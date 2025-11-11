@@ -1,0 +1,132 @@
+{
+  "hallways_staircases_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Grand Staircase",
+        "description": "A sweeping double staircase with carved banisters and worn carpet runners, creaking under every step."
+      },
+      {
+        "name": "Wooden Floorboards",
+        "description": "Aged planks with deep scratches and stains, echoing footsteps across the corridor."
+      },
+      {
+        "name": "Tall Doorways",
+        "description": "Heavy wooden doors with ornate handles and peeling paint, some slightly ajar."
+      },
+      {
+        "name": "Wall Paneling",
+        "description": "Dark wooden panels and faded wallpaper, peeling at the edges and stained with age."
+      },
+      {
+        "name": "Ceiling Molding",
+        "description": "Decorative plaster moldings cracked with time, dust falling gently when disturbed."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Portrait Paintings",
+        "description": "Large framed paintings of family ancestors whose eyes seem to follow the player’s movement."
+      },
+      {
+        "name": "Wall Mirrors",
+        "description": "Tall, gilded mirrors along the hallway, some cracked or reflecting figures that aren’t really there."
+      },
+      {
+        "name": "Side Tables",
+        "description": "Small wooden tables holding vases, candleholders, or decaying flowers."
+      },
+      {
+        "name": "Rugs and Runners",
+        "description": "Long, faded carpets lining the hallways, threadbare and slightly damp."
+      },
+      {
+        "name": "Chandeliers",
+        "description": "Elegant yet dusty chandeliers hanging from the ceiling, crystals swaying as if moved by unseen air."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Delicate webs hanging in corners, glimmering faintly in dim light."
+      },
+      {
+        "name": "Drafts of Cold Air",
+        "description": "Sudden gusts flowing through the halls, carrying faint whispers or sighs."
+      },
+      {
+        "name": "Echoing Footsteps",
+        "description": "Sounds of movement that do not match the player’s steps, coming from distant halls."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Wall lamps and chandeliers that flicker sporadically, plunging sections into darkness."
+      },
+      {
+        "name": "Dust in the Air",
+        "description": "Fine dust drifting in beams of light, disturbed by unseen movement."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Locked Door",
+        "description": "A door with an ornate handle that rattles but won’t open, requiring a key or trigger to unlock."
+      },
+      {
+        "name": "Hidden Passage Switch",
+        "description": "A wall sconce or book that can be pulled to reveal a hidden stairway or secret door."
+      },
+      {
+        "name": "Fallen Portrait",
+        "description": "A painting lying face down on the floor, revealing something hidden behind it."
+      },
+      {
+        "name": "Candleholder",
+        "description": "A movable sconce that acts as a lever or light source, with wax dripping onto the wall below."
+      },
+      {
+        "name": "Crumpled Letter",
+        "description": "A torn note or message found on a table or floor, hinting at the mansion’s secrets."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Creaking Sounds",
+        "description": "Boards, banisters, and doors making unsettling creaks in the silence."
+      },
+      {
+        "name": "Phantom Shadows",
+        "description": "Dark silhouettes moving along the walls, vanishing when approached."
+      },
+      {
+        "name": "Distant Laughter or Crying",
+        "description": "Faint echoes of human voices coming from upstairs or around corners."
+      },
+      {
+        "name": "Swinging Chandelier",
+        "description": "A chandelier that sways gently, chains rattling though no wind is present."
+      },
+      {
+        "name": "Sudden Temperature Drops",
+        "description": "Cold patches of air that cause visible breath and shivers as the player passes through."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Wall Sconces",
+        "description": "Iron sconces holding flickering candles that cast shifting light along the corridor walls."
+      },
+      {
+        "name": "Chandelier Glow",
+        "description": "Dim, golden light from dusty chandeliers reflecting off mirrors and portraits."
+      },
+      {
+        "name": "Moonlight Through Windows",
+        "description": "Pale light streaming through high arched windows, cutting across the staircase."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "A handheld or dropped lantern providing a moving pool of light across the hallway floor."
+      }
+    ]
+  }
+}

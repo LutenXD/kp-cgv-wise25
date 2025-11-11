@@ -1,0 +1,132 @@
+{
+  "courtyard_garden_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone Pathways",
+        "description": "Cracked stone walkways winding through overgrown weeds and tangled roots, slick with moss."
+      },
+      {
+        "name": "Fountain",
+        "description": "A grand but decayed fountain at the courtyard’s center, filled with murky water and wilted petals."
+      },
+      {
+        "name": "Iron Gate",
+        "description": "Tall wrought-iron gates with intricate patterns, rusted and partially open, creaking in the wind."
+      },
+      {
+        "name": "Garden Walls",
+        "description": "Crumbled stone walls covered in ivy and old carvings, hiding niches and small alcoves."
+      },
+      {
+        "name": "Archways and Columns",
+        "description": "Broken marble archways and leaning columns entwined with vines and thorny bushes."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Stone Benches",
+        "description": "Weathered benches covered in moss and lichen, some cracked down the middle."
+      },
+      {
+        "name": "Birdbath",
+        "description": "An ornate birdbath filled with stagnant water and floating leaves."
+      },
+      {
+        "name": "Garden Statues",
+        "description": "Figures of angels and animals with broken wings or missing heads, their surfaces streaked by rain."
+      },
+      {
+        "name": "Lamp Posts",
+        "description": "Tall iron lamps that flicker dimly, some still working, others shattered or unlit."
+      },
+      {
+        "name": "Gravestone Markers",
+        "description": "Small, weather-worn stones near the edges of the courtyard, names barely legible."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Overgrown Vegetation",
+        "description": "Thick weeds, ferns, and ivy choking the paths, moving slightly in unseen wind."
+      },
+      {
+        "name": "Falling Leaves",
+        "description": "Dead leaves slowly drifting down from unseen trees above."
+      },
+      {
+        "name": "Crows and Ravens",
+        "description": "Dark birds perched on statues and railings, occasionally cawing or flying away suddenly."
+      },
+      {
+        "name": "Soft Rain or Mist",
+        "description": "A light drizzle or persistent fog hanging over the courtyard, muting all sound."
+      },
+      {
+        "name": "Moonlight Reflections",
+        "description": "Pale light reflecting off puddles and the fountain’s surface, casting ghostly glows."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Locked Garden Gate",
+        "description": "An ornate gate leading to another area, sealed with a rusted lock that may require a key."
+      },
+      {
+        "name": "Statue with Hidden Compartment",
+        "description": "A cracked statue concealing a small compartment or puzzle mechanism."
+      },
+      {
+        "name": "Weathered Journal Page",
+        "description": "A soggy page lying near the fountain, containing cryptic notes about the mansion’s past."
+      },
+      {
+        "name": "Broken Lantern",
+        "description": "An old lantern near a bench, glass shattered but faintly glowing within."
+      },
+      {
+        "name": "Cursed Flower",
+        "description": "A single strange flower glowing faintly, pulsing in rhythm with ambient sounds."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Wind Gusts",
+        "description": "Sudden, strong bursts of wind that rustle foliage and extinguish candles or lanterns."
+      },
+      {
+        "name": "Whispering Voices",
+        "description": "Soft whispers carried on the wind, seeming to come from the statues or trees."
+      },
+      {
+        "name": "Animal Sounds",
+        "description": "Distant howls, croaks, or rustling in the bushes, hinting at unseen life."
+      },
+      {
+        "name": "Shadow Movement",
+        "description": "Shadows shifting subtly across the garden, as if something is moving just out of sight."
+      },
+      {
+        "name": "Faint Chiming",
+        "description": "The sound of wind chimes, though none can be seen."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Bright silver light illuminating parts of the courtyard, leaving others in darkness."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "Old iron lanterns hanging from posts or trees, their light flickering weakly."
+      },
+      {
+        "name": "Fireflies",
+        "description": "Small glowing insects drifting lazily through the air, adding a faint green shimmer."
+      },
+      {
+        "name": "Lightning Flashes",
+        "description": "Occasional bursts of light from distant storms, revealing the courtyard in stark contrast."
+      }
+    ]
+  }
+}

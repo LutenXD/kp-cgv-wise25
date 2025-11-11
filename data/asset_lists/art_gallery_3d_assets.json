@@ -1,0 +1,132 @@
+{
+  "art_gallery_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Vaulted Ceiling",
+        "description": "High arched ceiling with cracked frescoes and flaking paint, once depicting celestial scenes now obscured by grime."
+      },
+      {
+        "name": "Marble Flooring",
+        "description": "Cold, polished tiles streaked with age, some broken or marked by mysterious stains."
+      },
+      {
+        "name": "Tall Windows",
+        "description": "Long windows covered by tattered curtains, letting in diffused moonlight that glints off the marble."
+      },
+      {
+        "name": "Display Alcoves",
+        "description": "Recessed wall sections housing sculptures, each dimly lit and cloaked in dust."
+      },
+      {
+        "name": "Grand Archway Entrance",
+        "description": "An ornate archway leading into the gallery, adorned with cracked cherubs and chipped molding."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Framed Paintings",
+        "description": "Portraits, landscapes, and surreal pieces hanging askew; some eyes move subtly when viewed directly."
+      },
+      {
+        "name": "Pedestals and Sculptures",
+        "description": "Stone and marble statues of unknown figures, some missing limbs or heads, standing in eerie stillness."
+      },
+      {
+        "name": "Display Tables",
+        "description": "Velvet-covered tables holding small artifacts, vases, and broken picture frames."
+      },
+      {
+        "name": "Benches",
+        "description": "Wooden benches arranged along the center of the hall, worn smooth by time, one overturned."
+      },
+      {
+        "name": "Velvet Ropes",
+        "description": "Frayed ropes cordoning off certain exhibits, posts leaning at odd angles."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Dust Particles",
+        "description": "Fine motes suspended in the air, illuminated by faint moonbeams."
+      },
+      {
+        "name": "Cobwebs",
+        "description": "Thick webs stretching across frames and statues, suggesting long abandonment."
+      },
+      {
+        "name": "Faint Whispering",
+        "description": "Soft murmurs and sighs that seem to echo from the paintings themselves."
+      },
+      {
+        "name": "Cold Drafts",
+        "description": "Sudden currents of air that disturb hanging fabrics and cause candle flames to bend."
+      },
+      {
+        "name": "Eerie Silence",
+        "description": "An unnatural quiet punctuated only by creaks and distant drips of water."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Cursed Painting",
+        "description": "A large portrait whose expression subtly changes when the player looks away; may hide a mechanism or clue."
+      },
+      {
+        "name": "Broken Frame",
+        "description": "An empty frame lying on the floor, concealing a small key or hidden compartment beneath."
+      },
+      {
+        "name": "Movable Statue",
+        "description": "A heavy sculpture that can be rotated or pushed to reveal a secret passage or trigger a puzzle."
+      },
+      {
+        "name": "Art Catalog Book",
+        "description": "A dusty ledger listing artworks and their owners, with certain entries ominously crossed out."
+      },
+      {
+        "name": "Hidden Safe",
+        "description": "A small safe embedded behind a painting, requiring a code found within the gallery’s clues."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Creaking Floorboards",
+        "description": "Soft groans and clicks as if footsteps are echoing your own."
+      },
+      {
+        "name": "Shifting Shadows",
+        "description": "Moving silhouettes cast by unseen light sources, suggesting figures walking just out of view."
+      },
+      {
+        "name": "Blinking Portraits",
+        "description": "Certain paintings blink or glance sideways when the player isn’t looking directly at them."
+      },
+      {
+        "name": "Cracking Canvas",
+        "description": "The sound of canvas stretching and tearing in the silence, though no damage appears visible."
+      },
+      {
+        "name": "Spectral Figure",
+        "description": "A faint ghostly figure visible in reflections or paintings, vanishing when approached."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Wall Lamps",
+        "description": "Old brass sconces flickering weakly, their bulbs buzzing with static energy."
+      },
+      {
+        "name": "Moonlight",
+        "description": "Pale light streaming through windows, illuminating statues and glinting off marble."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Clusters of candles around certain exhibits, their flames unnaturally still."
+      },
+      {
+        "name": "Spotlights",
+        "description": "Old electric spotlights aimed at paintings, some flickering or turning on unexpectedly."
+      }
+    ]
+  }
+}

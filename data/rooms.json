@@ -91,10 +91,6 @@
         {
             "name": "Bathroom",
             "description": "A clawfoot tub filled with rusty water, a mirror that shows a distorted reflection, and the sound of dripping."
-        },
-        {
-            "name": "Clock Tower",
-            "description": "A massive, broken clock that ticks backward, and a view of the stormy grounds."
         }
         ]
     }

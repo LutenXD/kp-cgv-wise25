@@ -1,0 +1,124 @@
+{
+  "attic_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Wooden Beams",
+        "description": "Aged support beams, splintered and creaky, with cobwebs stretched across them."
+      },
+      {
+        "name": "Slanted Roof",
+        "description": "Low, angled roof with exposed rafters and water stains from old leaks."
+      },
+      {
+        "name": "Small Window",
+        "description": "A single grimy window that lets in a thin beam of moonlight, dust swirling in the glow."
+      },
+      {
+        "name": "Trapdoor",
+        "description": "A wooden hatch with rusty hinges leading to the floors below, sometimes opening on its own."
+      },
+      {
+        "name": "Wooden Floorboards",
+        "description": "Warped, uneven boards that creak loudly with every step."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Old Rocking Chair",
+        "description": "A dusty wooden rocking chair that sways gently when no one is near."
+      },
+      {
+        "name": "Antique Trunk",
+        "description": "A large, weathered trunk with rusty metal clasps and faint initials carved into the lid."
+      },
+      {
+        "name": "Dusty Table",
+        "description": "A small table covered in thick dust, with old candle wax and scraps of fabric."
+      },
+      {
+        "name": "Wardrobe",
+        "description": "A tall, forgotten wardrobe with cracked doors and tattered clothes hanging inside."
+      },
+      {
+        "name": "Broken Mirror",
+        "description": "A shattered mirror leaning against the wall, reflecting distorted shapes."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Dense cobwebs filling every corner, glinting faintly in the dim light."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating dust visible in the air, disturbed by the player’s movement."
+      },
+      {
+        "name": "Flickering Light Bulb",
+        "description": "A single dim bulb that flickers erratically, casting twitching shadows."
+      },
+      {
+        "name": "Cold Spots",
+        "description": "Chilling patches of air that make the player’s breath visible."
+      },
+      {
+        "name": "Faint Footsteps",
+        "description": "Soft creaks as if someone else is walking in the attic."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Photo Album",
+        "description": "A dusty book filled with faded family photos, some faces scratched out."
+      },
+      {
+        "name": "Toy Chest",
+        "description": "An old wooden box containing broken toys and a music box that still plays."
+      },
+      {
+        "name": "Mannequin",
+        "description": "A headless mannequin draped with a torn dress, facing the corner."
+      },
+      {
+        "name": "Portrait Painting",
+        "description": "A cracked painting of a family member with eyes that seem to follow the player."
+      },
+      {
+        "name": "Metal Chest",
+        "description": "A locked chest with a faint knocking sound coming from inside."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Floating Dust",
+        "description": "Dust motes drifting in beams of light, creating a thick, musty atmosphere."
+      },
+      {
+        "name": "Rats",
+        "description": "Small rats scurrying between boxes and crates when the player gets close."
+      },
+      {
+        "name": "Creaking Sounds",
+        "description": "Boards and beams groaning softly, responding to unseen weight."
+      },
+      {
+        "name": "Ambient Fog",
+        "description": "A low mist clinging to the floor, swirling around the player’s feet."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Dim silver light streaming through the window, illuminating motes of dust."
+      },
+      {
+        "name": "Flickering Bulb",
+        "description": "A bare bulb swinging slightly, casting moving shadows across the attic."
+      },
+      {
+        "name": "Candlelight",
+        "description": "A single candle left on a table, nearly burned out, melting into a pool of wax."
+      }
+    ]
+  }
+}

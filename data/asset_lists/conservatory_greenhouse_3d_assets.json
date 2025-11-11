@@ -1,0 +1,132 @@
+{
+  "conservatory_greenhouse_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Glass Walls and Ceiling",
+        "description": "Large glass panes framed by rusted iron, many cracked or covered in grime and creeping vines."
+      },
+      {
+        "name": "Iron Framework",
+        "description": "Delicate yet corroded metal beams supporting the structure, some bent or fractured."
+      },
+      {
+        "name": "Stone Pathway",
+        "description": "Broken stone tiles leading through the room, overgrown with moss and tangled roots."
+      },
+      {
+        "name": "Fountain Basin",
+        "description": "A dried-up fountain in the center, filled with stagnant water and fallen leaves."
+      },
+      {
+        "name": "Large Windows",
+        "description": "Tall, fogged windows letting in faint moonlight, distorted by condensation and dirt."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Planting Tables",
+        "description": "Wooden tables cluttered with cracked pots, rusted tools, and withered plants."
+      },
+      {
+        "name": "Wicker Chairs",
+        "description": "Old garden chairs covered in mildew, one toppled over as if hastily abandoned."
+      },
+      {
+        "name": "Watering Can",
+        "description": "A rusted metal can lying on its side, dripping brown water onto the floor."
+      },
+      {
+        "name": "Clay Pots",
+        "description": "Broken and scattered pots containing long-dead or mutated plant life."
+      },
+      {
+        "name": "Trellis and Vines",
+        "description": "A decaying wooden trellis overtaken by thorny vines and creeping ivy."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Overgrown Foliage",
+        "description": "Wild plants and ferns sprawling across the floor and walls, some still unnaturally green."
+      },
+      {
+        "name": "Dripping Water",
+        "description": "Condensation falling from the ceiling or leaves, echoing through the quiet space."
+      },
+      {
+        "name": "Creeping Fog",
+        "description": "A soft mist rolling along the ground, thickest near the fountain."
+      },
+      {
+        "name": "Insects and Moths",
+        "description": "Small insects circling the light sources or resting on leaves and windows."
+      },
+      {
+        "name": "Decay Smell",
+        "description": "A heavy, earthy scent of rot and damp soil, occasionally broken by floral sweetness."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Broken Lantern",
+        "description": "A fallen lantern near the fountain, its glass cracked but still faintly glowing."
+      },
+      {
+        "name": "Mysterious Seedling",
+        "description": "A small, glowing sprout growing in an old pot, pulsing faintly as if alive."
+      },
+      {
+        "name": "Garden Journal",
+        "description": "A water-damaged notebook on a table, filled with notes on plant experiments and strange rituals."
+      },
+      {
+        "name": "Locked Cabinet",
+        "description": "A metal storage cabinet secured with a rusted padlock, emitting faint rattling sounds from inside."
+      },
+      {
+        "name": "Shattered Glass Panel",
+        "description": "A broken section of the ceiling, letting in rain and leaves — possibly an entry point for creatures."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Fluttering Curtains",
+        "description": "Tattered fabric blowing in the cold air, whispering against the glass walls."
+      },
+      {
+        "name": "Shifting Shadows",
+        "description": "Plant silhouettes moving unnaturally, as though responding to unseen forces."
+      },
+      {
+        "name": "Faint Whispers",
+        "description": "Soft voices hidden beneath the sound of rustling leaves."
+      },
+      {
+        "name": "Glowing Spores",
+        "description": "Tiny bioluminescent particles floating near certain plants, pulsating gently."
+      },
+      {
+        "name": "Creeping Vines Movement",
+        "description": "Vines that twitch or slowly crawl when the player isn’t watching."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight Through Glass",
+        "description": "Cold blue light filtering through the cracked panes, refracting across the wet floor."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "A dim, flickering lantern casting long shadows over the foliage."
+      },
+      {
+        "name": "Bioluminescent Plants",
+        "description": "Faint, organic light emitted by certain unnatural plants in the far corners."
+      },
+      {
+        "name": "Lightning Flashes",
+        "description": "Occasional lightning bursts illuminating the greenhouse through the windows."
+      }
+    ]
+  }
+}
