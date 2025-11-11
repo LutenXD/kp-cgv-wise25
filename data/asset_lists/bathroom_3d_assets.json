@@ -1,0 +1,132 @@
+{
+  "bathroom_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Tiled Walls",
+        "description": "Cracked ceramic tiles stained with mildew and dark streaks, some missing entirely to reveal the plaster beneath."
+      },
+      {
+        "name": "Stone or Porcelain Floor",
+        "description": "Cold tiles slick with moisture, patterned with old stains and faint footprints."
+      },
+      {
+        "name": "Bathtub",
+        "description": "A large clawfoot tub with rusted edges, half-filled with stagnant, dark water that ripples occasionally."
+      },
+      {
+        "name": "Sink and Mirror",
+        "description": "An antique porcelain sink with rusted faucets and a cracked mirror above it, reflecting movement that isn’t there."
+      },
+      {
+        "name": "Toilet and Plumbing",
+        "description": "An old-fashioned toilet with a hanging chain flush and visible rusted pipes along the walls."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Medicine Cabinet",
+        "description": "A small metal cabinet above the sink containing dusty bottles, old bandages, and yellowed labels."
+      },
+      {
+        "name": "Towel Rack",
+        "description": "A rusted rack holding a damp, discolored towel that drips onto the floor."
+      },
+      {
+        "name": "Curtain Rod and Shower Curtain",
+        "description": "A torn shower curtain hanging halfway open, stained and swaying slightly as if recently disturbed."
+      },
+      {
+        "name": "Laundry Basket",
+        "description": "A wicker basket filled with rotted fabric and moldy clothing."
+      },
+      {
+        "name": "Vanity Table",
+        "description": "A small vanity with cracked glass jars, a broken comb, and traces of faded perfume."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Condensation and Drips",
+        "description": "Water slowly dripping from the ceiling or taps, forming small ripples in puddles on the floor."
+      },
+      {
+        "name": "Fogged Mirror",
+        "description": "The mirror fogs over and occasionally reveals words or handprints that vanish quickly."
+      },
+      {
+        "name": "Mold and Decay",
+        "description": "Dark patches of mold creeping up the walls, emitting a musty odor."
+      },
+      {
+        "name": "Cold Air",
+        "description": "A chilling draft that emanates from the bathtub or through the drain."
+      },
+      {
+        "name": "Faint Whispers",
+        "description": "Soft, echoing voices heard through the pipes or behind the walls."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Mirror",
+        "description": "When interacted with, reflections behave unnaturally—delayed movements or figures appearing behind the player."
+      },
+      {
+        "name": "Bathtub Drain",
+        "description": "A blackened drain that gurgles faintly; interacting may trigger a hand or object emerging from the water."
+      },
+      {
+        "name": "Medicine Bottle",
+        "description": "A small glass vial containing a strange liquid or a key item for a puzzle."
+      },
+      {
+        "name": "Cabinet Drawer",
+        "description": "A drawer that opens slowly, revealing a torn photograph or cryptic note."
+      },
+      {
+        "name": "Broken Light Fixture",
+        "description": "A ceiling lamp that flickers when touched, sometimes triggering supernatural events."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Flickering Lights",
+        "description": "Overhead light bulbs that blink erratically, casting momentary darkness across the room."
+      },
+      {
+        "name": "Dripping Echoes",
+        "description": "Loud, rhythmic drops of water echo through the space, syncing with the player’s heartbeat."
+      },
+      {
+        "name": "Steam Clouds",
+        "description": "Mist forming near the bathtub or sink, occasionally revealing ghostly shapes."
+      },
+      {
+        "name": "Mirror Apparitions",
+        "description": "Brief spectral reflections appearing behind the player before fading away."
+      },
+      {
+        "name": "Water Ripple Movement",
+        "description": "Ripples forming in the tub even when the water appears still, as if something is moving beneath the surface."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Overhead Lamp",
+        "description": "A single flickering light casting harsh shadows and highlighting the room’s decay."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Candles placed on the sink or tub edge, their wax pooled and blackened."
+      },
+      {
+        "name": "Moonlight Through Window",
+        "description": "Soft light filtering through a fogged or cracked window, illuminating the mist."
+      },
+      {
+        "name": "Electrical Sparks",
+        "description": "Occasional flickers of blue light from a damaged wire or fixture, briefly brightening the darkness."
+      }
+    ]
+  }
+}

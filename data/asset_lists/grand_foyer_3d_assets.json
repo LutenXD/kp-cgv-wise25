@@ -1,0 +1,116 @@
+{
+  "grand_foyer_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Grand Staircase",
+        "description": "A sweeping, ornate staircase with intricate railings and worn-out carpet."
+      },
+      {
+        "name": "Chandelier",
+        "description": "A large, dusty chandelier with flickering candles or broken bulbs, possibly swaying slightly."
+      },
+      {
+        "name": "High Ceilings",
+        "description": "Detailed ceiling moldings, cracks, and peeling paint."
+      },
+      {
+        "name": "Marble Floors",
+        "description": "Cracked or stained marble tiles, with scattered debris or leaves."
+      },
+      {
+        "name": "Double Doors",
+        "description": "Massive, creaking wooden doors with rusty hinges and tarnished brass handles."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Antique Side Tables",
+        "description": "Ornate tables with cobwebs, dust, and possibly a single, half-burned candle."
+      },
+      {
+        "name": "Grand Mirror",
+        "description": "A full-length mirror with a gilded frame, possibly cracked or showing ghostly reflections."
+      },
+      {
+        "name": "Coat Rack",
+        "description": "A standalone rack with tattered coats, hats, and umbrellas."
+      },
+      {
+        "name": "Rugs",
+        "description": "Large, threadbare rugs with moth-eaten patterns or mysterious stains."
+      },
+      {
+        "name": "Wall Sconces",
+        "description": "Flickering wall-mounted candles or gas lamps."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Hanging from the ceiling, corners, and furniture."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of light."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Candles, lamps, or chandeliers that dim and brighten unpredictably."
+      },
+      {
+        "name": "Ghostly Presence",
+        "description": "Subtle visual effects like a faint, translucent figure or cold breath in the air."
+      },
+      {
+        "name": "Sound Effects",
+        "description": "Creaking floorboards, distant whispers, or the sound of a door slamming shut."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Portraits",
+        "description": "Paintings of past inhabitants with eyes that follow the player."
+      },
+      {
+        "name": "Letter or Journal",
+        "description": "A discarded letter or journal on a table, hinting at the mansion’s dark history."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A small, intricate pocket watch that doesn’t work, possibly tied to a puzzle."
+      },
+      {
+        "name": "Key",
+        "description": "A rusty key hidden under a rug or inside a drawer, used to unlock another area."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or cobwebs gently moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, adding to the eerie atmosphere."
+      },
+      {
+        "name": "Stains or Blood Splatter",
+        "description": "Mysterious stains on the floor or walls, hinting at past violence."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming in through broken or stained-glass windows."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles placed on tables, sconces, or the floor."
+      },
+      {
+        "name": "Shadow Play",
+        "description": "Shadows that move unnaturally or seem to take on human-like shapes."
+      }
+    ]
+  }
+}

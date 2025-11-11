@@ -1,0 +1,136 @@
+{
+  "music_room_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "High Ceilings with Moldings",
+        "description": "Elegant plaster moldings now cracked and faded, their patterns obscured by dust and cobwebs."
+      },
+      {
+        "name": "Tall Windows with Curtains",
+        "description": "Large windows draped with heavy velvet curtains, torn and faded, letting in streaks of cold moonlight."
+      },
+      {
+        "name": "Wooden Wall Panels",
+        "description": "Dark oak paneling with carved motifs of musical instruments, worn and chipped over time."
+      },
+      {
+        "name": "Marble Fireplace",
+        "description": "A grand fireplace with a cracked mantel and soot-stained carvings of cherubs and lyres."
+      },
+      {
+        "name": "Ornate Ceiling Beams",
+        "description": "Carved beams overhead, some sagging, adorned with faint gold leaf designs."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Grand Piano",
+        "description": "A large black piano with missing keys and a warped lid; occasionally plays a note by itself."
+      },
+      {
+        "name": "Sheet Music Stand",
+        "description": "A rusted metal stand holding faded, torn sheets of music marked with strange symbols."
+      },
+      {
+        "name": "Upright Harp",
+        "description": "An elegant golden harp with snapped strings that hum faintly when the player passes."
+      },
+      {
+        "name": "String Instruments",
+        "description": "Violins, cellos, and lutes placed around the room, some with broken strings or cracked bodies."
+      },
+      {
+        "name": "Chairs and Stools",
+        "description": "A mix of upholstered chairs and wooden stools arranged in a half circle, coated in dust."
+      },
+      {
+        "name": "Portrait of a Musician",
+        "description": "A large oil painting above the fireplace depicting a stern composer whose eyes follow the player."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Floating Dust",
+        "description": "Dust particles swirling in the moonlight, disturbed by the faint vibration of music."
+      },
+      {
+        "name": "Cobwebs",
+        "description": "Thick webs connecting instruments, chairs, and light fixtures."
+      },
+      {
+        "name": "Echoing Notes",
+        "description": "Faint piano chords or violin tones playing at random intervals, source unseen."
+      },
+      {
+        "name": "Chill in the Air",
+        "description": "Cold air gathers near the piano and windows, forming visible breath when approached."
+      },
+      {
+        "name": "Faint Perfume Smell",
+        "description": "A lingering scent of floral perfume, growing stronger when the music starts playing on its own."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Music Box",
+        "description": "A small, ornate box resting on a table that plays a haunting melody when opened."
+      },
+      {
+        "name": "Conductor’s Baton",
+        "description": "A baton left on a podium, tied to a ghostly orchestra event or puzzle trigger."
+      },
+      {
+        "name": "Sheet Music Fragment",
+        "description": "A torn piece of music that completes a larger composition used to unlock a hidden passage."
+      },
+      {
+        "name": "Gramophone",
+        "description": "An antique gramophone that begins to play when approached, the record scratched and looping."
+      },
+      {
+        "name": "Hidden Panel",
+        "description": "A concealed wall panel behind the piano or painting, accessible after completing a melody puzzle."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Phantom Orchestra",
+        "description": "Faint silhouettes of musicians appear briefly when certain notes are played."
+      },
+      {
+        "name": "Vibrating Instruments",
+        "description": "Instruments that tremble or resonate in response to unseen forces or music cues."
+      },
+      {
+        "name": "Shadow Movement",
+        "description": "Dark figures flicker across the walls, vanishing when light touches them."
+      },
+      {
+        "name": "Whispered Singing",
+        "description": "Soft humming or singing accompanying the music, coming from empty corners of the room."
+      },
+      {
+        "name": "Cold Drafts",
+        "description": "Sudden gusts that rustle sheet music and extinguish candles as melodies begin."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Candlelight",
+        "description": "Dozens of melted candles scattered across tables and piano tops, flickering faintly."
+      },
+      {
+        "name": "Chandelier Light",
+        "description": "A dusty crystal chandelier swaying above, refracting candlelight into dancing reflections."
+      },
+      {
+        "name": "Moonlight Through Windows",
+        "description": "Pale light shining through cracked glass panes, illuminating instruments and dust in the air."
+      },
+      {
+        "name": "Firelight",
+        "description": "Occasional glow from the fireplace, casting long shadows across the room’s instruments."
+      }
+    ]
+  }
+}

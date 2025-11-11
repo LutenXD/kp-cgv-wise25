@@ -1,0 +1,124 @@
+{
+  "servants_quarters_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Narrow Wooden Beds",
+        "description": "Small, creaky beds with thin mattresses and tattered blankets. Some may have rusty springs or mysterious stains."
+      },
+      {
+        "name": "Low Ceiling with Exposed Beams",
+        "description": "Dark, wooden beams covered in cobwebs, cracks, and signs of water damage."
+      },
+      {
+        "name": "Small Windows",
+        "description": "Tiny, grimy windows with iron bars, letting in minimal light. The glass may be cracked or broken."
+      },
+      {
+        "name": "Wooden Floorboards",
+        "description": "Worn, uneven floorboards with gaps, stains, and mysterious scratches."
+      },
+      {
+        "name": "Thin Walls",
+        "description": "Plaster walls with peeling paint, cracks, and faint handprints or writings."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Wooden Wardrobe",
+        "description": "A small, rickety wardrobe containing tattered servant uniforms. The door may creak or refuse to stay closed."
+      },
+      {
+        "name": "Washbasin and Pitcher",
+        "description": "A chipped ceramic basin and pitcher on a small table, filled with murky water."
+      },
+      {
+        "name": "Nightstand",
+        "description": "A simple wooden table with a half-burned candle, a rusty key, or a worn-out book."
+      },
+      {
+        "name": "Straight-Back Chairs",
+        "description": "Plain wooden chairs, some broken or stacked haphazardly in a corner."
+      },
+      {
+        "name": "Wall Hooks",
+        "description": "Iron hooks on the walls for hanging clothes or tools, some with remnants of fabric or rust."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs in the corners, on the furniture, and between the ceiling beams."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the dim light, visible near the windows or candle flames."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "A single candle or oil lamp casting flickering, uneven light and long shadows."
+      },
+      {
+        "name": "Whispers and Murmurs",
+        "description": "Faint voices, the sound of footsteps, or distant sobbing from unseen servants."
+      },
+      {
+        "name": "Cold Drafts",
+        "description": "Sudden chills, especially near the beds or windows, with visible breath in the air."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Servant's Diary",
+        "description": "A small, leather-bound diary hidden under a pillow or in the nightstand, containing clues or disturbing entries."
+      },
+      {
+        "name": "Rusty Key",
+        "description": "A key hidden in a drawer, under the bed, or behind a loose brick, used to unlock another area."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A pocket watch left on the nightstand or in the wardrobe, tied to a time-based puzzle."
+      },
+      {
+        "name": "Uniform Patch",
+        "description": "A patch or piece of fabric from a servant's uniform, possibly hinting at their fate or identity."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A loose floorboard or secret panel in the wall, containing a note, key, or small artifact."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains, bedsheets, or papers moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, especially around the beds or windows."
+      },
+      {
+        "name": "Bloodstains or Dirt Marks",
+        "description": "Mysterious stains on the floor, walls, or bedsheets, hinting at past struggles."
+      },
+      {
+        "name": "Falling Dust or Ash",
+        "description": "Dust or ash drifting down from the ceiling or shelves, especially when disturbed."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Faint moonlight filtering through the grimy windows, casting long, eerie shadows."
+      },
+      {
+        "name": "Candlelight",
+        "description": "A single flickering candle on the nightstand or wall sconce, creating a dim, ghostly ambiance."
+      },
+      {
+        "name": "Oil Lamp Glow",
+        "description": "A weak, flickering glow from an oil lamp, barely illuminating the room."
+      }
+    ]
+  }
+}

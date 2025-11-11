@@ -1,0 +1,132 @@
+{
+  "chapel_crypt_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone Archways",
+        "description": "Tall, gothic archways carved with faded religious symbols and cracks filled with moss."
+      },
+      {
+        "name": "Stained Glass Windows",
+        "description": "Broken panes depicting saints and angels, moonlight shining through in distorted colors."
+      },
+      {
+        "name": "Altar",
+        "description": "A cold marble altar covered in dust, with melted candles and dark stains resembling blood."
+      },
+      {
+        "name": "Tomb Entrances",
+        "description": "Stone doorways leading to narrow burial chambers below, some sealed, others broken open."
+      },
+      {
+        "name": "Pillars and Columns",
+        "description": "Massive stone supports etched with worn inscriptions and faint claw marks."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Pews",
+        "description": "Rows of wooden benches, cracked and splintered, some toppled as if in panic."
+      },
+      {
+        "name": "Candelabras",
+        "description": "Tall metal stands holding half-burned candles, dripping with wax and rust."
+      },
+      {
+        "name": "Holy Statue",
+        "description": "A weathered stone statue of a saint or angel, missing parts, with an unsettling expression."
+      },
+      {
+        "name": "Organ",
+        "description": "An ancient pipe organ, silent and covered in cobwebs. Some keys still press down on their own."
+      },
+      {
+        "name": "Coffins and Sarcophagi",
+        "description": "Stone coffins lined along the walls, lids cracked or slightly ajar, revealing bones inside."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Delicate webs draped over statues, pews, and candles, shimmering in dim light."
+      },
+      {
+        "name": "Incense Smoke",
+        "description": "Faint trails of smoke lingering in the air, though no incense burns nearby."
+      },
+      {
+        "name": "Whispering Echoes",
+        "description": "Soft prayers or murmurs reverberating throughout the crypt, origin unknown."
+      },
+      {
+        "name": "Chill Air",
+        "description": "Cold drafts passing through cracks in the stone, carrying a faint scent of decay."
+      },
+      {
+        "name": "Dripping Water",
+        "description": "Occasional drops falling from the ceiling, echoing through the still air."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Ancient Bible or Tome",
+        "description": "A massive book on the altar, its pages brittle and filled with forbidden texts or incantations."
+      },
+      {
+        "name": "Silver Crucifix",
+        "description": "A tarnished crucifix that glows faintly when supernatural entities are near."
+      },
+      {
+        "name": "Sealed Crypt Door",
+        "description": "A locked stone door engraved with names of the dead, requiring a special relic to open."
+      },
+      {
+        "name": "Offering Bowl",
+        "description": "A metal basin once used for holy offerings, now filled with dark liquid and bone fragments."
+      },
+      {
+        "name": "Chalice",
+        "description": "A golden goblet on the altar, with dried blood around the rim."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Ghostly Choir",
+        "description": "Soft, distant singing that fades in and out, harmonizing with no visible source."
+      },
+      {
+        "name": "Flickering Candlelight",
+        "description": "Candles that dim and flare unpredictably, casting shifting shadows on the walls."
+      },
+      {
+        "name": "Rumbling Ground",
+        "description": "A faint tremor as if something large moves beneath the crypt."
+      },
+      {
+        "name": "Phantom Breeze",
+        "description": "A sudden gust that extinguishes lights or rustles pages of the tome."
+      },
+      {
+        "name": "Shadow Apparition",
+        "description": "A moving shadow that glides across the walls, mimicking the player’s motion."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight Through Stained Glass",
+        "description": "Pale light filtered through broken windows, painting the stone floor in fragmented color."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles lining the altar and pews, their flames barely sustaining."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "A single hanging lantern swaying from a chain, creaking as it moves."
+      },
+      {
+        "name": "Spirit Glow",
+        "description": "A faint, ethereal illumination emanating from the tombs, pulsating softly."
+      }
+    ]
+  }
+}

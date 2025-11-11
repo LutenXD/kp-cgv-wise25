@@ -1,0 +1,124 @@
+{
+  "dining_room_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Long Dining Table",
+        "description": "A massive wooden table with intricate carvings, set for a meal that was never finished. The tablecloth is stained and tattered."
+      },
+      {
+        "name": "High-Backed Chairs",
+        "description": "Ornate chairs with velvet upholstery, some broken or covered in dust."
+      },
+      {
+        "name": "Chandelier",
+        "description": "A large, flickering chandelier above the table, with missing crystals or broken bulbs."
+      },
+      {
+        "name": "Wainscoting",
+        "description": "Dark wooden paneling on the lower walls, some panels loose or cracked."
+      },
+      {
+        "name": "Large Windows",
+        "description": "Tall windows with heavy, moth-eaten curtains, allowing eerie moonlight to filter in."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "China Cabinet",
+        "description": "A glass-front cabinet displaying fine china, some pieces broken or missing."
+      },
+      {
+        "name": "Sideboard",
+        "description": "A long sideboard with tarnished silverware, dusty plates, and half-empty decanters."
+      },
+      {
+        "name": "Table Settings",
+        "description": "Plates, bowls, and cutlery arranged for a meal, some cracked or stained."
+      },
+      {
+        "name": "Candelabras",
+        "description": "Silver or brass candelabras with half-melted candles, flickering ominously."
+      },
+      {
+        "name": "Portraits",
+        "description": "Paintings of past family members, some with eyes that follow the player."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the chandelier, corners, and furniture."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of light or moonlight."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Candles or chandeliers that flicker unpredictably, casting eerie shadows."
+      },
+      {
+        "name": "Ghostly Presence",
+        "description": "Translucent figures sitting at the table or standing in the corners, disappearing when approached."
+      },
+      {
+        "name": "Echoing Sounds",
+        "description": "Faint clinking of silverware, whispers, or the sound of a chair scraping."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Rotting Food",
+        "description": "Plates of food that appear fresh but turn rotten or moldy when inspected."
+      },
+      {
+        "name": "Letter or Note",
+        "description": "A handwritten note or letter left on the table, hinting at the mansion’s dark history."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A small, intricate pocket watch hidden in a drawer or under a plate, tied to a puzzle."
+      },
+      {
+        "name": "Key",
+        "description": "A rusty key hidden in a drawer, under a plate, or inside a decanter."
+      },
+      {
+        "name": "Wine Bottles",
+        "description": "Dusty wine bottles, some filled with blood-like liquid or glowing substances."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or tablecloths gently moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, adding to the eerie atmosphere."
+      },
+      {
+        "name": "Bloodstains",
+        "description": "Mysterious stains on the tablecloth, plates, or floor, hinting at past violence."
+      },
+      {
+        "name": "Falling Dust",
+        "description": "Dust particles or ash drifting down from the ceiling or chandelier."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming through the windows, casting long, eerie shadows across the table."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles on the table or sideboard, creating a ghostly ambiance."
+      },
+      {
+        "name": "Fireplace Glow",
+        "description": "A faint, ghostly glow from a nearby fireplace, even if it's not lit."
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "basement_dungeon_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone Walls",
+        "description": "Rough, damp stone bricks covered in moss and dark stains, some stones slightly loose."
+      },
+      {
+        "name": "Arched Ceiling",
+        "description": "Low, vaulted arches with iron support beams, dripping condensation."
+      },
+      {
+        "name": "Iron Door",
+        "description": "Heavy, rusted door with a small barred window. It groans loudly when opened."
+      },
+      {
+        "name": "Stone Floor",
+        "description": "Cold stone slabs with cracks and patches of pooled water or blood."
+      },
+      {
+        "name": "Narrow Staircase",
+        "description": "Steep stone steps leading up to the mansion, with a metal railing slick with rust."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Wooden Workbench",
+        "description": "A sturdy table covered in old tools, broken bottles, and dark stains."
+      },
+      {
+        "name": "Iron Chains",
+        "description": "Rusted chains hanging from the ceiling and walls, some still attached to shackles."
+      },
+      {
+        "name": "Storage Shelves",
+        "description": "Rotting wooden shelves lined with jars of strange substances and forgotten relics."
+      },
+      {
+        "name": "Barred Cell",
+        "description": "A small cage-like cell with an open door, straw bedding, and scratch marks on the walls."
+      },
+      {
+        "name": "Wooden Barrels",
+        "description": "Old barrels leaking water or unknown fluids, stacked in dark corners."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick webs hanging from the ceiling beams and corners, glistening in the dim light."
+      },
+      {
+        "name": "Dripping Water",
+        "description": "Constant dripping from unseen leaks, echoing through the chamber."
+      },
+      {
+        "name": "Rats",
+        "description": "Small rodents darting between cracks and shadows, their squeaks echoing faintly."
+      },
+      {
+        "name": "Mold and Decay",
+        "description": "Patches of green mold and black rot covering wood and stone alike."
+      },
+      {
+        "name": "Cold Mist",
+        "description": "Thin mist lingering near the floor, moving unnaturally against air currents."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Rusty Key",
+        "description": "An old iron key lying on a shelf or hanging from a hook, likely tied to a locked cell."
+      },
+      {
+        "name": "Bloodstained Note",
+        "description": "A torn piece of paper with smeared writing, hinting at what happened down here."
+      },
+      {
+        "name": "Broken Lantern",
+        "description": "A shattered lantern on the ground, its glass scattered and oil spilled."
+      },
+      {
+        "name": "Torture Chair",
+        "description": "A wooden chair fitted with restraints, rusted metal parts, and old blood stains."
+      },
+      {
+        "name": "Hidden Passage Door",
+        "description": "A disguised section of wall that can be opened with a lever or key mechanism."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Flickering Torchlight",
+        "description": "Dim torches that sputter and fade, causing shadows to dance across the walls."
+      },
+      {
+        "name": "Echoing Footsteps",
+        "description": "Delayed echoes of the player’s movements, as if something else walks with them."
+      },
+      {
+        "name": "Chains Clinking",
+        "description": "Soft rattling of metal, even when no wind or movement is nearby."
+      },
+      {
+        "name": "Whispering Voices",
+        "description": "Barely audible murmurs that seem to come from behind the walls."
+      },
+      {
+        "name": "Sudden Drafts",
+        "description": "Cold air rushing from unseen cracks or tunnels, extinguishing light sources."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Torchlight",
+        "description": "Flickering torches mounted along the walls, their flames weak and unstable."
+      },
+      {
+        "name": "Lantern Glow",
+        "description": "Faint light from an oil lantern placed on a table or hanging from a hook."
+      },
+      {
+        "name": "Moonlight Through Grate",
+        "description": "Thin beams of pale light shining through a ceiling grate or drain cover."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Small candles melted into strange shapes, clustered near an altar or cell door."
+      }
+    ]
+  }
+}

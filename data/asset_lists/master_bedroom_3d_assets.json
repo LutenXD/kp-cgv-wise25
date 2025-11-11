@@ -1,0 +1,124 @@
+{
+  "master_bedroom_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Four-Poster Bed",
+        "description": "A grand, ornate bed with tattered curtains, rumpled sheets, and a dusty mattress. The bedposts may have carvings or strange symbols."
+      },
+      {
+        "name": "High Ceil2ing with Moldings",
+        "description": "Decorative ceiling moldings with cracks, peeling paint, and cobwebs."
+      },
+      {
+        "name": "Large Windows",
+        "description": "Tall, arched windows with heavy, moth-eaten curtains. Moonlight filters through, casting eerie shadows."
+      },
+      {
+        "name": "Fireplace",
+        "description": "A grand but unused fireplace with soot stains, a cracked mantel, and possibly ghostly embers."
+      },
+      {
+        "name": "Wooden Floorboards",
+        "description": "Creaky, warped floorboards with gaps, stains, or mysterious scratches."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Vanity Table",
+        "description": "An antique vanity with a cracked mirror, tarnished silver brushes, and half-used perfume bottles."
+      },
+      {
+        "name": "Wardrobe",
+        "description": "A large, ornate wardrobe with tattered clothes inside. The doors may creak or refuse to stay closed."
+      },
+      {
+        "name": "Nightstands",
+        "description": "Small tables on either side of the bed, holding half-burned candles, old books, or a rusty key."
+      },
+      {
+        "name": "Armchair",
+        "description": "A plush but worn armchair near the fireplace, covered in dust or cobwebs."
+      },
+      {
+        "name": "Full-Length Mirror",
+        "description": "A standing mirror with a gilded frame, possibly cracked or showing ghostly reflections."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the furniture, bedposts, and corners of the room."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of moonlight or candlelight."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Candles or lamps that flicker unpredictably, casting shifting shadows."
+      },
+      {
+        "name": "Ghostly Whispers",
+        "description": "Faint whispers, the sound of breathing, or a voice calling from the wardrobe or under the bed."
+      },
+      {
+        "name": "Cold Spots",
+        "description": "Areas in the room that feel unnaturally cold, possibly with visible breath."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Diary or Journal",
+        "description": "A leather-bound journal on the nightstand or vanity, containing clues or disturbing entries."
+      },
+      {
+        "name": "Locket or Jewelry Box",
+        "description": "A small box or locket on the vanity, containing a photograph, a key, or a supernatural artifact."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A pocket watch hidden in a drawer or under the pillow, tied to a time-based puzzle."
+      },
+      {
+        "name": "Portrait",
+        "description": "A painting of a past resident, with eyes that follow the player or a face that changes expression."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A secret drawer or panel in the wardrobe or under the bed, containing a key, letter, or other important item."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or bedsheets gently moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, especially around the bed or fireplace."
+      },
+      {
+        "name": "Bloodstains or Handprints",
+        "description": "Mysterious stains on the sheets, walls, or floor, hinting at past violence."
+      },
+      {
+        "name": "Falling Ash or Petals",
+        "description": "Ash from the fireplace or dried petals drifting down from the ceiling."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming through the windows, casting long, eerie shadows across the room."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles on the nightstands, vanity, or fireplace mantel, creating a ghostly ambiance."
+      },
+      {
+        "name": "Fireplace Glow",
+        "description": "A faint, ghostly glow from the fireplace, even if it's not lit."
+      }
+    ]
+  }
+}

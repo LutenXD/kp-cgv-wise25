@@ -1,0 +1,124 @@
+{
+  "library_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Floor-to-Ceiling Bookshelves",
+        "description": "Tall, wooden bookshelves filled with ancient, leather-bound books. Some shelves are empty or have books askew."
+      },
+      {
+        "name": "Ladder on Rails",
+        "description": "A rolling ladder attached to the bookshelves, slightly creaky and unstable."
+      },
+      {
+        "name": "High Ceiling with Wooden Beams",
+        "description": "Dark wooden beams with cobwebs, cracks, and peeling paint."
+      },
+      {
+        "name": "Large Windows",
+        "description": "Stained-glass or arched windows with heavy curtains, allowing dim light to filter in."
+      },
+      {
+        "name": "Fireplace",
+        "description": "A grand, unused fireplace with soot stains, cracked mantel, and possibly a ghostly fire effect."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Reading Desk",
+        "description": "A large, ornate desk with ink stains, quills, and half-burned candles."
+      },
+      {
+        "name": "Leather Armchairs",
+        "description": "Worn-out armchairs with cracks and dust, positioned near the fireplace."
+      },
+      {
+        "name": "Globes",
+        "description": "Antique globes, some cracked or showing supernatural markings."
+      },
+      {
+        "name": "Standing Lamps",
+        "description": "Brass or iron lamps with flickering bulbs or candles, casting eerie shadows."
+      },
+      {
+        "name": "Rugs",
+        "description": "Threadbare Persian rugs with moth-eaten patterns or mysterious stains."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across bookshelves, furniture, and corners."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of light or near the windows."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Lamps or candles that flicker unpredictably, creating an unsettling atmosphere."
+      },
+      {
+        "name": "Ghostly Whispers",
+        "description": "Faint whispers or the sound of pages turning on their own."
+      },
+      {
+        "name": "Cold Spots",
+        "description": "Areas in the room that feel unnaturally cold, possibly with visible breath."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Ancient Books",
+        "description": "Books with cryptic symbols, hidden compartments, or pages that reveal clues when opened."
+      },
+      {
+        "name": "Locked Drawers",
+        "description": "Drawers in the desk or bookshelves that require a key or puzzle to open."
+      },
+      {
+        "name": "Quill and Inkwell",
+        "description": "A quill that can be used to write or reveal hidden messages when dipped in ink."
+      },
+      {
+        "name": "Pocket Watch",
+        "description": "A broken pocket watch hidden in a drawer or book, tied to a time-based puzzle."
+      },
+      {
+        "name": "Portrait",
+        "description": "A painting of a past librarian or mansion owner, with eyes that follow the player."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Pages of books fluttering or curtains moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, adding to the eerie atmosphere."
+      },
+      {
+        "name": "Bloodstains or Ink Blots",
+        "description": "Mysterious stains on books, the desk, or floor, hinting at past events."
+      },
+      {
+        "name": "Falling Leaves",
+        "description": "Dried leaves or book pages drifting down from the shelves."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming through the windows, casting long shadows across the bookshelves."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles on the desk or sconces, creating a ghostly ambiance."
+      },
+      {
+        "name": "Fireplace Glow",
+        "description": "A faint, ghostly glow from the fireplace, even if it's not lit."
+      }
+    ]
+  }
+}
