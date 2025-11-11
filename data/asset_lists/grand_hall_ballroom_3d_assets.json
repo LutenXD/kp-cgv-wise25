@@ -1,0 +1,120 @@
+{
+  "grand_hall_ballroom_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "High Vaulted Ceiling",
+        "description": "Ornate, decaying ceiling with peeling gold leaf, cracks, and possibly a fresco or mural."
+      },
+      {
+        "name": "Grand Windows",
+        "description": "Tall, arched windows with broken or stained glass, allowing eerie moonlight to filter in."
+      },
+      {
+        "name": "Marble or Wooden Flooring",
+        "description": "Cracked marble or warped wooden floors, scattered with dust, leaves, or debris."
+      },
+      {
+        "name": "Balcony or Mezzanine",
+        "description": "A second-level balcony overlooking the hall, with a rusted or broken railing."
+      },
+      {
+        "name": "Grand Entrance Doors",
+        "description": "Massive double doors, slightly ajar or creaking, with tarnished handles."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Ballroom Chairs",
+        "description": "Antique chairs lined along the walls, some broken or covered in dust."
+      },
+      {
+        "name": "Ornate Tables",
+        "description": "Small, decorative tables with candelabras, half-melted candles, or ghostly place settings."
+      },
+      {
+        "name": "Grand Piano",
+        "description": "A decaying piano, possibly playing eerie tunes by itself or covered in cobwebs."
+      },
+      {
+        "name": "Chandeliers",
+        "description": "Large, flickering chandeliers with missing crystals or broken bulbs, swaying slightly."
+      },
+      {
+        "name": "Wall Mirrors",
+        "description": "Full-length mirrors with gilded frames, some cracked or showing ghostly reflections."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across corners, furniture, and chandeliers."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of light or moonlight."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Candles, sconces, or chandeliers that flicker unpredictably, casting shifting shadows."
+      },
+      {
+        "name": "Ghostly Figures",
+        "description": "Translucent figures dancing or standing in the distance, disappearing when approached."
+      },
+      {
+        "name": "Echoing Sounds",
+        "description": "Faint music, laughter, or whispers that seem to come from nowhere."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Sheet Music",
+        "description": "Yellowed sheet music on the piano, possibly revealing a clue or playing a haunting melody."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A small, intricate pocket watch left on a table, tied to a puzzle or time-based event."
+      },
+      {
+        "name": "Guest Book",
+        "description": "An old, leather-bound book with names of past guests, some pages torn or bloodstained."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A secret panel or drawer in the wall, containing a key, letter, or other important item."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or tablecloths gently moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, adding to the eerie atmosphere."
+      },
+      {
+        "name": "Bloodstains or Scorch Marks",
+        "description": "Mysterious stains or marks on the floor, hinting at past violence or supernatural events."
+      },
+      {
+        "name": "Falling Petals or Leaves",
+        "description": "Decaying petals or leaves drifting down from the ceiling or balcony."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming through broken windows, casting long, eerie shadows."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles on tables, sconces, or the floor, creating a ghostly ambiance."
+      },
+      {
+        "name": "Shadow Play",
+        "description": "Shadows that move unnaturally or form ominous shapes on the walls and floor."
+      }
+    ]
+  }
+}

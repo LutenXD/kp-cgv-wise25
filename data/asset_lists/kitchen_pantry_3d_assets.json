@@ -1,0 +1,124 @@
+{
+  "kitchen_pantry_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone or Wooden Countertops",
+        "description": "Worn, stained countertops with cracks, knife marks, and signs of heavy use."
+      },
+      {
+        "name": "Brick Oven",
+        "description": "A large, soot-covered brick oven with a rusty iron door. The inside may glow faintly or emit ghostly heat."
+      },
+      {
+        "name": "Wooden Shelves",
+        "description": "Open shelves lined with dusty jars, cracked dishes, and rusted cooking utensils."
+      },
+      {
+        "name": "Stone or Dirt Floor",
+        "description": "Uneven, cracked flooring with stains, spilled ingredients, or mysterious puddles."
+      },
+      {
+        "name": "Small Windows",
+        "description": "Grimy, barred windows letting in minimal light, with cobwebs in the corners."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Wooden Table",
+        "description": "A large, sturdy table in the center of the kitchen, covered in scratches, stains, and half-prepared meals."
+      },
+      {
+        "name": "Cast Iron Pots and Pans",
+        "description": "Heavy, rusted pots and pans hanging from hooks or stacked haphazardly on shelves."
+      },
+      {
+        "name": "Knife Block",
+        "description": "A wooden block holding an assortment of knives, some missing or covered in rust."
+      },
+      {
+        "name": "Pantry Shelves",
+        "description": "Shelves stocked with jars of preserved food, some labeled with strange symbols or containing unknown substances."
+      },
+      {
+        "name": "Hearth Tools",
+        "description": "A set of iron tools for the fireplace or oven, covered in soot and rust."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the shelves, ceiling beams, and corners."
+      },
+      {
+        "name": "Dust and Grime",
+        "description": "Layers of dust on surfaces, with grime built up in the corners and crevices."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "A single lantern or candle casting uneven, flickering light, creating long shadows."
+      },
+      {
+        "name": "Ghostly Clanging",
+        "description": "The sound of pots and pans clanging, or utensils moving on their own."
+      },
+      {
+        "name": "Cold Spots",
+        "description": "Sudden chills near the oven or pantry, with visible breath in the air."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Recipe Book",
+        "description": "An old, stained recipe book with handwritten notes, some pages torn or containing cryptic instructions."
+      },
+      {
+        "name": "Rusty Key",
+        "description": "A key hidden in a jar, under a pot, or behind a loose brick, used to unlock another area."
+      },
+      {
+        "name": "Mysterious Jar",
+        "description": "A jar labeled with strange symbols, containing an unknown substance or glowing liquid."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A pocket watch left on the counter or shelf, tied to a time-based puzzle."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A loose floorboard or secret panel behind the shelves, containing a note or small artifact."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or hanging utensils moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, especially around the oven or pantry."
+      },
+      {
+        "name": "Bloodstains or Spills",
+        "description": "Mysterious stains on the countertop, floor, or cutting board, hinting at past violence."
+      },
+      {
+        "name": "Falling Ash or Dust",
+        "description": "Ash from the oven or dust drifting down from the shelves."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Faint moonlight filtering through the grimy windows, casting eerie shadows."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "A dim, flickering lantern hanging from the ceiling or placed on the table."
+      },
+      {
+        "name": "Oven Glow",
+        "description": "A faint, ghostly glow emanating from the oven, even when it's not lit."
+      }
+    ]
+  }
+}

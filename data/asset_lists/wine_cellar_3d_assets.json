@@ -1,0 +1,124 @@
+{
+  "wine_cellar_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone Walls",
+        "description": "Damp, moss-covered stone walls with cracks, water stains, and patches of mold."
+      },
+      {
+        "name": "Wooden Barrels",
+        "description": "Large, dusty barrels stacked along the walls, some leaking or marked with strange symbols."
+      },
+      {
+        "name": "Stone Floor",
+        "description": "Uneven, cracked stone flooring with puddles of water or wine stains."
+      },
+      {
+        "name": "Low Ceiling with Wooden Beams",
+        "description": "Dark, rotting wooden beams covered in cobwebs and dust."
+      },
+      {
+        "name": "Iron Gate or Door",
+        "description": "A heavy, rusty iron gate or door at the entrance, creaking ominously when opened."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Wine Racks",
+        "description": "Wooden racks filled with dusty wine bottles, some missing or containing unknown liquids."
+      },
+      {
+        "name": "Tasting Table",
+        "description": "A small, rickety table with a few glasses, a half-empty decanter, and wine stains."
+      },
+      {
+        "name": "Candlesticks",
+        "description": "Iron or brass candlesticks with half-melted candles, casting flickering light."
+      },
+      {
+        "name": "Storage Crates",
+        "description": "Wooden crates filled with corks, broken bottles, or old documents."
+      },
+      {
+        "name": "Hanging Lanterns",
+        "description": "Rusty lanterns hanging from the ceiling, swaying slightly and emitting dim light."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the racks, barrels, and ceiling beams."
+      },
+      {
+        "name": "Dampness",
+        "description": "Visible moisture on the walls and floor, with puddles forming near the barrels."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "Lanterns or candles casting weak, flickering light, creating long, shifting shadows."
+      },
+      {
+        "name": "Ghostly Whispers",
+        "description": "Faint whispers, the sound of clinking glasses, or distant murmurs from unseen figures."
+      },
+      {
+        "name": "Cold Drafts",
+        "description": "Sudden chills near the barrels or door, with visible breath in the air."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Dusty Wine Bottles",
+        "description": "Bottles labeled with strange symbols or dates, some containing glowing or blood-like liquid."
+      },
+      {
+        "name": "Rusty Key",
+        "description": "A key hidden behind a barrel, under the tasting table, or inside a crate."
+      },
+      {
+        "name": "Old Journal",
+        "description": "A leather-bound journal tucked between bottles or inside a crate, containing clues or disturbing entries."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A pocket watch left on the tasting table or hidden in a crate, tied to a time-based puzzle."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A loose stone in the wall or a false bottom in a barrel, containing a note or small artifact."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Cobwebs or lanterns swaying as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, especially around the barrels or door."
+      },
+      {
+        "name": "Wine Stains",
+        "description": "Dark, mysterious stains on the floor or table, hinting at past spills or darker events."
+      },
+      {
+        "name": "Falling Dust",
+        "description": "Dust or mold spores drifting down from the ceiling or shelves."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Lantern Light",
+        "description": "Dim, flickering lanterns hanging from the ceiling or placed on the tasting table."
+      },
+      {
+        "name": "Candlelight",
+        "description": "Flickering candles on the table or racks, casting eerie shadows."
+      },
+      {
+        "name": "Ghostly Glow",
+        "description": "A faint, eerie glow emanating from certain bottles or barrels."
+      }
+    ]
+  }
+}

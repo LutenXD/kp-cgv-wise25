@@ -1,0 +1,124 @@
+{
+  "laundry_room_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Stone or Concrete Walls",
+        "description": "Damp, moldy walls with cracks, water stains, and peeling plaster."
+      },
+      {
+        "name": "Wooden Beams",
+        "description": "Exposed, rotting wooden beams on the ceiling, covered in cobwebs and dust."
+      },
+      {
+        "name": "Stone or Tiled Floor",
+        "description": "Cracked, uneven flooring with stains, puddles of water, or mysterious dark spots."
+      },
+      {
+        "name": "Small, Barred Window",
+        "description": "A grimy, barred window letting in minimal light, with condensation or frost on the glass."
+      },
+      {
+        "name": "Wooden Door",
+        "description": "A heavy, creaking door with rusty hinges, possibly slightly ajar or difficult to open."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Washbasin",
+        "description": "A large, chipped stone or metal basin filled with murky water and floating debris."
+      },
+      {
+        "name": "Washing Board",
+        "description": "A wooden washing board with rusty metal ridges, placed near the basin."
+      },
+      {
+        "name": "Clothesline",
+        "description": "A rope strung across the room with tattered, half-dried clothes hanging from it."
+      },
+      {
+        "name": "Wooden Crates",
+        "description": "Stacked crates filled with soiled linens, broken bottles of soap, or rusted irons."
+      },
+      {
+        "name": "Ironing Board",
+        "description": "An old, rickety ironing board with a rusty iron placed on top."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the ceiling, corners, and furniture."
+      },
+      {
+        "name": "Dampness",
+        "description": "Visible moisture on the walls and floor, with puddles forming in certain areas."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "A single lantern or candle casting weak, flickering light, creating long, shifting shadows."
+      },
+      {
+        "name": "Ghostly Sounds",
+        "description": "The sound of dripping water, distant splashing, or whispers from unseen figures."
+      },
+      {
+        "name": "Cold Drafts",
+        "description": "Sudden chills, especially near the washbasin or window, with visible breath in the air."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Stained Laundry",
+        "description": "Piles of laundry with mysterious stains, some shaped like handprints or symbols."
+      },
+      {
+        "name": "Rusty Key",
+        "description": "A key hidden in a soap dish, under a pile of laundry, or inside a crate."
+      },
+      {
+        "name": "Broken Pocket Watch",
+        "description": "A pocket watch left on the washbasin or hidden in a crate, tied to a puzzle."
+      },
+      {
+        "name": "Handwritten Note",
+        "description": "A note tucked into a pocket of a garment or pinned to the clothesline, hinting at the room's dark history."
+      },
+      {
+        "name": "Hidden Compartment",
+        "description": "A loose floorboard or a false bottom in a crate, containing a small artifact or clue."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Clothes on the clothesline or curtains moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, especially around the washbasin or window."
+      },
+      {
+        "name": "Water Stains",
+        "description": "Dark, mysterious stains on the floor or walls, hinting at past events."
+      },
+      {
+        "name": "Falling Dust",
+        "description": "Dust or lint drifting down from the ceiling or shelves."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Faint moonlight filtering through the barred window, casting eerie shadows."
+      },
+      {
+        "name": "Lantern Light",
+        "description": "A dim, flickering lantern hanging from the ceiling or placed on a crate."
+      },
+      {
+        "name": "Ghostly Glow",
+        "description": "A faint, eerie glow emanating from the washbasin or puddles on the floor."
+      }
+    ]
+  }
+}

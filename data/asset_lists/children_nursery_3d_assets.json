@@ -1,0 +1,124 @@
+{
+  "children_nursery_3d_assets": {
+    "architectural_elements": [
+      {
+        "name": "Wooden Crib",
+        "description": "An old, creaky crib with a mobile of broken toys hanging above. The sheets are stained or tattered."
+      },
+      {
+        "name": "Rocking Chair",
+        "description": "A wooden rocking chair that moves on its own, covered in dust and cobwebs."
+      },
+      {
+        "name": "Toy Chest",
+        "description": "A large, ornate chest filled with broken or eerie toys. The lid may creak or slam shut unexpectedly."
+      },
+      {
+        "name": "Small Table and Chairs",
+        "description": "A tiny wooden table with mismatched chairs, covered in dust and scribbles."
+      },
+      {
+        "name": "Bookshelf",
+        "description": "A low bookshelf filled with children’s books, some with disturbing illustrations or missing pages."
+      }
+    ],
+    "furniture_and_decor": [
+      {
+        "name": "Stuffed Animals",
+        "description": "Old, tattered stuffed animals with button eyes, some positioned unnaturally or missing parts."
+      },
+      {
+        "name": "Dolls",
+        "description": "Porcelain or cloth dolls with cracked faces or missing limbs, some positioned to watch the player."
+      },
+      {
+        "name": "Wooden Blocks",
+        "description": "Scattered wooden blocks with letters or numbers, some arranged to spell ominous words."
+      },
+      {
+        "name": "Music Box",
+        "description": "A wind-up music box that plays a haunting melody when opened."
+      },
+      {
+        "name": "Wall Decals",
+        "description": "Faded or peeling decals of animals, stars, or children’s drawings, some with disturbing details."
+      }
+    ],
+    "atmospheric_details": [
+      {
+        "name": "Cobwebs",
+        "description": "Thick cobwebs draped across the crib, rocking chair, and toy chest."
+      },
+      {
+        "name": "Dust Particles",
+        "description": "Floating in the air, visible in shafts of light or moonlight."
+      },
+      {
+        "name": "Flickering Lights",
+        "description": "A dim, flickering nightlight or candle casting eerie shadows."
+      },
+      {
+        "name": "Ghostly Laughter",
+        "description": "Faint giggles, whispers, or the sound of a child singing a nursery rhyme."
+      },
+      {
+        "name": "Cold Spots",
+        "description": "Areas in the room that feel unnaturally cold, especially near the crib or rocking chair."
+      }
+    ],
+    "interactive_objects": [
+      {
+        "name": "Children's Drawings",
+        "description": "Crayon drawings on the walls or table, depicting disturbing scenes or hidden clues."
+      },
+      {
+        "name": "Broken Toy",
+        "description": "A toy with a missing part or a mechanism that activates a secret compartment or puzzle."
+      },
+      {
+        "name": "Locket or Small Box",
+        "description": "A tiny locket or box hidden in the toy chest or under the crib, containing a photograph or note."
+      },
+      {
+        "name": "Storybook",
+        "description": "A children’s book with a dark twist or a hidden message within its pages."
+      },
+      {
+        "name": "Wind-Up Key",
+        "description": "A key for the music box or a mechanical toy, possibly tied to a puzzle."
+      }
+    ],
+    "environmental_effects": [
+      {
+        "name": "Drafts",
+        "description": "Curtains or the rocking chair moving as if pushed by an unseen force."
+      },
+      {
+        "name": "Fog",
+        "description": "A thin layer of mist near the floor, adding to the eerie atmosphere."
+      },
+      {
+        "name": "Handprints",
+        "description": "Small, ghostly handprints on the walls, crib, or windows."
+      },
+      {
+        "name": "Falling Dust or Ash",
+        "description": "Dust or ash drifting down from the ceiling or shelves."
+      }
+    ],
+    "lighting": [
+      {
+        "name": "Moonlight",
+        "description": "Streaming through the windows, casting long, eerie shadows across the room."
+      },
+      {
+        "name": "Nightlight",
+        "description": "A dim, flickering nightlight or candle, creating a ghostly ambiance."
+      },
+      {
+        "name": "Fireplace Glow",
+        "description": "A faint, ghostly glow from a nearby fireplace, even if it's not lit."
+      }
+    ]
+  }
+}
