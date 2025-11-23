@@ -1,0 +1,24 @@
+                           [ ATTIC ]
+                               |
+     ---------------------------------------------------------------
+     |                                                             |
+ [Art Gallery]---[Grand Hall / Ballroom]---[Music Room]        [Secret Study]
+     |                    |                     |                    |
+     |                [Grand Foyer]-------------|----------------[Library]
+     |                    |                     |
+ [Bathroom]          [Hallways & Staircases]    |
+     |                    |                     |
+ [Master Bedroom]---[Servants Quarters]---[Children’s Nursery]
+     |
+     | (stairs down)
+     v
+ ----------------------[Dining Room]------------------------------
+     |                            |
+ [Kitchen/Pantry]            [Conservatory/Greenhouse]
+     |                            |
+ [Laundry Room]              [Courtyard/Garden]
+     |
+ [Wine Cellar]
+     |
+ [Basement / Dungeon]--------------[Chapel / Crypt]
+
