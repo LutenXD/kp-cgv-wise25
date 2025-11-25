@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhwq8yxr5m3y7"]
+[gd_scene load_steps=2 format=3 uid="uid://d225s6yutrc3d"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_main_menu"]
+[ext_resource type="Script" uid="uid://bvlvcp7fkm8qg" path="res://scripts/main_menu.gd" id="1_main_menu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -66,6 +66,13 @@ custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Exit"
+
+[node name="OptionsPopup" type="AcceptDialog" parent="."]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(400, 150)
+dialog_text = "There are no options! Just play the game!"
+dialog_autowrap = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

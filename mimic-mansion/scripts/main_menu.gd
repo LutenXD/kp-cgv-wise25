@@ -3,6 +3,7 @@ extends Control
 const SAVE_PATH = "user://savegame.save"
 
 @onready var continue_button = $CenterContainer/VBoxContainer/ContinueButton
+@onready var options_popup = $OptionsPopup
 
 func _ready():
 	# Check if a save file exists and enable/disable the continue button
@@ -28,11 +29,7 @@ func _on_continue_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_options_button_pressed():
-	# TODO: Implement options menu
-	# For now, just show a placeholder
-	print("Options menu - To be implemented")
-	# You can create an options scene later:
-	# get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
+	options_popup.popup_centered()
 
 func _on_exit_button_pressed():
 	get_tree().quit()
