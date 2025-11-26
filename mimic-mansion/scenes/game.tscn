@@ -121,7 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="Sphere1" type="StaticBody3D" parent="InteractiveSpheres"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -3)
 script = ExtResource("3_interactive_sphere")
-sphere_name = "Sphere1"
+sphere_name = "Blue Sphere"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere1"]
 mesh = SubResource("SphereMesh_lnu2h")
@@ -132,7 +132,8 @@ shape = SubResource("SphereShape3D_sphere")
 [node name="Sphere2" type="StaticBody3D" parent="InteractiveSpheres"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3)
 script = ExtResource("3_interactive_sphere")
-sphere_name = "Sphere2"
+sphere_name = "Red Sphere"
+sphere_id = "sphere2"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere2"]
 mesh = SubResource("SphereMesh_lbhrr")
@@ -141,9 +142,10 @@ mesh = SubResource("SphereMesh_lbhrr")
 shape = SubResource("SphereShape3D_sphere")
 
 [node name="Sphere3" type="StaticBody3D" parent="InteractiveSpheres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3.410222)
 script = ExtResource("3_interactive_sphere")
-sphere_name = "Sphere3"
+sphere_name = "Green Sphere"
+sphere_id = "sphere3"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere3"]
 mesh = SubResource("SphereMesh_iywne")

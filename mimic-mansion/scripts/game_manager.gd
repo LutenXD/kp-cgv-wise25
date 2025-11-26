@@ -6,10 +6,50 @@ extends Node3D
 @onready var player = $player
 @onready var camera = $player/Camera3D
 
+@onready var sphere1 = $InteractiveSpheres/Sphere1
+@onready var sphere2 = $InteractiveSpheres/Sphere2
+@onready var sphere3 = $InteractiveSpheres/Sphere3
+
+var lore_manager: LoreManager
+
 const RAY_LENGTH = 100.0
 
 func _ready():
 	info_panel.hide()
+	initialize_lore_system()
+
+func initialize_lore_system():
+	# Create and initialize lore manager
+	lore_manager = LoreManager.new()
+	add_child(lore_manager)
+	
+	# Wait a frame for lore to load
+	await get_tree().process_frame
+	
+	# Select 10 random lore items
+	var selected_lore = lore_manager.select_random_lore_items(10)
+	
+	if selected_lore.is_empty():
+		push_error("Failed to select lore items")
+		return
+	
+	# Distribute lore to spheres
+	var sphere_data = lore_manager.distribute_lore_to_spheres(selected_lore)
+	
+	# Assign lore to each sphere
+	if sphere1 and sphere_data.has("sphere1"):
+		sphere1.set_lore_items(sphere_data["sphere1"])
+		print("Sphere 1 assigned ", sphere_data["sphere1"].size(), " lore items")
+	
+	if sphere2 and sphere_data.has("sphere2"):
+		sphere2.set_lore_items(sphere_data["sphere2"])
+		print("Sphere 2 assigned ", sphere_data["sphere2"].size(), " lore items")
+	
+	if sphere3 and sphere_data.has("sphere3"):
+		sphere3.set_lore_items(sphere_data["sphere3"])
+		print("Sphere 3 assigned ", sphere_data["sphere3"].size(), " lore items")
+	
+	print("Lore system initialized successfully")
 
 func _input(event):
 	if event.is_action_pressed("ui_select") or (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
