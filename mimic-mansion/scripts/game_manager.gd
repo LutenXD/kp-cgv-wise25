@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var info_panel = $UI/InfoPanel
 @onready var info_title = $UI/InfoPanel/MarginContainer/VBoxContainer/Title
-@onready var info_text = $UI/InfoPanel/MarginContainer/VBoxContainer/InfoText
+@onready var info_text = $UI/InfoPanel/MarginContainer/VBoxContainer/ScrollContainer/InfoText
 @onready var player = $player
 @onready var camera = $player/Camera3D
 
@@ -53,7 +53,11 @@ func initialize_lore_system():
 
 func _input(event):
 	if event.is_action_pressed("ui_select") or (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
-		check_raycast()
+		# If panel is visible, hide it on click
+		if info_panel.visible:
+			info_panel.hide()
+		else:
+			check_raycast()
 
 func check_raycast():
 	var space_state = get_world_3d().direct_space_state
@@ -77,13 +81,3 @@ func show_info(info: Dictionary):
 	info_title.text = info.name
 	info_text.text = info.text
 	info_panel.show()
-	
-	# Auto-hide after 5 seconds
-	await get_tree().create_timer(5.0).timeout
-	info_panel.hide()
-
-func _process(_delta):
-	# Press E or click to interact
-	if Input.is_action_just_pressed("ui_accept"):
-		if info_panel.visible:
-			info_panel.hide()

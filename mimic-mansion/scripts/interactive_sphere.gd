@@ -20,8 +20,11 @@ func get_info() -> Dictionary:
 			var description = item.get("description", "No description")
 			var is_true = item.get("is_true", false)
 			
-			info_text += str(i + 1) + ". [" + category + "]\n"
-			info_text += description
+			# Color code based on true/false
+			var color = "green" if is_true else "red"
+			
+			info_text += "[color=" + color + "]" + str(i + 1) + ". [" + category + "]\n"
+			info_text += description + "[/color]"
 			if i < lore_items.size() - 1:
 				info_text += "\n\n"
 	
