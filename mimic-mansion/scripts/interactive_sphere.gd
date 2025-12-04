@@ -8,6 +8,9 @@ var lore_items: Array = []
 func set_lore_items(items: Array):
 	lore_items = items
 
+func get_lore_items() -> Array:
+	return lore_items
+
 func get_info() -> Dictionary:
 	var info_text = ""
 	

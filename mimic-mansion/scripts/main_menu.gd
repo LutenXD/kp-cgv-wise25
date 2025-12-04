@@ -3,11 +3,11 @@ extends Control
 const SAVE_PATH = "user://savegame.save"
 
 @onready var continue_button = $CenterContainer/VBoxContainer/ContinueButton
-@onready var options_popup = $OptionsPopup
 
 func _ready():
-	# Check if a save file exists and enable/disable the continue button
-	if FileAccess.file_exists(SAVE_PATH):
+	# Check if game is in progress
+	var settings = get_game_settings()
+	if settings and settings.is_game_in_progress():
 		continue_button.disabled = false
 	else:
 		continue_button.disabled = true
@@ -15,21 +15,27 @@ func _ready():
 	# Ensure the mouse is visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+func get_game_settings():
+	if has_node("/root/GameSettings"):
+		return get_node("/root/GameSettings")
+	return null
+
 func _on_new_game_button_pressed():
-	# Delete existing save file if starting a new game
-	if FileAccess.file_exists(SAVE_PATH):
-		DirAccess.remove_absolute(SAVE_PATH)
+	# Clear any existing game state
+	var settings = get_game_settings()
+	if settings:
+		settings.clear_game_state()
+		settings.start_new_game()
 	
 	# Load the game scene
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_continue_button_pressed():
-	# Load the saved game
-	load_game()
+	# Continue the existing game
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_options_button_pressed():
-	options_popup.popup_centered()
+	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 func _on_exit_button_pressed():
 	get_tree().quit()

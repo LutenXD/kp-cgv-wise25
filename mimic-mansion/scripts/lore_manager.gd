@@ -5,6 +5,11 @@ class_name LoreManager
 var all_lore_items: Array = []
 var selected_lore_items: Array = []
 
+func get_true_ratio() -> float:
+	if has_node("/root/GameSettings"):
+		return get_node("/root/GameSettings").get_true_ratio()
+	return 0.5  # Default 50%
+
 func _ready():
 	load_lore_data()
 
@@ -38,9 +43,18 @@ func select_random_lore_items(count: int = 10) -> Array:
 	
 	selected_lore_items = shuffled.slice(0, min(count, shuffled.size()))
 	
-	# Assign true/false randomly to each item
-	for item in selected_lore_items:
-		item["is_true"] = randf() > 0.5
+	# Get the true ratio from game settings
+	var true_ratio = get_true_ratio()
+	var num_true_items = int(count * true_ratio)
+	
+	# Assign true/false based on the ratio
+	for i in range(selected_lore_items.size()):
+		selected_lore_items[i]["is_true"] = i < num_true_items
+	
+	# Shuffle again to randomize the order of true/false items
+	selected_lore_items.shuffle()
+	
+	print("Selected ", num_true_items, " true items and ", count - num_true_items, " false items")
 	
 	return selected_lore_items
 

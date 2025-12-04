@@ -67,13 +67,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 
-[node name="OptionsPopup" type="AcceptDialog" parent="."]
-oversampling_override = 1.0
-initial_position = 1
-size = Vector2i(400, 150)
-dialog_text = "There are no options! Just play the game!"
-dialog_autowrap = true
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

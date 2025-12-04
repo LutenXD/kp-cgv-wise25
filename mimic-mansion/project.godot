@@ -18,6 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveManager="*res://scripts/save_manager.gd"
+GameSettings="*res://scripts/game_settings.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
+window/size/resizable=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
