@@ -1,0 +1,192 @@
+[
+  {
+    "object_name": "Candelabras",
+    "object_description": "Silver or brass candelabras with half-melted candles, flickering ominously.",
+    "room_category": "dining_room",
+    "assigned_lore": [
+      {
+        "category": "Mysterious Events",
+        "description": "A portrait of Isolde Blackwood occasionally 'bleeds' from the eyes, staining the floor below."
+      },
+      {
+        "category": "Secrets and Artifacts",
+        "description": "A cursed mirror in the master bedroom shows reflections of people who aren’t there—sometimes screaming."
+      },
+      {
+        "category": "Local Legends",
+        "description": "A room in the attic is said to contain a portal to another world, but the door is always locked."
+      }
+    ]
+  },
+  {
+    "object_name": "Coat Rack",
+    "object_description": "A standalone rack with tattered coats, hats, and umbrellas.",
+    "room_category": "grand_foyer",
+    "assigned_lore": [
+      {
+        "category": "Mysterious Events",
+        "description": "Dark, humanoid shadows move through the corridors, disappearing when approached."
+      },
+      {
+        "category": "Local Legends",
+        "description": "A bridge on the mansion’s grounds disappears at dawn, stranding those who cross it."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "Candles in the dining hall float in mid-air during storms, casting eerie, shifting shadows."
+      }
+    ]
+  },
+  {
+    "object_name": "Wall Decals",
+    "object_description": "Faded or peeling decals of animals, stars, or children’s drawings, some with disturbing details.",
+    "room_category": "children_nursery",
+    "assigned_lore": [
+      {
+        "category": "Mysterious Events",
+        "description": "A portrait of Isolde Blackwood occasionally 'bleeds' from the eyes, staining the floor below."
+      },
+      {
+        "category": "History",
+        "description": "Elias died in 1810 under mysterious circumstances, found clutching a locket with a portrait of an unknown woman."
+      },
+      {
+        "category": "Ghosts and Entities",
+        "description": "A weeping woman in black is often seen in the library, crying over a book that burns when touched."
+      }
+    ]
+  },
+  {
+    "object_name": "Leather Armchair",
+    "object_description": "A worn, high-backed armchair with cracks in the leather, positioned near the desk.",
+    "room_category": "secret_study",
+    "assigned_lore": [
+      {
+        "category": "Local Legends",
+        "description": "A room in the attic is said to contain a portal to another world, but the door is always locked."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "The grand staircase sometimes leads to a hallway that doesn’t exist, vanishing when followed."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "A portrait of Isolde Blackwood occasionally 'bleeds' from the eyes, staining the floor below."
+      }
+    ]
+  },
+  {
+    "object_name": "Candelabras",
+    "object_description": "Iron or brass candelabras with flickering candles, casting eerie shadows.",
+    "room_category": "secret_study",
+    "assigned_lore": [
+      {
+        "category": "Ghosts and Entities",
+        "description": "A laughing man in a top hat is heard cackling maniacally in the ballroom, but no one is there."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "Whispers echo through the walls, especially in the master bedroom, even when no one is there."
+      },
+      {
+        "category": "Ghosts and Entities",
+        "description": "Dr. Alistair Graves mutters equations and stares at invisible experiments in his old laboratory."
+      }
+    ]
+  },
+  {
+    "object_name": "Birdbath",
+    "object_description": "An ornate birdbath filled with stagnant water and floating leaves.",
+    "room_category": "courtyard_garden",
+    "assigned_lore": [
+      {
+        "category": "Ghosts and Entities",
+        "description": "A weeping woman in black is often seen in the library, crying over a book that burns when touched."
+      },
+      {
+        "category": "Ghosts and Entities",
+        "description": "A laughing man in a top hat is heard cackling maniacally in the ballroom, but no one is there."
+      },
+      {
+        "category": "Local Legends",
+        "description": "Ghostly figures are seen dining in the ballroom, but the food on their plates is always rotten."
+      }
+    ]
+  },
+  {
+    "object_name": "Ballroom Chairs",
+    "object_description": "Antique chairs lined along the walls, some broken or covered in dust.",
+    "room_category": "grand_hall_ballroom",
+    "assigned_lore": [
+      {
+        "category": "Mysterious Events",
+        "description": "Certain rooms become freezing cold for no reason, even in the middle of summer."
+      },
+      {
+        "category": "Secrets and Artifacts",
+        "description": "Isolde’s locket contains a portrait of a woman who is not Isolde, hinting at a hidden affair or betrayal."
+      },
+      {
+        "category": "Local Legends",
+        "description": "The mansion’s grandfather clock chimes 13 times on the hour, every hour."
+      }
+    ]
+  },
+  {
+    "object_name": "Armchair",
+    "object_description": "A plush but worn armchair near the fireplace, covered in dust or cobwebs.",
+    "room_category": "master_bedroom",
+    "assigned_lore": [
+      {
+        "category": "Ghosts and Entities",
+        "description": "A laughing man in a top hat is heard cackling maniacally in the ballroom, but no one is there."
+      },
+      {
+        "category": "Ghosts and Entities",
+        "description": "A faceless maid is seen polishing silverware that vanishes when she stops."
+      },
+      {
+        "category": "Local Legends",
+        "description": "The stone lions at the entrance come to life at night, guarding the mansion from intruders."
+      }
+    ]
+  },
+  {
+    "object_name": "Wooden Crates",
+    "object_description": "Stacked crates filled with soiled linens, broken bottles of soap, or rusted irons.",
+    "room_category": "laundry_room",
+    "assigned_lore": [
+      {
+        "category": "Secrets and Artifacts",
+        "description": "Isolde’s locket contains a portrait of a woman who is not Isolde, hinting at a hidden affair or betrayal."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "Whispers echo through the walls, especially in the master bedroom, even when no one is there."
+      },
+      {
+        "category": "History",
+        "description": "In 1899, the mansion was bought by Dr. Alistair Graves, a scientist who conducted secret experiments on the paranormal."
+      }
+    ]
+  },
+  {
+    "object_name": "Rugs",
+    "object_description": "Threadbare Persian rugs with moth-eaten patterns or mysterious stains.",
+    "room_category": "library",
+    "assigned_lore": [
+      {
+        "category": "Mysterious Events",
+        "description": "Furniture rearranges itself overnight, sometimes forming strange, occult symbols."
+      },
+      {
+        "category": "Mysterious Events",
+        "description": "A piano in the ballroom plays by itself at midnight, always the same haunting melody."
+      },
+      {
+        "category": "Ghosts and Entities",
+        "description": "A faceless maid is seen polishing silverware that vanishes when she stops."
+      }
+    ]
+  }
+]

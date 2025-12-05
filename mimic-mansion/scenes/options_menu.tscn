@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj7y2xqr8iqwf"]
+
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_options_menu"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_options_menu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RatioContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RatioLabel" type="Label" parent="CenterContainer/VBoxContainer/RatioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "True Items: 20% / False Items: 80%"
+horizontal_alignment = 1
+
+[node name="SliderLabel" type="Label" parent="CenterContainer/VBoxContainer/RatioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Adjust True/False Ratio:"
+horizontal_alignment = 1
+
+[node name="TrueRatioSlider" type="HSlider" parent="CenterContainer/VBoxContainer/RatioContainer"]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+step = 5.0
+value = 20.0
+tick_count = 21
+ticks_on_borders = true
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back to Main Menu"
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/RatioContainer/TrueRatioSlider" to="." method="_on_true_ratio_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

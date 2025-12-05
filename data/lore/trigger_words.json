@@ -1,0 +1,29 @@
+{
+  "forbidden_trigger_words": [
+    "Isolde",
+    "Lilith",
+    "Elias",
+    "Victor",
+    "Elara",
+    "Graves",
+    "ritual",
+    "locket",
+    "cellar",
+    "shadows",
+    "bleeding",
+    "vanishing",
+    "whispers",
+    "cursed",
+    "mirror",
+    "portal",
+    "ouija",
+    "drowning",
+    "fire",
+    "key",
+    "symbols",
+    "attic",
+    "carriage",
+    "statue",
+    "clock"
+  ]
+}
