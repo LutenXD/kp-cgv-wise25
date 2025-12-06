@@ -69,6 +69,36 @@ tick_count = 21
 ticks_on_borders = true
 
 [node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MimicContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MimicLabel" type="Label" parent="CenterContainer/VBoxContainer/MimicContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Number of Mimics: 3"
+horizontal_alignment = 1
+
+[node name="MimicSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/MimicContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Adjust Mimic Count:"
+horizontal_alignment = 1
+
+[node name="MimicCountSlider" type="HSlider" parent="CenterContainer/VBoxContainer/MimicContainer"]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+step = 1.0
+value = 3.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
@@ -79,4 +109,5 @@ theme_override_font_sizes/font_size = 24
 text = "Back to Main Menu"
 
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/RatioContainer/TrueRatioSlider" to="." method="_on_true_ratio_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/MimicContainer/MimicCountSlider" to="." method="_on_mimic_count_slider_value_changed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
