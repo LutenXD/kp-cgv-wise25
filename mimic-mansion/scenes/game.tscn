@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1epn1qimdddd"]
+[gd_scene load_steps=11 format=3 uid="uid://c1epn1qimdddd"]
 
 [ext_resource type="Script" uid="uid://ddndwinwdw1we" path="res://scripts/player.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://c6g2o88n1y6l5" path="res://scripts/game_manager.gd" id="2_game_manager"]
-[ext_resource type="Script" uid="uid://c5kubi7axlj1p" path="res://scripts/interactive_sphere.gd" id="3_interactive_sphere"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
 albedo_color = Color(0.4, 0.3, 0.2, 1)
@@ -29,14 +28,6 @@ size = Vector3(10, 4, 0.2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 height = 1.8
-
-[sub_resource type="SphereMesh" id="SphereMesh_lnu2h"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_sphere"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_lbhrr"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_iywne"]
 
 [node name="game" type="Node3D"]
 script = ExtResource("2_game_manager")
@@ -117,41 +108,6 @@ shape = SubResource("CapsuleShape3D_player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="InteractiveSpheres" type="Node3D" parent="."]
-
-[node name="Sphere1" type="StaticBody3D" parent="InteractiveSpheres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -3)
-script = ExtResource("3_interactive_sphere")
-sphere_name = "Mimic1"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere1"]
-mesh = SubResource("SphereMesh_lnu2h")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractiveSpheres/Sphere1"]
-shape = SubResource("SphereShape3D_sphere")
-
-[node name="Sphere2" type="StaticBody3D" parent="InteractiveSpheres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -3)
-script = ExtResource("3_interactive_sphere")
-sphere_name = "Mimic2"
-sphere_id = "sphere2"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere2"]
-mesh = SubResource("SphereMesh_lbhrr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractiveSpheres/Sphere2"]
-shape = SubResource("SphereShape3D_sphere")
-
-[node name="Sphere3" type="StaticBody3D" parent="InteractiveSpheres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3)
-script = ExtResource("3_interactive_sphere")
-sphere_name = "Mimic3"
-sphere_id = "sphere3"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractiveSpheres/Sphere3"]
-mesh = SubResource("SphereMesh_iywne")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractiveSpheres/Sphere3"]
-shape = SubResource("SphereShape3D_sphere")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
