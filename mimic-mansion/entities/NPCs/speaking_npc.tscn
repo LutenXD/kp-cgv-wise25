@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhtmqv2uvnvy8"]
+
+[ext_resource type="Script" uid="uid://cqdo5v8o2reuu" path="res://entities/NPCs/speaking_npc.gd" id="1_mos11"]
+[ext_resource type="Script" uid="uid://xw1fqiexdhfd" path="res://utils/interactable_component.gd" id="1_ufs3y"]
+[ext_resource type="Script" uid="uid://cynwx4dnmqhxr" path="res://utils/stt_http_request.gd" id="3_pg5yl"]
+[ext_resource type="Script" uid="uid://bcaksrcgd3y4k" path="res://utils/chat_http_request.gd" id="3_y70n3"]
+[ext_resource type="Script" uid="uid://dmi0visvifrro" path="res://utils/tts_http_request.gd" id="5_pg5yl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1dig"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ufs3y"]
+
+[node name="SpeakinNPC" type="Node3D"]
+script = ExtResource("1_mos11")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_v1dig")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_ufs3y")
+
+[node name="InteractableComponent" type="Node" parent="StaticBody3D"]
+script = ExtResource("1_ufs3y")
+
+[node name="STTRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_pg5yl")
+
+[node name="ChatRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_y70n3")
+
+[node name="TTSRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_pg5yl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+billboard = 2
+
+[connection signal="send_audio" from="StaticBody3D/InteractableComponent" to="." method="_on_interactable_component_send_audio"]
+[connection signal="stt_answer_received" from="STTRequest" to="." method="_on_stt_request_stt_answer_received"]
+[connection signal="text_answer_received" from="ChatRequest" to="." method="_on_chat_request_text_answer_received"]
+[connection signal="tts_answer_received" from="TTSRequest" to="." method="_on_tts_request_tts_answer_received"]
