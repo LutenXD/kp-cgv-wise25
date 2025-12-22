@@ -2,6 +2,7 @@ extends Node
 
 # Game settings that persist across scenes
 var true_item_ratio: float = 0.2  # Default 20% true items
+var mimic_count: int = 3  # Default number of mimics to spawn
 var game_in_progress: bool = false
 var player_position: Vector3 = Vector3.ZERO
 var selected_lore: Array = []
@@ -14,6 +15,13 @@ func set_true_ratio(ratio: float):
 
 func get_true_ratio() -> float:
 	return true_item_ratio
+
+func set_mimic_count(count: int):
+	mimic_count = clamp(count, 1, 20)
+	print("Mimic count set to: ", mimic_count)
+
+func get_mimic_count() -> int:
+	return mimic_count
 
 func start_new_game():
 	game_in_progress = true
