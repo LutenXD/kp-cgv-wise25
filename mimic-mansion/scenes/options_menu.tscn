@@ -102,6 +102,25 @@ ticks_on_borders = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
+[node name="DebugContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="DebugLabel" type="Label" parent="CenterContainer/VBoxContainer/DebugContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Debug Mode (Fly with F):"
+
+[node name="DebugCheckbox" type="CheckBox" parent="CenterContainer/VBoxContainer/DebugContainer"]
+layout_mode = 2
+button_pressed = true
+theme_override_font_sizes/font_size = 24
+
+[node name="Spacer4" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
@@ -110,4 +129,5 @@ text = "Back to Main Menu"
 
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/RatioContainer/TrueRatioSlider" to="." method="_on_true_ratio_slider_value_changed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/MimicContainer/MimicCountSlider" to="." method="_on_mimic_count_slider_value_changed"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/DebugContainer/DebugCheckbox" to="." method="_on_debug_checkbox_toggled"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

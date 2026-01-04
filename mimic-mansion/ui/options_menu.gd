@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var mimic_label = %MimicLabel
 
 signal close_options
+@onready var debug_checkbox = $CenterContainer/VBoxContainer/DebugContainer/DebugCheckbox
 
 func _ready():
 	hide()
@@ -19,6 +20,8 @@ func _ready():
 			true_ratio_slider.value = settings.get_true_ratio() * 100
 		if mimic_count_slider:
 			mimic_count_slider.value = settings.get_mimic_count()
+		if debug_checkbox:
+			debug_checkbox.button_pressed = settings.get_debug_mode()
 	
 	update_ratio_label()
 	update_mimic_label()
@@ -49,6 +52,11 @@ func update_mimic_label():
 	if mimic_label and mimic_count_slider:
 		var count = int(mimic_count_slider.value)
 		mimic_label.text = "Number of Mimics: " + str(count)
+
+func _on_debug_checkbox_toggled(toggled_on: bool):
+	var settings = get_game_settings()
+	if settings:
+		settings.set_debug_mode(toggled_on)
 
 func _on_back_button_pressed():
 	print("back")
