@@ -3,6 +3,7 @@ extends Node
 # Game settings that persist across scenes
 var true_item_ratio: float = 0.2  # Default 20% true items
 var mimic_count: int = 3  # Default number of mimics to spawn
+var debug_mode: bool = true  # Debug mode enabled by default
 var game_in_progress: bool = false
 var player_position: Vector3 = Vector3.ZERO
 var selected_lore: Array = []
@@ -22,6 +23,13 @@ func set_mimic_count(count: int):
 
 func get_mimic_count() -> int:
 	return mimic_count
+
+func set_debug_mode(enabled: bool):
+	debug_mode = enabled
+	print("Debug mode: ", "ENABLED" if debug_mode else "DISABLED")
+
+func get_debug_mode() -> bool:
+	return debug_mode
 
 func start_new_game():
 	game_in_progress = true
