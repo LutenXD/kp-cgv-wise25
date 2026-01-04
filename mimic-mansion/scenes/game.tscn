@@ -1,32 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1epn1qimdddd"]
+[gd_scene load_steps=5 format=3 uid="uid://c1epn1qimdddd"]
 
 [ext_resource type="Script" uid="uid://ddndwinwdw1we" path="res://scripts/player.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://c6g2o88n1y6l5" path="res://scripts/game_manager.gd" id="2_game_manager"]
-[ext_resource type="PackedScene" uid="uid://cws4wjikcg5cb" path="res://scenes/note_book.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://2v4xo680txrw" path="res://hud.tscn" id="4_lbhrr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
-albedo_color = Color(0.4, 0.3, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_floor"]
-material = SubResource("StandardMaterial3D_floor")
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
-albedo_color = Color(0.7, 0.7, 0.65, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
-albedo_color = Color(0.6, 0.5, 0.4, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wall"]
-material = SubResource("StandardMaterial3D_walls")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
-size = Vector3(10, 4, 0.2)
+[ext_resource type="Script" path="res://scripts/room_layout_generator.gd" id="3_layout_generator"]
+[ext_resource type="Script" path="res://scripts/room_tracker.gd" id="4_room_tracker"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 height = 1.8
@@ -37,67 +14,17 @@ script = ExtResource("2_game_manager")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 5, 0)
-light_energy = 0.8
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 20, 0)
+light_energy = 0.5
 shadow_enabled = true
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-light_color = Color(1, 0.95, 0.85, 1)
-light_energy = 1.5
-omni_range = 10.0
+[node name="RoomLayout" type="Node3D" parent="."]
+script = ExtResource("3_layout_generator")
 
-[node name="Room" type="Node3D" parent="."]
-
-[node name="Floor" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floor"]
-mesh = SubResource("BoxMesh_floor")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor"]
-shape = SubResource("BoxShape3D_floor")
-
-[node name="Ceiling" type="MeshInstance3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-mesh = SubResource("BoxMesh_floor")
-surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
-
-[node name="WallNorth" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallNorth"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallNorth"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallSouth" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallSouth"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallSouth"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallEast" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 2, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallEast"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallEast"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallWest" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 2, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallWest"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallWest"]
-shape = SubResource("BoxShape3D_wall")
+[node name="RoomTracker" type="Node3D" parent="."]
+script = ExtResource("4_room_tracker")
+player_path = NodePath("../player")
+room_label_path = NodePath("../UI/RoomLabel")
 
 [node name="player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -127,6 +54,19 @@ mouse_filter = 2
 [node name="Dot" type="Panel" parent="UI/Crosshair"]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
+
+[node name="RoomLabel" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Grand Foyer"
+horizontal_alignment = 2
 
 [node name="InfoPanel" type="Panel" parent="UI"]
 visible = false

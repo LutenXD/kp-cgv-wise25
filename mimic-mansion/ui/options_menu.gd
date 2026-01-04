@@ -50,6 +50,10 @@ func update_mimic_label():
 		var count = int(mimic_count_slider.value)
 		mimic_label.text = "Number of Mimics: " + str(count)
 
+func _on_generate_layout_button_pressed():
+	# Open the room layout generator scene
+	get_tree().change_scene_to_file("res://scenes/room_layout_preview.tscn")
+
 func _on_back_button_pressed():
 	print("back")
 	close_options.emit()
