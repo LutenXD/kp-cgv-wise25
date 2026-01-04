@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://music_room_asset"]
+
+[ext_resource type="PackedScene" uid="uid://room_prefab" path="res://assets/room.tscn" id="1"]
+
+[node name="MusicRoom" instance=ExtResource("1")]
