@@ -99,21 +99,10 @@ tick_count = 10
 ticks_on_borders = true
 
 [node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="GenerateLayoutButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(250, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Generate Room Layout"
-
-[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
