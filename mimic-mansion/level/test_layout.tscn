@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dduhq2fgq1ii3"]
+
+[ext_resource type="Script" uid="uid://cb2s2njibejfk" path="res://level/create_level.gd" id="1_7sf03"]
+[ext_resource type="PackedScene" uid="uid://b1vyrmki5vwqh" path="res://level/rooms/corridor.tscn" id="1_yip47"]
+[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="2_rf5gp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rf5gp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7sf03"]
+sky_material = SubResource("ProceduralSkyMaterial_rf5gp")
+
+[sub_resource type="Environment" id="Environment_otrr3"]
+background_mode = 2
+sky = SubResource("Sky_7sf03")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="TestLayout" type="Node3D"]
+script = ExtResource("1_7sf03")
+rooms = Array[PackedScene]([ExtResource("1_yip47")])
+room_propability = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_otrr3")
+
+[node name="Corridor" parent="." instance=ExtResource("1_yip47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.06169, -1.9073486e-06, 32.643097)
+
+[node name="Player" parent="." instance=ExtResource("2_rf5gp")]
+
+[node name="RoomContainer" type="Node" parent="."]

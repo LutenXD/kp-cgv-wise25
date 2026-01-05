@@ -22,7 +22,7 @@ var piper_thread: Thread
 @onready var tts_request: TTSRequest = %TTSRequest
 
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
-#@onready var gd_piper: GDPiper = $GDPiper #ich bin dran...  kp, ob ich das noch schaffe (läuft auf linux dev builds :/ )
+@onready var gd_piper: GDPiper = $GDPiper #ich bin dran...  kp, ob ich das noch schaffe (läuft auf linux dev builds :/ )
 
 
 func _ready() -> void:
@@ -60,8 +60,8 @@ func _on_chat_request_text_answer_received(text: String) -> void:
 		tts_request.request_tts(text)
 
 
-func _piper_tts(_text: String) -> void:
-	#audio_stream_player_3d.call_deferred("set_stream", gd_piper.tts(text, 1.0, 7))
+func _piper_tts(text: String) -> void:
+	audio_stream_player_3d.call_deferred("set_stream", gd_piper.tts(text, 1.0, 7))
 	audio_stream_player_3d.call_deferred("play")
 
 

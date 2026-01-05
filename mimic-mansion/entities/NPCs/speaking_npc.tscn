@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhtmqv2uvnvy8"]
+[gd_scene format=3 uid="uid://dhtmqv2uvnvy8"]
 
 [ext_resource type="Script" uid="uid://cqdo5v8o2reuu" path="res://entities/NPCs/speaking_npc.gd" id="1_mos11"]
 [ext_resource type="Script" uid="uid://xw1fqiexdhfd" path="res://utils/interactable_component.gd" id="1_ufs3y"]
@@ -10,39 +10,41 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_ufs3y"]
 
-[node name="SpeakinNPC" type="Node3D"]
+[node name="SpeakinNPC" type="Node3D" unique_id=766133172]
 script = ExtResource("1_mos11")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=616544448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=509964351]
 shape = SubResource("BoxShape3D_v1dig")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=543671654]
 mesh = SubResource("BoxMesh_ufs3y")
 
-[node name="InteractableComponent" type="Node" parent="StaticBody3D"]
+[node name="InteractableComponent" type="Node" parent="StaticBody3D" unique_id=39657472]
 script = ExtResource("1_ufs3y")
 
-[node name="STTRequest" type="HTTPRequest" parent="."]
+[node name="STTRequest" type="HTTPRequest" parent="." unique_id=1944179967]
 unique_name_in_owner = true
 script = ExtResource("3_pg5yl")
 
-[node name="ChatRequest" type="HTTPRequest" parent="."]
+[node name="ChatRequest" type="HTTPRequest" parent="." unique_id=603240628]
 unique_name_in_owner = true
 script = ExtResource("3_y70n3")
 
-[node name="TTSRequest" type="HTTPRequest" parent="."]
+[node name="TTSRequest" type="HTTPRequest" parent="." unique_id=205813095]
 unique_name_in_owner = true
 script = ExtResource("5_pg5yl")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1435961007]
 unique_name_in_owner = true
 
-[node name="DebugLabel" type="Label3D" parent="."]
+[node name="DebugLabel" type="Label3D" parent="." unique_id=1999646119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 billboard = 2
+
+[node name="GDPiper" type="GDPiper" parent="." unique_id=1852421510]
 
 [connection signal="send_audio" from="StaticBody3D/InteractableComponent" to="." method="_on_interactable_component_send_audio"]
 [connection signal="stt_answer_received" from="STTRequest" to="." method="_on_stt_request_stt_answer_received"]
