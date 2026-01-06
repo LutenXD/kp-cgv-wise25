@@ -9,7 +9,7 @@ var tts_model: String = "Kokoro-82M"
 
 @export_group("TTS Voice", "voice_")
 ## CRITICAL: must match the filename in res://addons/gdpiper/piper-voices
-@export_enum("de_DE-thorsten_emotional-medium", "en_US-ljspeech-high", "fransop_finetune", "frm01-1000") 
+@export_enum("de_DE-thorsten_emotional-medium", "en_US-ljspeech-high", "fransop_finetune", "frm01-1000", "hans", "jacob", "frederik") 
 var voice_piper: String = "fransop_finetune"
 
 @export_enum("af_heart", "am_echo", "af_river", "am_santa", "bm_fable") 
