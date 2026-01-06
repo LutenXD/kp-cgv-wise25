@@ -64,44 +64,77 @@ shape = SubResource("WorldBoundaryShape3D_w72v2")
 mesh = SubResource("PlaneMesh_owtjd")
 
 [node name="SpeakinNPC" parent="." unique_id=1877849916 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8327827, 0, 8.574533)
-tts_voice = "af_river"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.596297, 0, -3.969761)
+voice_kokoro = "am_echo"
 
 [node name="SpeakinNPC2" parent="." unique_id=234578733 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.641425, 0, -3.5896173)
-tts_model = "tts-1-hd"
-tts_voice = "fable"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3756995, 0, -9.028097)
+tts_model = "piper"
+voice_piper = "frm01-1000"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
 [node name="SpeakinNPC6" parent="." unique_id=1687014108 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.610925, 0, -2.8398266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2175417, 0, -3.7994242)
+voice_kokoro = "am_santa"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC8" parent="." unique_id=766133172 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.451986, 0, -3.582903)
+voice_kokoro = "bm_fable"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC9" parent="." unique_id=259473255 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.141547, 0, 0.056847095)
 tts_model = "tts-1-hd"
-tts_voice = "echo"
+voice_tts_1 = "alloy"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC13" parent="." unique_id=999883048 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.861024, 0, 0.396811)
+tts_model = "tts-1-hd"
+voice_tts_1 = "echo"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC14" parent="." unique_id=916237332 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7280474, 0, 0.396811)
+tts_model = "tts-1-hd"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC15" parent="." unique_id=603872252 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.237169, 0, 0.58761454)
+tts_model = "tts-1-hd"
+voice_tts_1 = "nova"
+instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="SpeakinNPC16" parent="." unique_id=1787896505 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.240653, -0.038804054, 0.559433)
+tts_model = "tts-1-hd"
+voice_tts_1 = "shimmer"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
 [node name="SpeakinNPC7" parent="." unique_id=1563729991 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9603724, 0, 1.9843464)
-tts_model = "tts-1-hd"
-tts_voice = "nova"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2455635, 0, -8.886667)
+tts_model = "piper"
+voice_piper = "de_DE-thorsten_emotional-medium"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
 [node name="SpeakinNPC10" parent="." unique_id=1537832831 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.301474, 0, 2.0184069)
-tts_model = "tts-1-hd"
-tts_voice = "shimmer"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.89329, 0, -4.133949)
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
 [node name="SpeakinNPC12" parent="." unique_id=1135822106 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.305441, 9.536743e-07, 8.142512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12797642, 9.536743e-07, -3.7688494)
+voice_kokoro = "af_river"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
 [node name="SpeakinNPC11" parent="." unique_id=350057761 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9134693, 0, -4.470625)
-tts_model = "tts-1-hd"
-tts_voice = "alloy"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0647173, 0, -8.992483)
+tts_model = "piper"
+voice_piper = "en_US-ljspeech-high"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
 
-[node name="SpeakinNPC3" parent="." unique_id=766133172 instance=ExtResource("2_s65ib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2768111, 0, 4.914694)
+[node name="SpeakinNPC3" parent="." unique_id=1688933236 instance=ExtResource("2_s65ib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7243316, 0, -8.797249)
+chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."

@@ -18,7 +18,7 @@ public:
 	GDPiper();
 	~GDPiper();
 
-	Ref<AudioStreamWAV> tts(String text, float speed, int speaker_id);
+	Ref<AudioStreamWAV> tts(String text, float speed, String voice_id, int speaker_id);
 };
 
 } // namespace godot

@@ -2,8 +2,9 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/audio_stream_wav.hpp>
 #include <godot_cpp/variant/packed_byte_array.hpp>
+#include <godot_cpp/classes/project_settings.hpp>
 #include <vector>
-#include <algorithm> 
+#include <algorithm>
 #include "piper.h"
 
 using namespace godot;
@@ -11,7 +12,7 @@ using namespace godot;
 Ref<AudioStreamWAV> make_stream_from_piper(const std::vector<float> &samples, int sample_rate);
 
 void GDPiper::_bind_methods() {
-    ClassDB::bind_method(D_METHOD("tts", "text", "speed", "speaker_id"), &GDPiper::tts);
+    ClassDB::bind_method(D_METHOD("tts", "text", "speed", "voice_id", "speaker_id"), &GDPiper::tts);
 }
 
 GDPiper::GDPiper() {
@@ -21,11 +22,21 @@ GDPiper::GDPiper() {
 GDPiper::~GDPiper() {
 }
 
-Ref<AudioStreamWAV> GDPiper::tts(String text, float speed, int speaker_id) {
-    piper_synthesizer *synth = piper_create(
-        "/home/frederik/uni/Master/KP/piper-voices/fransop_finetune.onnx",
-        "/home/frederik/uni/Master/KP/piper-voices/fransop_finetune.onnx.json",
-        "/home/frederik/uni/Master/KP/libpiper/install/espeak-ng-data/"
+Ref<AudioStreamWAV> GDPiper::tts(String text, float speed, String voice_id, int speaker_id) {
+    String base = "res://addons/gdpiper";
+
+    String voice = base + "/piper-voices/" + voice_id + ".onnx";
+    String json  = base + "/piper-voices/" + voice_id + ".onnx.json";
+    String espeak = base + "/espeak-ng-data/";
+
+    String voice_abs  = ProjectSettings::get_singleton()->globalize_path(voice);
+    String json_abs   = ProjectSettings::get_singleton()->globalize_path(json);
+    String espeak_abs = ProjectSettings::get_singleton()->globalize_path(espeak);
+    
+    piper_synthesizer* synth = piper_create(
+        voice_abs.utf8().get_data(),
+        json_abs.utf8().get_data(),
+        espeak_abs.utf8().get_data()
     );
 
     piper_synthesize_options options = piper_default_synthesize_options(synth);

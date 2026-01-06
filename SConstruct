@@ -178,7 +178,7 @@ sources = Glob("src/*.cpp")
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
-        "godot_piper/bin/libpiper_godot.{}.{}.framework/libpiper.{}.{}".format(
+        "mimic-mansion/bin/libpiper_godot.{}.{}.framework/libpiper.{}.{}".format(
             env["platform"], env["target"], env["platform"], env["target"]
         ),
         source=sources,
@@ -186,17 +186,17 @@ if env["platform"] == "macos":
 elif env["platform"] == "ios":
     if env["ios_simulator"]:
         library = env.StaticLibrary(
-            "godot_piper/bin/libpiper_godot.{}.{}.simulator.a".format(env["platform"], env["target"]),
+            "mimic-mansion/bin/libpiper_godot.{}.{}.simulator.a".format(env["platform"], env["target"]),
             source=sources,
         )
     else:
         library = env.StaticLibrary(
-            "godot_piper/bin/libpiper_godot.{}.{}.a".format(env["platform"], env["target"]),
+            "mimic-mansion/bin/libpiper_godot.{}.{}.a".format(env["platform"], env["target"]),
             source=sources,
         )
 else:
     library = env.SharedLibrary(
-        "godot_piper/bin/libpiper_godot{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        "mimic-mansion/bin/libpiper_godot{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
 
