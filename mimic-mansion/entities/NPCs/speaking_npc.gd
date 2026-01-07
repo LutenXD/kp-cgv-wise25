@@ -25,6 +25,14 @@ var response: String
 var tts_voice: String
 var piper_thread: Thread
 var hud: HUD
+var speaking: bool = false
+
+var thinking: bool = false
+var wiggle_speed: float = 1.0
+var wiggle_duration: float = 0.2
+var wiggle_timer: float = 0.0
+var wiggle_angle: float = PI / 32.0
+
 
 @onready var stt_request: STTRequest = %STTRequest
 @onready var chat_request: ChatRequest = %ChatRequest
@@ -32,6 +40,9 @@ var hud: HUD
 
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
 @onready var gd_piper: GDPiper = $GDPiper #ich bin dran...  kp, ob ich das noch schaffe (läuft auf linux dev builds :/ )
+
+@onready var bus_index: int = AudioServer.get_bus_index("Speech")
+@onready var capture: AudioEffectCapture = AudioServer.get_bus_effect(bus_index, 0)
 
 
 func _ready() -> void:
@@ -55,9 +66,51 @@ func _ready() -> void:
 	
 	hud = get_tree().get_first_node_in_group("HUD")
 
+var left: bool = false
+func _process(delta: float) -> void:
+	if speaking:
+		var prev_rms: float = 0.0
+		var frames_available: int = capture.get_frames_available()
+		if frames_available == 0:
+			return
+		
+		var frames: PackedVector2Array = capture.get_buffer(frames_available)
+		
+		var rms_sum: float = 0.0
+		
+		for frame in frames:
+			var sample = max(abs(frame.x), abs(frame.y))
+			rms_sum += sample * sample
+			
+		var rms: float = sqrt(rms_sum / frames.size())
+		
+		#prints(" RMS:", rms)
+		
+		# wow magic numbers
+		$StaticBody3D/MeshInstance3D.position.y = 0.0 + rms * (4.0/16.0 + prev_rms * 12.0/16.0) * 2.0
+		prev_rms = rms
+	
+	if thinking:
+		if wiggle_timer > wiggle_duration and not left:
+			left = true
+		
+		if wiggle_timer < 0.0 and left:
+			left = false
+		
+		if left:
+			delta *= -1.0
+		
+		wiggle_timer += delta
+
+		$StaticBody3D/MeshInstance3D.rotation.y = lerp_angle(-wiggle_angle, wiggle_angle, ease(wiggle_timer / wiggle_duration, -2.0))
+	else:
+		wiggle_timer = 0.0
+		$StaticBody3D/MeshInstance3D.rotation.y = 0.0
+
 
 func _on_interactable_component_send_audio(audio: AudioStreamWAV) -> void:
 	stt_request.request_stt(audio)
+	thinking = true
 
 
 func _on_stt_request_stt_answer_received(text: String) -> void:
@@ -80,10 +133,14 @@ func _on_chat_request_text_answer_received(text: String) -> void:
 func _piper_tts(text: String) -> void:
 	audio_stream_player_3d.call_deferred("set_stream", gd_piper.tts(text, 1.0, tts_voice, 7))
 	audio_stream_player_3d.call_deferred("play")
+	thinking = false
+	speaking = true
 	hud.call_deferred("set_subtitle", text)
 
 
 func _on_tts_request_tts_answer_received(audio: AudioStreamMP3) -> void:
+	thinking = false
+	speaking = true
 	audio_stream_player_3d.set_stream(audio)
 	audio_stream_player_3d.play()
 	hud.set_subtitle(response)
@@ -94,6 +151,7 @@ func _exit_tree() -> void:
 
 
 func _on_audio_stream_player_3d_finished() -> void:
+	speaking = false
 	for player in get_tree().get_nodes_in_group("npc_player"):
 		if player is AudioStreamPlayer3D and player.playing:
 			return

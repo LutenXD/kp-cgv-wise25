@@ -39,6 +39,7 @@ script = ExtResource("5_pg5yl")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1435961007 groups=["npc_player"]]
 unique_name_in_owner = true
+bus = &"Speech"
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=1999646119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
