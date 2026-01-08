@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7a0m8fuf6p0o"]
+
+[ext_resource type="Script" uid="uid://cy4aopdl4etgn" path="res://level/props/prop.gd" id="1_lp7bn"]
+
+[node name="Prop" type="StaticBody3D" unique_id=1113012891]
+script = ExtResource("1_lp7bn")
