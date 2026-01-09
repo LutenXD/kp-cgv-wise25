@@ -1,0 +1,602 @@
+[
+	{
+		"question": "Given an example of an .obj file, describe the meaning of its contents!",
+		"answer": "An .obj file is a text-based file format used to represent 3D geometry. It includes vertex positions, texture coordinates, normals, and faces.",
+		"explanation": "The .obj format stores geometry data in a human-readable text format. It lists vertex positions (v), texture coordinates (vt), normals (vn), and faces (f) that reference these vertices. Faces are defined by indices that point to the vertices, texture coordinates, and normals. This format is widely used for its simplicity and compatibility with many 3D modeling programs."
+	},
+	{
+		"question": "Explain the term manifold topology and motivate why neighborhood data structures are usually restricted to this!",
+		"answer": "Manifold topology ensures that each edge is shared by at most two faces, each vertex has a disk-like neighborhood, and the mesh is free of self-intersections.",
+		"explanation": "Manifold topology is important because it simplifies mesh processing algorithms. It ensures that the mesh is locally Euclidean, meaning that around each vertex, the surface looks like a flat plane. This property is crucial for algorithms that involve surface analysis, smoothing, and rendering."
+	},
+	{
+		"question": "What is the ratio of triangles and vertices in a closed triangle mesh?",
+		"answer": "In a closed triangle mesh, the ratio of triangles to vertices is approximately 2:1.",
+		"explanation": "For a closed triangle mesh, the Euler formula states that v - e + f = χ, where v is the number of vertices, e is the number of edges, and f is the number of faces. For a closed mesh without boundaries, χ is typically 2 (for a sphere-like topology). Given that each face is a triangle and each edge is shared by two faces, we have 2e = 3f. Therefore, f ≈ 2v and e ≈ 3v, leading to a ratio of triangles to vertices of approximately 2:1."
+	},
+	{
+		"question": "Describe a simple mesh data structure that is sufficient for rendering. Which mesh processing tasks can be performed with just this data structure?",
+		"answer": "A simple mesh data structure for rendering includes arrays for vertex positions, normals, texture coordinates, and faces.",
+		"explanation": "This structure allows for efficient rendering by providing direct access to vertex attributes and face indices. It supports tasks like face iteration, computation of face degree, and basic rendering operations."
+	},
+	{
+		"question": "What is the meaning of shells and loops in mesh processing?",
+		"answer": "Shells are connected components of a mesh, and loops are sequences of edges that form a closed path.",
+		"explanation": "Shells represent separate surfaces or components within a mesh, while loops are used to describe the boundaries or closed paths within those surfaces. Understanding shells and loops is crucial for operations like mesh traversal and boundary detection."
+	},
+	{
+		"question": "Given a not necessarily flat polygon in 3D. How can you estimate a normal pointing to the outside direction defined by the right hand rule from the orientation of the polygon?",
+		"answer": "Compute the normal using the cross product of vectors formed by the polygon's vertices.",
+		"explanation": "For a polygon with vertices p0, p1, ..., pn-1, the normal can be estimated by summing the cross products of consecutive edge vectors. The direction of the normal is determined by the right-hand rule, ensuring consistency with the polygon's orientation."
+	},
+	{
+		"question": "Explain how to compute a vertex normal from the average of the incident face normals with the simple mesh data structure in time linear in the number of vertices?",
+		"answer": "Average the normals of all faces incident to the vertex.",
+		"explanation": "For each vertex, compute the average of the normals of all faces that include that vertex. This can be done efficiently by iterating over the faces and their vertices, ensuring the computation is linear in the number of vertices."
+	},
+	{
+		"question": "Describe and motivate a method for calculating the area of a 2D-polygon without triangulation!",
+		"answer": "Use the shoelace formula to calculate the area of a 2D polygon.",
+		"explanation": "The shoelace formula involves summing the cross products of consecutive vertex coordinates. This method is efficient and avoids the need for triangulation, making it suitable for planar polygons."
+	},
+	{
+		"question": "How can you compute the volume enclosed by a triangle mesh? What are the preconditions for the triangle mesh for this to work?",
+		"answer": "Sum the signed volumes of tetrahedra formed by each triangle and a reference point.",
+		"explanation": "The volume enclosed by a triangle mesh can be computed by summing the signed volumes of tetrahedra formed by each triangle and an arbitrary reference point. The mesh must be oriented and closed for this method to work correctly."
+	},
+	{
+		"question": "Describe a data structure and an algorithm to determine edge-connected components in a polygonal mesh!",
+		"answer": "Use a graph traversal algorithm like BFS or DFS to find connected components.",
+		"explanation": "Represent the mesh as a graph where vertices are nodes and edges are connections. Use BFS or DFS to traverse the graph and identify connected components, which correspond to edge-connected components in the mesh."
+	},
+	{
+		"question": "Explain the term halfedge in the context of a manifold and a non-manifold polygonal meshes!",
+		"answer": "A halfedge is a directed edge that represents one side of an edge in a mesh.",
+		"explanation": "In a manifold mesh, each edge is shared by exactly two faces, and each face is bounded by a loop of edges. In non-manifold meshes, edges can be shared by more than two faces or have other configurations. The halfedge data structure represents each edge as two directed halfedges, one for each direction."
+	},
+	{
+		"question": "Given a figure of a polygonal mesh, a. draw the halfedges oriented along a consistent orientation of the faces! b. Explain for one halfedge which adjacency and incidence relations are stored in a halfedge data structure! c. Explain all incidence relations stored in the halfedge data structure!",
+		"answer": "Halfedges are oriented consistently with the faces they belong to. Each halfedge stores references to the next and previous halfedges in the face loop, the opposite halfedge, the incident vertex, and the incident face.",
+		"explanation": "The halfedge data structure stores adjacency and incidence relations to allow efficient traversal of the mesh. For a given halfedge, it stores pointers to the next and previous halfedges in the face loop, the opposite halfedge (if any), the incident vertex, and the incident face. This allows for efficient navigation and manipulation of the mesh."
+	},
+	{
+		"question": "Discuss advantages and disadvantages of pointer- vs. index-based implementation of a halfedge data structure?",
+		"answer": "Pointer-based: faster access but more memory overhead. Index-based: more compact but slower access.",
+		"explanation": "Pointer-based implementations provide faster access to adjacent elements but have higher memory overhead due to pointer storage. Index-based implementations are more memory-efficient but may have slower access times due to indirect addressing."
+	},
+	{
+		"question": "Which adjacency and incidence relations stored in the halfedge data structure can be constructed directly while loading a polygonal mesh from an obj-file?",
+		"answer": "Vertex positions, face indices, and edge connections.",
+		"explanation": "While loading an .obj file, vertex positions, face indices, and edge connections can be directly constructed. These relations form the basis of the halfedge data structure and are essential for mesh processing."
+	},
+	{
+		"question": "Explain inverse matching including its runtime and what information it gives you!",
+		"answer": "Inverse matching is used to find the opposite halfedge for a given halfedge.",
+		"explanation": "Inverse matching involves iterating over all halfedges to find the opposite halfedge for each halfedge. This process has a runtime of O(n), where n is the number of halfedges, and provides information about the adjacency and incidence relations in the mesh."
+	},
+	{
+		"question": "How are boundary loops constructed in a halfedge data structure?",
+		"answer": "Boundary loops are constructed by identifying edges that are not shared by two faces.",
+		"explanation": "Boundary loops are formed by edges that are incident to only one face. These edges are identified during the construction of the halfedge data structure and are used to represent the boundaries of the mesh."
+	},
+	{
+		"question": "What design patterns do you know for implementing mesh processing algorithms?",
+		"answer": "Common design patterns include the visitor pattern, the iterator pattern, and the observer pattern.",
+		"explanation": "The visitor pattern allows for flexible operations on mesh elements, the iterator pattern enables efficient traversal of mesh elements, and the observer pattern facilitates event-driven mesh processing."
+	},
+	{
+		"question": "How do you implement a vertex circulator with begin(), end(), operator *() and operator ++() functions according to the STL philosophy?",
+		"answer": "Implement a circulator class that provides the required functions for iterating over vertices.",
+		"explanation": "A vertex circulator is implemented as a class that provides begin() and end() functions to define the range of vertices, operator *() to dereference the current vertex, and operator ++() to move to the next vertex. This follows the STL philosophy for container iteration."
+	},
+	{
+		"question": "What are the pros and cons of representing a mesh as triangle strips?",
+		"answer": "Pros: efficient rendering. Cons: limited to specific mesh topologies.",
+		"explanation": "Triangle strips allow for efficient rendering by minimizing the number of vertices that need to be processed. However, they are limited to meshes that can be represented as a sequence of connected triangles, which may not be suitable for all mesh topologies."
+	},
+	{
+		"question": "Given a halfedge data structure, how can you implement an iterator to navigate forward and backward along a triangle strip?",
+		"answer": "Use pointers to navigate between adjacent halfedges in the strip.",
+		"explanation": "An iterator for navigating a triangle strip can be implemented by maintaining pointers to the current halfedge and using the next and previous pointers to move forward and backward along the strip."
+	},
+	{
+		"question": "Describe a stochastic optimization algorithm for decomposing triangle meshes into triangle strips!",
+		"answer": "Use a greedy algorithm to find the longest possible strips.",
+		"explanation": "A stochastic optimization algorithm for decomposing triangle meshes into triangle strips involves iteratively selecting the longest possible strip from the remaining triangles. This approach aims to minimize the number of strips and maximize their length."
+	},
+	{
+		"question": "Given pseudo-code of an algorithm for orienting polygonal meshes, explain the algorithm!",
+		"answer": "The algorithm orients faces consistently by ensuring that adjacent faces have compatible orientations.",
+		"explanation": "The algorithm for orienting polygonal meshes involves iterating over the faces and ensuring that adjacent faces have compatible orientations. This is achieved by checking the orientation of each face relative to its neighbors and adjusting as necessary."
+	},
+	{
+		"question": "How could you interpret the gradient of a function geometrically?",
+		"answer": "The gradient represents the direction of steepest ascent.",
+		"explanation": "Geometrically, the gradient of a function at a point represents the direction in which the function increases most rapidly. It is a vector that points in the direction of the steepest ascent and has a magnitude equal to the rate of change in that direction."
+	},
+	{
+		"question": "How is the Jacobian matrix of a vector-valued function defined and how can you express a first order Taylor expansion with it?",
+		"answer": "The Jacobian matrix is the matrix of first-order partial derivatives.",
+		"explanation": "The Jacobian matrix of a vector-valued function is defined as the matrix of its first-order partial derivatives. It is used in the first-order Taylor expansion to approximate the function near a point, providing a linear approximation of the function's behavior."
+	},
+	{
+		"question": "How does the Jacobian matrix relate to the tangent space of a parametric surface?",
+		"answer": "The Jacobian matrix defines the tangent space at a point on the surface.",
+		"explanation": "The Jacobian matrix of a parametric surface at a point defines the tangent space at that point. The columns of the Jacobian matrix represent the partial derivatives of the surface with respect to its parameters, which span the tangent space."
+	},
+	{
+		"question": "How do you determine the length of a curve c(t)?",
+		"answer": "Integrate the magnitude of the derivative of the curve.",
+		"explanation": "The length of a curve c(t) is determined by integrating the magnitude of its derivative, |c'(t)|, over the interval of interest. This gives the total distance traveled along the curve."
+	},
+	{
+		"question": "How do you re-parameterize a curve c(t) with respect to its arc length?",
+		"answer": "Use the arc length parameter s(t) to reparameterize the curve.",
+		"explanation": "To reparameterize a curve with respect to its arc length, compute the arc length parameter s(t) by integrating the magnitude of the derivative of the curve. Then express the curve as a function of s instead of t."
+	},
+	{
+		"question": "What is the first fundamental form of a parametric surface, how is it calculated and which local properties can be shown with it?",
+		"answer": "The first fundamental form is a metric tensor that describes the local geometry of the surface.",
+		"explanation": "The first fundamental form of a parametric surface is calculated using the partial derivatives of the surface with respect to its parameters. It describes the local geometry of the surface, including the lengths of curves and the angles between tangent vectors."
+	},
+	{
+		"question": "How can you calculate the length of a curve defined in the parameter space of a surface using the first fundamental form?",
+		"answer": "Integrate the square root of the first fundamental form along the curve.",
+		"explanation": "The length of a curve defined in the parameter space of a surface can be calculated by integrating the square root of the first fundamental form along the curve. This provides the actual length of the curve on the surface."
+	},
+	{
+		"question": "How to calculate the surface area of a parametric surface using the first fundamental form?",
+		"answer": "Integrate the determinant of the first fundamental form over the parameter domain.",
+		"explanation": "The surface area of a parametric surface is calculated by integrating the determinant of the first fundamental form over the parameter domain. This gives the total area of the surface."
+	},
+	{
+		"question": "How can you interpret the curvature of a curve geometrically?",
+		"answer": "Curvature measures the rate of change of the tangent direction.",
+		"explanation": "Geometrically, the curvature of a curve at a point measures the rate of change of the tangent direction at that point. It describes how quickly the curve is bending."
+	},
+	{
+		"question": "How can you describe the curvature at a specific surface point?",
+		"answer": "Use the second fundamental form and the shape operator.",
+		"explanation": "The curvature at a specific surface point can be described using the second fundamental form and the shape operator. These provide information about how the surface is bending at that point."
+	},
+	{
+		"question": "Given a picture of a surface. Determine if it is a manifold or a manifold with a boundary! Is the surface orientable? Which genus does the surface have?",
+		"answer": "Determine the type of surface based on its properties.",
+		"explanation": "To determine if a surface is a manifold or a manifold with a boundary, check if it is locally Euclidean and if it has any boundaries. To determine if it is orientable, check if a consistent normal direction can be defined. The genus of the surface is determined by the number of holes or handles it has."
+	},
+	{
+		"question": "What is the difference between the terms incidence and adjacency?",
+		"answer": "Incidence refers to the connection between elements, while adjacency refers to the proximity of elements.",
+		"explanation": "In mesh processing, incidence refers to the connection between mesh elements, such as vertices and edges. Adjacency refers to the proximity or neighboring relationship between elements, such as adjacent faces."
+	},
+	{
+		"question": "Given the Euler equation. Explain what the symbols stand for and what the equation describes.",
+		"answer": "The Euler equation relates the number of vertices, edges, and faces in a mesh.",
+		"explanation": "The Euler equation, v - e + f = χ, relates the number of vertices (v), edges (e), and faces (f) in a mesh to its Euler characteristic (χ). This equation is fundamental in topology and describes the structural properties of the mesh."
+	},
+	{
+		"question": "Given a picture with several objects. Determine which objects are topologically equivalent!",
+		"answer": "Objects with the same number of holes and handles are topologically equivalent.",
+		"explanation": "To determine if objects are topologically equivalent, compare their Euler characteristics and the number of holes and handles. Objects with the same Euler characteristic and similar structural properties are topologically equivalent."
+	},
+	{
+		"question": "Explain the terms sharp edge, corner and dart with the help of sketches!",
+		"answer": "Sharp edge: an edge with a high curvature. Corner: a vertex with a high curvature. Dart: a vertex with a negative curvature.",
+		"explanation": "A sharp edge is an edge where the surface bends sharply. A corner is a vertex where multiple edges meet at a high angle. A dart is a vertex where the surface folds inward, resulting in a negative curvature."
+	},
+	{
+		"question": "How can the Laplace operator be used to smooth functions in 1D, 2D, nD?",
+		"answer": "The Laplace operator averages the values of neighboring points.",
+		"explanation": "The Laplace operator is used to smooth functions by averaging the values of neighboring points. In 1D, it averages the values of adjacent points. In 2D and higher dimensions, it averages the values of neighboring points in all directions."
+	},
+	{
+		"question": "How can the Laplace operator be generalized to surfaces (Laplace-Beltrami)?",
+		"answer": "The Laplace-Beltrami operator is the generalization of the Laplace operator to surfaces.",
+		"explanation": "The Laplace-Beltrami operator is used to smooth functions on surfaces by averaging the values of neighboring points on the surface. It takes into account the geometry of the surface and is used in mesh processing and surface analysis."
+	},
+	{
+		"question": "Given images of smooth triangle meshes, decide which ones are smoothed with the Laplace operator and which ones with the Cotangent-Laplace operator. Justify your decision!",
+		"answer": "Laplace operator: uniform smoothing. Cotangent-Laplace operator: preserves features.",
+		"explanation": "The Laplace operator provides uniform smoothing by averaging the values of neighboring points. The Cotangent-Laplace operator preserves features by taking into account the geometry of the surface, resulting in more natural smoothing."
+	},
+	{
+		"question": "What network update operation is used in the common Remeshing Pipeline? What is the goal of Remeshing?",
+		"answer": "Edge flip operation. The goal is to improve mesh quality.",
+		"explanation": "In the common Remeshing Pipeline, the edge flip operation is used to improve the quality of the mesh by adjusting the connectivity of the edges. The goal of remeshing is to create a mesh with better properties, such as more uniform triangle sizes and improved surface representation."
+	},
+	{
+		"question": "Explain strategies for the implementation of mesh modifications and a consistent update of the underlying data structure like the halfedge data structure!",
+		"answer": "Use local operations to modify the mesh and update the data structure accordingly.",
+		"explanation": "Strategies for implementing mesh modifications include using local operations like edge flips, vertex splits, and edge collapses. These operations are performed while maintaining the consistency of the underlying data structure, such as the halfedge data structure."
+	},
+	{
+		"question": "Give an overview of how to delete or add a facet in a half-edge data structure!",
+		"answer": "Update the pointers and references in the halfedge data structure.",
+		"explanation": "To delete or add a facet in a halfedge data structure, update the pointers and references to maintain the consistency of the mesh. This involves adjusting the pointers for the affected halfedges, vertices, and faces."
+	},
+	{
+		"question": "Why is it important for graphics application development to wait for next events during the main loop?",
+		"answer": "To ensure responsiveness and efficient resource usage.",
+		"explanation": "Waiting for next events during the main loop ensures that the application remains responsive to user input and efficiently uses system resources. This is crucial for real-time graphics applications."
+	},
+	{
+		"question": "Name three architectural concepts of modern GPU that facilitate a large throughput!",
+		"answer": "Parallel processing, pipelining, and memory hierarchy.",
+		"explanation": "Modern GPUs achieve large throughput through parallel processing, which allows multiple operations to be performed simultaneously; pipelining, which overlaps different stages of processing; and a memory hierarchy that optimizes data access."
+	},
+	{
+		"question": "How do you have to prepare an analytic surface representation such that it can be rendered with the rendering pipeline of a GPU?",
+		"answer": "Convert the surface to a triangle mesh and set up the necessary buffers and shaders.",
+		"explanation": "To render an analytic surface representation with a GPU, convert the surface to a triangle mesh and set up the necessary vertex and index buffers. Additionally, configure the appropriate shaders to handle the rendering pipeline."
+	},
+	{
+		"question": "How are GPU objects managed in OpenGL? Which object types do you know?",
+		"answer": "GPU objects are managed using OpenGL functions. Object types include buffers, textures, and shaders.",
+		"explanation": "In OpenGL, GPU objects are managed using functions like glGenBuffers, glBindBuffer, and glBufferData. Common object types include vertex buffer objects (VBOs), vertex array objects (VAOs), and shader programs."
+	},
+	{
+		"question": "How can we debug OpenGL applications?",
+		"answer": "Use debugging tools and check for errors with glGetError.",
+		"explanation": "Debugging OpenGL applications involves using tools like GLDebugger and checking for errors with functions like glGetError. Additionally, logging and visual debugging can help identify and fix issues."
+	},
+	{
+		"question": "Given a picture of the OpenGL 3.2 pipeline without specification of the data types (vertices, primitives, fragments): Explain the data flow through the pipeline!",
+		"answer": "Data flows from vertex shaders to fragment shaders through the rendering pipeline.",
+		"explanation": "In the OpenGL 3.2 pipeline, data flows from the vertex shader, which processes vertex attributes, to the fragment shader, which processes pixel data. The pipeline includes stages like vertex processing, primitive assembly, rasterization, and fragment processing."
+	},
+	{
+		"question": "Explain the difference between a shader and a shader program! What are the building blocks of shaders and shader programs respectively?",
+		"answer": "A shader is a single stage in the pipeline, while a shader program is a collection of shaders.",
+		"explanation": "A shader is a single stage in the rendering pipeline, such as the vertex shader or fragment shader. A shader program is a collection of shaders that are linked together to form a complete program for rendering."
+	},
+	{
+		"question": "How can you transfer data from a C / C++ program to a shader program?",
+		"answer": "Use uniform variables and attribute buffers.",
+		"explanation": "Data is transferred from a C/C++ program to a shader program using uniform variables for constant data and attribute buffers for vertex data. Uniform variables are set using functions like glUniform, and attribute buffers are set up using vertex buffer objects (VBOs)."
+	},
+	{
+		"question": "How is streaming input and streaming output of vertex shader and a fragment shader defined?",
+		"answer": "Streaming input is defined using vertex attributes, and streaming output is defined using varyings.",
+		"explanation": "Streaming input to the vertex shader is defined using vertex attributes, which are specified using vertex buffer objects. Streaming output from the vertex shader to the fragment shader is defined using varyings, which are interpolated across the primitive."
+	},
+	{
+		"question": "Given a vertex and a fragment shader, explain the data flow (input, transfer from vertex to fragment shader, output)!",
+		"answer": "Vertex attributes are input to the vertex shader, varyings are passed to the fragment shader, and the fragment shader outputs the final color.",
+		"explanation": "In the data flow through the rendering pipeline, vertex attributes are input to the vertex shader, which processes them and passes varyings to the fragment shader. The fragment shader then processes these varyings and outputs the final color for each pixel."
+	},
+	{
+		"question": "Given a shader. Determine if it is a vertex or fragment shader.",
+		"answer": "Check the shader type and its functionality.",
+		"explanation": "To determine if a shader is a vertex or fragment shader, check its type and the functionality it performs. Vertex shaders process vertex attributes, while fragment shaders process pixel data and output the final color."
+	},
+	{
+		"question": "Expand a vertex / fragment shader pair by a variable passed from vertex to the fragment shader!",
+		"answer": "Use a varying variable to pass data between shaders.",
+		"explanation": "To pass a variable from the vertex shader to the fragment shader, declare it as a varying in both shaders. The vertex shader assigns a value to the varying, which is then interpolated and used by the fragment shader."
+	},
+	{
+		"question": "How do you pass values for a uniform variable to a shader program?",
+		"answer": "Use functions like glUniform to set uniform values.",
+		"explanation": "Values for uniform variables are passed to a shader program using functions like glUniform. These functions set the value of the uniform variable in the shader program."
+	},
+	{
+		"question": "How is visibility sorting done in the rendering pipeline with the depth buffer algorithm?",
+		"answer": "The depth buffer algorithm uses a depth test to determine visibility.",
+		"explanation": "The depth buffer algorithm performs visibility sorting by using a depth test to determine which fragments are visible. Fragments that pass the depth test are rendered, while others are discarded."
+	},
+	{
+		"question": "Discuss how geometry can be stored in buffers and textures on the GPU!",
+		"answer": "Geometry is stored in vertex buffer objects (VBOs) and textures.",
+		"explanation": "Geometry can be stored in vertex buffer objects (VBOs) for efficient rendering, and textures can be used to store additional data like normal maps or displacement maps. VBOs store vertex attributes, while textures store image data."
+	},
+	{
+		"question": "Explain how geometry is rendered with OpenGL by referring to Vertex Buffer Objects, Vertex Array Objects, and Shader Programs!",
+		"answer": "Geometry is rendered using VBOs, VAOs, and shader programs.",
+		"explanation": "In OpenGL, geometry is rendered by setting up vertex buffer objects (VBOs) to store vertex attributes, vertex array objects (VAOs) to manage the state of the vertex attributes, and shader programs to process the vertex and fragment data."
+	},
+	{
+		"question": "Discuss advantages and disadvantages of interleaved versus non-interleaved storage of geometry in buffer objects!",
+		"answer": "Interleaved: better cache performance. Non-interleaved: more flexible.",
+		"explanation": "Interleaved storage of geometry in buffer objects provides better cache performance by grouping related data together. Non-interleaved storage is more flexible and allows for separate management of different attributes."
+	},
+	{
+		"question": "How do you specify the format and component type for a vertex attribute?",
+		"answer": "Use functions like glVertexAttribPointer to specify the format and type.",
+		"explanation": "The format and component type for a vertex attribute are specified using functions like glVertexAttribPointer. This function sets the layout of the vertex attribute data in the buffer."
+	},
+	{
+		"question": "What is the difference between uniform variables and vertex attributes?",
+		"answer": "Uniform variables are constant across the primitive, while vertex attributes vary per vertex.",
+		"explanation": "Uniform variables are constant across the entire primitive and are set using functions like glUniform. Vertex attributes vary per vertex and are specified using vertex buffer objects (VBOs)."
+	},
+	{
+		"question": "How do you get the index of a vertex attribute array declared as input to the vertex shader necessary for specifying the corresponding attribute pointer of a vertex array object?",
+		"answer": "Use glGetAttribLocation to get the index of the vertex attribute.",
+		"explanation": "The index of a vertex attribute array declared as input to the vertex shader is obtained using glGetAttribLocation. This index is used to specify the corresponding attribute pointer in the vertex array object."
+	},
+	{
+		"question": "Explain indexed rendering and discuss when this is advantageous over retained mode rendering!",
+		"answer": "Indexed rendering uses indices to reference vertices, reducing redundancy.",
+		"explanation": "Indexed rendering uses indices to reference vertices, which reduces redundancy and improves performance when multiple primitives share the same vertices. This is advantageous over retained mode rendering, which stores all vertices explicitly."
+	},
+	{
+		"question": "What primitive types can be input and output to the geometry shader?",
+		"answer": "Input: points, lines, triangles. Output: points, line strips, triangle strips.",
+		"explanation": "The geometry shader can accept primitive types like points, lines, and triangles as input, and can output primitive types like points, line strips, and triangle strips. This allows for flexible processing of geometry."
+	},
+	{
+		"question": "Why is the input data to the geometry shader to be declared as arrays?",
+		"answer": "To handle multiple vertices and primitives.",
+		"explanation": "The input data to the geometry shader is declared as arrays to handle multiple vertices and primitives. This allows the geometry shader to process complex geometry and generate new primitives."
+	},
+	{
+		"question": "Given a shader program. Determine the shader type and its functionality!",
+		"answer": "Check the shader type and its code to determine functionality.",
+		"explanation": "To determine the shader type and its functionality, check the shader type (vertex, fragment, geometry) and examine its code to understand what operations it performs."
+	},
+	{
+		"question": "How do you pass a variable that is interpolated over a triangle from the geometry shader to the fragment shader?",
+		"answer": "Use a varying variable to pass the data.",
+		"explanation": "To pass a variable that is interpolated over a triangle from the geometry shader to the fragment shader, declare it as a varying in both shaders. The geometry shader assigns a value to the varying, which is then interpolated and used by the fragment shader."
+	},
+	{
+		"question": "Explain the principle of instanced rendering and describe a typical application!",
+		"answer": "Instanced rendering renders multiple instances of the same geometry with different parameters.",
+		"explanation": "Instanced rendering is used to render multiple instances of the same geometry with different parameters, such as position, orientation, or color. This is efficient for rendering objects like particles or instanced models."
+	},
+	{
+		"question": "For instanced rendering give two approaches to specialize shader computation to a specific instance!",
+		"answer": "Use instance-specific attributes and uniform variables.",
+		"explanation": "For instanced rendering, shader computation can be specialized to a specific instance using instance-specific attributes, which are passed as vertex attributes, or uniform variables, which are set per instance."
+	},
+	{
+		"question": "Explain the different stages of light transport from emission to detection!",
+		"answer": "Emission, propagation, scattering, and detection.",
+		"explanation": "Light transport involves several stages: emission, where light is emitted from a source; propagation, where light travels through space; scattering, where light interacts with surfaces; and detection, where light is detected by a sensor or camera."
+	},
+	{
+		"question": "What is needed to specify a goniometric point light source?",
+		"answer": "Position, intensity, and angular distribution.",
+		"explanation": "To specify a goniometric point light source, provide its position, intensity, and angular distribution, which describes how the light is emitted in different directions."
+	},
+	{
+		"question": "Explain the term color bleeding!",
+		"answer": "Color bleeding is the effect where colors from one surface affect another.",
+		"explanation": "Color bleeding occurs when light reflects off one surface and affects the color of another surface. This is common in global illumination and can be simulated using techniques like radiosity or path tracing."
+	},
+	{
+		"question": "How do the results of light simulations with single versus multiple reflections compare?",
+		"answer": "Single reflections are simpler but less accurate, while multiple reflections are more accurate but computationally expensive.",
+		"explanation": "Light simulations with single reflections are simpler and faster but less accurate, as they do not account for indirect lighting. Simulations with multiple reflections are more accurate but computationally expensive, as they account for indirect lighting and complex interactions."
+	},
+	{
+		"question": "Explain the difference between hard and soft shadows!",
+		"answer": "Hard shadows have sharp edges, while soft shadows have blurred edges.",
+		"explanation": "Hard shadows are produced by point light sources and have sharp edges, while soft shadows are produced by area light sources and have blurred edges due to the penumbra effect."
+	},
+	{
+		"question": "Which light source types result in hard shadows?",
+		"answer": "Point light sources and directional light sources.",
+		"explanation": "Point light sources and directional light sources produce hard shadows because they emit light from a single point or direction, resulting in sharp shadow edges."
+	},
+	{
+		"question": "Explain the term penumbra and what happens in this region with respect to illumination!",
+		"answer": "The penumbra is the region where light is partially obstructed.",
+		"explanation": "The penumbra is the region where light is partially obstructed by an object, resulting in a gradient of illumination. In this region, the intensity of light decreases gradually from full illumination to complete shadow."
+	},
+	{
+		"question": "Argue why human perception motivates the use of gamma for sRGB color space and displays!",
+		"answer": "Gamma correction compensates for the non-linear response of human vision.",
+		"explanation": "Human perception of brightness is non-linear, and gamma correction is used to compensate for this. In the sRGB color space, gamma correction ensures that the displayed colors match human perception more closely."
+	},
+	{
+		"question": "What is the rendering equation and why is it difficult to solve?",
+		"answer": "The rendering equation describes light transport and is difficult to solve due to its complexity.",
+		"explanation": "The rendering equation is an integral equation that describes the transport of light in a scene. It is difficult to solve analytically due to its complexity and the need for numerical methods like Monte Carlo integration."
+	},
+	{
+		"question": "Name three simplifications of the rendering equation typically adopted in real-time rendering!",
+		"answer": "Local illumination, no global illumination, and simplified BRDFs.",
+		"explanation": "In real-time rendering, the rendering equation is often simplified by assuming local illumination, ignoring global illumination effects, and using simplified bidirectional reflectance distribution functions (BRDFs)."
+	},
+	{
+		"question": "How does intensity fall off for a point light source?",
+		"answer": "Intensity falls off with the square of the distance.",
+		"explanation": "For a point light source, the intensity of light falls off with the square of the distance from the source. This is described by the inverse square law."
+	},
+	{
+		"question": "Explain why it makes sense to split local lighting into ambient, diffuse and specular reflection!",
+		"answer": "To model different types of light-surface interactions.",
+		"explanation": "Splitting local lighting into ambient, diffuse, and specular components allows for more accurate modeling of light-surface interactions. Ambient light represents indirect lighting, diffuse reflection represents scattered light, and specular reflection represents highlights."
+	},
+	{
+		"question": "What does the ambient term in local illumination models compensate for?",
+		"answer": "The ambient term compensates for indirect lighting.",
+		"explanation": "The ambient term in local illumination models compensates for indirect lighting, which is light that has been reflected or scattered by other surfaces in the scene."
+	},
+	{
+		"question": "What is a Lambertian Radiator and how does it look from different viewing angles?",
+		"answer": "A Lambertian Radiator scatters light equally in all directions.",
+		"explanation": "A Lambertian Radiator is a surface that scatters light equally in all directions, resulting in a uniform appearance from different viewing angles. This is often used to model diffuse reflection."
+	},
+	{
+		"question": "The Lambertian implementation of diffuse local illumination is computed mainly from the cosine term. What does this imply for the bidirectional reflectance distribution function?",
+		"answer": "The BRDF is constant and independent of the viewing angle.",
+		"explanation": "The Lambertian implementation of diffuse local illumination is computed mainly from the cosine term, which implies that the bidirectional reflectance distribution function (BRDF) is constant and independent of the viewing angle."
+	},
+	{
+		"question": "Which parameter of the Phong and Blinn-Phong implementation of specular reflection defines the roughness of the surface? Where is the cosine term in these models?",
+		"answer": "The shininess parameter defines the roughness. The cosine term is in the specular component.",
+		"explanation": "In the Phong and Blinn-Phong models of specular reflection, the shininess parameter defines the roughness of the surface. The cosine term is part of the specular component, which describes the intensity of the highlight."
+	},
+	{
+		"question": "Given images of illuminated objects, estimate diffuse, specular and roughness parameters!",
+		"answer": "Estimate parameters based on the appearance of the object.",
+		"explanation": "To estimate diffuse, specular, and roughness parameters from images of illuminated objects, observe the overall brightness, the intensity of highlights, and the sharpness of reflections."
+	},
+	{
+		"question": "In which coordinate system is the illumination calculation typically performed?",
+		"answer": "Eye space or world space.",
+		"explanation": "The illumination calculation is typically performed in eye space or world space, depending on the rendering pipeline and the coordinate system used for the light and surface properties."
+	},
+	{
+		"question": "Explain which part of lighting calculation is done on CPU, in Vertex Shader and in Fragment Shader!",
+		"answer": "CPU: setup and parameters. Vertex Shader: transformations. Fragment Shader: final color calculation.",
+		"explanation": "In the lighting calculation, the CPU handles setup and parameter management, the vertex shader performs transformations and initial lighting calculations, and the fragment shader computes the final color with more detailed lighting effects."
+	},
+	{
+		"question": "How can you provide the following parameters to the Fragment Shader in eye coordinates: position, surface normal, direction to the viewer and direction to the light source?",
+		"answer": "Pass parameters using varyings and uniforms.",
+		"explanation": "To provide parameters like position, surface normal, direction to the viewer, and direction to the light source to the fragment shader in eye coordinates, use varyings to pass data from the vertex shader and uniforms to pass constant data."
+	},
+	{
+		"question": "Explain how you have to account for gamma correction in the shader pipeline to avoid unnatural darkening when the display performs gamma correction!",
+		"answer": "Apply gamma correction in the shader to linearize the color space.",
+		"explanation": "To account for gamma correction in the shader pipeline, apply gamma correction to the rendered colors to linearize the color space. This prevents unnatural darkening when the display performs gamma correction."
+	},
+	{
+		"question": "Name three applications of texture mapping in GPU-based real-time rendering!",
+		"answer": "Surface detailing, environment mapping, and bump mapping.",
+		"explanation": "Texture mapping is used in GPU-based real-time rendering for applications like surface detailing, where textures add detail to surfaces; environment mapping, where textures represent the surroundings; and bump mapping, where textures simulate surface relief."
+	},
+	{
+		"question": "Given an image of texture space including texel locations explain texture sampling close to the border of texture space for different wrapping strategies (repeat, clamp to edge/border)!",
+		"answer": "Repeat: tiles the texture. Clamp to edge: extends the edge. Clamp to border: uses a border color.",
+		"explanation": "For texture sampling close to the border of texture space, different wrapping strategies include repeat, which tiles the texture; clamp to edge, which extends the edge pixels; and clamp to border, which uses a specified border color."
+	},
+	{
+		"question": "How do you create a texture object in OpenGL and how can you access it in a GLSL shader?",
+		"answer": "Use glGenTextures and glTexImage2D to create a texture object. Access it in a shader using sampler variables.",
+		"explanation": "In OpenGL, a texture object is created using functions like glGenTextures and glTexImage2D. In a GLSL shader, the texture is accessed using sampler variables, which are used to sample the texture data."
+	},
+	{
+		"question": "Based on the pixel footprint in texture space argue when magnification and when minification filtering is used!",
+		"answer": "Magnification: when the pixel footprint is smaller than a texel. Minification: when the pixel footprint is larger than a texel.",
+		"explanation": "Magnification filtering is used when the pixel footprint in texture space is smaller than a texel, resulting in a closer view. Minification filtering is used when the pixel footprint is larger than a texel, resulting in a more distant view."
+	},
+	{
+		"question": "Explain the term mipmap and how it is used for minification filtering!",
+		"answer": "A mipmap is a series of pre-filtered texture images at different resolutions.",
+		"explanation": "A mipmap is a series of pre-filtered texture images at different resolutions, used for minification filtering to improve texture quality when the texture is viewed from a distance."
+	},
+	{
+		"question": "How are normal vectors encoded in a normal map?",
+		"answer": "Normal vectors are encoded as RGB values.",
+		"explanation": "Normal vectors are encoded in a normal map as RGB values, where each component of the normal vector (x, y, z) is mapped to the corresponding color channel (R, G, B)."
+	},
+	{
+		"question": "The tangent vectors at a surface point form the Jacobian matrix and are needed to transform tangent space normals from a normal map to eye space. Explain how to compute them from the surface position and texture coordinates in the Fragment Shader!",
+		"answer": "Compute the tangent vectors using the partial derivatives of the surface position and texture coordinates.",
+		"explanation": "To compute the tangent vectors at a surface point, use the partial derivatives of the surface position and texture coordinates. These tangent vectors form the Jacobian matrix, which is used to transform tangent space normals from a normal map to eye space."
+	},
+	{
+		"question": "In Bump-Mapping normal deviations are computed from a gray valued displacement map. Explain advantages and disadvantages compared to normal mapping!",
+		"answer": "Advantages: more accurate. Disadvantages: more computationally expensive.",
+		"explanation": "Bump mapping computes normal deviations from a gray-valued displacement map, providing more accurate surface detail but at the cost of higher computational expense compared to normal mapping."
+	},
+	{
+		"question": "Explain the principle of parallax occlusion mapping and discuss sources of artefacts!",
+		"answer": "Parallax occlusion mapping uses depth information to create the illusion of depth.",
+		"explanation": "Parallax occlusion mapping uses depth information to create the illusion of depth by adjusting the texture coordinates based on the viewer's position. Sources of artifacts include incorrect depth information and sampling errors."
+	},
+	{
+		"question": "Can you imagine an extension to parallax occlusion mapping using the geometry shader that supports changes in the silhouette of the model?",
+		"answer": "Use the geometry shader to modify the geometry based on depth information.",
+		"explanation": "An extension to parallax occlusion mapping using the geometry shader could involve modifying the geometry based on depth information to support changes in the silhouette of the model."
+	},
+	{
+		"question": "Tessellation can be incorporated in the rendering pipeline between primitive assembly and Geometry Shader. Explain the function of the Tesselation Control and the Tesselation Evaluation Shaders at the example of displacement mapping!",
+		"answer": "Tessellation Control Shader: determines the level of tessellation. Tessellation Evaluation Shader: computes the final vertex positions.",
+		"explanation": "In the rendering pipeline, the Tessellation Control Shader determines the level of tessellation based on the input data, and the Tessellation Evaluation Shader computes the final vertex positions using displacement mapping."
+	},
+	{
+		"question": "Motivate the need for acceleration data structures by the example of occlusion culling, view frustum culling, raytracing, reconstruction of functions, classification, distance calculation or collision detection!",
+		"answer": "Acceleration data structures improve performance by reducing the number of operations.",
+		"explanation": "Acceleration data structures are needed to improve performance in tasks like occlusion culling, view frustum culling, raytracing, and collision detection by reducing the number of operations required to perform these tasks."
+	},
+	{
+		"question": "Compare acceleration data structures that work according to the principle of space division with bounding volume hierarchies and give examples!",
+		"answer": "Space division: divides space into regions. Bounding volume hierarchies: hierarchically bounds objects.",
+		"explanation": "Acceleration data structures that work according to the principle of space division, such as grids and kd-trees, divide space into regions. Bounding volume hierarchies, such as BVH trees, hierarchically bound objects to improve performance."
+	},
+	{
+		"question": "Explain how to use the Separating Axis Theorem to implement an intersection test on two convex objects.",
+		"answer": "Check for separation along potential separating axes.",
+		"explanation": "The Separating Axis Theorem is used to implement an intersection test on two convex objects by checking for separation along potential separating axes. If a separating axis is found, the objects do not intersect."
+	},
+	{
+		"question": "Explain how to determine the necessary separating axes in the case of intersection tests between two elements of {triangle / square in 3D, tetrahedron, cube, prism, ...} and indicate their number.",
+		"answer": "Determine axes based on the geometry of the objects.",
+		"explanation": "The necessary separating axes for intersection tests between convex objects are determined based on the geometry of the objects. For example, for a triangle and a square in 3D, the number of separating axes is determined by the edges and faces of the objects."
+	},
+	{
+		"question": "For what reasons can the number of necessary separating axes be reduced?",
+		"answer": "Symmetry and parallelism can reduce the number of axes.",
+		"explanation": "The number of necessary separating axes can be reduced due to symmetry and parallelism in the objects' geometry, which can simplify the intersection test."
+	},
+	{
+		"question": "Given a picture of different representations of a grid data structure, discuss advantages and disadvantages regarding dynamic updates, coherent memory access and memory requirements!",
+		"answer": "Grids: efficient for coherent memory access but less efficient for dynamic updates.",
+		"explanation": "Grid data structures are efficient for coherent memory access and have lower memory requirements but are less efficient for dynamic updates compared to other data structures like trees or hierarchies."
+	},
+	{
+		"question": "How can one represent a sparse grid in a memory-efficient manner? How does this affect the creation and traversal process?",
+		"answer": "Use a sparse representation like a hash grid.",
+		"explanation": "A sparse grid can be represented in a memory-efficient manner using a hash grid or similar structure. This affects the creation and traversal process by requiring more complex data management but reduces memory usage."
+	},
+	{
+		"question": "Given the declaration of a data structure for a bounding volume hierarchy. Calculate the memory needed when constructing the bounding volume hierarchy over n objects so that exactly one object per leaf node is stored.",
+		"answer": "Memory needed is O(n) for n objects.",
+		"explanation": "When constructing a bounding volume hierarchy over n objects with exactly one object per leaf node, the memory needed is O(n), as each object is stored in a leaf node and the hierarchy is built over these nodes."
+	},
+	{
+		"question": "Explain the top-down approach to build a bounding volume hierarchy!",
+		"answer": "Recursively split the set of objects into subsets.",
+		"explanation": "The top-down approach to building a bounding volume hierarchy involves recursively splitting the set of objects into subsets and building bounding volumes for each subset until each subset contains a single object."
+	},
+	{
+		"question": "What changes in the top-down approach when building a hierarchical spatial subdivision acceleration data structure?",
+		"answer": "The splitting strategy changes to account for spatial subdivision.",
+		"explanation": "When building a hierarchical spatial subdivision acceleration data structure, the splitting strategy changes to account for spatial subdivision, which involves dividing space into regions rather than just bounding objects."
+	},
+	{
+		"question": "Explain an example of how a BSP is built on the auto-partition principle! How is the splitting plane chosen?",
+		"answer": "The splitting plane is chosen to balance the number of objects on each side.",
+		"explanation": "A BSP (Binary Space Partitioning) tree is built on the auto-partition principle by choosing a splitting plane that balances the number of objects on each side. This ensures that the tree is balanced and efficient for traversal."
+	},
+	{
+		"question": "How can you represent a solid with a BSP tree?",
+		"answer": "Use the BSP tree to represent the solid's geometry.",
+		"explanation": "A solid can be represented with a BSP tree by using the tree to describe the geometry of the solid, with each node representing a splitting plane and the leaves representing the solid's surfaces."
+	},
+	{
+		"question": "Describe a recursive depth sorting algorithm for a given viewpoint from front to back! Execute the recursive algorithm on a sample scene with given KD or BSP tree!",
+		"answer": "Recursively traverse the tree and sort objects based on their depth.",
+		"explanation": "A recursive depth sorting algorithm for a given viewpoint from front to back involves recursively traversing the KD or BSP tree and sorting objects based on their depth relative to the viewpoint."
+	},
+	{
+		"question": "How to efficiently manage the result of a knn request?",
+		"answer": "Use a priority queue to manage the nearest neighbors.",
+		"explanation": "To efficiently manage the result of a knn (k-nearest neighbors) request, use a priority queue to keep track of the nearest neighbors as the tree is traversed."
+	},
+	{
+		"question": "Given a pseudo code of the knn search, explain its operation on the basis of a sketch of the acceleration hierarchy!",
+		"answer": "Traverse the hierarchy and maintain a list of the nearest neighbors.",
+		"explanation": "The knn search algorithm traverses the acceleration hierarchy, maintaining a list of the nearest neighbors based on their distance to the query point. The pseudo code describes this process in detail."
+	},
+	{
+		"question": "How to extend the pseudo code to efficiently calculate a point to surface distance?",
+		"answer": "Incorporate distance calculations into the traversal.",
+		"explanation": "To extend the pseudo code to efficiently calculate a point to surface distance, incorporate distance calculations into the traversal of the acceleration hierarchy, updating the nearest neighbors as the tree is traversed."
+	},
+	{
+		"question": "How do you implement a hierarchical collision test on two bounding volume hierarchies? What degrees of freedom do you have in the implementation and what is a good heuristic to set these degrees of freedom?",
+		"answer": "Recursively test for collisions between the hierarchies.",
+		"explanation": "A hierarchical collision test on two bounding volume hierarchies is implemented by recursively testing for collisions between the hierarchies. Degrees of freedom include the order of traversal and the stopping criteria. A good heuristic is to stop when a collision is detected or when the bounding volumes are sufficiently small."
+	},
+	{
+		"question": "How do you implement CSG operations using a BSP representation of solids? Explain this for the set difference more exactly!",
+		"answer": "Use the BSP tree to perform boolean operations on the solids.",
+		"explanation": "CSG (Constructive Solid Geometry) operations can be implemented using a BSP representation of solids by performing boolean operations on the BSP trees. For the set difference, the operation involves subtracting one solid from another by traversing the trees and performing the appropriate operations."
+	}
+]

@@ -11,7 +11,7 @@ height = 3.0
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_symyc"]
 
-[node name="Player" type="CharacterBody3D" unique_id=947552428]
+[node name="Player" type="CharacterBody3D" unique_id=947552428 groups=["Player"]]
 script = ExtResource("1_symyc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1125416171]

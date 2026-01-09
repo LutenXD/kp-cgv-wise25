@@ -1,3 +1,4 @@
+class_name Mimic
 extends Node3D
 
 
@@ -9,7 +10,7 @@ var tts_model: String = "Kokoro-82M"
 
 @export_group("TTS Voice", "voice_")
 ## CRITICAL: must match the filename in res://addons/gdpiper/piper-voices
-@export_enum("de_DE-thorsten_emotional-medium", "en_US-ljspeech-high", "fransop_finetune", "frm01-1000", "hans", "jacob", "frederik") 
+@export_enum("de_DE-thorsten_emotional-medium", "en_US-ljspeech-high", "fransop_finetune", "frm01-1000", "hans", "jacob", "frederik", "frans", "jans", "frob", "fransob") 
 var voice_piper: String = "fransop_finetune"
 
 @export_enum("af_heart", "am_echo", "af_river", "am_santa", "bm_fable") 
@@ -28,10 +29,9 @@ var hud: HUD
 var speaking: bool = false
 
 var thinking: bool = false
-var wiggle_speed: float = 1.0
-var wiggle_duration: float = 0.2
+var wiggle_duration: float = 0.1
 var wiggle_timer: float = 0.0
-var wiggle_angle: float = PI / 32.0
+var wiggle_angle: float = PI / 64.0
 
 
 @onready var stt_request: STTRequest = %STTRequest
@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 		
 		#prints(" RMS:", rms)
 		
-		# wow magic numbers
+		# wow magic numbers (exponential smoothing mit alpha = 1/4)
 		$StaticBody3D/MeshInstance3D.position.y = 0.0 + rms * (4.0/16.0 + prev_rms * 12.0/16.0) * 2.0
 		prev_rms = rms
 	

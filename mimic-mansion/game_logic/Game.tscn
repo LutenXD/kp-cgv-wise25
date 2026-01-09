@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://74y3u1sq1kck"]
+
+[ext_resource type="Script" uid="uid://dd5dcr0sphys6" path="res://game_logic/game_manager.gd" id="1_i57b4"]
+[ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="2_12xgp"]
+[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="3_11dh7"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/speaking_npc.tscn" id="4_12xgp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yt5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dsqel"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yt5")
+
+[sub_resource type="Environment" id="Environment_hcq1q"]
+background_mode = 2
+sky = SubResource("Sky_dsqel")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dvuwv"]
+
+[sub_resource type="Gradient" id="Gradient_amuej"]
+colors = PackedColorArray(0, 0, 0, 1, 0.1882353, 0.5529412, 0.23921569, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dsqel"]
+noise_type = 3
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tp1t3"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_dsqel")
+color_ramp = SubResource("Gradient_amuej")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w72v2"]
+albedo_texture = SubResource("NoiseTexture2D_tp1t3")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_je483"]
+material = SubResource("StandardMaterial3D_w72v2")
+size = Vector2(100, 100)
+
+[node name="Game" type="Node3D" unique_id=1598571889]
+script = ExtResource("1_i57b4")
+mimic_pre_instructions = "You are an Object in a video game. You give knowledge to the player about a topic in Computer Graphics and help the player answering a Question. Don't give away the answer straight away and explain a bit about the topic first. Be brief and don't answer in more than 3 sentences."
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=120330231]
+environment = SubResource("Environment_hcq1q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=332188963]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="HUD" parent="." unique_id=364530958 node_paths=PackedStringArray("player") instance=ExtResource("2_12xgp")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=947552428 instance=ExtResource("3_11dh7")]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1875859571]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=986043041]
+shape = SubResource("WorldBoundaryShape3D_dvuwv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1732459535]
+mesh = SubResource("PlaneMesh_je483")
+
+[node name="MimicContainer" type="Node3D" parent="." unique_id=1896974085]
+unique_name_in_owner = true
+
+[node name="SpeakinNPC" parent="MimicContainer" unique_id=766133172 instance=ExtResource("4_12xgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3492725, 0, -5.2456717)
+tts_model = "piper"
+voice_piper = "fransob"
+
+[node name="SpeakinNPC2" parent="MimicContainer" unique_id=1810017922 instance=ExtResource("4_12xgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2849343, 0, -5.2456717)
+tts_model = "piper"
+voice_piper = "jans"
+
+[node name="SpeakinNPC3" parent="MimicContainer" unique_id=1204609788 instance=ExtResource("4_12xgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.135106, 0, -5.2456717)
+tts_model = "piper"
+voice_piper = "frans"
+
+[node name="SpeakinNPC4" parent="MimicContainer" unique_id=1283876771 instance=ExtResource("4_12xgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.105846, 0, -5.2456717)
+tts_model = "piper"
+voice_piper = "frob"

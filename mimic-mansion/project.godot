@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
+buses/default_bus_layout="uid://c3qee0n51ctk0"
 driver/enable_input=true
 
 [autoload]
@@ -44,6 +45,7 @@ project/assembly_name="Mimic-Mansion"
 
 folder_colors={
 "res://entities/": "green",
+"res://game_logic/": "pink",
 "res://level/": "green",
 "res://ui/": "green",
 "res://utils/": "green"
