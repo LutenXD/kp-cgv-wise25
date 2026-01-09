@@ -23,7 +23,7 @@ size = Vector3(10, 4, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h54rr"]
 size = Vector3(10, 4, 0.2)
 
-[node name="Room" type="Node3D"]
+[node name="Room2" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -52,6 +52,7 @@ shape = SubResource("BoxShape3D_h54rr")
 
 [node name="WallSouth" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth"]
 mesh = SubResource("BoxMesh_cu6br")
