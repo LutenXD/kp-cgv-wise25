@@ -11,21 +11,62 @@ var selected_items: Array = []
 var current_sphere = null
 var all_lore_items: Array = []
 var spawned_mimics: Array = []
+var spawned_rooms: Array = []
 
 const RAY_LENGTH = 100.0
+const ROOM_SIZE = 10.0  # Standard room size for positioning
+const HALLWAY_COUNT = 3  # Number of hallway instances to create
 
-# Define mimic spawn locations
+# Define unique room scene paths (appear only once)
+const UNIQUE_ROOMS = [
+	"res://assets/rooms/art_gallery.tscn",
+	"res://assets/rooms/attic.tscn", 
+	"res://assets/rooms/basement_dungeon.tscn",
+	"res://assets/rooms/bathroom.tscn",
+	"res://assets/rooms/chapel_crypt.tscn",
+	"res://assets/rooms/children_nursery.tscn",
+	"res://assets/rooms/conservatory_greenhouse.tscn",
+	"res://assets/rooms/courtyard_garden.tscn",
+	"res://assets/rooms/dining_room.tscn",
+	"res://assets/rooms/grand_foyer.tscn",
+	"res://assets/rooms/grand_hall_ballroom.tscn",
+	"res://assets/rooms/kitchen_pantry.tscn",
+	"res://assets/rooms/laundry_room.tscn",
+	"res://assets/rooms/library.tscn",
+	"res://assets/rooms/master_bedroom.tscn",
+	"res://assets/rooms/music_room.tscn",
+	"res://assets/rooms/secret_study.tscn",
+	"res://assets/rooms/servants_quarters.tscn",
+	"res://assets/rooms/wine_cellar.tscn"
+]
+
+# Define hallway scene paths (can appear multiple times)
+const HALLWAY_ROOMS = [
+	"res://assets/rooms/hallway_junction_1.tscn",
+	"res://assets/rooms/hallway_junction_2.tscn",
+	"res://assets/rooms/hallway_straight.tscn"
+]
+
+# Define mimic spawn locations (relative to each room center)
 const MIMIC_SPAWN_POSITIONS = [
-	Vector3(5, 1, 0),
-	Vector3(-5, 1, 0),
-	Vector3(0, 1, 5),
-	Vector3(0, 1, -5),
-	Vector3(3, 1, 3),
-	Vector3(-3, 1, -3),
+	Vector3(3, 1, 0),
+	Vector3(-3, 1, 0),
+	Vector3(0, 1, 3),
+	Vector3(0, 1, -3),
+	Vector3(2, 1, 2),
+	Vector3(-2, 1, -2),
 ]
 
 func _ready():
 	info_panel.hide()
+	
+	# Remove the default room from the scene if it exists
+	var default_room = get_node_or_null("Room")
+	if default_room:
+		default_room.queue_free()
+	
+	# Spawn rooms in a grid layout
+	spawn_rooms()
 	
 	# Check if we're continuing a game
 	var settings = get_game_settings()
@@ -39,6 +80,66 @@ func get_game_settings():
 		return get_node("/root/GameSettings")
 	return null
 
+func spawn_rooms():
+	"""Spawn all rooms in a grid layout next to each other"""
+	print("Spawning rooms in grid layout...")
+	
+	var rooms_parent = Node3D.new()
+	rooms_parent.name = "Rooms"
+	add_child(rooms_parent)
+	
+	# Combine unique rooms and multiple hallway instances
+	var all_room_paths = UNIQUE_ROOMS.duplicate()
+	
+	# Add multiple instances of hallways
+	for i in range(HALLWAY_COUNT):
+		for hallway_path in HALLWAY_ROOMS:
+			all_room_paths.append(hallway_path)
+	
+	# Calculate grid dimensions (try to make roughly square)
+	var total_rooms = all_room_paths.size()
+	var grid_size = ceil(sqrt(total_rooms))
+	
+	print("Total rooms to spawn: ", total_rooms)
+	print("Grid size: ", grid_size, "x", grid_size)
+	
+	# Spawn rooms in grid
+	var room_index = 0
+	for y in range(grid_size):
+		for x in range(grid_size):
+			if room_index >= all_room_paths.size():
+				break
+			
+			var room_path = all_room_paths[room_index]
+			var room_scene = load(room_path)
+			
+			if room_scene:
+				var room_instance = room_scene.instantiate()
+				
+				# Calculate world position (center rooms around origin)
+				var offset_x = (x - grid_size / 2.0) * ROOM_SIZE
+				var offset_z = (y - grid_size / 2.0) * ROOM_SIZE
+				room_instance.global_position = Vector3(offset_x, 0, offset_z)
+				
+				# Give the room a unique name
+				room_instance.name = "Room_" + str(room_index) + "_" + room_path.get_file().get_basename()
+				
+				rooms_parent.add_child(room_instance)
+				spawned_rooms.append(room_instance)
+				
+				print("Spawned room: ", room_instance.name, " at position: ", room_instance.global_position)
+			else:
+				print("Failed to load room: ", room_path)
+			
+			room_index += 1
+	
+	print("Total rooms spawned: ", spawned_rooms.size())
+	
+	# Position player in the center room
+	if player:
+		player.global_position = Vector3(0, 1, 0)
+		print("Player positioned at center: ", player.global_position)
+
 func spawn_mimics(sphere_data: Dictionary):
 	# Create InteractiveSpheres parent node if it doesn't exist
 	var spheres_parent = get_node_or_null("InteractiveSpheres")
@@ -50,14 +151,27 @@ func spawn_mimics(sphere_data: Dictionary):
 	# Get mimic count from settings
 	var settings = get_game_settings()
 	var count = settings.get_mimic_count() if settings else 3
-	count = min(count, MIMIC_SPAWN_POSITIONS.size())  # Don't exceed available positions
+	
+	# Calculate available positions across all rooms
+	var available_positions = []
+	for room in spawned_rooms:
+		var room_center = room.global_position
+		for local_pos in MIMIC_SPAWN_POSITIONS:
+			var world_pos = room_center + local_pos
+			available_positions.append(world_pos)
+	
+	# Don't exceed available positions
+	count = min(count, available_positions.size())
 	
 	# Clear existing mimics
 	spawned_mimics.clear()
 	
-	# Spawn mimics at the first N positions
+	# Randomly select positions
+	available_positions.shuffle()
+	
+	# Spawn mimics at selected positions
 	for i in range(count):
-		var position = MIMIC_SPAWN_POSITIONS[i]
+		var position = available_positions[i]
 		var mimic_id = "mimic" + str(i + 1)
 		var mimic = create_mimic("Mimic_" + str(i + 1), mimic_id, position)
 		

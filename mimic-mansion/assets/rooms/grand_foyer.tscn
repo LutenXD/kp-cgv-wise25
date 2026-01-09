@@ -43,6 +43,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
 
 [node name="WallNorth" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth"]
 mesh = SubResource("BoxMesh_lcnj0")
@@ -61,6 +62,7 @@ shape = SubResource("BoxShape3D_4bek3")
 
 [node name="WallEast" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast"]
 mesh = SubResource("BoxMesh_lcnj0")
@@ -70,6 +72,7 @@ shape = SubResource("BoxShape3D_4bek3")
 
 [node name="WallWest" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest"]
 mesh = SubResource("BoxMesh_lcnj0")
