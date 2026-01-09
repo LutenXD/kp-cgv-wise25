@@ -3,6 +3,7 @@ extends Node3D
 @onready var info_panel = $UI/InfoPanel
 @onready var info_title = $UI/InfoPanel/MarginContainer/VBoxContainer/Title
 @onready var info_text = $UI/InfoPanel/MarginContainer/VBoxContainer/ScrollContainer/InfoText
+@onready var room_display = $UI/RoomDisplay
 @onready var player = $player
 @onready var camera = $player/Camera3D
 
@@ -12,6 +13,7 @@ var current_sphere = null
 var all_lore_items: Array = []
 var spawned_mimics: Array = []
 var spawned_rooms: Array = []
+var current_room_name: String = "Unknown Room"
 
 const RAY_LENGTH = 100.0
 const ROOM_SIZE = 10.0  # Standard room size for positioning
@@ -59,6 +61,7 @@ const MIMIC_SPAWN_POSITIONS = [
 
 func _ready():
 	info_panel.hide()
+	room_display.text = current_room_name
 	
 	# Remove the default room from the scene if it exists
 	var default_room = get_node_or_null("Room")
@@ -139,6 +142,63 @@ func spawn_rooms():
 	if player:
 		player.global_position = Vector3(0, 1, 0)
 		print("Player positioned at center: ", player.global_position)
+
+func _process(_delta):
+	# Update current room display
+	update_current_room()
+
+func update_current_room():
+	"""Detect which room the player is currently in and update the display"""
+	if not player:
+		return
+	
+	var player_pos = player.global_position
+	var closest_room = null
+	var closest_distance = INF
+	
+	# Find the closest room to the player
+	for room in spawned_rooms:
+		var room_pos = room.global_position
+		var distance = player_pos.distance_to(room_pos)
+		
+		# Check if player is within room bounds (assuming 10x10 room size)
+		var x_diff = abs(player_pos.x - room_pos.x)
+		var z_diff = abs(player_pos.z - room_pos.z)
+		
+		if x_diff <= ROOM_SIZE/2 and z_diff <= ROOM_SIZE/2 and distance < closest_distance:
+			closest_distance = distance
+			closest_room = room
+	
+	# Update room display if we found a room and it's different from current
+	if closest_room:
+		var new_room_name = format_room_name(closest_room.name)
+		if new_room_name != current_room_name:
+			current_room_name = new_room_name
+			room_display.text = current_room_name
+			print("Entered room: ", current_room_name)
+	else:
+		# Player is between rooms
+		if current_room_name != "Between Rooms":
+			current_room_name = "Between Rooms"
+			room_display.text = current_room_name
+
+func format_room_name(room_node_name: String) -> String:
+	"""Convert room node name to a readable format"""
+	# Remove "Room_X_" prefix and convert underscores to spaces
+	var parts = room_node_name.split("_")
+	if parts.size() >= 3:
+		# Skip "Room" and number, join the rest
+		var name_parts = parts.slice(2)
+		var formatted = ""
+		for i in range(name_parts.size()):
+			if i > 0:
+				formatted += " "
+			# Capitalize first letter of each word
+			var word = name_parts[i]
+			if word.length() > 0:
+				formatted += word[0].to_upper() + word.substr(1)
+		return formatted
+	return room_node_name
 
 func spawn_mimics(sphere_data: Dictionary):
 	# Create InteractiveSpheres parent node if it doesn't exist
