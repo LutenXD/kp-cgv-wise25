@@ -59,6 +59,7 @@ mesh = SubResource("BoxMesh_bmlj5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth"]
 shape = SubResource("BoxShape3D_al31o")
+disabled = true
 
 [node name="WallEast" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)

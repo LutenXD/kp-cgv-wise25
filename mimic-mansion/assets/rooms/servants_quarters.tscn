@@ -6,3 +6,6 @@
 
 [node name="WallSouth" parent="Walls" index="1"]
 visible = false
+
+[node name="CollisionShape3D" parent="Walls/WallSouth" index="1"]
+disabled = true

@@ -7,11 +7,23 @@
 [node name="WallNorth" parent="Walls" index="0"]
 visible = false
 
+[node name="CollisionShape3D" parent="Walls/WallNorth" index="1"]
+disabled = true
+
 [node name="WallSouth" parent="Walls" index="1"]
 visible = false
+
+[node name="CollisionShape3D" parent="Walls/WallSouth" index="1"]
+disabled = true
 
 [node name="WallEast" parent="Walls" index="2"]
 visible = false
 
+[node name="CollisionShape3D" parent="Walls/WallEast" index="1"]
+disabled = true
+
 [node name="WallWest" parent="Walls" index="3"]
 visible = false
+
+[node name="CollisionShape3D" parent="Walls/WallWest" index="1"]
+disabled = true
