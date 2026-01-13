@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://n3v0gtqf7m0w"]
 
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="1_dsqel"]
-[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/speaking_npc.tscn" id="2_s65ib"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="2_s65ib"]
 [ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="3_w72v2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_amuej"]

@@ -3,6 +3,7 @@ extends HTTPRequest
 
 
 signal text_answer_received(text: String)
+signal correctness_received(is_correct: bool)
 
 
 const CHAT_URL: String = "https://llm.scads.ai/v1/chat/completions"
@@ -14,6 +15,8 @@ const API_KEY: String = "sk-lJKZ3tHOtQ7KgZP5ChABsw"
 
 
 var conversation: Array[Dictionary] = []
+var is_requesting: bool = false
+var pending_requests: Array[String]
 
 
 func _ready() -> void:
@@ -21,6 +24,13 @@ func _ready() -> void:
 
 
 func request_chat(user_text: String) -> void:
+	if is_requesting:
+		print("\nbuffering chat request\n")
+		pending_requests.append(user_text)
+		return
+	
+	is_requesting = true
+	
 	conversation.append({ "role": "user", "content": user_text })
 	
 	var headers: Array[String] = [
@@ -33,7 +43,7 @@ func request_chat(user_text: String) -> void:
 		"messages": [
 			{
 				"role": "system",
-				"content": system_instructions
+				"content": "Always respond with JSON: { \"content\": string, \"is_correct\": boolean }. " + system_instructions
 			}
 		] + conversation
 	}
@@ -61,14 +71,36 @@ func _on_request_completed(result: int, response_code: int, _headers: PackedStri
 		push_error("Invalid JSON: %s" % text)
 		return
 	
-	var choices = data.get("choices", [])
-	if choices.size() == 0:
+	var choices: Array = data.get("choices", [])
+	if choices.is_empty():
 		push_error("No choices in response: %s" % text)
 		return
 	
 	var message_dict: Dictionary = choices[0].get("message", {})
-	var ai_message: String = str(message_dict.get("content", ""))
+	var content: String = str(message_dict.get("content", ""))
 	
-	conversation.append({"role": "assistant", "content": ai_message})
+	var parsed = JSON.parse_string(content)
+	var ai_text := ""
+	var is_correct = null
+
+	if typeof(parsed) == TYPE_DICTIONARY:
+		ai_text = str(parsed.get("content", ""))
+		if parsed.has("is_correct"):
+			is_correct = bool(parsed["is_correct"])
+	else:
+		ai_text = str(content)
+
+	# Store ONLY text in conversation
+	conversation.append({
+		"role": "assistant",
+		"content": ai_text
+	})
 	
-	text_answer_received.emit(ai_message)
+	text_answer_received.emit(ai_text)
+	
+	if is_correct != null:
+		correctness_received.emit(is_correct)
+	
+	is_requesting = false
+	if pending_requests.size() > 0:
+		request_chat(pending_requests.pop_front())

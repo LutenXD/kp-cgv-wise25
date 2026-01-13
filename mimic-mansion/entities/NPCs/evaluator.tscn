@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://uqb5rigsgygs"]
+
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="1_rf24v"]
+[ext_resource type="Script" uid="uid://qpqfpxtbc30q" path="res://entities/NPCs/evaluator.gd" id="2_cefsd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77xn7"]
+albedo_color = Color(0.80784315, 0.65882355, 0.22352941, 1)
+metallic = 1.0
+metallic_specular = 0.52
+roughness = 0.48
+
+[sub_resource type="BoxMesh" id="BoxMesh_irnih"]
+material = SubResource("StandardMaterial3D_77xn7")
+
+[node name="Evaluator" unique_id=766133172 instance=ExtResource("1_rf24v")]
+script = ExtResource("2_cefsd")
+
+[node name="MeshInstance3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(616544448) index="1" unique_id=543671654]
+mesh = SubResource("BoxMesh_irnih")
+
+[node name="ScoreLabel" type="Label3D" parent="." index="7" unique_id=1798176545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6169775, 0)
+billboard = 2
+modulate = Color(1, 1, 0, 1)
