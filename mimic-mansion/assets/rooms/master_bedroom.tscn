@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://n1u6ao2rdp8ip"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
-albedo_color = Color(0.6, 0.5, 0.4, 1)
+albedo_color = Color(0.55, 0.6, 0.75, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 material = SubResource("StandardMaterial3D_walls")
@@ -11,7 +11,7 @@ size = Vector3(10, 4, 0.2)
 size = Vector3(10, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
-albedo_color = Color(0.4, 0.3, 0.2, 1)
+albedo_color = Color(0.52, 0.42, 0.35, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_floor"]
 material = SubResource("StandardMaterial3D_floor")
@@ -21,7 +21,7 @@ size = Vector3(10, 0.2, 10)
 size = Vector3(10, 0.2, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
-albedo_color = Color(0.7, 0.7, 0.65, 1)
+albedo_color = Color(0.85, 0.82, 0.75, 1)
 
 [node name="Room" type="Node3D"]
 

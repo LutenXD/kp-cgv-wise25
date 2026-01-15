@@ -28,7 +28,7 @@ func _ready():
 	room_layout_manager = RoomLayoutManager.new()
 	add_child(room_layout_manager)
 	
-	# Wait a frame to ensure everything is ready
+	# Wait a frame to ensure the room layout manager is ready
 	await get_tree().process_frame
 	
 	# Spawn the starting room
@@ -37,7 +37,7 @@ func _ready():
 	# Position player in the room
 	if player:
 		player.global_position = Vector3(0, 1, 0)
-		print("Player positioned at: ", player.global_position)
+		#print("Player positioned at: ", player.global_position)
 	
 	# Check if we're continuing a game
 	var settings = get_game_settings()
@@ -104,13 +104,13 @@ func spawn_mimics(sphere_data: Dictionary):
 		# Assign lore items if available
 		if sphere_data.has(mimic_id):
 			mimic.set_lore_items(sphere_data[mimic_id])
-			print("Mimic ", i + 1, " assigned ", sphere_data[mimic_id].size(), " lore items")
+			#print("Mimic ", i + 1, " assigned ", sphere_data[mimic_id].size(), " lore items")
 		
 		spheres_parent.add_child(mimic)
 		spawned_mimics.append(mimic)
-		print("Spawned mimic at position: ", position)
+		#print("Spawned mimic at position: ", position)
 	
-	print("Total mimics spawned: ", count)
+	#print("Total mimics spawned: ", count)
 	
 	# Generate statements about other mimics and add them to each mimic
 	generate_mimic_statements()
@@ -354,7 +354,7 @@ func initialize_lore_system():
 	if settings:
 		settings.save_game_state(player.global_position, selected_lore, sphere_data, [])
 	
-	print("Lore system initialized successfully")
+	#print("Lore system initialized successfully")
 
 func _input(event):
 	if event.is_action_pressed("ui_select") or (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
@@ -387,9 +387,9 @@ func show_info(info: Dictionary):
 	info_title.text = info.name
 	info_text.text = info.text
 	info_panel.show()
-	print("\nViewing sphere: " + info.name)
-	print("Press 1, 2, or 3 to select items from this sphere")
-	print("Press M to assign selected items as mimics\n")
+	#print("\nViewing sphere: " + info.name)
+	#print("Press 1, 2, or 3 to select items from this sphere")
+	#print("Press M to assign selected items as mimics\n")
 
 func _unhandled_input(event):
 	# Press ESC to return to main menu
@@ -440,7 +440,7 @@ func select_item(index: int):
 			var desc2 = item.get("description", "No description")
 			print("Selected item: [" + item.get("category", "Unknown") + "] " + desc2.substr(0, 50) + "...")
 		
-		print("Total selected: " + str(selected_items.size()))
+		#print("Total selected: " + str(selected_items.size()))
 
 func assign_mimics():
 	if selected_items.is_empty():
@@ -455,9 +455,9 @@ func assign_mimics():
 		var desc = desc_full.substr(0, 50) + "..."
 		
 		if is_true:
-			print("✓ CORRECT! [" + category + "] - This is TRUE (not a mimic)")
+			print("CORRECT! [" + category + "] - This is TRUE (not a mimic)")
 		else:
-			print("✗ MIMIC FOUND! [" + category + "] - This is FALSE")
+			print("MIMIC FOUND! [" + category + "] - This is FALSE")
 			print("  Description: " + desc)
 	
 	print("Total items marked: " + str(selected_items.size()))
