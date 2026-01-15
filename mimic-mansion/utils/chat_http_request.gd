@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func request_chat(user_text: String) -> void:
 	if is_requesting:
-		print("\nbuffering chat request\n")
+		#print("\nbuffering chat request\n")
 		pending_requests.append(user_text)
 		return
 	

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coktg6g18js6k"]
+
+[ext_resource type="Texture2D" uid="uid://cxo2f77tkxohu" path="res://assets/textures/materials/soundabsorbing-wall/albedo.png" id="1_svjln"]
+[ext_resource type="Texture2D" uid="uid://bgnmkqafot7kw" path="res://assets/textures/materials/soundabsorbing-wall/height.png" id="2_fyw7k"]
+[ext_resource type="Texture2D" uid="uid://bwkbh6arfmo7l" path="res://assets/textures/materials/soundabsorbing-wall/metallic.png" id="3_54dmv"]
+[ext_resource type="Texture2D" uid="uid://74qdldhme48g" path="res://assets/textures/materials/soundabsorbing-wall/normal.png" id="4_603mr"]
+[ext_resource type="Texture2D" uid="uid://dxdi33athm5dd" path="res://assets/textures/materials/soundabsorbing-wall/roughness.png" id="5_mssb4"]
+
+[resource]
+albedo_texture = ExtResource("1_svjln")
+metallic_texture = ExtResource("3_54dmv")
+roughness_texture = ExtResource("5_mssb4")
+normal_enabled = true
+normal_texture = ExtResource("4_603mr")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_fyw7k")
+uv1_scale = Vector3(10, 10, 10)

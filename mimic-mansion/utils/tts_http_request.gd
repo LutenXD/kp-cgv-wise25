@@ -9,8 +9,11 @@ const TTS_URL: String = "https://llm.scads.ai/v1/audio/speech"
 const API_KEY: String = "sk-lJKZ3tHOtQ7KgZP5ChABsw"
 
 
-var tts_model: String = "Kokoro-82M"
-var tts_voice: String = "am_echo"
+@export var tts_model: String = "Kokoro-82M"
+@export var tts_voice: String = "am_echo"
+
+var is_requesting: bool = false
+var pending_requests: Array[String]
 
 
 func _ready() -> void:
@@ -18,6 +21,13 @@ func _ready() -> void:
 
 
 func request_tts(text: String) -> void:
+	if is_requesting:
+		#print("\nbuffering tts request\n")
+		pending_requests.append(text)
+		return
+	
+	is_requesting = true
+	
 	var headers: Array[String] = [
 		"Content-Type: application/json",
 		"Authorization: Bearer " + API_KEY
@@ -52,3 +62,7 @@ func _on_request_completed(result: int, response_code: int, _headers: PackedStri
 	var wav_stream: AudioStreamMP3 = AudioStreamMP3.load_from_buffer(body)
 	
 	tts_answer_received.emit(wav_stream)
+	
+	is_requesting = false
+	if pending_requests.size() > 0:
+		request_tts(pending_requests.pop_front())

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du3y86ujear2a"]
+
+[ext_resource type="Texture2D" uid="uid://xc0m742jb3aa" path="res://assets/textures/materials/university_metal_rail/albedo.png" id="1_gli1c"]
+[ext_resource type="Texture2D" uid="uid://q7gtvtkhfd0b" path="res://assets/textures/materials/university_metal_rail/height.png" id="2_v2axb"]
+[ext_resource type="Texture2D" uid="uid://bs1vcl2n4iu76" path="res://assets/textures/materials/university_metal_rail/metallic.png" id="3_yg6yr"]
+[ext_resource type="Texture2D" uid="uid://cn21nyall2ekp" path="res://assets/textures/materials/university_metal_rail/normal.png" id="4_nlcop"]
+[ext_resource type="Texture2D" uid="uid://bmsbgnjwfpdn8" path="res://assets/textures/materials/university_metal_rail/roughness.png" id="5_epx5b"]
+
+[resource]
+albedo_texture = ExtResource("1_gli1c")
+metallic_texture = ExtResource("3_yg6yr")
+roughness_texture = ExtResource("5_epx5b")
+normal_enabled = true
+normal_texture = ExtResource("4_nlcop")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_v2axb")
+uv1_scale = Vector3(10, 10, 10)

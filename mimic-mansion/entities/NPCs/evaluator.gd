@@ -1,3 +1,4 @@
+@tool
 class_name Evaluator
 extends Mimic
 
@@ -21,7 +22,7 @@ func _ready() -> void:
 
 func set_evaluator_instructions() -> void:
 	self.set_instructions(evaluator_pre_instructions + str(statements[question_idx]) + evaluator_post_instructions)
-	print("\nnew instructions\n")
+	#print(str(statements[question_idx]))
 	score_label.text = str(question_idx) + "/" + str(num_questions)
 
 

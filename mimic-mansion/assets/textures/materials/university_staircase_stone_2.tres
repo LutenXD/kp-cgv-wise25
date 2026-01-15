@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bht72115j18jv"]
+
+[ext_resource type="Texture2D" uid="uid://ccse7rbm55jmf" path="res://assets/textures/materials/university_staircase_stone_2/albedo.png" id="1_6inqf"]
+[ext_resource type="Texture2D" uid="uid://ukwys5jwn01a" path="res://assets/textures/materials/university_staircase_stone_2/height.png" id="2_0e75u"]
+[ext_resource type="Texture2D" uid="uid://diykwse1ky81d" path="res://assets/textures/materials/university_staircase_stone_2/metallic.png" id="3_coq5t"]
+[ext_resource type="Texture2D" uid="uid://bmmyk1ygnodou" path="res://assets/textures/materials/university_staircase_stone_2/normal.png" id="4_sj8d3"]
+[ext_resource type="Texture2D" uid="uid://c0x5xiy170ud7" path="res://assets/textures/materials/university_staircase_stone_2/roughness.png" id="5_qg1rd"]
+
+[resource]
+albedo_texture = ExtResource("1_6inqf")
+metallic_texture = ExtResource("3_coq5t")
+roughness_texture = ExtResource("5_qg1rd")
+normal_enabled = true
+normal_texture = ExtResource("4_sj8d3")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_0e75u")
+uv1_scale = Vector3(10, 10, 10)

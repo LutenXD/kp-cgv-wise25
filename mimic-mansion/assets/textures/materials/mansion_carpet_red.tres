@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dl0fhf2o68u1h"]
+
+[ext_resource type="Texture2D" uid="uid://11y3mh7qvjdg" path="res://assets/textures/materials/mansion_carpet_red/albedo.png" id="1_e7q1r"]
+[ext_resource type="Texture2D" uid="uid://cxj1v4ksy83fu" path="res://assets/textures/materials/mansion_carpet_red/height.png" id="2_npsua"]
+[ext_resource type="Texture2D" uid="uid://crwflxcylj8v5" path="res://assets/textures/materials/mansion_carpet_red/metallic.png" id="3_phnf7"]
+[ext_resource type="Texture2D" uid="uid://cnv80y40v3d6d" path="res://assets/textures/materials/mansion_carpet_red/normal.png" id="4_w3ubp"]
+[ext_resource type="Texture2D" uid="uid://bnyowba0g6ns8" path="res://assets/textures/materials/mansion_carpet_red/roughness.png" id="5_1nx64"]
+
+[resource]
+albedo_texture = ExtResource("1_e7q1r")
+metallic_texture = ExtResource("3_phnf7")
+roughness_texture = ExtResource("5_1nx64")
+normal_enabled = true
+normal_texture = ExtResource("4_w3ubp")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_npsua")
+uv1_scale = Vector3(10, 10, 10)

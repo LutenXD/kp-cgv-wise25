@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ct1vhil7bxt16"]
+
+[ext_resource type="Texture2D" uid="uid://clr8pl55d734i" path="res://assets/textures/materials/mansion_wall_plaster/albedo.png" id="1_a0mmp"]
+[ext_resource type="Texture2D" uid="uid://d4g4yo5hq81rk" path="res://assets/textures/materials/mansion_wall_plaster/height.png" id="2_qx2i2"]
+[ext_resource type="Texture2D" uid="uid://cwcgpdepe3e3o" path="res://assets/textures/materials/mansion_wall_plaster/metallic.png" id="3_fc8q7"]
+[ext_resource type="Texture2D" uid="uid://dl5ox873weyau" path="res://assets/textures/materials/mansion_wall_plaster/normal.png" id="4_lw4px"]
+[ext_resource type="Texture2D" uid="uid://drcoevlr38ocv" path="res://assets/textures/materials/mansion_wall_plaster/roughness.png" id="5_rasxr"]
+
+[resource]
+albedo_texture = ExtResource("1_a0mmp")
+metallic_texture = ExtResource("3_fc8q7")
+roughness_texture = ExtResource("5_rasxr")
+normal_enabled = true
+normal_texture = ExtResource("4_lw4px")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_qx2i2")
+uv1_scale = Vector3(10, 10, 10)

@@ -10,11 +10,22 @@ const STT_MODEL: String = "openai/whisper-large-v3"
 const API_KEY: String = "sk-lJKZ3tHOtQ7KgZP5ChABsw"
 
 
+var is_requesting: bool = false
+var pending_requests: Array[AudioStreamWAV]
+
+
 func _ready() -> void:
 	self.request_completed.connect(_on_stt_request_completed)
 
 
 func request_stt(recording: AudioStreamWAV) -> void:
+	if is_requesting:
+		#print("\nbuffering tts request\n")
+		pending_requests.append(recording)
+		return
+	
+	is_requesting = true
+	
 	if recording == null:
 		push_error("recording empty")
 		return
@@ -89,3 +100,7 @@ func _on_stt_request_completed(result: int, response_code: int, _headers: Packed
 	var transcript: String = str(data.get("text", ""))
 	
 	stt_answer_received.emit(transcript)
+	
+	is_requesting = false
+	if pending_requests.size() > 0:
+		request_stt(pending_requests.pop_front())
