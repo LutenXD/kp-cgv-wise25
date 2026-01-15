@@ -3,73 +3,41 @@ extends Node3D
 @onready var info_panel = $UI/InfoPanel
 @onready var info_title = $UI/InfoPanel/MarginContainer/VBoxContainer/Title
 @onready var info_text = $UI/InfoPanel/MarginContainer/VBoxContainer/ScrollContainer/InfoText
-@onready var room_display = $UI/RoomDisplay
+
 @onready var player = $player
 @onready var camera = $player/Camera3D
 
 var lore_manager: LoreManager
+var room_layout_manager: RoomLayoutManager
 var selected_items: Array = []
 var current_sphere = null
 var all_lore_items: Array = []
 var spawned_mimics: Array = []
-var spawned_rooms: Array = []
-var current_room_name: String = "Unknown Room"
 
 const RAY_LENGTH = 100.0
-const ROOM_SIZE = 10.0  # Standard room size for positioning
-const HALLWAY_COUNT = 3  # Number of hallway instances to create
-
-# Define unique room scene paths (appear only once)
-const UNIQUE_ROOMS = [
-	"res://assets/rooms/art_gallery.tscn",
-	"res://assets/rooms/attic.tscn", 
-	"res://assets/rooms/basement_dungeon.tscn",
-	"res://assets/rooms/bathroom.tscn",
-	"res://assets/rooms/chapel_crypt.tscn",
-	"res://assets/rooms/children_nursery.tscn",
-	"res://assets/rooms/conservatory_greenhouse.tscn",
-	"res://assets/rooms/courtyard_garden.tscn",
-	"res://assets/rooms/dining_room.tscn",
-	"res://assets/rooms/grand_foyer.tscn",
-	"res://assets/rooms/grand_hall_ballroom.tscn",
-	"res://assets/rooms/kitchen_pantry.tscn",
-	"res://assets/rooms/laundry_room.tscn",
-	"res://assets/rooms/library.tscn",
-	"res://assets/rooms/master_bedroom.tscn",
-	"res://assets/rooms/music_room.tscn",
-	"res://assets/rooms/secret_study.tscn",
-	"res://assets/rooms/servants_quarters.tscn",
-	"res://assets/rooms/wine_cellar.tscn"
-]
-
-# Define hallway scene paths (can appear multiple times)
-const HALLWAY_ROOMS = [
-	"res://assets/rooms/hallway_junction_1.tscn",
-	"res://assets/rooms/hallway_junction_2.tscn",
-	"res://assets/rooms/hallway_straight.tscn"
-]
-
-# Define mimic spawn locations (relative to each room center)
-const MIMIC_SPAWN_POSITIONS = [
-	Vector3(3, 1, 0),
-	Vector3(-3, 1, 0),
-	Vector3(0, 1, 3),
-	Vector3(0, 1, -3),
-	Vector3(2, 1, 2),
-	Vector3(-2, 1, -2),
-]
 
 func _ready():
 	info_panel.hide()
-	room_display.text = current_room_name
 	
 	# Remove the default room from the scene if it exists
 	var default_room = get_node_or_null("Room")
 	if default_room:
 		default_room.queue_free()
 	
-	# Spawn rooms in a grid layout
-	spawn_rooms()
+	# Create and initialize room layout manager
+	room_layout_manager = RoomLayoutManager.new()
+	add_child(room_layout_manager)
+	
+	# Wait a frame to ensure everything is ready
+	await get_tree().process_frame
+	
+	# Spawn the starting room
+	room_layout_manager.spawn_starting_room()
+	
+	# Position player in the room
+	if player:
+		player.global_position = Vector3(0, 1, 0)
+		print("Player positioned at: ", player.global_position)
 	
 	# Check if we're continuing a game
 	var settings = get_game_settings()
@@ -83,122 +51,14 @@ func get_game_settings():
 		return get_node("/root/GameSettings")
 	return null
 
-func spawn_rooms():
-	"""Spawn all rooms in a grid layout next to each other"""
-	print("Spawning rooms in grid layout...")
-	
-	var rooms_parent = Node3D.new()
-	rooms_parent.name = "Rooms"
-	add_child(rooms_parent)
-	
-	# Combine unique rooms and multiple hallway instances
-	var all_room_paths = UNIQUE_ROOMS.duplicate()
-	
-	# Add multiple instances of hallways
-	for i in range(HALLWAY_COUNT):
-		for hallway_path in HALLWAY_ROOMS:
-			all_room_paths.append(hallway_path)
-	
-	# Calculate grid dimensions (try to make roughly square)
-	var total_rooms = all_room_paths.size()
-	var grid_size = ceil(sqrt(total_rooms))
-	
-	print("Total rooms to spawn: ", total_rooms)
-	print("Grid size: ", grid_size, "x", grid_size)
-	
-	# Spawn rooms in grid
-	var room_index = 0
-	for y in range(grid_size):
-		for x in range(grid_size):
-			if room_index >= all_room_paths.size():
-				break
-			
-			var room_path = all_room_paths[room_index]
-			var room_scene = load(room_path)
-			
-			if room_scene:
-				var room_instance = room_scene.instantiate()
-				
-				# Calculate world position (center rooms around origin)
-				var offset_x = (x - grid_size / 2.0) * ROOM_SIZE
-				var offset_z = (y - grid_size / 2.0) * ROOM_SIZE
-				room_instance.global_position = Vector3(offset_x, 0, offset_z)
-				
-				# Give the room a unique name
-				room_instance.name = "Room_" + str(room_index) + "_" + room_path.get_file().get_basename()
-				
-				rooms_parent.add_child(room_instance)
-				spawned_rooms.append(room_instance)
-				
-				print("Spawned room: ", room_instance.name, " at position: ", room_instance.global_position)
-			else:
-				print("Failed to load room: ", room_path)
-			
-			room_index += 1
-	
-	print("Total rooms spawned: ", spawned_rooms.size())
-	
-	# Position player in the center room
-	if player:
-		player.global_position = Vector3(0, 1, 0)
-		print("Player positioned at center: ", player.global_position)
+
 
 func _process(_delta):
-	# Update current room display
-	update_current_room()
+	pass
 
-func update_current_room():
-	"""Detect which room the player is currently in and update the display"""
-	if not player:
-		return
-	
-	var player_pos = player.global_position
-	var closest_room = null
-	var closest_distance = INF
-	
-	# Find the closest room to the player
-	for room in spawned_rooms:
-		var room_pos = room.global_position
-		var distance = player_pos.distance_to(room_pos)
-		
-		# Check if player is within room bounds (assuming 10x10 room size)
-		var x_diff = abs(player_pos.x - room_pos.x)
-		var z_diff = abs(player_pos.z - room_pos.z)
-		
-		if x_diff <= ROOM_SIZE/2 and z_diff <= ROOM_SIZE/2 and distance < closest_distance:
-			closest_distance = distance
-			closest_room = room
-	
-	# Update room display if we found a room and it's different from current
-	if closest_room:
-		var new_room_name = format_room_name(closest_room.name)
-		if new_room_name != current_room_name:
-			current_room_name = new_room_name
-			room_display.text = current_room_name
-			print("Entered room: ", current_room_name)
-	else:
-		# Player is between rooms
-		if current_room_name != "Between Rooms":
-			current_room_name = "Between Rooms"
-			room_display.text = current_room_name
 
-func format_room_name(room_node_name: String) -> String:
-	"""Convert room node name to a readable format"""
-	# Remove "Room_X_" prefix and convert underscores to spaces
-	var parts = room_node_name.split("_")
-	if parts.size() >= 3:
-		# Skip "Room" and number, join the rest
-		var name_parts = parts.slice(2)
-		var formatted = ""
-		for i in range(name_parts.size()):
-			if i > 0:
-				formatted += " "
-			# Capitalize first letter of each word
-			var word = name_parts[i]
-			if word.length() > 0:
-				formatted += word[0].to_upper() + word.substr(1)
-		return formatted
-	return room_node_name
+
+
 
 func spawn_mimics(sphere_data: Dictionary):
 	# Create InteractiveSpheres parent node if it doesn't exist
@@ -212,13 +72,19 @@ func spawn_mimics(sphere_data: Dictionary):
 	var settings = get_game_settings()
 	var count = settings.get_mimic_count() if settings else 3
 	
-	# Calculate available positions across all rooms
-	var available_positions = []
-	for room in spawned_rooms:
-		var room_center = room.global_position
-		for local_pos in MIMIC_SPAWN_POSITIONS:
-			var world_pos = room_center + local_pos
-			available_positions.append(world_pos)
+	# Define fixed spawn positions around the origin
+	var available_positions = [
+		Vector3(3, 1, 0),
+		Vector3(-3, 1, 0),
+		Vector3(0, 1, 3),
+		Vector3(0, 1, -3),
+		Vector3(2, 1, 2),
+		Vector3(-2, 1, -2),
+		Vector3(4, 1, 4),
+		Vector3(-4, 1, -4),
+		Vector3(5, 1, 0),
+		Vector3(0, 1, 5)
+	]
 	
 	# Don't exceed available positions
 	count = min(count, available_positions.size())
