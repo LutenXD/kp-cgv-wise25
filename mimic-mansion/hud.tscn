@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://2v4xo680txrw"]
+
+[ext_resource type="Script" uid="uid://d16ftr7spjplh" path="res://hud.gd" id="1_8sq4i"]
+[ext_resource type="PackedScene" uid="uid://bhwq8yxr5m3y7" path="res://scenes/pause_menu.tscn" id="2_640wx"]
+[ext_resource type="PackedScene" uid="uid://cj7y2xqr8iqwf" path="res://scenes/options_menu.tscn" id="3_a2258"]
+
+[node name="HUD" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8sq4i")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_640wx")]
+
+[node name="OptionsMenu" parent="." instance=ExtResource("3_a2258")]
+process_mode = 3
+
+[connection signal="continue_game" from="PauseMenu" to="." method="_on_main_menu_continue_game"]
+[connection signal="open_settings" from="PauseMenu" to="." method="_on_pause_menu_open_settings"]
+[connection signal="close_options" from="OptionsMenu" to="." method="_on_options_menu_close_options"]

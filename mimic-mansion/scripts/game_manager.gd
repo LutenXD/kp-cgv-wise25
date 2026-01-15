@@ -353,8 +353,8 @@ func show_info(info: Dictionary):
 
 func _unhandled_input(event):
 	# Press ESC to return to main menu
-	if event.is_action_pressed("ui_cancel"):
-		return_to_main_menu()
+#	if event.is_action_pressed("ui_cancel"):
+#		return_to_main_menu()
 	
 	# Press number keys (1-3) to select items from the current sphere
 	if info_panel.visible and current_sphere:

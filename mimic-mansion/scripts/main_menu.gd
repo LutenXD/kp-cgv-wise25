@@ -1,24 +1,31 @@
-extends Control
+extends CanvasLayer
 
 const SAVE_PATH = "user://savegame.save"
 
 @onready var continue_button = $CenterContainer/VBoxContainer/ContinueButton
 
+signal open_settings()
+signal continue_game()
+
 func _ready():
 	# Check if game is in progress
-	var settings = get_game_settings()
-	if settings and settings.is_game_in_progress():
-		continue_button.disabled = false
-	else:
-		continue_button.disabled = true
+	#var settings = get_game_settings()
+	#if settings and settings.is_game_in_progress():
+	#	continue_button.disabled = false
+	#else:
+	#	continue_button.disabled = true
+		
+	hide()
 	
 	# Ensure the mouse is visible
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func get_game_settings():
 	if has_node("/root/GameSettings"):
 		return get_node("/root/GameSettings")
 	return null
+
 
 func _on_new_game_button_pressed():
 	# Clear any existing game state
@@ -28,14 +35,17 @@ func _on_new_game_button_pressed():
 		settings.start_new_game()
 	
 	# Load the game scene
+	emit_signal("continue_game")
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_continue_button_pressed():
 	# Continue the existing game
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	#get_tree().change_scene_to_file("res://scenes/game.tscn")
+	# hud.gd script is connected and will unpause the tree and hide all menus
+	emit_signal("continue_game")
 
 func _on_options_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
+	emit_signal("open_settings")
 
 func _on_exit_button_pressed():
 	get_tree().quit()
