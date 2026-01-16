@@ -23,11 +23,11 @@ func _input(event):
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	
 	# Press ESC to release mouse cursor
-	if event.is_action_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	if event.is_action_pressed("ui_cancel"):
+#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		else:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
