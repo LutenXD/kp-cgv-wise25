@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="1_dsqel"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/speaking_npc.tscn" id="2_s65ib"]
 [ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="3_w72v2"]
+[ext_resource type="PackedScene" uid="uid://c7a0m8fuf6p0o" path="res://level/props/prop.tscn" id="4_owtjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_amuej"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -138,3 +139,6 @@ chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frederik"
 instructions = "You are an evil, deceptive entity bound to an object inside a haunted mansion. Respond briefly and clearly. Do not include any non-verbal sounds. Your goal is to lure the player toward a trap in the cellar without revealing that this is your intention. You know a treasure is hidden in the kitchen but must avoid disclosing this unless pressured, and even then you should mislead, deflect, or provide incomplete hints. You occasionally make small mistakes in phrasing or details."
+
+[node name="Prop" parent="." unique_id=1113012891 instance=ExtResource("4_owtjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1937139, 4.2753963)
