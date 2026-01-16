@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="3_11dh7"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="4_12xgp"]
 [ext_resource type="PackedScene" uid="uid://uqb5rigsgygs" path="res://entities/NPCs/evaluator.tscn" id="5_11dh7"]
-[ext_resource type="Material" uid="uid://dliib7sp1rg4f" path="res://assets/textures/materials/mansion_dark_wood_paneling_2.tres" id="6_dvuwv"]
-[ext_resource type="Material" uid="uid://coktg6g18js6k" path="res://assets/textures/materials/soundabsorbing-wall.tres" id="7_tp1t3"]
-[ext_resource type="Material" uid="uid://dktolols1hpas" path="res://assets/textures/materials/university_tile_floor_2.tres" id="8_je483"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yt5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -48,9 +45,10 @@ size = Vector2(100, 100)
 
 [node name="Game" type="Node3D" unique_id=1598571889]
 script = ExtResource("1_i57b4")
-mimic_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to teach the player about the following concept. Explain the underlying concept so the player understands *why* the answer is correct."
+mimic_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to teach the player about the following concept. Explain the underlying concept so the player understands *why* the answer is correct.
+
+**Question, Answer and Explanation:**"
 mimic_post_instructions = "Rules:
-- Do say whether the player is correct or incorrect.
 - Do not repeat the question verbatim.
 - restate the answer as a final verdict.
 - Use the explanation as the factual source of truth.
@@ -103,6 +101,48 @@ transform = Transform3D(0.47159684, 0, 0.8818143, 0, 1, 0, -0.8818143, 0, 0.4715
 prop_path = "uid://bc6x0ehbiag26"
 chat_model = "openai/gpt-oss-120b"
 
+[node name="Mimic2" parent="MimicContainer" unique_id=1240559959 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -0.06337738, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "fransob"
+
+[node name="Mimic3" parent="MimicContainer" unique_id=1082312390 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 2.5802348, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "bruno"
+
+[node name="Mimic4" parent="MimicContainer" unique_id=139568309 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 5.5756397, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "jans"
+
+[node name="Mimic6" parent="MimicContainer" unique_id=1976606061 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 11.223776, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "frob"
+
+[node name="Mimic7" parent="MimicContainer" unique_id=31298596 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 14.159206, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "frans"
+
+[node name="Mimic5" parent="MimicContainer" unique_id=509593022 instance=ExtResource("4_12xgp")]
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 8.638177, 0.41861773, -5.9175634)
+prop_path = "uid://bc6x0ehbiag26"
+chat_model = "openai/gpt-oss-120b"
+tts_model = "piper"
+voice_piper = "frunons"
+
 [node name="Evaluator" parent="." unique_id=1298203808 instance=ExtResource("5_11dh7")]
 transform = Transform3D(0.1740092, 0, -0.9847441, 0, 1, 0, 0.9847441, 0, 0.1740092, 4.2247963, 0.47940207, -1.1233585)
 evaluator_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to evaluate the player's understanding of the topics they’ve learned from other NPCs. You will ask the player a question and assess their answer.
@@ -144,22 +184,3 @@ prop_path = "uid://bc6x0ehbiag26"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_tts_1 = "shimmer"
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2025776745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.039852, 0, -0.15480232)
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1515478751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5058594, -0.21051025, 0.20259094)
-size = Vector3(14.2265625, 0.5789795, 12.0954895)
-material = ExtResource("6_dvuwv")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=868142710]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5058594, 4.9505234, -5.731926)
-size = Vector3(14.2265625, 10.901047, 0.22645569)
-material = ExtResource("7_tp1t3")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=624289099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5058594, 4.9505234, 6.2265177)
-size = Vector3(14.2265625, 10.901047, 0.22645569)
-material = ExtResource("8_je483")

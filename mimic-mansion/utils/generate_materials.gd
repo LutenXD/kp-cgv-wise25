@@ -8,7 +8,7 @@ func _run():
 	if dir == null:
 		push_error("Could not open " + ROOT_DIR)
 		return
-
+	
 	dir.list_dir_begin()
 	var folder_name := dir.get_next()
 	
@@ -16,7 +16,7 @@ func _run():
 		if dir.current_is_dir() and not folder_name.begins_with("."):
 			_process_material_folder(folder_name)
 		folder_name = dir.get_next()
-
+	
 	dir.list_dir_end()
 	print("Material generation complete.")
 

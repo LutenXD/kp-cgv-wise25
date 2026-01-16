@@ -49,7 +49,7 @@ var hud: HUD
 @onready var tts_request: TTSRequest = %TTSRequest
 
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
-#@onready var gd_piper: GDPiper = $GDPiper #ich bin dran...  kp, ob ich das noch schaffe (läuft auf linux dev builds :/ )
+@onready var gd_piper: GDPiper = $GDPiper #ich bin dran...  kp, ob ich das noch schaffe (läuft auf linux dev builds :/ )
 
 @onready var bus_index: int = AudioServer.get_bus_index("Speech")
 @onready var capture: AudioEffectCapture = AudioServer.get_bus_effect(bus_index, 0)
@@ -229,7 +229,7 @@ func _on_chat_request_text_answer_received(text: String) -> void:
 var tts_stream: AudioStream
 var stream_buffered: bool = false
 func _piper_tts(text: String) -> void:
-	#tts_stream = gd_piper.tts(text, .5, tts_voice, 7)
+	tts_stream = gd_piper.tts(text, 1.5, tts_voice, 7)
 	
 	if self.audio_stream_player_3d.playing:
 		stream_buffered = true
