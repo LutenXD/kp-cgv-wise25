@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1epn1qimdddd"]
+[gd_scene load_steps=13 format=3 uid="uid://c1epn1qimdddd"]
 
 [ext_resource type="Script" uid="uid://ddndwinwdw1we" path="res://scripts/player.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://c6g2o88n1y6l5" path="res://scripts/game_manager.gd" id="2_game_manager"]
+[ext_resource type="PackedScene" uid="uid://cws4wjikcg5cb" path="res://scenes/note_book.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://2v4xo680txrw" path="res://hud.tscn" id="4_lbhrr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
@@ -101,6 +102,9 @@ shape = SubResource("BoxShape3D_wall")
 [node name="player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_yqjtg")
+
+[node name="note_book" parent="player" instance=ExtResource("3_lnu2h")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.1909194, -0.8908211)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 shape = SubResource("CapsuleShape3D_player")

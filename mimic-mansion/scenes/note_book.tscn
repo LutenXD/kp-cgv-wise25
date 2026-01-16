@@ -51,10 +51,10 @@ transform = Transform3D(-1.9161812e-08, -3.9287535e-08, -1, -0.89879405, 0.43837
 mesh = ExtResource("1_747sg")
 
 [node name="subviewport sprite" type="Sprite3D" parent="BookPlaceholder"]
-transform = Transform3D(0.0033296533, -0.27998, 5.1617622e-05, -0.04905482, -0.00053260475, 0.27566877, -0.27564916, -0.0032872, -0.04905767, -0.074760914, 0.2050457, 0.58510876)
+transform = Transform3D(0.0033876505, -0.27997932, 0.00016617775, -0.04890041, -0.000428088, 0.2756964, -0.27567592, -0.0033646175, -0.04890198, -0.07276398, 0.20914, 0.58510876)
 texture = SubResource("ViewportTexture_b403g")
 region_enabled = true
-region_rect = Rect2(0, 16.39413, 388.29684, 495.60587)
+region_rect = Rect2(0, 0, 322, 512)
 
 [node name="book_viewport" type="SubViewport" parent="BookPlaceholder"]
 transparent_bg = true
@@ -67,7 +67,8 @@ custom_minimum_size = Vector2(500, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.0
+offset_left = -71.1
+offset_right = 106.899994
 offset_bottom = 0.0
 
 [node name="Menu viewport container" type="SubViewportContainer" parent="."]
@@ -83,20 +84,16 @@ handle_input_locally = false
 size = Vector2i(1002, 512)
 render_target_update_mode = 0
 
-[node name="Interaction Menu" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Menu viewport container/menu_subviewport"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -143.0
-offset_top = -23.0
+offset_left = 135.0
+offset_top = 185.0
+offset_right = 278.0
+offset_bottom = 208.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Press esc to close"
@@ -106,3 +103,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_lvois")
 }
 autoplay = "appear"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="close button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "close"
+
+[connection signal="pressed" from="CanvasLayer/Control/close button" to="." method="_on_close_button_pressed"]
