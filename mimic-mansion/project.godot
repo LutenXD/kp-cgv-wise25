@@ -46,11 +46,8 @@ project/assembly_name="Mimic-Mansion"
 
 enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
-[global_group]
-
-player=""
-
 [file_customization]
+
 folder_colors={
 "res://entities/": "green",
 "res://game_logic/": "pink",
@@ -58,6 +55,10 @@ folder_colors={
 "res://ui/": "green",
 "res://utils/": "green"
 }
+
+[global_group]
+
+player=""
 
 [input]
 

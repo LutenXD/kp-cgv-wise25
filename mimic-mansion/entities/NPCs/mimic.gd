@@ -174,10 +174,10 @@ func _update_prop() -> void:
 	
 	var packed_model: PackedScene = load(prop_path)
 	var node: Node3D = packed_model.instantiate()
-	mimic_mesh = node.get_child(0).get_child(0)
+	mimic_mesh = node.get_child(0)
 	
 	mimic_mesh.owner = null
-	node.get_child(0).remove_child(mimic_mesh)
+	node.remove_child(mimic_mesh)
 	
 	mimic_mesh.mesh = mimic_mesh.mesh.duplicate()
 	
@@ -189,6 +189,7 @@ func _update_prop() -> void:
 	var shape: Node = mimic_mesh.get_child(0).get_child(0)
 	shape.owner = null
 	mimic_mesh.get_child(0).remove_child(shape)
+	shape.rotation.x = PI / 2.0
 	static_body_3d.add_child(shape)
 	mimic_mesh.get_child(0).queue_free()
 	

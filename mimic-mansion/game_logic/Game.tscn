@@ -98,47 +98,47 @@ unique_name_in_owner = true
 
 [node name="Mimic" parent="MimicContainer" unique_id=766133172 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.47159684, 0, 0.8818143, 0, 1, 0, -0.8818143, 0, 0.47159684, -5.1566706, 0.41861773, -3.1866372)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://des35pypreh7h"
 chat_model = "openai/gpt-oss-120b"
 
 [node name="Mimic2" parent="MimicContainer" unique_id=1240559959 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -0.06337738, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://ce77xk53or0cv"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "fransob"
 
 [node name="Mimic3" parent="MimicContainer" unique_id=1082312390 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 2.5802348, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://cgq4pp14mqgbq"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "bruno"
 
 [node name="Mimic4" parent="MimicContainer" unique_id=139568309 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 5.5756397, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://r7sbnmk48t8l"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "jans"
 
 [node name="Mimic6" parent="MimicContainer" unique_id=1976606061 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 11.223776, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://c43bxsa7q07d"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frob"
 
 [node name="Mimic7" parent="MimicContainer" unique_id=31298596 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 14.159206, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://hfpdodxxnimn"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frans"
 
 [node name="Mimic5" parent="MimicContainer" unique_id=509593022 instance=ExtResource("4_12xgp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 8.638177, 0.41861773, -5.9175634)
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://ccvpl3bkeoaju"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frunons"
@@ -180,7 +180,7 @@ No code fences.
 No explanations outside JSON.
 
 If you output anything outside the JSON object, the response is invalid."
-prop_path = "uid://bc6x0ehbiag26"
+prop_path = "uid://s3te7k2jfvrj"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_tts_1 = "shimmer"

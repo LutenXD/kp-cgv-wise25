@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://btsxf4xca513a"]
+[gd_scene format=3 uid="uid://btsxf4xca513a"]
 
 [ext_resource type="Script" uid="uid://bl2awe1igqvxl" path="res://scenes/note_book_text_edit.gd" id="1_stgxg"]
 

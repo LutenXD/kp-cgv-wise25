@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cws4wjikcg5cb"]
+[gd_scene format=3 uid="uid://cws4wjikcg5cb"]
 
 [ext_resource type="ArrayMesh" uid="uid://ceapcn8ti4j62" path="res://assets/blender placeholders/book_placeholder.obj" id="1_747sg"]
 [ext_resource type="Script" uid="uid://4cds853o525y" path="res://scenes/note_book.gd" id="1_b403g"]
