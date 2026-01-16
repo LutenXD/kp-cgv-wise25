@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3suv8a2knqeg"]
+
+[ext_resource type="Texture2D" uid="uid://tnars0b45g17" path="res://assets/textures/materials/university_wall_paint/albedo.png" id="1_dq0tn"]
+[ext_resource type="Texture2D" uid="uid://gb3dp0x16gq2" path="res://assets/textures/materials/university_wall_paint/height.png" id="2_yvw1p"]
+[ext_resource type="Texture2D" uid="uid://bvw2pajbkdh7w" path="res://assets/textures/materials/university_wall_paint/metallic.png" id="3_5eyu0"]
+[ext_resource type="Texture2D" uid="uid://doh7nocpkjdeq" path="res://assets/textures/materials/university_wall_paint/normal.png" id="4_8lqbu"]
+[ext_resource type="Texture2D" uid="uid://deya4t4yp0h3w" path="res://assets/textures/materials/university_wall_paint/roughness.png" id="5_ehe3r"]
+
+[resource]
+albedo_texture = ExtResource("1_dq0tn")
+metallic_texture = ExtResource("3_5eyu0")
+roughness_texture = ExtResource("5_ehe3r")
+normal_enabled = true
+normal_texture = ExtResource("4_8lqbu")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_yvw1p")
+uv1_scale = Vector3(10, 10, 10)

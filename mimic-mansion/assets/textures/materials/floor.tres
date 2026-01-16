@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4cl4sb08w6xn"]
+
+[ext_resource type="Texture2D" uid="uid://db87ka1eajlsd" path="res://assets/textures/materials/floor/albedo.png" id="1_cwy02"]
+[ext_resource type="Texture2D" uid="uid://c517vffpy0fbk" path="res://assets/textures/materials/floor/height.png" id="2_kwy4w"]
+[ext_resource type="Texture2D" uid="uid://dtfbklel3yb5n" path="res://assets/textures/materials/floor/metallic.png" id="3_ljxmv"]
+[ext_resource type="Texture2D" uid="uid://8sc40by8nvbe" path="res://assets/textures/materials/floor/normal.png" id="4_0xuio"]
+[ext_resource type="Texture2D" uid="uid://yn1q4amcdlx3" path="res://assets/textures/materials/floor/roughness.png" id="5_cke0o"]
+
+[resource]
+albedo_texture = ExtResource("1_cwy02")
+metallic_texture = ExtResource("3_ljxmv")
+roughness_texture = ExtResource("5_cke0o")
+normal_enabled = true
+normal_texture = ExtResource("4_0xuio")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_kwy4w")
+uv1_scale = Vector3(10, 10, 10)

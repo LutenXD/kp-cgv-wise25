@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://baj8qsdchnep1"]
+
+[ext_resource type="Texture2D" uid="uid://dv7cg5uw8026j" path="res://assets/textures/materials/cobble-floor/albedo.png" id="1_25xph"]
+[ext_resource type="Texture2D" uid="uid://d1i2kxvsto2iv" path="res://assets/textures/materials/cobble-floor/height.png" id="2_qquas"]
+[ext_resource type="Texture2D" uid="uid://7yrssfta1g4p" path="res://assets/textures/materials/cobble-floor/metallic.png" id="3_apqqm"]
+[ext_resource type="Texture2D" uid="uid://c3leluf481pia" path="res://assets/textures/materials/cobble-floor/normal.png" id="4_pptlv"]
+[ext_resource type="Texture2D" uid="uid://d2kmr6fxf7gca" path="res://assets/textures/materials/cobble-floor/roughness.png" id="5_jwj2y"]
+
+[resource]
+albedo_texture = ExtResource("1_25xph")
+metallic_texture = ExtResource("3_apqqm")
+roughness_texture = ExtResource("5_jwj2y")
+normal_enabled = true
+normal_texture = ExtResource("4_pptlv")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_qquas")
+uv1_scale = Vector3(10, 10, 10)

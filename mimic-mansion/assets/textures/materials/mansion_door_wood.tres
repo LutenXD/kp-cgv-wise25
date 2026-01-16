@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cj0kqw7ofkekk"]
+
+[ext_resource type="Texture2D" uid="uid://cproudex5q2os" path="res://assets/textures/materials/mansion_door_wood/albedo.png" id="1_ps4tq"]
+[ext_resource type="Texture2D" uid="uid://bo3t3l7uxghai" path="res://assets/textures/materials/mansion_door_wood/height.png" id="2_4ly8b"]
+[ext_resource type="Texture2D" uid="uid://bxj0wr1tg5yk0" path="res://assets/textures/materials/mansion_door_wood/metallic.png" id="3_weg2s"]
+[ext_resource type="Texture2D" uid="uid://20m6condd564" path="res://assets/textures/materials/mansion_door_wood/normal.png" id="4_bir1r"]
+[ext_resource type="Texture2D" uid="uid://21b7m6rguja4" path="res://assets/textures/materials/mansion_door_wood/roughness.png" id="5_r7dws"]
+
+[resource]
+albedo_texture = ExtResource("1_ps4tq")
+metallic_texture = ExtResource("3_weg2s")
+roughness_texture = ExtResource("5_r7dws")
+normal_enabled = true
+normal_texture = ExtResource("4_bir1r")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_4ly8b")
+uv1_scale = Vector3(10, 10, 10)

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nlf6vx4wa4ki"]
+
+[ext_resource type="Texture2D" uid="uid://c4hwmvt7gpyp6" path="res://assets/textures/materials/university_wood_door_2/albedo.png" id="1_vfnw1"]
+[ext_resource type="Texture2D" uid="uid://d3i4hmfvn6w7u" path="res://assets/textures/materials/university_wood_door_2/height.png" id="2_lq67u"]
+[ext_resource type="Texture2D" uid="uid://brnw2c33ohtsl" path="res://assets/textures/materials/university_wood_door_2/metallic.png" id="3_gca42"]
+[ext_resource type="Texture2D" uid="uid://crrxbvjml3spk" path="res://assets/textures/materials/university_wood_door_2/normal.png" id="4_etp7y"]
+[ext_resource type="Texture2D" uid="uid://b5gpm78btr7mx" path="res://assets/textures/materials/university_wood_door_2/roughness.png" id="5_2cevf"]
+
+[resource]
+albedo_texture = ExtResource("1_vfnw1")
+metallic_texture = ExtResource("3_gca42")
+roughness_texture = ExtResource("5_2cevf")
+normal_enabled = true
+normal_texture = ExtResource("4_etp7y")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_lq67u")
+uv1_scale = Vector3(10, 10, 10)

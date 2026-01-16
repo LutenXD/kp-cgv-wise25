@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dhtmqv2uvnvy8"]
+
+[ext_resource type="Script" uid="uid://cqdo5v8o2reuu" path="res://entities/NPCs/mimic.gd" id="1_ikkii"]
+[ext_resource type="Script" uid="uid://xw1fqiexdhfd" path="res://utils/interactable_component.gd" id="2_0y8bu"]
+[ext_resource type="Script" uid="uid://cynwx4dnmqhxr" path="res://utils/stt_http_request.gd" id="3_0buyb"]
+[ext_resource type="Script" uid="uid://bcaksrcgd3y4k" path="res://utils/chat_http_request.gd" id="4_s5tgr"]
+[ext_resource type="Script" uid="uid://dmi0visvifrro" path="res://utils/tts_http_request.gd" id="5_bdre0"]
+
+[node name="Mimic" type="Node3D" unique_id=766133172]
+script = ExtResource("1_ikkii")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=616544448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="InteractableComponent" type="Node" parent="StaticBody3D" unique_id=39657472]
+unique_name_in_owner = true
+script = ExtResource("2_0y8bu")
+
+[node name="STTRequest" type="HTTPRequest" parent="." unique_id=1944179967]
+unique_name_in_owner = true
+script = ExtResource("3_0buyb")
+
+[node name="ChatRequest" type="HTTPRequest" parent="." unique_id=603240628]
+unique_name_in_owner = true
+script = ExtResource("4_s5tgr")
+system_instructions = "Du bist ein böser NPC Geist in einem Videospiel, der versucht den Spieler in eine Falle zu locken. Antworte kurz und verwende keine Lautsprache."
+
+[node name="TTSRequest" type="HTTPRequest" parent="." unique_id=205813095]
+unique_name_in_owner = true
+script = ExtResource("5_bdre0")
+tts_voice = "af_heart"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1435961007 groups=["npc_player"]]
+unique_name_in_owner = true
+bus = &"Speech"
+
+[node name="DebugLabel" type="Label3D" parent="." unique_id=1999646119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7493918, 0)
+billboard = 2
+text = "TTS Model: Kokoro-82M
+Voice: af_heart"
+
+[node name="GDPiper" type="GDPiper" parent="." unique_id=1852421510]
+
+[connection signal="send_audio" from="StaticBody3D/InteractableComponent" to="." method="_on_interactable_component_send_audio"]
+[connection signal="stt_answer_received" from="STTRequest" to="." method="_on_stt_request_stt_answer_received"]
+[connection signal="correctness_received" from="ChatRequest" to="." method="_on_chat_request_correctness_received"]
+[connection signal="text_answer_received" from="ChatRequest" to="." method="_on_chat_request_text_answer_received"]
+[connection signal="tts_answer_received" from="TTSRequest" to="." method="_on_tts_request_tts_answer_received"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

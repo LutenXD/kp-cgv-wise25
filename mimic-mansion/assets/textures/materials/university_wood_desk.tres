@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cv4ondopi4j6w"]
+
+[ext_resource type="Texture2D" uid="uid://ditrb31lyjni1" path="res://assets/textures/materials/university_wood_desk/albedo.png" id="1_tnrrv"]
+[ext_resource type="Texture2D" uid="uid://cbfmqguexxcca" path="res://assets/textures/materials/university_wood_desk/height.png" id="2_mege0"]
+[ext_resource type="Texture2D" uid="uid://6wdwpo0bqcko" path="res://assets/textures/materials/university_wood_desk/metallic.png" id="3_h2pr8"]
+[ext_resource type="Texture2D" uid="uid://ibs4e63n5py0" path="res://assets/textures/materials/university_wood_desk/normal.png" id="4_uexa0"]
+[ext_resource type="Texture2D" uid="uid://3ilkcy4ia1sj" path="res://assets/textures/materials/university_wood_desk/roughness.png" id="5_5ytfr"]
+
+[resource]
+albedo_texture = ExtResource("1_tnrrv")
+metallic_texture = ExtResource("3_h2pr8")
+roughness_texture = ExtResource("5_5ytfr")
+normal_enabled = true
+normal_texture = ExtResource("4_uexa0")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_mege0")
+uv1_scale = Vector3(10, 10, 10)
