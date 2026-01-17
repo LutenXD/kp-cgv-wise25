@@ -38,9 +38,44 @@ func load_room_data():
 	
 	# Convert array to dictionary for easier lookup
 	for room in data["rooms"]:
-		room_data[room["name"]] = room
+		var room_name = room["name"]
+		room_data[room_name] = room
+		
+		# Create rotated versions of each room
+		for rotation in [90, 180, 270]:
+			var rotated_room = room.duplicate(true)
+			var rotated_name = room_name + "_rot" + str(rotation)
+			
+			# Rotate door positions based on rotation angle
+			var rotated_doors = {"north": [], "east": [], "south": [], "west": []}
+			
+			match rotation:
+				90:
+					# 90° clockwise: north->east, east->south, south->west, west->north
+					rotated_doors["east"] = room["doors"]["north"].duplicate()
+					rotated_doors["south"] = room["doors"]["east"].duplicate()
+					rotated_doors["west"] = room["doors"]["south"].duplicate()
+					rotated_doors["north"] = room["doors"]["west"].duplicate()
+				180:
+					# 180°: north->south, east->west, south->north, west->east
+					rotated_doors["south"] = room["doors"]["north"].duplicate()
+					rotated_doors["west"] = room["doors"]["east"].duplicate()
+					rotated_doors["north"] = room["doors"]["south"].duplicate()
+					rotated_doors["east"] = room["doors"]["west"].duplicate()
+				270:
+					# 270° clockwise (90° counter-clockwise): north->west, east->north, south->east, west->south
+					rotated_doors["west"] = room["doors"]["north"].duplicate()
+					rotated_doors["north"] = room["doors"]["east"].duplicate()
+					rotated_doors["east"] = room["doors"]["south"].duplicate()
+					rotated_doors["south"] = room["doors"]["west"].duplicate()
+			
+			rotated_room["name"] = rotated_name
+			rotated_room["doors"] = rotated_doors
+			rotated_room["rotation"] = rotation
+			rotated_room["original_name"] = room_name
+			room_data[rotated_name] = rotated_room
 	
-	print("Loaded ", room_data.size(), " room definitions")
+	print("Loaded ", room_data.size(), " room definitions (including rotated versions)")
 
 func get_room_doors(room_name: String) -> Dictionary:
 	"""Get door configuration for a room"""
@@ -117,6 +152,30 @@ func spawn_starting_room():
 	else:
 		push_error("Failed to spawn starting room!")
 		return null
+
+func restore_room_layout(saved_rooms: Array):
+	"""Restore previously spawned rooms from saved data"""
+	print("RoomLayoutManager: Restoring ", saved_rooms.size(), " saved rooms...")
+	
+	spawned_rooms.clear()
+	
+	for room_data_dict in saved_rooms:
+		var room_name = room_data_dict.get("name", "")
+		var position = room_data_dict.get("position", Vector3.ZERO)
+		var rotation = room_data_dict.get("rotation_degrees", 0.0)
+		var scene_path = room_data_dict.get("scene_path", "")
+		
+		# Spawn the room at saved position and rotation
+		var room = spawn_room(scene_path, position, rotation)
+		
+		if room:
+			# Add to spawned rooms array with saved data
+			spawned_rooms.append(room_data_dict.duplicate())
+			print("✓ Restored room: ", room_name, " at ", position)
+		else:
+			push_error("Failed to restore room: " + room_name)
+	
+	print("✓ Room layout restored successfully")
 
 func spawn_additional_room():
 	"""Spawn an additional room connected to an available door"""
