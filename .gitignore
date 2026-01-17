@@ -1,0 +1,5 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Ignore generated rotated room variants
+mimic-mansion/assets/game_rooms/
