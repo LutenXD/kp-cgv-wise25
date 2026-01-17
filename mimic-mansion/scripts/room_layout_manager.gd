@@ -119,85 +119,86 @@ func spawn_starting_room():
 		return null
 
 func spawn_additional_room():
-
 	"""Spawn an additional room connected to an available door"""
-	var available_doors = get_available_doors()
+	var available_doors = get_available_doors() 
 	
 	if available_doors.size() == 0:
 		print("No available doors to spawn additional rooms.")
 		return null
 	
-	# Pick a random available door
 	var door_info = available_doors[randi() % available_doors.size()]
 	var door_direction = door_info["door_direction"]
-	var parent_room_position = door_info["position"]
-	var parent_room_rotation = door_info["rotation_degrees"]
+	var parent_position = door_info["position"]
+	var parent_rotation = door_info["rotation_degrees"]
 	var parent_room_name = door_info["room_name"]
 	
-	# Choose a random room different from the parent room
-	var room_names = room_data.keys()
-	room_names.erase(parent_room_name)
-	if room_names.size() == 0:
-		print("No other rooms available to spawn.")
-		return null
-	
-	var new_room_name = room_names[randi() % room_names.size()]
-	var new_room_scene_path = "res://assets/rooms/" + new_room_name + ".tscn"
-	
-	# Get doors of the new room and check for compatible connection
-	var new_room_doors = get_room_doors(new_room_name)
+	print("Spawning additional room at door: ", door_info)
 
-	# Select a random door from the new room
-	var all_new_doors = []
-	for direction in new_room_doors.keys():
-		for door in new_room_doors[direction]:
-			all_new_doors.append({"direction": direction, "door": door})
+	# Get list of available room types that haven't been spawned yet
+	var spawned_room_names = []
+	for room in spawned_rooms:
+		spawned_room_names.append(room["name"])
 
-	if all_new_doors.size() == 0:
-		print("New room has no doors, cannot connect.")
+	var available_room_types = []
+	for room_name in room_data.keys():
+		if not spawned_room_names.has(room_name):
+			available_room_types.append(room_name)
+
+	if available_room_types.size() == 0:
+		print("No new room types available to spawn.")
 		return null
 
-	var random_new_door = all_new_doors[randi() % all_new_doors.size()]
-	
-	# Get dimensions
+	# Select a random room type
+	var selected_room_name = available_room_types[randi() % available_room_types.size()]
+	print("Selected room type: ", selected_room_name)
+
+	# Get dimensions of both rooms
 	var parent_dimensions = get_room_dimensions(parent_room_name)
-	var new_dimensions = get_room_dimensions(new_room_name)
+	var new_dimensions = get_room_dimensions(selected_room_name)
+	var grid_size = 10.0  # Each room unit is 10x10 in world space
 	
-	# Calculate new room position based on door direction
+	# Calculate offset based on door direction and room dimensions
 	var offset = Vector3.ZERO
-	var grid_size = 10.0  # Base grid size per room unit
-	
 	match door_direction:
 		"north":
-			offset = Vector3(0, 0, -parent_dimensions.y * grid_size)
+			# New room connects to parent's north side, extends northward (-Z)
+			offset = Vector3(0, 0, -(parent_dimensions.y + new_dimensions.y) * grid_size * 0.5)
 		"east":
-			offset = Vector3(parent_dimensions.x * grid_size, 0, 0)
+			# New room connects to parent's east side, extends eastward (+X)
+			offset = Vector3((parent_dimensions.x + new_dimensions.x) * grid_size * 0.5, 0, 0)
 		"south":
-			offset = Vector3(0, 0, parent_dimensions.y * grid_size)
+			# New room connects to parent's south side, extends southward (+Z)
+			offset = Vector3(0, 0, (parent_dimensions.y + new_dimensions.y) * grid_size * 0.5)
 		"west":
-			offset = Vector3(-parent_dimensions.x * grid_size, 0, 0)
+			# New room connects to parent's west side, extends westward (-X)
+			offset = Vector3(-(parent_dimensions.x + new_dimensions.x) * grid_size * 0.5, 0, 0)
 	
-	# Calculate rotation needed to align the new room's door with the parent door
+	# Apply parent rotation to the offset
+	var rotated_offset = offset.rotated(Vector3.UP, deg_to_rad(parent_rotation))
+	var new_room_position = parent_position + rotated_offset
+	
+	# New room faces opposite direction to parent's door
+	var opposing_directions = {"north": "south", "south": "north", "east": "west", "west": "east"}
+	var new_room_facing = opposing_directions[door_direction]
 	var direction_angles = {"north": 0.0, "east": 90.0, "south": 180.0, "west": 270.0}
+	var new_room_rotation = direction_angles[new_room_facing]
 	
-	var new_door_angle = direction_angles[random_new_door["direction"]]
-	var target_angle = direction_angles[door_direction]
+	print("  Parent: ", parent_room_name, " (", parent_dimensions.x, "x", parent_dimensions.y, ") at ", parent_position)
+	print("  New: ", selected_room_name, " (", new_dimensions.x, "x", new_dimensions.y, ") at ", new_room_position)
+	print("  Door direction: ", door_direction, " -> New room facing: ", new_room_facing)
 	
-	var rotation_offset = target_angle - new_door_angle
-	var new_room_rotation = parent_room_rotation + rotation_offset
+	# Spawn the room
+	var room_scene_path = "res://assets/rooms/" + selected_room_name + ".tscn"
+	var new_room = spawn_room(room_scene_path, new_room_position, 0.0)
 	
-	# Apply parent rotation to offset and calculate final position
-	var rotated_offset = offset.rotated(Vector3.UP, deg_to_rad(parent_room_rotation))
-	var new_room_position = parent_room_position + rotated_offset
-	
-	print("Spawning additional room: ", new_room_name, " at position: ", new_room_position, " with rotation: ", new_room_rotation)
-	print("  Connecting parent room: ", parent_room_name, " door direction: ", door_direction, " to new room door direction: ", random_new_door["direction"])
-
-	var new_room = spawn_room(new_room_scene_path, new_room_position, new_room_rotation)
-
-	# Disable walls for connected doors
 	if new_room:
-		# Disable wall in parent room
+		# Disable connecting walls
+		var opposing_dirs = {
+			"north": "south", "south": "north", 
+			"east": "west", "west": "east"
+		}
+		
+		# 1. Disable parent room's wall at the connecting door
 		var parent_room_node = get_node_or_null("Room_" + parent_room_name)
 		if parent_room_node:
 			var parent_walls_node = parent_room_node.get_node_or_null("Walls")
@@ -207,37 +208,38 @@ func spawn_additional_room():
 				var parent_wall = parent_walls_node.get_node_or_null(parent_wall_name)
 				if parent_wall:
 					parent_wall.queue_free()
-					print("Disabled parent wall: ", parent_wall_name)
+					print("  Disabled parent wall: ", parent_wall_name)
 		
-		# Disable wall in new room
-		var new_door_direction = random_new_door["direction"]
+		# 2. Disable new room's wall at the connecting door (regardless of door existence)
 		var new_walls_node = new_room.get_node_or_null("Walls")
 		if new_walls_node:
-			var new_door_index = int(random_new_door["door"])
-			var new_wall_name = "Wall" + new_door_direction.capitalize() + str(new_door_index)
-			var new_wall = new_walls_node.get_node_or_null(new_wall_name)
-			if new_wall:
-				new_wall.queue_free()
-				print("Disabled new room wall: ", new_wall_name)
-
-	if new_room:
-		print("Spawned additional room: ", new_room_name)
+			var opposing_door_direction = opposing_dirs[door_direction]
+			
+			# Disable the wall at the connecting door (always try index 0)
+			var connecting_wall_name = "Wall" + opposing_door_direction.capitalize() + "0"
+			var connecting_wall = new_walls_node.get_node_or_null(connecting_wall_name)
+			if connecting_wall:
+				connecting_wall.queue_free()
+				print("  Disabled new room connecting wall: ", connecting_wall_name)
 		
-		# Get doors for the new room
-		var doors = get_room_doors(new_room_name)
-		
+		# Track the new room
+		var doors = get_room_doors(selected_room_name)
 		spawned_rooms.append({
-			"name": new_room_name,
+			"name": selected_room_name,
 			"position": new_room_position,
-			"rotation_degrees": parent_room_rotation,
-			"scene_path": new_room_scene_path,
+			"rotation_degrees": new_room_rotation,
+			"scene_path": room_scene_path,
 			"unused_doors": doors
 		})
 		
+		print("Spawned room: ", selected_room_name)
 		return new_room
 	else:
-		push_error("Failed to spawn additional room: " + new_room_name)
+		push_error("Failed to spawn room: " + selected_room_name)
 		return null
+	
+
+
 
 func get_available_doors():
 	"""Get a list of all available doors in spawned rooms"""
