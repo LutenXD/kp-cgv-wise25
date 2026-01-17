@@ -48,7 +48,7 @@ func _ready():
 			player.global_position = Vector3(0, 1, 0)
 			#print("Player positioned at: ", player.global_position)
 		
-		initialize_lore_system()
+		# initialize_lore_system()
 
 func get_game_settings():
 	if has_node("/root/GameSettings"):
