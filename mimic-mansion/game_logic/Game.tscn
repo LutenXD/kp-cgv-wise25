@@ -168,18 +168,7 @@ Rules:
 When the answer is incorrect, state it plainly.
 When the answer is correct, acknowledge it briefly and move on.
 
-**Do not break character or reveal the answer directly.**
-
-OUTPUT FORMAT (STRICT):
-
-You MUST respond with ONE valid JSON object and NOTHING else.
-No text before the JSON.
-No text after the JSON.
-No markdown.
-No code fences.
-No explanations outside JSON.
-
-If you output anything outside the JSON object, the response is invalid."
+**Do not break character or reveal the answer.**"
 prop_path = "uid://s3te7k2jfvrj"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"

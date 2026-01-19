@@ -38,14 +38,29 @@ func request_chat(user_text: String) -> void:
 		"Authorization: " + "Bearer " + API_KEY
 	]
 	
-	var body: Dictionary[String, Variant] = {
+	var body: Dictionary = {
 		"model": chat_model,
 		"messages": [
 			{
 				"role": "system",
-				"content": "Always respond with JSON: { \"content\": string, \"is_correct\": boolean }. " + system_instructions
+				"content": system_instructions
 			}
-		] + conversation
+		] + conversation,
+		"response_format": {
+			"type": "json_schema",
+			"json_schema": {
+				"name": "chat_response",
+				"schema": {
+					"type": "object",
+					"properties": {
+						"content": { "type": "string" },
+						"is_correct": { "type": "boolean" }
+					},
+					"required": ["content", "is_correct"],
+					"additionalProperties": false
+				}
+			}
+		}
 	}
 	
 	self.request(
@@ -77,19 +92,17 @@ func _on_request_completed(result: int, response_code: int, _headers: PackedStri
 		return
 	
 	var message_dict: Dictionary = choices[0].get("message", {})
-	var content: String = str(message_dict.get("content", ""))
+	var content: String = message_dict.get("content", "")
 	
 	var parsed = JSON.parse_string(content)
-	var ai_text := ""
-	var is_correct = null
-
-	if typeof(parsed) == TYPE_DICTIONARY:
-		ai_text = str(parsed.get("content", ""))
-		if parsed.has("is_correct"):
-			is_correct = bool(parsed["is_correct"])
-	else:
-		ai_text = str(content)
-
+	
+	if typeof(parsed) != TYPE_DICTIONARY:
+		push_error("Structured output violated schema")
+		return
+	
+	var ai_text: String = parsed["content"]
+	var is_correct: bool = parsed["is_correct"]
+	
 	# Store ONLY text in conversation
 	conversation.append({
 		"role": "assistant",
