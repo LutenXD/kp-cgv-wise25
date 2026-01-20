@@ -2,7 +2,7 @@ extends Node3D
 class_name RoomLayoutManager
 
 # Configuration
-const STARTING_ROOM_PATH = "res://assets/rooms/grand_foyer.tscn"
+const STARTING_ROOM_PATH = "res://assets/game_rooms/grand_foyer.tscn"
 const STARTING_ROOM_POSITION = Vector3.ZERO
 const ROOM_ASSETS_PATH = "res://data/room_assets.json"
 
@@ -94,30 +94,16 @@ func get_room_dimensions(room_name: String) -> Vector2:
 	var data = room_data[room_name]
 	return Vector2(data.get("width", 1), data.get("length", 1))
 
-func spawn_room(room_scene_path: String = "res://assets/rooms/grand_foyer.tscn", position: Vector3 = Vector3.ZERO, rotation_degrees: float = 0.0):
+func spawn_room(room_scene_path: String = "res://assets/rooms/grand_foyer.tscn", position: Vector3 = Vector3.ZERO):
 	"""Spawn a single room in the scene"""
 	
-	# Check if this is a rotated variant that doesn't have a scene file
 	var room_name = room_scene_path.get_file().get_basename()
-	var base_scene_path = room_scene_path
-	var actual_rotation = rotation_degrees
 	
-	# If requesting a rotated variant that doesn't exist, use base room with rotation
-	if "_rot" in room_name and not ResourceLoader.exists(room_scene_path):
-		# Extract base room name and rotation
-		var parts = room_name.split("_rot")
-		if parts.size() == 2:
-			var base_name = parts[0]
-			var rot_angle = parts[1].to_int()
-			base_scene_path = "res://assets/rooms/" + base_name + ".tscn"
-			actual_rotation = rot_angle
-			print("  Generating rotated variant: ", base_name, " with ", rot_angle, "° rotation")
-	
-	var room_scene = ResourceLoader.load(base_scene_path, "", ResourceLoader.CACHE_MODE_REUSE)
+	var room_scene = ResourceLoader.load(room_scene_path, "", ResourceLoader.CACHE_MODE_REUSE)
 	
 	if not room_scene:
-		var error = ResourceLoader.load_threaded_get_status(base_scene_path)
-		push_error("Failed to load room scene: " + base_scene_path + " Error: " + str(error))
+		var error = ResourceLoader.load_threaded_get_status(room_scene_path)
+		push_error("Failed to load room scene: " + room_scene_path + " Error: " + str(error))
 		return null
 
 	var room_instance = room_scene.instantiate()
@@ -131,53 +117,8 @@ func spawn_room(room_scene_path: String = "res://assets/rooms/grand_foyer.tscn",
 	add_child(room_instance)
 	
 	room_instance.global_position = position
-	room_instance.rotation_degrees.y = actual_rotation
-	
-	# Rename walls to match rotation if room is rotated
-	if actual_rotation != 0.0:
-		rename_walls_for_rotation(room_instance, actual_rotation)
 	
 	return room_instance
-
-func rename_walls_for_rotation(room_instance: Node3D, rotation: float):
-	"""Rename walls to match their new orientation after rotation"""
-	var walls_node = room_instance.get_node_or_null("Walls")
-	if not walls_node:
-		return
-	
-	# Determine direction mapping based on rotation
-	var direction_map = {}
-	match int(rotation):
-		90:
-			# 90° clockwise: north->east, east->south, south->west, west->north
-			direction_map = {"North": "East", "East": "South", "South": "West", "West": "North"}
-		180:
-			# 180°: north->south, east->west, south->north, west->east
-			direction_map = {"North": "South", "East": "West", "South": "North", "West": "East"}
-		270:
-			# 270° clockwise: north->west, east->north, south->east, west->south
-			direction_map = {"North": "West", "East": "North", "South": "East", "West": "South"}
-	
-	if direction_map.is_empty():
-		return
-	
-	# Collect all walls to rename (to avoid modifying while iterating)
-	var walls_to_rename = []
-	for child in walls_node.get_children():
-		var wall_name = child.name
-		for old_dir in direction_map.keys():
-			if wall_name.begins_with("Wall" + old_dir):
-				var new_dir = direction_map[old_dir]
-				var suffix = wall_name.substr(4 + old_dir.length()) # Get the number part
-				var new_name = "Wall" + new_dir + suffix
-				walls_to_rename.append({"node": child, "new_name": new_name})
-				break
-	
-	# Apply the renames
-	for item in walls_to_rename:
-		item["node"].name = item["new_name"]
-	
-	print("  Renamed ", walls_to_rename.size(), " walls for ", rotation, "° rotation")
 
 func spawn_starting_room():
 	"""Spawn the starting room at the configured position"""
@@ -222,11 +163,10 @@ func restore_room_layout(saved_rooms: Array):
 	for room_data_dict in saved_rooms:
 		var room_name = room_data_dict.get("name", "")
 		var position = room_data_dict.get("position", Vector3.ZERO)
-		var rotation = room_data_dict.get("rotation_degrees", 0.0)
 		var scene_path = room_data_dict.get("scene_path", "")
 		
-		# Spawn the room at saved position and rotation
-		var room = spawn_room(scene_path, position, rotation)
+		# Spawn the room at saved position
+		var room = spawn_room(scene_path, position)
 		
 		if room:
 			# Add to spawned rooms array with saved data
@@ -305,18 +245,16 @@ func spawn_additional_room():
 	print("  New: ", selected_room_name, " (", new_dimensions.x, "x", new_dimensions.y, ") at ", new_room_position)
 	print("  Door direction: ", door_direction)
 	
-	# Determine the base room name (without rotation suffix)
-	var base_room_name = selected_room_name
-	var rotation_for_spawn = 0.0
-	
-	if "_rot" in selected_room_name:
-		base_room_name = room_data[selected_room_name].get("original_name", base_room_name)
-		rotation_for_spawn = room_data[selected_room_name].get("rotation", 0.0)
-	
 	# Use the selected room name (with rotation suffix) as the scene path
-	# The spawn_room function will handle loading base room + applying rotation
-	var room_scene_path = "res://assets/rooms/" + selected_room_name + ".tscn"
-	var new_room = spawn_room(room_scene_path, new_room_position, rotation_for_spawn)
+	var room_scene_path = "res://assets/game_rooms/" + selected_room_name + ".tscn"
+	
+	# Check if the scene file exists before trying to load it
+	if not ResourceLoader.exists(room_scene_path):
+		push_error("Room scene file does not exist: " + room_scene_path)
+		print("  Skipping room: ", selected_room_name, " (file not found)")
+		return null
+	
+	var new_room = spawn_room(room_scene_path, new_room_position)
 	
 	if new_room:
 		# Disable connecting walls
@@ -354,7 +292,6 @@ func spawn_additional_room():
 		spawned_rooms.append({
 			"name": selected_room_name,
 			"position": new_room_position,
-			"rotation_degrees": rotation_for_spawn,
 			"scene_path": room_scene_path,
 			"unused_doors": doors
 		})
