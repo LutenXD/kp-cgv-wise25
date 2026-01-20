@@ -77,6 +77,9 @@ func create_rotated_variant(original_scene: PackedScene, rotation_degrees: int) 
 	# Rotate the entire room
 	room_instance.rotation_degrees.y = rotation_degrees
 	
+	# Rename walls to match their new orientation after rotation
+	rename_walls_for_rotation(room_instance, rotation_degrees)
+	
 	# Create a new packed scene from the rotated instance
 	var rotated_scene = PackedScene.new()
 	rotated_scene.pack(room_instance)
@@ -85,3 +88,46 @@ func create_rotated_variant(original_scene: PackedScene, rotation_degrees: int) 
 	room_instance.queue_free()
 	
 	return rotated_scene
+
+func rename_walls_for_rotation(room_instance: Node, rotation: int):
+	"""Rename walls to match their new orientation after rotation"""
+	var walls_node = room_instance.get_node_or_null("Walls")
+	if not walls_node:
+		return
+	
+	# Determine direction mapping based on rotation
+	var direction_map = {}
+	match rotation:
+		90:
+			# 90° clockwise rotation: north wall moves to west, east to north, south to east, west to south
+			direction_map = {"North": "West", "East": "North", "South": "East", "West": "South"}
+		180:
+			# 180°: north->south, east->west, south->north, west->east
+			direction_map = {"North": "South", "East": "West", "South": "North", "West": "East"}
+		270:
+			# 270° clockwise (90° counter-clockwise): north->east, east->south, south->west, west->north
+			direction_map = {"North": "East", "East": "South", "South": "West", "West": "North"}
+	
+	if direction_map.is_empty():
+		return
+	
+	# Step 1: Rename all walls to temporary names to avoid conflicts
+	var walls_to_process = []
+	for child in walls_node.get_children():
+		var wall_name = child.name
+		for old_dir in direction_map.keys():
+			if wall_name.begins_with("Wall" + old_dir):
+				var new_dir = direction_map[old_dir]
+				var suffix = wall_name.substr(4 + old_dir.length()) # Get the number part
+				var temp_name = "TEMP_Wall" + new_dir + suffix
+				var final_name = "Wall" + new_dir + suffix
+				walls_to_process.append({"node": child, "temp_name": temp_name, "final_name": final_name})
+				child.name = temp_name
+				break
+	
+	# Step 2: Remove the TEMP_ prefix from all walls
+	for item in walls_to_process:
+		item["node"].name = item["final_name"]
+	
+	if walls_to_process.size() > 0:
+		print("    → Renamed ", walls_to_process.size(), " walls for ", rotation, "° rotation")
