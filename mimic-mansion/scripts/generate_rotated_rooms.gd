@@ -6,6 +6,8 @@ extends EditorScript
 
 const ROOM_FOLDER = "res://assets/rooms/"
 const OUTPUT_FOLDER = "res://assets/game_rooms/"
+const ROOM_ASSETS_PATH = "res://data/rot_assets.json"
+const OUTPUT_JSON_PATH = "res://data/rot_room_assets.json"
 const ROTATIONS = [90, 180, 270]  # Degrees to rotate
 
 func _run():
@@ -14,6 +16,9 @@ func _run():
 	# Create output directory if it doesn't exist
 	DirAccess.make_dir_absolute(OUTPUT_FOLDER)
 	print("Output folder: ", OUTPUT_FOLDER)
+	
+	# Generate rotated room assets JSON
+	generate_rotated_room_assets_json()
 	
 	# Read all .tscn files from the rooms folder
 	var room_files = []
@@ -131,3 +136,145 @@ func rename_walls_for_rotation(room_instance: Node, rotation: int):
 	
 	if walls_to_process.size() > 0:
 		print("    → Renamed ", walls_to_process.size(), " walls for ", rotation, "° rotation")
+
+func generate_rotated_room_assets_json():
+	"""Generate a JSON file with all room variants including rotations"""
+	print("\n=== Generating Rotated Room Assets JSON ===")
+	
+	# Load the original room assets
+	var file = FileAccess.open(ROOM_ASSETS_PATH, FileAccess.READ)
+	if not file:
+		push_error("Failed to open: " + ROOM_ASSETS_PATH)
+		return
+	
+	var json_text = file.get_as_text()
+	file.close()
+	
+	var json = JSON.new()
+	var parse_result = json.parse(json_text)
+	if parse_result != OK:
+		push_error("Failed to parse JSON: " + ROOM_ASSETS_PATH)
+		return
+	
+	var room_data = json.get_data()
+	if not room_data.has("rooms"):
+		push_error("Invalid room_assets.json format")
+		return
+	
+	# Create rotated variants
+	var all_rooms = []
+	for room in room_data["rooms"]:
+		# Add original room
+		var original_room = room.duplicate(true)
+		all_rooms.append(original_room)
+		
+		# Add rotated variants
+		for rotation in ROTATIONS:
+			var rotated_room = create_rotated_room_data(room, rotation)
+			all_rooms.append(rotated_room)
+	
+	# Create output JSON
+	var output_data = {"rooms": all_rooms}
+	var output_json = JSON.stringify(output_data, "  ")
+	
+	# Save to file
+	var output_file = FileAccess.open(OUTPUT_JSON_PATH, FileAccess.WRITE)
+	if not output_file:
+		push_error("Failed to create: " + OUTPUT_JSON_PATH)
+		return
+	
+	output_file.store_string(output_json)
+	output_file.close()
+	
+	print("✓ Generated rotated room assets JSON: ", OUTPUT_JSON_PATH)
+	print("  Total room variants: ", all_rooms.size(), " (", room_data["rooms"].size(), " originals + ", room_data["rooms"].size() * 3, " rotated)")
+
+func create_rotated_room_data(room: Dictionary, rotation_degrees: int) -> Dictionary:
+	"""Create a rotated version of room data with rotated door positions"""
+	var rotated_room = room.duplicate(true)
+	
+	# Update name with rotation suffix
+	rotated_room["name"] = room["name"] + "_rot" + str(rotation_degrees)
+	
+	# For rectangular rooms, swap width and length for 90/270 degree rotations
+	if rotation_degrees == 90 or rotation_degrees == 270:
+		var temp = rotated_room["width"]
+		rotated_room["width"] = rotated_room["length"]
+		rotated_room["length"] = temp
+	
+	# Rotate door positions
+	var original_doors = room["doors"]
+	var rotated_doors = rotate_doors(original_doors, rotation_degrees, room["width"], room["length"])
+	rotated_room["doors"] = rotated_doors
+	
+	return rotated_room
+
+func rotate_doors(doors: Dictionary, rotation: int, width: int, length: int) -> Dictionary:
+	"""Rotate door positions based on rotation angle"""
+	var rotated_doors = {
+		"north": [],
+		"east": [],
+		"south": [],
+		"west": []
+	}
+	
+	# Determine direction mapping based on rotation
+	var direction_map = {}
+	match rotation:
+		90:
+			# 90° clockwise: north->west, east->north, south->east, west->south
+			direction_map = {"north": "west", "east": "north", "south": "east", "west": "south"}
+		180:
+			# 180°: north->south, east->west, south->north, west->east
+			direction_map = {"north": "south", "east": "west", "south": "north", "west": "east"}
+		270:
+			# 270° clockwise: north->east, east->south, south->west, west->north
+			direction_map = {"north": "east", "east": "south", "south": "west", "west": "north"}
+	
+	# Rotate each door to its new direction
+	for direction in doors.keys():
+		var new_direction = direction_map[direction]
+		var door_positions = doors[direction]
+		
+		# Transform door positions based on rotation
+		var new_positions = []
+		for pos in door_positions:
+			var new_pos = transform_door_position(pos, direction, rotation, width, length)
+			new_positions.append(new_pos)
+		
+		rotated_doors[new_direction] = new_positions
+	
+	return rotated_doors
+
+func transform_door_position(pos: int, original_direction: String, rotation: int, width: int, length: int) -> int:
+	"""Transform a door position index based on rotation"""
+	# For 90/270 rotations, positions may need to be transformed
+	# based on the change in room dimensions
+	match rotation:
+		90:
+			# When rotating 90° clockwise:
+			# - north wall (width) -> west wall (length): pos needs adjustment
+			# - east wall (length) -> north wall (width): reverse position
+			# - south wall (width) -> east wall (length): pos needs adjustment
+			# - west wall (length) -> south wall (width): reverse position
+			match original_direction:
+				"north", "south":  # Width -> Length
+					return pos
+				"east", "west":  # Length -> Width
+					return (length - 1) - pos if length > 1 else pos
+		180:
+			# 180° rotation reverses positions along the same dimension
+			match original_direction:
+				"north", "south":
+					return (width - 1) - pos if width > 1 else pos
+				"east", "west":
+					return (length - 1) - pos if length > 1 else pos
+		270:
+			# 270° clockwise (90° counter-clockwise)
+			match original_direction:
+				"north", "south":  # Width -> Length
+					return (width - 1) - pos if width > 1 else pos
+				"east", "west":  # Length -> Width
+					return pos
+	
+	return pos
