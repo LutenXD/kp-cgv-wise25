@@ -5,8 +5,8 @@ extends EditorScript
 # Run this from Godot: File -> Run
 
 const ROOM_FOLDER = "res://assets/rooms/"
-const OUTPUT_FOLDER = "res://assets/game_rooms/"
-const ROOM_ASSETS_PATH = "res://data/rot_assets.json"
+const OUTPUT_FOLDER = "res://assets/rot_rooms/"
+const ROOM_ASSETS_PATH = "res://data/room_assets.json"
 const OUTPUT_JSON_PATH = "res://data/rot_room_assets.json"
 const ROTATIONS = [90, 180, 270]  # Degrees to rotate
 

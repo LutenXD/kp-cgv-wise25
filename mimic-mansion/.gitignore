@@ -1,7 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-/rot_rooms/*
 
 # Generated room assets
+assets/rot_rooms/
 data/rot_room_assets.json
