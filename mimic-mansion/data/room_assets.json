@@ -98,17 +98,6 @@
         "south": [0],
         "west": [0]
       }
-    },
-    {
-      "name": "servants_quarters",
-      "width": 1,
-      "length": 1,
-      "doors": {
-        "north": [],
-        "east": [],
-        "south": [0],
-        "west": []
-      }
-    }   
+    }  
   ]
 }
