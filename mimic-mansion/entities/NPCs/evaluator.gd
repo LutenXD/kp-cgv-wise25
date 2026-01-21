@@ -33,5 +33,6 @@ func _on_chat_request_correctness_received(is_correct: bool) -> void:
 		if question_idx < num_questions:
 			set_evaluator_instructions()
 			self.chat_request.request_chat("ask away")
+			thinking = true
 		else:
 			self.set_instructions(evaluator_pre_instructions + "every question was successfully answered. Praise the player!")

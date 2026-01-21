@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cj7y2xqr8iqwf"]
+
+[ext_resource type="Script" uid="uid://7ehusbxj3831" path="res://ui/options_menu.gd" id="1_options_menu"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1376845131]
+script = ExtResource("1_options_menu")
+
+[node name="OptionsMenu" type="Control" parent="." unique_id=573764452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenu" unique_id=975106527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsMenu" unique_id=1552702475]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer" unique_id=1009733224]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=265423416]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=14267649]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RatioContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=1138686382]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RatioLabel" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/RatioContainer" unique_id=17994799]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "True Items: 20% / False Items: 80%"
+horizontal_alignment = 1
+
+[node name="SliderLabel" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/RatioContainer" unique_id=830066644]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Adjust True/False Ratio:"
+horizontal_alignment = 1
+
+[node name="TrueRatioSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/RatioContainer" unique_id=2071700961]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+step = 5.0
+value = 20.0
+tick_count = 21
+ticks_on_borders = true
+
+[node name="Spacer2" type="Control" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=142233888]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MimicContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=1463388145]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MimicLabel" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/MimicContainer" unique_id=1309649814]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Number of Mimics: 3"
+horizontal_alignment = 1
+
+[node name="MimicSliderLabel" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/MimicContainer" unique_id=456576013]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Adjust Mimic Count:"
+horizontal_alignment = 1
+
+[node name="MimicCountSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/MimicContainer" unique_id=840396041]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+value = 3.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Spacer3" type="Control" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=1738680503]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=1346060061]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back to Main Menu"
+
+[connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/RatioContainer/TrueRatioSlider" to="." method="_on_true_ratio_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/MimicContainer/MimicCountSlider" to="." method="_on_mimic_count_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

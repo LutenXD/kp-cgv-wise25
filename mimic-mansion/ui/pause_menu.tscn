@@ -1,29 +1,31 @@
 [gd_scene format=3 uid="uid://bhwq8yxr5m3y7"]
 
-[ext_resource type="Script" uid="uid://bvlvcp7fkm8qg" path="res://scripts/main_menu.gd" id="1_main_menu"]
+[ext_resource type="Script" uid="uid://bvlvcp7fkm8qg" path="res://ui/pause_menu.gd" id="1_main_menu"]
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" unique_id=1187400153]
 process_mode = 3
 script = ExtResource("1_main_menu")
 
-[node name="MainMenu" type="Control" parent="."]
+[node name="MainMenu" type="Control" parent="." unique_id=2029507724]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+[node name="ColorRect" type="ColorRect" parent="MainMenu" unique_id=108507173]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.1, 0.1, 0.15, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="MainMenu"]
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu" unique_id=908761639]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,41 +33,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer" unique_id=430556952]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Title" type="Label" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=2122724093]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "MIMIC MANSION"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="Spacer" type="Control" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1601712263]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+mouse_filter = 2
 
-[node name="NewGameButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1675174729]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "New Game"
 
-[node name="ContinueButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=486248321]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "Continue"
 
-[node name="OptionsButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1612384361]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "Options"
 
-[node name="ExitButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=250927880]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 

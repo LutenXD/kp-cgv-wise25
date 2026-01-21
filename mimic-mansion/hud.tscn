@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://2v4xo680txrw"]
 
 [ext_resource type="Script" uid="uid://d16ftr7spjplh" path="res://hud.gd" id="1_8sq4i"]
-[ext_resource type="PackedScene" uid="uid://bhwq8yxr5m3y7" path="res://scenes/pause_menu.tscn" id="2_640wx"]
-[ext_resource type="PackedScene" uid="uid://cj7y2xqr8iqwf" path="res://scenes/options_menu.tscn" id="3_a2258"]
+[ext_resource type="PackedScene" uid="uid://bhwq8yxr5m3y7" path="res://ui/pause_menu.tscn" id="2_640wx"]
+[ext_resource type="PackedScene" uid="uid://cj7y2xqr8iqwf" path="res://ui/options_menu.tscn" id="3_a2258"]
 
-[node name="HUD" type="Control"]
+[node name="HUD" type="Control" unique_id=34305968]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,9 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8sq4i")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_640wx")]
+[node name="PauseMenu" parent="." unique_id=297029041 instance=ExtResource("2_640wx")]
 
-[node name="OptionsMenu" parent="." instance=ExtResource("3_a2258")]
+[node name="OptionsMenu" parent="." unique_id=672524031 instance=ExtResource("3_a2258")]
 process_mode = 3
 
 [connection signal="continue_game" from="PauseMenu" to="." method="_on_main_menu_continue_game"]

@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func parse_json(number_questions: int) -> Array[Dictionary]:
-	var json_text: String = FileAccess.open("res://data/cg1-data.json", FileAccess.READ).get_as_text()
+	var json_text: String = FileAccess.open("res://data/ecg-data.json", FileAccess.READ).get_as_text()
 	
 	var json: JSON = JSON.new()
 	var error: Error = json.parse(json_text)

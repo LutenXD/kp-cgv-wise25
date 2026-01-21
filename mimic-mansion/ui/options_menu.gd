@@ -1,16 +1,16 @@
 extends CanvasLayer
 
-@onready var true_ratio_slider = $CenterContainer/VBoxContainer/RatioContainer/TrueRatioSlider
-@onready var ratio_label = $CenterContainer/VBoxContainer/RatioContainer/RatioLabel
-@onready var mimic_count_slider = $CenterContainer/VBoxContainer/MimicContainer/MimicCountSlider
-@onready var mimic_label = $CenterContainer/VBoxContainer/MimicContainer/MimicLabel
+@onready var true_ratio_slider = %TrueRatioSlider
+@onready var ratio_label = %RatioLabel
+@onready var mimic_count_slider = %MimicCountSlider
+@onready var mimic_label = %MimicLabel
 
-signal close_options()
+signal close_options
 
 func _ready():
 	hide()
-	# Ensure the mouse is visible
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# Ensure the mouse is visible #wird vom hud gehandelt
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	# Initialize sliders with current settings
 	var settings = get_game_settings()
@@ -51,5 +51,7 @@ func update_mimic_label():
 		mimic_label.text = "Number of Mimics: " + str(count)
 
 func _on_back_button_pressed():
-	emit_signal("close_options")
+	print("back")
+	close_options.emit()
+	#emit_signal("close_options") #avoid magic strings
 	#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
