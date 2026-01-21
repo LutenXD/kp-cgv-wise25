@@ -79,8 +79,28 @@ func create_rotated_variant(original_scene: PackedScene, rotation_degrees: int) 
 	# Instantiate the original scene
 	var room_instance = original_scene.instantiate()
 	
+	# Get room dimensions from the scene name
+	var room_name = original_scene.resource_path.get_file().get_basename()
+	var room_info = get_room_info(room_name)
+	
 	# Rotate the entire room
 	room_instance.rotation_degrees.y = rotation_degrees
+	
+	# Adjust position for non-square rooms to keep them centered correctly
+	if room_info and (room_info["width"] != room_info["length"]):
+		var grid_size = 10.0
+		var width_diff = (room_info["width"]-1) * grid_size
+		var length_diff = (room_info["length"]-1) * grid_size
+		print("    → Adjusting position for non-square room: width=", room_info["width"], ", length=", room_info["length"])
+		print("      width_diff=", width_diff, ", length_diff=", length_diff)
+		
+		match rotation_degrees:
+			90:
+				room_instance.position.x -= length_diff
+				room_instance.position.z += width_diff
+			270:
+				room_instance.position.x += length_diff
+				room_instance.position.z -= width_diff
 	
 	# Rename walls to match their new orientation after rotation
 	rename_walls_for_rotation(room_instance, rotation_degrees)
@@ -136,6 +156,29 @@ func rename_walls_for_rotation(room_instance: Node, rotation: int):
 	
 	if walls_to_process.size() > 0:
 		print("    → Renamed ", walls_to_process.size(), " walls for ", rotation, "° rotation")
+
+func get_room_info(room_name: String) -> Dictionary:
+	"""Get room dimensions from room_assets.json"""
+	var file = FileAccess.open(ROOM_ASSETS_PATH, FileAccess.READ)
+	if not file:
+		return {}
+	
+	var json_text = file.get_as_text()
+	file.close()
+	
+	var json = JSON.new()
+	if json.parse(json_text) != OK:
+		return {}
+	
+	var data = json.get_data()
+	if not data.has("rooms"):
+		return {}
+	
+	for room in data["rooms"]:
+		if room["name"] == room_name:
+			return room
+	
+	return {}
 
 func generate_rotated_room_assets_json():
 	"""Generate a JSON file with all room variants including rotations"""
