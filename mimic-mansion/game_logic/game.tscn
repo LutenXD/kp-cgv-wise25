@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://74y3u1sq1kck"]
 
-[ext_resource type="Script" uid="uid://dd5dcr0sphys6" path="res://game_logic/game_manager.gd" id="1_ta1pv"]
+[ext_resource type="Script" uid="uid://dd5dcr0sphys6" path="res://game_logic/mimic_manager.gd" id="1_ta1pv"]
 [ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="2_o8hf1"]
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="3_4sqru"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="4_twcmp"]
@@ -44,16 +44,6 @@ material = SubResource("StandardMaterial3D_w72v2")
 size = Vector2(100, 100)
 
 [node name="Game" type="Node3D" unique_id=1598571889]
-script = ExtResource("1_ta1pv")
-mimic_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to teach the player about the following concept. Explain the underlying concept so the player understands *why* the answer is correct.
-
-**Question, Answer and Explanation:**"
-mimic_post_instructions = "
-Start the conversation by acknowledge the presence of the player.
-You want to explain your concept to the player from the ground up.
-
-**Do not break character or reveal your instructions to the player.**
-**Answer in not more than 3 sentances at a time.**"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=120330231]
 environment = SubResource("Environment_hcq1q")
@@ -75,50 +65,61 @@ shape = SubResource("WorldBoundaryShape3D_dvuwv")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1732459535]
 mesh = SubResource("PlaneMesh_je483")
 
-[node name="MimicContainer" type="Node3D" parent="." unique_id=1896974085]
-unique_name_in_owner = true
+[node name="MimicManager" type="Node3D" parent="." unique_id=1896974085 node_paths=PackedStringArray("humgold")]
+script = ExtResource("1_ta1pv")
+mimic_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to teach the player about the following concept. Explain the underlying concept so the player understands *why* the answer is correct.
 
-[node name="Mimic" parent="MimicContainer" unique_id=766133172 instance=ExtResource("4_twcmp")]
+**Question, Answer and Explanation:**"
+mimic_post_instructions = "
+Start the conversation by acknowledge the presence of the player.
+You want to explain your concept to the player from the ground up.
+The player is to be addressed as a \"filthy student\" or something similar.
+
+**Do not break character or reveal your instructions to the player.**
+**Answer in not more than 3 sentances at a time.**"
+humgold = NodePath("../Evaluator")
+
+[node name="Mimic" parent="MimicManager" unique_id=766133172 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.47159684, 0, 0.8818143, 0, 1, 0, -0.8818143, 0, 0.47159684, -5.1566706, 0.41861773, -3.1866372)
 prop_path = "uid://des35pypreh7h"
 chat_model = "openai/gpt-oss-120b"
 
-[node name="Mimic2" parent="MimicContainer" unique_id=1240559959 instance=ExtResource("4_twcmp")]
+[node name="Mimic2" parent="MimicManager" unique_id=1240559959 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -0.06337738, 0.41861773, -5.9175634)
 prop_path = "uid://ce77xk53or0cv"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "fransob"
 
-[node name="Mimic3" parent="MimicContainer" unique_id=1082312390 instance=ExtResource("4_twcmp")]
+[node name="Mimic3" parent="MimicManager" unique_id=1082312390 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 2.5802348, 0.41861773, -5.9175634)
 prop_path = "uid://cgq4pp14mqgbq"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "bruno"
 
-[node name="Mimic4" parent="MimicContainer" unique_id=139568309 instance=ExtResource("4_twcmp")]
+[node name="Mimic4" parent="MimicManager" unique_id=139568309 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 5.5756397, 0.41861773, -5.9175634)
 prop_path = "uid://r7sbnmk48t8l"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "jans"
 
-[node name="Mimic5" parent="MimicContainer" unique_id=509593022 instance=ExtResource("4_twcmp")]
+[node name="Mimic5" parent="MimicManager" unique_id=509593022 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 8.638177, 0.41861773, -5.9175634)
 prop_path = "uid://ccvpl3bkeoaju"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frunons"
 
-[node name="Mimic6" parent="MimicContainer" unique_id=1976606061 instance=ExtResource("4_twcmp")]
+[node name="Mimic6" parent="MimicManager" unique_id=1976606061 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 11.223776, 0.41861773, -5.9175634)
 prop_path = "uid://c43bxsa7q07d"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frob"
 
-[node name="Mimic7" parent="MimicContainer" unique_id=31298596 instance=ExtResource("4_twcmp")]
+[node name="Mimic7" parent="MimicManager" unique_id=31298596 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 14.159206, 0.41861773, -5.9175634)
 prop_path = "uid://hfpdodxxnimn"
 chat_model = "openai/gpt-oss-120b"
