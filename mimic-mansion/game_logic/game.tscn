@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="3_4sqru"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="4_twcmp"]
 [ext_resource type="PackedScene" uid="uid://uqb5rigsgygs" path="res://entities/NPCs/evaluator.tscn" id="5_1xng4"]
+[ext_resource type="PackedScene" uid="uid://cctloslvbfy3r" path="res://entities/interactable_door.tscn" id="6_o8hf1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yt5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -80,7 +81,7 @@ The player is to be addressed as a \"filthy student\" or something similar.
 humgold = NodePath("../Evaluator")
 
 [node name="Mimic" parent="MimicManager" unique_id=766133172 groups=["mimic"] instance=ExtResource("4_twcmp")]
-transform = Transform3D(0.47159684, 0, 0.8818143, 0, 1, 0, -0.8818143, 0, 0.47159684, -5.1566706, 0.41861773, -3.1866372)
+transform = Transform3D(0.21543413, 0, 0.9765185, 0, 1, 0, -0.9765185, 0, 0.21543413, -3.3349276, 0.41861773, 3.658798)
 prop_path = "uid://des35pypreh7h"
 chat_model = "openai/gpt-oss-120b"
 
@@ -120,7 +121,7 @@ tts_model = "piper"
 voice_piper = "frob"
 
 [node name="Mimic7" parent="MimicManager" unique_id=31298596 groups=["mimic"] instance=ExtResource("4_twcmp")]
-transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 14.159206, 0.41861773, -5.9175634)
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -1.7609262, 0.41861773, 5.2535396)
 prop_path = "uid://hfpdodxxnimn"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
@@ -156,3 +157,6 @@ prop_path = "uid://s3te7k2jfvrj"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_tts_1 = "shimmer"
+
+[node name="InteractableDoor" parent="." unique_id=1352723989 instance=ExtResource("6_o8hf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3862681)

@@ -22,7 +22,7 @@ func _capture_mouse():
 
 
 func _process(_delta: float) -> void:
-	interaction_label.visible = not player.current_interaction == null
+	#interaction_label.visible = not player.current_interaction == null
 	fps_label.text = str(Engine.get_frames_per_second())
 
 

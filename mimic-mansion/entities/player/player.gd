@@ -41,6 +41,7 @@ func _process(_delta: float) -> void:
 	current_interaction = get_interactable_component_at_shapecast()
 	if current_interaction:
 		if Input.is_action_just_pressed("interact"):
+			current_interaction.interact_with()
 			last_interaction = current_interaction
 			record_audio()
 	

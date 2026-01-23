@@ -103,3 +103,7 @@ interact={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+mesh_lod/lod_change/threshold_pixels=8.0

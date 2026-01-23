@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://cctloslvbfy3r"]
+
+[ext_resource type="Script" uid="uid://xw1fqiexdhfd" path="res://utils/interactable_component.gd" id="1_vq8wu"]
+
+[sub_resource type="GDScript" id="GDScript_wfpq4"]
+script/source = "extends Node3D
+
+
+var open: bool = false
+var player: Player
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var interactable_component: InteractableComponent = $AnimatableBody3D/InteractableComponent
+
+
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group(\"Player\")
+
+
+func _process(_delta: float) -> void:
+	$AnimatableBody3D/Label3D.visible = is_same(interactable_component, player.current_interaction)
+	$AnimatableBody3D/Label3D2.visible = is_same(interactable_component, player.current_interaction)
+
+
+func _on_interactable_component_interacted() -> void:
+	if open:
+		animation_player.play_backwards(\"open\")
+	else:
+		animation_player.play(\"open\")
+	
+	open = !open
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_hk54o"]
+size = Vector3(0.2, 3, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hk54o"]
+points = PackedVector3Array(-0.1, -1.5, -0.1, -0.1, -1.5, 0.1, -0.1, 1.5, -0.1, 0.1, -1.5, -0.1, 0.1, -1.5, 0.1, -0.1, 1.5, 0.1, 0.1, 1.5, -0.1, 0.1, 1.5, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vq8wu"]
+points = PackedVector3Array(-0.1, -1.5, -0.1, -0.1, -1.5, 0.1, -0.1, 1.5, -0.1, 0.1, -1.5, -0.1, 0.1, -1.5, 0.1, -0.1, 1.5, 0.1, 0.1, 1.5, -0.1, 0.1, 1.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wfpq4"]
+size = Vector3(2.2, 0.2, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qq2lw"]
+points = PackedVector3Array(1.1, 0.1, 0.1, 1.1, 0.1, -0.1, -1.1, 0.1, 0.1, 1.1, -0.1, 0.1, 1.1, -0.1, -0.1, -1.1, 0.1, -0.1, -1.1, -0.1, 0.1, -1.1, -0.1, -0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hvoeb"]
+size = Vector3(1.8, 3, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bsbnc"]
+points = PackedVector3Array(-0.9, -1.5, -0.05, -0.9, -1.5, 0.05, -0.9, 1.5, -0.05, 0.9, -1.5, -0.05, 0.9, -1.5, 0.05, -0.9, 1.5, 0.05, 0.9, 1.5, -0.05, 0.9, 1.5, 0.05)
+
+[sub_resource type="Animation" id="Animation_qq2lw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_hvoeb"]
+resource_name = "open"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -2.3561945, -0.23333335, 0.013180733, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bsbnc"]
+_data = {
+&"RESET": SubResource("Animation_qq2lw"),
+&"open": SubResource("Animation_hvoeb")
+}
+
+[node name="InteractableDoor" type="Node3D" unique_id=1352723989]
+script = SubResource("GDScript_wfpq4")
+
+[node name="Frame" type="StaticBody3D" parent="." unique_id=1311409016]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Frame" unique_id=140107332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+mesh = SubResource("BoxMesh_hk54o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Frame" unique_id=2146332427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+shape = SubResource("ConvexPolygonShape3D_hk54o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Frame" unique_id=937965561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+mesh = SubResource("BoxMesh_hk54o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Frame" unique_id=808586327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+shape = SubResource("ConvexPolygonShape3D_vq8wu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Frame" unique_id=724499027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+mesh = SubResource("BoxMesh_wfpq4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Frame" unique_id=1577606674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+shape = SubResource("ConvexPolygonShape3D_qq2lw")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="." unique_id=906564133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1729884116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+mesh = SubResource("BoxMesh_hvoeb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1168546442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+shape = SubResource("ConvexPolygonShape3D_bsbnc")
+
+[node name="InteractableComponent" type="Node" parent="AnimatableBody3D" unique_id=844389346]
+script = ExtResource("1_vq8wu")
+metadata/_custom_type_script = "uid://xw1fqiexdhfd"
+
+[node name="Label3D" type="Label3D" parent="AnimatableBody3D" unique_id=2121833884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0.15)
+visible = false
+text = "Press \"e\" to open"
+
+[node name="Label3D2" type="Label3D" parent="AnimatableBody3D" unique_id=1365952002]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 1.5, -0.15)
+visible = false
+text = "Press \"e\" to open"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41240774]
+libraries/ = SubResource("AnimationLibrary_bsbnc")
+
+[connection signal="interacted" from="AnimatableBody3D/InteractableComponent" to="." method="_on_interactable_component_interacted"]
