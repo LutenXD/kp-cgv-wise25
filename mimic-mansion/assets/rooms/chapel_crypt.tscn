@@ -32,10 +32,9 @@ albedo_color = Color(0.5, 0.5, 0.52, 1)
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="WallNorth0" type="StaticBody3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 mesh = SubResource("BoxMesh_a4b51")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth0"]

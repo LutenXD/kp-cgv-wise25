@@ -30,7 +30,7 @@ func is_room_variant_spawned(room_name: String) -> bool:
 			return true
 	return false
 
-func spawn_starting_room(starting_room_name: String = "grand_foyer", number_of_connected_rooms: int = 9) -> void:
+func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 9) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	
@@ -43,10 +43,10 @@ func spawn_starting_room(starting_room_name: String = "grand_foyer", number_of_c
 	available_doors = doors.duplicate()
 
 	for i in range(number_of_connected_rooms):
-		spawn_connected_room()
+		spawn_connected_room(filler_room_name)
 
 
-func spawn_connected_room() -> void:
+func spawn_connected_room(filler_room_name: String = "none") -> void:
 
 	if available_doors.is_empty():
 		print("No available doors to spawn connected room")
@@ -61,12 +61,14 @@ func spawn_connected_room() -> void:
 	
 	# Try multiple times to find a room that doesn't collide
 	var max_attempts = 10
+	var room_placed = false
+	
 	for attempt in range(max_attempts):
 		# Find a room with opposing door
 		var room_with_door = get_room_with_door_in_direction(opposing_direction)
 		if not room_with_door:
 			print("Could not find room with door in direction: ", opposing_direction)
-			return
+			break
 		
 		var new_room = room_with_door["room"]
 		var new_room_name = room_with_door["name"]
@@ -113,10 +115,88 @@ func spawn_connected_room() -> void:
 				if door["name"] != room_with_door["door"]["name"]:
 					available_doors.append(door)
 			print("Available doors count: ", available_doors.size())
+			room_placed = true
 			break
 	
+	# If no room was placed after all attempts, spawn a filler room
+	if not room_placed and filler_room_name and filler_room_name != "none":
+		print("Spawning filler room: ", filler_room_name)
+		spawn_filler_room(parent_door, opposing_direction, filler_room_name)
 
+func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, filler_room_name: String) -> void:
+	"""Spawn a filler room when no suitable room is found"""
+	var filler_room = get_filler_room_with_door(filler_room_name, opposing_direction)
+	if not filler_room:
+		print("Could not load filler room: ", filler_room_name)
+		return
+	
+	var new_room = filler_room["room"]
+	var new_room_name = filler_room["name"]
+	
+	var parent_door_position = parent_door["node"].global_position
+	var child_door_position = filler_room["door"]["node"].global_position
+	
+	new_room.global_position = parent_door_position - (child_door_position - new_room.global_position)
+	
+	# Check for collisions
+	var collision_detected = false
+	var new_room_floor_tiles = get_floor_tiles_in_room(new_room)
+	for floor in new_room_floor_tiles:
+		var floor_grid_position = Vector3i(floor.global_position.x, floor.global_position.y, floor.global_position.z)
+		if grid.has(floor_grid_position):
+			print("Filler room collision detected at: ", floor_grid_position)
+			collision_detected = true
+			break
+	
+	if collision_detected:
+		new_room.queue_free()
+		print("Could not place filler room due to collision")
+		return
+	
+	# Add floor tiles to grid
+	for floor in new_room_floor_tiles:
+		var floor_grid_position = Vector3i(floor.global_position.x, floor.global_position.y, floor.global_position.z)
+		grid[floor_grid_position] = true
+	
+	print("Successfully placed filler room: ", new_room_name)
+	
+	# Enable door visibility and disable walls
+	set_door_visible(parent_door, true)
+	set_door_visible(filler_room["door"], true)
+	disable_wall_at_door(parent_door)
+	disable_wall_at_door(filler_room["door"])
+	
+	# Add new doors to available_doors (excluding the connection door)
+	var new_doors = get_room_doors(new_room)
+	for door in new_doors:
+		if door["name"] != filler_room["door"]["name"]:
+			available_doors.append(door)
 
+func get_filler_room_with_door(filler_room_name: String, direction: String) -> Dictionary:
+	"""Get a filler room with a door in the specified direction"""
+	# Try all rotation variants of the filler room
+	var rotations = ["", "_rot90", "_rot180", "_rot270"]
+	
+	for rot in rotations:
+		var room_name = filler_room_name + rot
+		var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
+		
+		if temp_room and has_door_in_direction(temp_room, direction):
+			var room_doors = get_room_doors(temp_room)
+			var door_in_direction = null
+			for door in room_doors:
+				if door["direction"] == direction:
+					door_in_direction = door
+					break
+			return {
+				"room": temp_room,
+				"name": room_name,
+				"door": door_in_direction
+			}
+		elif temp_room:
+			temp_room.queue_free()
+	
+	return {}
 
 func set_door_visible(door_info: Dictionary, is_visible: bool) -> void:
 	"""Set the visibility of a door node"""
@@ -164,7 +244,6 @@ func get_floor_tiles_in_room(room_node: Node3D) -> Array:
 		floor_tiles.append(child)
 	
 	return floor_tiles
-
 
 func get_opposing_direction(direction: String) -> String:
 	match direction:
