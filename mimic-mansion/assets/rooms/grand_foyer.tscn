@@ -33,7 +33,6 @@ albedo_color = Color(0.95, 0.92, 0.88, 1)
 
 [node name="WallNorth0" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -43,6 +42,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorNorth0" type="Node3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorNorth0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -50,7 +50,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_door")
 
 [node name="WallSouth0" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -60,6 +59,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorSouth0" type="Node3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -67,7 +67,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_door")
 
 [node name="WallEast0" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -77,6 +76,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorEast0" type="Node3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -84,7 +84,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_door")
 
 [node name="WallWest0" type="StaticBody3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -94,6 +93,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorWest0" type="Node3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorWest0"]
 mesh = SubResource("BoxMesh_a4b51")

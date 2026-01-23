@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://67com5isjdqx"]
+[gd_scene load_steps=9 format=3 uid="uid://67com5isjdqx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.55, 0.55, 0.58, 1)
@@ -9,6 +9,10 @@ size = Vector3(10, 4, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_maxj3"]
 size = Vector3(10, 4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door"]
+transparency = 1
+albedo_color = Color(0.55, 0.55, 0.58, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
 albedo_color = Color(0.4, 0.4, 0.42, 1)
@@ -22,10 +26,6 @@ size = Vector3(10, 0.2, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
 albedo_color = Color(0.5, 0.5, 0.52, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door"]
-albedo_color = Color(0.55, 0.55, 0.58, 0.3)
-transparency = 1
 
 [node name="Room" type="Node3D"]
 
@@ -52,6 +52,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorSouth0" type="Node3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -77,6 +78,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorEast1" type="Node3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, -10)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast1"]
 mesh = SubResource("BoxMesh_a4b51")
@@ -102,6 +104,7 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="DoorWest1" type="Node3D" parent="Walls"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, -10)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorWest1"]
 mesh = SubResource("BoxMesh_a4b51")
