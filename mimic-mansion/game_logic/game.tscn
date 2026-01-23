@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="4_twcmp"]
 [ext_resource type="PackedScene" uid="uid://uqb5rigsgygs" path="res://entities/NPCs/evaluator.tscn" id="5_1xng4"]
 [ext_resource type="PackedScene" uid="uid://cctloslvbfy3r" path="res://entities/interactable_door.tscn" id="6_o8hf1"]
+[ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yt5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,6 +60,7 @@ player = NodePath("../Player")
 [node name="Player" parent="." unique_id=947552428 instance=ExtResource("3_4sqru")]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1875859571]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=986043041]
 shape = SubResource("WorldBoundaryShape3D_dvuwv")
@@ -160,3 +162,7 @@ voice_tts_1 = "shimmer"
 
 [node name="InteractableDoor" parent="." unique_id=1352723989 instance=ExtResource("6_o8hf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3862681)
+
+[node name="RoomLayoutManager" type="Node3D" parent="." unique_id=1315244910]
+script = ExtResource("7_4sqru")
+metadata/_custom_type_script = "uid://bo0nxcksr5ibk"

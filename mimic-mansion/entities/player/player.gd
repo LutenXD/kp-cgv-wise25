@@ -12,6 +12,7 @@ var last_interaction: InteractableComponent
 var effect: AudioEffectRecord
 var recording: AudioStreamWAV
 var currently_recording: bool = false
+var flying: bool = false
 
 
 @onready var interaction_shape_cast_3d: ShapeCast3D = %InteractionShapeCast3D
@@ -24,6 +25,11 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("fly"):
+		flying = not flying
+		$CollisionShape3D.disabled = flying
+		prints("flying: ", str(flying))
+	
 	if event.is_action("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
@@ -53,7 +59,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not flying:
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
@@ -61,13 +67,19 @@ func _physics_process(delta: float) -> void:
 		#velocity.y = JUMP_VELOCITY
 	
 	var input_dir := Input.get_vector("strafe_left", "strafe_right", "forward", "backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	var direction := (self.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction and not flying:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+	elif direction and flying:
+		direction = (%Camera3D.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		velocity.x = direction.x * SPEED * 2.0
+		velocity.y = direction.y * SPEED * 2.0
+		velocity.z = direction.z * SPEED * 2.0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0.0, SPEED)
+		velocity.y = move_toward(velocity.y, 0.0, SPEED)
+		velocity.z = move_toward(velocity.z, 0.0, SPEED)
 	
 	move_and_slide()
 

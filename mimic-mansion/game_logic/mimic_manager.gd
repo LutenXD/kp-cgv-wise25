@@ -7,6 +7,9 @@ extends Node3D
 @export var humgold: Evaluator
 
 
+@onready var room_layout_manager: RoomLayoutManager = $"../RoomLayoutManager"
+
+
 func _ready() -> void:
 	var mimic_statements = MimicStatements.new()
 	var mimics: Array[Node] = get_tree().get_nodes_in_group("mimic")
@@ -20,3 +23,5 @@ func _ready() -> void:
 	humgold.statements = statements
 	await get_tree().process_frame # fuck this
 	humgold.set_evaluator_instructions()
+	
+	room_layout_manager.spawn_starting_room()

@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var ratio_label = %RatioLabel
 @onready var mimic_count_slider = %MimicCountSlider
 @onready var mimic_label = %MimicLabel
+@onready var debug_checkbox = %DebugCheckbox
+
 
 signal close_options
 @onready var debug_checkbox = $CenterContainer/VBoxContainer/DebugContainer/DebugCheckbox
