@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+
+signal close_options
+
+
 @onready var true_ratio_slider = %TrueRatioSlider
 @onready var ratio_label = %RatioLabel
 @onready var mimic_count_slider = %MimicCountSlider
@@ -7,8 +11,6 @@ extends CanvasLayer
 @onready var debug_checkbox = %DebugCheckbox
 
 
-signal close_options
-@onready var debug_checkbox = $CenterContainer/VBoxContainer/DebugContainer/DebugCheckbox
 
 func _ready():
 	hide()
