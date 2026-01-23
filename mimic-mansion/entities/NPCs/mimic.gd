@@ -3,7 +3,7 @@ class_name Mimic
 extends Node3D
 
 
-@export_file("*.glb") var prop_path: String:
+@export_file("*.tscn") var prop_path: String:
 	set(v):
 		prop_path = v
 		_update_prop()
@@ -189,7 +189,7 @@ func _update_prop() -> void:
 	var shape: Node = mimic_mesh.get_child(0).get_child(0)
 	shape.owner = null
 	mimic_mesh.get_child(0).remove_child(shape)
-	shape.rotation.x = PI / 2.0
+	#shape.rotation.x = PI / 2.0
 	static_body_3d.add_child(shape)
 	mimic_mesh.get_child(0).queue_free()
 	

@@ -18,7 +18,7 @@ func _run():
 
 func _process_directory(src_path: String, dst_path: String) -> void:
 	# Ensure destination directory exists
-	#DirAccess.make_dir_recursive_absolute(dst_path)
+	DirAccess.make_dir_recursive_absolute(dst_path)
 	
 	var dir := DirAccess.open(src_path)
 	if dir == null:
@@ -46,9 +46,8 @@ func _process_directory(src_path: String, dst_path: String) -> void:
 		
 	dir.list_dir_end()
 	
-	# Create scene if a GLB is present
-	if glb_files.size() > 0:
-		_create_scene_from_glb(glb_files[0], dst_path)
+	for glb in glb_files:
+		_create_scene_from_glb(glb, dst_path)
 
 
 func _create_scene_from_glb(glb_path: String, dst_path: String) -> void:
@@ -80,14 +79,15 @@ func _create_scene_from_glb(glb_path: String, dst_path: String) -> void:
 			var collision := CollisionShape3D.new()
 			collision.shape = shape
 			static_body.add_child(collision)
-			collision.rotation.x = PI / 2.0
+			#collision.rotation.x = PI / 2.0
 			collision.owner = static_body
 	
 	# Create scene
 	var packed_scene := PackedScene.new()
 	packed_scene.pack(static_body)
 	
-	var save_path := dst_path + ".tscn"
+	var scene_name := glb_path.get_file().get_basename() + ".tscn"
+	var save_path := dst_path + "/" + scene_name
 	
 	var err := ResourceSaver.save(packed_scene, save_path)
 	if err != OK:

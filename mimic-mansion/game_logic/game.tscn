@@ -81,48 +81,48 @@ The player is to be addressed as a \"filthy student\" or something similar.
 humgold = NodePath("../Evaluator")
 
 [node name="Mimic" parent="MimicManager" unique_id=766133172 groups=["mimic"] instance=ExtResource("4_twcmp")]
-transform = Transform3D(0.21543413, 0, 0.9765185, 0, 1, 0, -0.9765185, 0, 0.21543413, -3.3349276, 0.41861773, 3.658798)
-prop_path = "uid://des35pypreh7h"
+transform = Transform3D(0.21543413, 0, 0.9765185, 0, 1, 0, -0.9765185, 0, 0.21543413, -1.1563119, 0.41861773, 4.527965)
+prop_path = "uid://b8l7lxxik3jej"
 chat_model = "openai/gpt-oss-120b"
 
 [node name="Mimic2" parent="MimicManager" unique_id=1240559959 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -0.06337738, 0.41861773, -5.9175634)
-prop_path = "uid://ce77xk53or0cv"
+prop_path = "uid://blt5h8ragxcl1"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "fransob"
 
 [node name="Mimic3" parent="MimicManager" unique_id=1082312390 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 2.5802348, 0.41861773, -5.9175634)
-prop_path = "uid://cgq4pp14mqgbq"
+prop_path = "uid://br5u7ipixdtc5"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "bruno"
 
 [node name="Mimic4" parent="MimicManager" unique_id=139568309 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 5.5756397, 0.41861773, -5.9175634)
-prop_path = "uid://r7sbnmk48t8l"
+prop_path = "uid://bwl6gef2ihgr2"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "jans"
 
 [node name="Mimic5" parent="MimicManager" unique_id=509593022 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 8.638177, 0.41861773, -5.9175634)
-prop_path = "uid://ccvpl3bkeoaju"
+prop_path = "uid://bs2fnw5w2jqcf"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frunons"
 
 [node name="Mimic6" parent="MimicManager" unique_id=1976606061 groups=["mimic"] instance=ExtResource("4_twcmp")]
 transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, 11.223776, 0.41861773, -5.9175634)
-prop_path = "uid://c43bxsa7q07d"
+prop_path = "uid://ggtpuc7rq2nm"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frob"
 
 [node name="Mimic7" parent="MimicManager" unique_id=31298596 groups=["mimic"] instance=ExtResource("4_twcmp")]
-transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -1.7609262, 0.41861773, 5.2535396)
-prop_path = "uid://hfpdodxxnimn"
+transform = Transform3D(0.9994179, 0, -0.03411454, 0, 1, 0, 0.03411454, 0, 0.9994179, -1.5243878, 0.41861773, 4.017526)
+prop_path = "uid://cja67c6fu0hlq"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "piper"
 voice_piper = "frans"
@@ -153,7 +153,7 @@ When the answer is incorrect, state it plainly, insult the player, ask again and
 When the answer is correct, acknowledge it briefly and don't hallucinate a new question.
 
 **Do not break character or reveal the answer.**"
-prop_path = "uid://s3te7k2jfvrj"
+prop_path = "uid://bmnnqikoey5gw"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_tts_1 = "shimmer"
