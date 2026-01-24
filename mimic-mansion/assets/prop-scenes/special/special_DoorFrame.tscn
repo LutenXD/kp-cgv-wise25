@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce37a4gv6tw3y"]
+
+[ext_resource type="PackedScene" uid="uid://b8ohdqskv64ba" path="res://assets/props/special/door_frame.glb" id="1_door"]
+[ext_resource type="Material" uid="uid://bxtq63vvjlpgu" path="res://assets/textures/materials/university_whiteboard.tres" id="2_424or"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1syh"]
+size = Vector3(4, 4, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_424or"]
+size = Vector3(2, 0.9, 0.2)
+
+[node name="door_frame" instance=ExtResource("1_door")]
+
+[node name="Plane" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_424or")
+
+[node name="CollisionShapeLeft" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+shape = SubResource("BoxShape3D_n1syh")
+
+[node name="CollisionShapeRight" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+shape = SubResource("BoxShape3D_n1syh")
+
+[node name="CollisionShape3DMIddle" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
+shape = SubResource("BoxShape3D_424or")

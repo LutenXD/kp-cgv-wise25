@@ -3,5 +3,4 @@
 /android/
 
 # Generated room assets
-assets/rot_rooms/
-data/rot_room_assets.json
+assets/game_rooms/rot_rooms/

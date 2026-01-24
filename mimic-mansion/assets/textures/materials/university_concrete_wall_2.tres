@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck13qs8vykioi"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://ck13qs8vykioi"]
 
 [ext_resource type="Texture2D" uid="uid://csg66t4pbbvm2" path="res://assets/textures/materials/university_concrete_wall_2/albedo.png" id="1_ufh75"]
 [ext_resource type="Texture2D" uid="uid://btgpeeo80pqpe" path="res://assets/textures/materials/university_concrete_wall_2/height.png" id="2_76svp"]
@@ -14,4 +14,4 @@ normal_enabled = true
 normal_texture = ExtResource("4_8ss20")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_76svp")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(2.255, 2.255, 2.255)

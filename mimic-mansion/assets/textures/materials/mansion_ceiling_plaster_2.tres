@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b00ur8w8nvvww"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b00ur8w8nvvww"]
 
 [ext_resource type="Texture2D" uid="uid://cuqxbep7fvd47" path="res://assets/textures/materials/mansion_ceiling_plaster_2/albedo.png" id="1_aq55k"]
 [ext_resource type="Texture2D" uid="uid://bpr8op3i8qwdb" path="res://assets/textures/materials/mansion_ceiling_plaster_2/height.png" id="2_bn5qj"]
@@ -10,8 +10,11 @@
 albedo_texture = ExtResource("1_aq55k")
 metallic_texture = ExtResource("3_oglna")
 roughness_texture = ExtResource("5_2d6id")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.92
 normal_enabled = true
 normal_texture = ExtResource("4_nfunj")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_bn5qj")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(2.18, 2.18, 2.18)

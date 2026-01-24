@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://du3y86ujear2a"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://du3y86ujear2a"]
 
 [ext_resource type="Texture2D" uid="uid://xc0m742jb3aa" path="res://assets/textures/materials/university_metal_rail/albedo.png" id="1_gli1c"]
 [ext_resource type="Texture2D" uid="uid://q7gtvtkhfd0b" path="res://assets/textures/materials/university_metal_rail/height.png" id="2_v2axb"]
@@ -14,4 +14,4 @@ normal_enabled = true
 normal_texture = ExtResource("4_nlcop")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_v2axb")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(7.94, 7.94, 7.94)

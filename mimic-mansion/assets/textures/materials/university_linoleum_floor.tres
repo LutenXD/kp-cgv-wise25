@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://7ql12fcfpylw"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://7ql12fcfpylw"]
 
 [ext_resource type="Texture2D" uid="uid://dhj1x4dlgwqhm" path="res://assets/textures/materials/university_linoleum_floor/albedo.png" id="1_yev7q"]
 [ext_resource type="Texture2D" uid="uid://sorf0r4766mp" path="res://assets/textures/materials/university_linoleum_floor/height.png" id="2_2noq8"]
@@ -14,4 +14,4 @@ normal_enabled = true
 normal_texture = ExtResource("4_inj04")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_2noq8")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(2, 2, 2)
