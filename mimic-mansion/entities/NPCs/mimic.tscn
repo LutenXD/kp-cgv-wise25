@@ -40,8 +40,6 @@ billboard = 2
 text = "TTS Model: Kokoro-82M
 Voice: af_heart"
 
-[node name="GDPiper" type="GDPiper" parent="." unique_id=1852421510]
-
 [connection signal="send_audio" from="StaticBody3D/InteractableComponent" to="." method="_on_interactable_component_send_audio"]
 [connection signal="stt_answer_received" from="STTRequest" to="." method="_on_stt_request_stt_answer_received"]
 [connection signal="correctness_received" from="ChatRequest" to="." method="_on_chat_request_correctness_received"]

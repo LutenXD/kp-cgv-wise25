@@ -2,8 +2,8 @@
 extends EditorScript
 
 
-const SOURCE_ROOT := "res://assets/props"
-const DEST_ROOT   := "res://assets/prop-scenes"
+const SOURCE_ROOT := "res://assets/props-50k"
+const DEST_ROOT   := "res://assets/prop-scenes-50k"
 
 
 func _run():
