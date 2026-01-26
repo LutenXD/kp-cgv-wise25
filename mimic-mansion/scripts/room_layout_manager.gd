@@ -30,7 +30,7 @@ func is_room_variant_spawned(room_name: String) -> bool:
 			return true
 	return false
 
-func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 9) -> void:
+func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 10) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	
@@ -41,11 +41,23 @@ func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room
 
 	var doors = get_room_doors(starting_room)
 	available_doors = doors.duplicate()
+	
+	for floor_tile in get_floor_tiles_in_room(starting_room):
+		var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
+		grid[floor_grid_position] = true
+	
+	# Track the spawned room
+	spawned_rooms.append({
+		"node": null,
+		"name": starting_room_name,
+		"position": Vector3.ZERO
+	})
 
 	for i in range(number_of_connected_rooms):
 		spawn_connected_room(filler_room_name)
 	
 	prints("\n", grid)
+	prints("\n", spawned_rooms)
 
 
 func spawn_connected_room(filler_room_name: String = "none") -> void:
@@ -56,7 +68,7 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 
 	# Select a random available door
 	var parent_door = available_doors[randi() % available_doors.size()]
-	#print("Spawning connected room at door: ", parent_door)
+	print("Spawning connected room at door: ", parent_door)
 
 	# Get opposing direction
 	var opposing_direction = get_opposing_direction(parent_door["direction"])
@@ -82,6 +94,10 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 		var parent_door_position = parent_door["node"].global_position
 		var child_door_position = room_with_door["door"]["node"].global_position
 		
+		printt("parent door pos:", parent_door_position)
+		printt("child door pos:", child_door_position)
+		printt("global pos:", new_room.global_position)
+		
 		#new_room.global_transform = parent_door_position * child_door_position.affine_inverse()
 		new_room.global_position = parent_door_position - (child_door_position - new_room.global_position)
 
@@ -89,7 +105,11 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 		var collision_detected = false
 		var new_room_floor_tiles = get_floor_tiles_in_room(new_room)
 		for floor_tile in new_room_floor_tiles:
-			var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
+			var floor_grid_position = Vector3i(
+				round(floor_tile.global_position.x), 
+				round(floor_tile.global_position.y), 
+				round(floor_tile.global_position.z)
+			)
 			if grid.has(floor_grid_position):
 				print("Collision detected at grid position: ", floor_grid_position, " (attempt ", attempt + 1, ")")
 				collision_detected = true
@@ -101,11 +121,23 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 		else:
 			# No collision - add floor tiles to grid and keep the room
 			for floor_tile in new_room_floor_tiles:
-				var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
+				var floor_grid_position = Vector3i(
+					round(floor_tile.global_position.x), 
+					round(floor_tile.global_position.y), 
+					round(floor_tile.global_position.z)
+				)
+				printt("grid pos:", floor_grid_position)
 				grid[floor_grid_position] = true
 			
 			print("Successfully placed room: ", new_room_name)
-
+			
+			# Track the spawned room
+			spawned_rooms.append({
+				"node": null,
+				"name": new_room_name,
+				"position": Vector3.ZERO
+			})
+			
 			# Room position confirmed, now enable door visibility and disable walls
 			set_door_visible(parent_door, true)
 			set_door_visible(room_with_door["door"], true)
@@ -117,6 +149,8 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 				# Exclude the door used for connection
 				if door["name"] != room_with_door["door"]["name"]:
 					available_doors.append(door)
+			
+			available_doors.erase(parent_door)
 			print("Available doors count: ", available_doors.size())
 			room_placed = true
 			break
@@ -145,7 +179,11 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	var collision_detected = false
 	var new_room_floor_tiles = get_floor_tiles_in_room(new_room)
 	for floor_tile in new_room_floor_tiles:
-		var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
+		var floor_grid_position = Vector3i(
+			round(floor_tile.global_position.x), 
+			round(floor_tile.global_position.y), 
+			round(floor_tile.global_position.z)
+		)
 		if grid.has(floor_grid_position):
 			print("Filler room collision detected at: ", floor_grid_position)
 			collision_detected = true
@@ -158,10 +196,21 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	
 	# Add floor tiles to grid
 	for floor_tile in new_room_floor_tiles:
-		var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
+		var floor_grid_position = Vector3i(
+			round(floor_tile.global_position.x), 
+			round(floor_tile.global_position.y), 
+			round(floor_tile.global_position.z)
+		)
 		grid[floor_grid_position] = true
 	
 	print("Successfully placed filler room: ", new_room_name)
+	
+	# Track the spawned room
+	spawned_rooms.append({
+		"node": null,
+		"name": new_room_name,
+		"position": Vector3.ZERO
+	})
 	
 	# Enable door visibility and disable walls
 	set_door_visible(parent_door, true)
@@ -174,6 +223,8 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	for door in new_doors:
 		if door["name"] != filler_room["door"]["name"]:
 			available_doors.append(door)
+	
+	available_doors.erase(parent_door)
 
 func get_filler_room_with_door(filler_room_name: String, direction: String) -> Dictionary:
 	"""Get a filler room with a door in the specified direction"""
@@ -345,14 +396,8 @@ func spawn_room_at_position(room_name: String, pos: Vector3) -> Node3D:
 	
 	if rot_degrees > 0.0:
 		room_instance.rotation_degrees.y = rot_degrees
-		print("Applied rotation: ", rotation_degrees, "° to room: ", room_name)
+		print("Applied rotation: ", rot_degrees, "° to room: ", room_name)
 	
-	# Track the spawned room
-	spawned_rooms.append({
-		"node": room_instance,
-		"name": room_name,
-		"position": pos
-	})
 	return room_instance
 
 func get_room_doors(room_node: Node3D) -> Array:

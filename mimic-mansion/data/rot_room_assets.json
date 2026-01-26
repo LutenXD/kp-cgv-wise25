@@ -382,6 +382,58 @@
     },
     {
       "doors": {
+        "east": [],
+        "north": [],
+        "south": [
+          1.0
+        ],
+        "west": []
+      },
+      "length": 2.0,
+      "name": "holodeck",
+      "width": 2.0
+    },
+    {
+      "doors": {
+        "east": [
+          1
+        ],
+        "north": [],
+        "south": [],
+        "west": []
+      },
+      "length": 2.0,
+      "name": "holodeck_rot90",
+      "width": 2.0
+    },
+    {
+      "doors": {
+        "east": [],
+        "north": [
+          0
+        ],
+        "south": [],
+        "west": []
+      },
+      "length": 2.0,
+      "name": "holodeck_rot180",
+      "width": 2.0
+    },
+    {
+      "doors": {
+        "east": [],
+        "north": [],
+        "south": [],
+        "west": [
+          0
+        ]
+      },
+      "length": 2.0,
+      "name": "holodeck_rot270",
+      "width": 2.0
+    },
+    {
+      "doors": {
         "east": [
           0.0
         ],

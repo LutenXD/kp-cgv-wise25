@@ -105,6 +105,9 @@ func create_rotated_variant(original_scene: PackedScene, rotation_degrees: int) 
 	# Rename walls to match their new orientation after rotation
 	rename_walls_for_rotation(room_instance, rotation_degrees)
 	
+	# Rename doors to match their new orientation after rotation
+	rename_doors_for_rotation(room_instance, rotation_degrees)
+	
 	# Create a new packed scene from the rotated instance
 	var rotated_scene = PackedScene.new()
 	rotated_scene.pack(room_instance)
@@ -156,6 +159,49 @@ func rename_walls_for_rotation(room_instance: Node, rotation: int):
 	
 	if walls_to_process.size() > 0:
 		print("    → Renamed ", walls_to_process.size(), " walls for ", rotation, "° rotation")
+
+func rename_doors_for_rotation(room_instance: Node, rotation: int):
+	"""Rename doors to match their new orientation after rotation"""
+	var doors_node = room_instance.get_node_or_null("Walls")
+	if not doors_node:
+		return
+	
+	# Determine direction mapping based on rotation
+	var direction_map = {}
+	match rotation:
+		90:
+			# 90° clockwise rotation: north door moves to west, east to north, south to east, west to south
+			direction_map = {"North": "West", "East": "North", "South": "East", "West": "South"}
+		180:
+			# 180°: north->south, east->west, south->north, west->east
+			direction_map = {"North": "South", "East": "West", "South": "North", "West": "East"}
+		270:
+			# 270° clockwise (90° counter-clockwise): north->east, east->south, south->west, west->north
+			direction_map = {"North": "East", "East": "South", "South": "West", "West": "North"}
+	
+	if direction_map.is_empty():
+		return
+	
+	# Step 1: Rename all doors to temporary names to avoid conflicts
+	var doors_to_process = []
+	for child in doors_node.get_children():
+		var door_name = child.name
+		for old_dir in direction_map.keys():
+			if door_name.begins_with("Door" + old_dir):
+				var new_dir = direction_map[old_dir]
+				var suffix = door_name.substr(4 + old_dir.length()) # Get the number part
+				var temp_name = "TEMP_Door" + new_dir + suffix
+				var final_name = "Door" + new_dir + suffix
+				doors_to_process.append({"node": child, "temp_name": temp_name, "final_name": final_name})
+				child.name = temp_name
+				break
+	
+	# Step 2: Remove the TEMP_ prefix from all doors
+	for item in doors_to_process:
+		item["node"].name = item["final_name"]
+	
+	if doors_to_process.size() > 0:
+		print("    → Renamed ", doors_to_process.size(), " doors for ", rotation, "° rotation")
 
 func get_room_info(room_name: String) -> Dictionary:
 	"""Get room dimensions from room_assets.json"""

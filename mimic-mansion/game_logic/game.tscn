@@ -8,18 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://cctloslvbfy3r" path="res://entities/interactable_door.tscn" id="6_o8hf1"]
 [ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yt5"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_dsqel"]
-sky_material = SubResource("ProceduralSkyMaterial_h2yt5")
-
-[sub_resource type="Environment" id="Environment_hcq1q"]
-background_mode = 2
-sky = SubResource("Sky_dsqel")
-tonemap_mode = 2
+[sub_resource type="Environment" id="Environment_4sqru"]
+tonemap_mode = 4
+ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 3.0
+ssao_power = 2.0
+ssao_ao_channel_affect = 1.0
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+fog_density = 0.1
+adjustment_brightness = 0.72
+adjustment_saturation = 1.28
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dvuwv"]
 
@@ -48,11 +50,7 @@ size = Vector2(100, 100)
 [node name="Game" type="Node3D" unique_id=1598571889]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=120330231]
-environment = SubResource("Environment_hcq1q")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=332188963]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+environment = SubResource("Environment_4sqru")
 
 [node name="HUD" parent="." unique_id=364530958 node_paths=PackedStringArray("player") instance=ExtResource("2_o8hf1")]
 player = NodePath("../Player")
@@ -166,3 +164,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3862681)
 [node name="RoomLayoutManager" type="Node3D" parent="." unique_id=1315244910]
 script = ExtResource("7_4sqru")
 metadata/_custom_type_script = "uid://bo0nxcksr5ibk"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1889449183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=1015971815]
+pixel_size = 0.01
+billboard = 1
+text = "0, 0"
+
+[node name="Label3D2" type="Label3D" parent="Node3D" unique_id=1912213727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+pixel_size = 0.01
+billboard = 1
+text = "10, 0"
+
+[node name="Label3D3" type="Label3D" parent="Node3D" unique_id=568179204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+pixel_size = 0.01
+billboard = 1
+text = "20, 0"
+
+[node name="Label3D4" type="Label3D" parent="Node3D" unique_id=2029977631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.92, 0, 0)
+pixel_size = 0.01
+billboard = 1
+text = "30, 0"
+
+[node name="Label3D5" type="Label3D" parent="Node3D" unique_id=617467381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+pixel_size = 0.01
+billboard = 1
+text = "0, 10"
+
+[node name="Label3D6" type="Label3D" parent="Node3D" unique_id=1215556738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+pixel_size = 0.01
+billboard = 1
+text = "10, 10"
+
+[node name="Label3D7" type="Label3D" parent="Node3D" unique_id=1644446618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+pixel_size = 0.01
+billboard = 1
+text = "20, 10"
+
+[node name="Label3D8" type="Label3D" parent="Node3D" unique_id=1476083254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.92, 0, 10)
+pixel_size = 0.01
+billboard = 1
+text = "30, 10"
