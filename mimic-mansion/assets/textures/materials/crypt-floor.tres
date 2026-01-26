@@ -14,4 +14,4 @@ normal_enabled = true
 normal_texture = ExtResource("4_og4ab")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_afj15")
-uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true
