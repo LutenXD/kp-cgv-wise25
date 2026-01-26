@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://fegyw6naqvet"]
+[gd_scene format=3 uid="uid://b7ve6sxwjwdq3"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_u1jhc"]
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="2_gogwu"]
 [ext_resource type="Material" uid="uid://bxtq63vvjlpgu" path="res://assets/textures/materials/university_whiteboard.tres" id="2_rlb11"]
 [ext_resource type="Material" uid="uid://djfbob3ys4ffh" path="res://assets/textures/materials/laminate-floor.tres" id="3_c6pyh"]
+[ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_skp5l"]
 [ext_resource type="PackedScene" uid="uid://k6u4qsib8go5" path="res://assets/prop-scenes/holodeck/holodeck_HolographicCube.tscn" id="4_vq6e1"]
 [ext_resource type="Material" uid="uid://biggh1yg368kv" path="res://assets/textures/materials/university_ceiling.tres" id="4_wqhjx"]
 [ext_resource type="PackedScene" uid="uid://121jjb1mi1ex" path="res://assets/prop-scenes-50k/holodeck/holodeck_Sandbox.tscn" id="6_lc4g3"]
@@ -54,7 +55,6 @@ sky_material = SubResource("ProceduralSkyMaterial_gogwu")
 background_mode = 2
 sky = SubResource("Sky_f702a")
 tonemap_mode = 2
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_read_sky_light = false
 glow_enabled = true
@@ -98,10 +98,6 @@ albedo_color = Color(0.7, 0.7, 0.65, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=869469632]
 environment = SubResource("Environment_4oq0s")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1" unique_id=1799997459]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
-
 [node name="WallNorth0" parent="Walls" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
 
@@ -130,13 +126,18 @@ mesh = SubResource("BoxMesh_wall")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth1" index="1" unique_id=1668088988]
 shape = SubResource("BoxShape3D_wall")
+disabled = true
 
 [node name="DoorSouth1" type="Node3D" parent="Walls" index="4" unique_id=1730320601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth1" index="0" unique_id=1000391711]
+visible = false
 mesh = SubResource("BoxMesh_gogwu")
 surface_material_override/0 = SubResource("StandardMaterial3D_f702a")
+
+[node name="DoorWall" parent="Walls/DoorSouth1" index="1" unique_id=288271030 instance=ExtResource("3_skp5l")]
+material_override = ExtResource("2_rlb11")
 
 [node name="WallEast0" parent="Walls" index="5"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 15, 2, 0)
@@ -203,6 +204,9 @@ shape = SubResource("BoxShape3D_floor")
 [node name="StaticBody3D" parent="Floor/Floor11" index="2" unique_id=1824154060 instance=ExtResource("4_vq6e1")]
 transform = Transform3D(0.18577743, 0, 0.074072585, 0, 0.2, 0, -0.074072585, 0, 0.18577743, -4.5879693, 1.2955546, -3.5344992)
 
+[node name="Ceiling" parent="." index="3"]
+visible = false
+
 [node name="Ceiling00" parent="Ceiling" index="0"]
 material_override = ExtResource("4_wqhjx")
 
@@ -227,10 +231,10 @@ mesh = SubResource("BoxMesh_floor")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
 
-[node name="Player" parent="." index="5" unique_id=947552428 instance=ExtResource("2_gogwu")]
+[node name="Player" parent="." index="4" unique_id=947552428 instance=ExtResource("2_gogwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.056292, 0, 0)
 
-[node name="Props" type="Node" parent="." index="6" unique_id=1928558128]
+[node name="Props" type="Node" parent="." index="5" unique_id=1928558128]
 
 [node name="StaticBody3D" parent="Props" index="0" unique_id=496156305 instance=ExtResource("6_lc4g3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.374216, 0.49740565, -5.507369)
@@ -509,7 +513,7 @@ transform = Transform3D(0.1668638, 0, -0.11025639, 0, 0.2, 0, 0.11025639, 0, 0.1
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.4932203, 0.8098632, -12.026591)
 
 [node name="StaticBody3D67" parent="Props" index="84" unique_id=1678158977 instance=ExtResource("39_csj03")]
-transform = Transform3D(-0.68802786, 0, -0.1289101, 0, 0.70000005, 0, 0.1289101, 0, -0.68802786, 11.712894, 0.41498065, -14.291804)
+transform = Transform3D(-0.68802786, 0, -0.1289101, 0, 0.70000005, 0, 0.1289101, 0, -0.68802786, 11.6102495, 0.059670568, -14.486583)
 
 [node name="StaticBody3D68" parent="Props" index="85" unique_id=1030353076 instance=ExtResource("40_iors0")]
 transform = Transform3D(0.4202317, 0.12513916, -0.40956742, 0, 0.57381344, 0.17532286, 0.42825842, -0.12279372, 0.40189102, 3.7893822, 1.2512021, -10.168986)

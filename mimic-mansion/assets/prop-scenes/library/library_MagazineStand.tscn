@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xqend")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c0gnk"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fvt10"]
 points = PackedVector3Array(0.1948589, 0.39755678, -0.0017095208, -0.18943577, -0.4748612, -0.13526423, 0.18090412, -0.47322747, -0.13480474, 0.1845172, -0.48247713, 0.13398716, -0.20275237, 0.5089524, -0.03351593, -0.20275237, -0.4134989, 0.14143333, 0.18332872, 0.47943455, -0.13655049, -0.18911156, 0.47403124, -0.1350308, -0.05956405, -0.14308058, 0.14143333, 0.1948589, -0.4134989, 0.14143333, -0.19024926, -0.4769438, 0.13243091, 0.1948589, 0.5089524, -0.03351593, 0.13122396, -0.1272381, 0.12551612, -0.20275237, 0.47706813, -0.017598713, -0.12319897, -0.14308058, 0.14143333, 0.1948589, 0.47706813, -0.017598713, -0.20275237, -0.22259194, 0.1095989, 0.1948589, -0.22259194, 0.1095989, -0.20275237, 0.39755678, -0.0017095208, 0.1948589, 0.22259194, 0.030096889)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1359617540]
+[node name="library_MagazineStand" type="StaticBody3D" unique_id=1473898494]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1785847180]
 mesh = SubResource("ArrayMesh_nae1q")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27382" type="CollisionShape3D" parent="." unique_id=1452108900]
-shape = SubResource("ConvexPolygonShape3D_c0gnk")
+[node name="@CollisionShape3D@23516" type="CollisionShape3D" parent="." unique_id=1068769516]
+shape = SubResource("ConvexPolygonShape3D_fvt10")

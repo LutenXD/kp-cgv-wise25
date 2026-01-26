@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_63af6")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_okeiq"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_umhtr"]
 points = PackedVector3Array(-0.5089524, -0.3544713, -0.012338094, 0.4725275, 0.3650224, 0.018321587, -0.5089524, 0.3451593, 0.067185715, -0.5089524, 0.36109987, -0.06005238, 0.5089524, -0.3544713, -0.012338094, 0.5089524, -0.33853072, 0.035363737, 0.5089524, 0.28154957, -0.06005238, -0.5089524, -0.33853072, 0.035363737, 0.5089524, 0.29749015, 0.067185715, 0.5089524, 0.36109987, -0.06005238, 0.047627103, -0.38627616, -0.012338094, -0.5089524, 0.28154957, -0.06005238, -0.4840263, 0.37382445, -0.011559155, -0.5089524, 0.28154957, 0.067185715, 0.5089524, 0.3451593, 0.067185715, 0.48422733, 0.37397832, -0.011565437, 0.49301025, 0.28154957, 0.067185715, -0.047627103, -0.38627616, -0.012338094, -0.472252, 0.3648115, 0.018312985)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=113664225]
+[node name="holodeck_ProjectionScreen" type="StaticBody3D" unique_id=1425798477]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1875287642]
 mesh = SubResource("ArrayMesh_egmi4")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27218" type="CollisionShape3D" parent="." unique_id=592686685]
-shape = SubResource("ConvexPolygonShape3D_okeiq")
+[node name="@CollisionShape3D@23352" type="CollisionShape3D" parent="." unique_id=1696717378]
+shape = SubResource("ConvexPolygonShape3D_umhtr")

@@ -49,11 +49,11 @@ shadow_mesh = SubResource("ArrayMesh_r3nk2")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ucmts"]
 points = PackedVector3Array(0.049919643, 0.41185877, 0.48744568, -0.33496207, -0.41593733, -0.46263027, 0.34306282, -0.41523048, -0.46184516, -0.33350527, 0.41509205, -0.49147776, -0.34984747, -0.3998282, 0.47724783, 0.3429612, -0.4151085, 0.4616061, 0.3406303, 0.27558666, -0.48934856, -0.34964332, 0.4005765, 0.49239317, 0.33890015, 0.27420306, 0.48668784, -0.34928566, -0.36846018, -0.49208453, 0.050223105, 0.4142015, -0.47496772, 0.2664623, -0.3850192, 0.49342018, 0.3443938, -0.3703408, -0.4947012, -0.34937575, 0.4002674, -0.49221268, -0.34830457, -0.41344252, 0.4597553, -0.33466423, 0.41654748, 0.49300268, -0.33465773, -0.38468555, 0.49299303, 0.03496169, 0.41484314, -0.49118277, 0.34243476, -0.38360596, 0.49171498, -0.34904137, -0.41432667, -0.44553784, -0.31842807, -0.38368285, -0.4919094, 0.3441297, -0.4009997, -0.47874805, -0.34963426, -0.36883196, 0.4923803, 0.26589048, -0.38420224, -0.49257433)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=249629128]
+[node name="teakitchen_TeaShelf" type="StaticBody3D" unique_id=1811566403]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1097252028]
 mesh = SubResource("ArrayMesh_h5a7p")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27287" type="CollisionShape3D" parent="." unique_id=636678819]
+[node name="@CollisionShape3D@23421" type="CollisionShape3D" parent="." unique_id=302632660]
 shape = SubResource("ConvexPolygonShape3D_ucmts")

@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a0le0")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_anhei"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5wrjd"]
 points = PackedVector3Array(-0.33867466, 0.07239047, -0.47706813, -0.4023524, -0.07075238, 0.5089524, 0.39282513, -0.07075238, -0.5089524, -0.4023524, -0.07075238, -0.5089524, -0.33867466, 0.07239047, 0.47706813, 0.32922682, 0.07239047, -0.47706813, 0.39282513, -0.07075238, 0.5089524, 0.32922682, 0.07239047, 0.47706813, 0.40878427, 0.056473255, -0.49301025, -0.38215393, 0.053701516, 0.48360512, 0.40878427, 0.056473255, 0.49301025, -0.37771428, 0.053092282, -0.47803372, 0.40878427, -0.054835163, 0.49301025, 0.40878427, -0.054835163, -0.49301025)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=331579111]
+[node name="serverroom_RackMountKVM" type="StaticBody3D" unique_id=1943400877]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=886278009]
 mesh = SubResource("ArrayMesh_duvfh")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27344" type="CollisionShape3D" parent="." unique_id=132017343]
-shape = SubResource("ConvexPolygonShape3D_anhei")
+[node name="@CollisionShape3D@23478" type="CollisionShape3D" parent="." unique_id=750648596]
+shape = SubResource("ConvexPolygonShape3D_5wrjd")

@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_seb5j")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6dhhx"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_alf5q"]
 points = PackedVector3Array(-0.2346059, -0.508746, 0.3163702, 0.25796407, -0.3496512, 0.39580563, -0.07308796, 0.291651, -0.32406354, 0.24840285, -0.41306555, -0.39910734, 0.13940325, 0.4822746, 0.2999998, -0.25314766, -0.40808198, -0.39430737, -0.13359247, 0.4882418, 0.3038058, 0.14673519, 0.50834596, -0.017307114, -0.15516424, 0.49241656, -0.017226223, -0.26644602, -0.3496512, 0.39580563, 0.22617684, -0.508746, 0.3162893, 0.25796407, -0.3496512, -0.41464603, -0.26644602, -0.3496512, -0.3987104, 0.07714416, 0.27880037, -0.30985847, 0.27388415, -0.3496512, 0.3004346, -0.24113213, -0.42859295, -0.38403255, 0.27388415, -0.3655806, -0.35098442, 0.034776796, -0.49790326, 0.37181893, -0.25052595, -0.3496512, -0.41464603, 0.16260237, 0.44472793, 0.030257069, 0.18758248, -0.42914766, -0.38444993, -0.13924418, 0.50834596, -0.017226223, 0.01904534, 0.49101016, 0.30553594, 0.27388415, -0.3655806, 0.37987, 0.01880304, 0.3019054, -0.31865954, -0.21267694, -0.4948886, 0.36955798, -0.14485444, 0.47534683, 0.2511179, 0.21841416, -0.49100026, 0.3665637, -0.19468684, -0.4123081, 0.395473, 0.27388415, -0.38151, -0.38277477, 0.27388415, -0.3496512, -0.20796831, 0.27388415, -0.38151, 0.37987)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1834425810]
+[node name="lecturehall_Polylux" type="StaticBody3D" unique_id=377453468]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1902039711]
 mesh = SubResource("ArrayMesh_s7q8h")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27258" type="CollisionShape3D" parent="." unique_id=1975475099]
-shape = SubResource("ConvexPolygonShape3D_6dhhx")
+[node name="@CollisionShape3D@23392" type="CollisionShape3D" parent="." unique_id=352572847]
+shape = SubResource("ConvexPolygonShape3D_alf5q")

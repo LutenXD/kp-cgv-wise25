@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gjt78")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yhd0o"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u1grv"]
 points = PackedVector3Array(-0.49301025, 0.09261429, -0.056652382, 0.49301025, -0.13005237, 0.03876996, -0.47706813, 0.12442382, 0.05468095, -0.49301025, -0.13005237, -0.04074139, 0.47706813, -0.11413515, -0.056652382, -0.49301025, -0.11413515, 0.05468095, 0.47706813, 0.12442382, 0.05468095, 0.36577216, 0.12442382, -0.056652382, 0.49301025, -0.11413515, 0.05468095, -0.46122563, -0.11413515, -0.056652382, -0.4452835, 0.12442382, -0.056652382, 0.49301025, 0.10848169, -0.056652382, 0.49301025, -0.13005237, -0.04074139, -0.49301025, -0.13005237, 0.03876996, -0.49301025, 0.10848169, 0.05468095, 0.49301025, 0.10848169, 0.05468095, -0.49301025, -0.09824285, -0.056652382, 0.49301025, -0.09824285, -0.056652382, -0.47706813, 0.10848169, -0.056652382, -0.47118795, 0.11498271, -0.03779151)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=2022909275]
+[node name="serverroom_NetworkPatchPanel" type="StaticBody3D" unique_id=2060901159]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=47125580]
 mesh = SubResource("ArrayMesh_cwci3")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27355" type="CollisionShape3D" parent="." unique_id=1380828637]
-shape = SubResource("ConvexPolygonShape3D_yhd0o")
+[node name="@CollisionShape3D@23489" type="CollisionShape3D" parent="." unique_id=648206604]
+shape = SubResource("ConvexPolygonShape3D_u1grv")

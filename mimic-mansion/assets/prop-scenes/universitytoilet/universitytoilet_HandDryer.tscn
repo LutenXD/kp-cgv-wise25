@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yv4qu")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tt8nn"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jnwxu"]
 points = PackedVector3Array(0.31916288, -0.41541758, -0.48964053, -0.19492568, -0.30194342, 0.48025483, -0.21082094, -0.30194342, 0.48025483, 0.24230039, 0.49250385, -0.4898018, -0.32581434, -0.3985468, -0.48779923, -0.34157965, 0.46020088, -0.39619133, 0.28919765, 0.32195193, -0.05644545, -0.2902973, -0.49271777, 0.40075827, 0.3136529, -0.3973306, -0.1237841, -0.27205756, 0.4023778, -0.11688359, -0.35394838, -0.33380553, 0.33708382, 0.36140874, 0.46085522, -0.314518, 0.2726614, -0.4918237, -0.41208586, 0.20238604, -0.1430312, 0.1463499, -0.29655987, 0.4773052, -0.4900317, -0.26570386, -0.47731033, -0.48993677, -0.19492568, -0.46095523, 0.46433622, 0.3136529, 0.07940611, -0.012546778, 0.26021495, 0.3810008, -0.08585603, 0.32015243, 0.4475639, -0.49113724, -0.3393467, -0.4268588, -0.37844178, -0.27440202, -0.25424984, 0.44841763, -0.31059155, 0.4906032, -0.3959117, 0.34601623, -0.38023385, -0.37750602, -0.28002724, -0.490884, -0.41141552, -0.3379831, -0.2701809, 0.38483965, 0.2681487, 0.43812963, -0.17874256, -0.2496469, 0.34744826, -0.055964217, -0.30268863, 0.3735765, -0.11716103, 0.28815308, -0.49203515, -0.39685905, -0.1790304, -0.41326165, 0.48025483, 0.2726203, -0.47634688, -0.48897305)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=671212880]
+[node name="universitytoilet_HandDryer" type="StaticBody3D" unique_id=733260306]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1043515011]
 mesh = SubResource("ArrayMesh_xhjgo")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27142" type="CollisionShape3D" parent="." unique_id=2092177286]
-shape = SubResource("ConvexPolygonShape3D_tt8nn")
+[node name="@CollisionShape3D@23276" type="CollisionShape3D" parent="." unique_id=1273270702]
+shape = SubResource("ConvexPolygonShape3D_jnwxu")

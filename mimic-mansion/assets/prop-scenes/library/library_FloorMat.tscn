@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_upp4v")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4v3vl"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o5jcb"]
 points = PackedVector3Array(-0.461126, -0.02945238, -0.37767923, -0.49291062, -0.02945238, -0.36173087, -0.461126, 0.034166668, -0.32990736, -0.47706813, -0.02945238, 0.36969823, 0.49301025, -0.02945238, -0.36173087, 0.4452835, 0.034166668, -0.34585568, -0.461126, 0.034166668, 0.33787468, 0.5089524, -0.02945238, 0.33787468, 0.46122563, 0.034166668, 0.33787468, 0.46122563, 0.018261906, -0.37767923, -0.461126, 0.018261906, -0.37767923, 0.47706813, 0.034166668, -0.31403217, -0.5089524, -0.02945238, 0.33787468, 0.47706813, -0.02945238, 0.36969823, -0.47706813, 0.034166668, -0.31403217, 0.46122563, -0.02945238, -0.37767923, -0.5089524, -0.02945238, -0.32990736, 0.5089524, -0.02945238, -0.32990736, -0.47706813, 0.034166668, 0.30605116, 0.47706813, 0.034166668, 0.30605116, -0.42934138, 0.034166668, -0.34585568)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1156907640]
+[node name="library_FloorMat" type="StaticBody3D" unique_id=1504472984]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=841832518]
 mesh = SubResource("ArrayMesh_vhdq1")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27362" type="CollisionShape3D" parent="." unique_id=348399033]
-shape = SubResource("ConvexPolygonShape3D_4v3vl")
+[node name="@CollisionShape3D@23496" type="CollisionShape3D" parent="." unique_id=853124806]
+shape = SubResource("ConvexPolygonShape3D_o5jcb")

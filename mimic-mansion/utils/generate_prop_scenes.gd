@@ -65,7 +65,8 @@ func _create_scene_from_glb(glb_path: String, dst_path: String) -> void:
 	
 	# Root StaticBody3D
 	var static_body := StaticBody3D.new()
-	static_body.name = "StaticBody3D"
+	
+	static_body.name = glb_path.get_file().get_basename()
 	
 	for mesh_instance in mesh_instances:
 		mesh_instance.get_parent().remove_child(mesh_instance)

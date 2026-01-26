@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m75w2")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_evh1v"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ejy7"]
 points = PackedVector3Array(0.2669988, 0.06533408, 0.2332667, -0.3993854, -0.41412416, -0.17850454, -0.38367438, 0.49293652, -0.07594319, 0.4002934, 0.46092072, -0.26965716, 0.3875785, -0.4179755, -0.27136093, -0.39953732, 0.44469827, -0.26898852, -0.16868277, -0.13881138, 0.23678848, 0.4148, -0.41495696, -0.07594319, 0.3991229, 0.49293652, -0.07594319, -0.0391851, 0.33638963, 0.17443751, -0.37063828, -0.43091312, -0.2699321, -0.25386527, 0.08012405, 0.23427132, 0.05463361, -0.4933285, -0.060338065, 0.16853328, -0.1388801, 0.23689848, -0.4150285, -0.39926302, -0.07594319, -0.29293576, 0.42819485, -0.28305617, 0.2929185, -0.337959, -0.283262, 0.09596569, -0.021861257, 0.28325582, -0.38407028, 0.48955122, -0.26872367, 0.16900367, 0.18417893, 0.23755296, -0.4150285, 0.16414884, -0.07594319, 0.35209173, 0.50872856, -0.07594319, -0.16823764, 0.18314105, 0.23616917, 0.4148, 0.430357, -0.07594319, 0.29303333, 0.4286631, -0.2833739, -0.39935148, -0.4306509, -0.07594319, -0.29154095, -0.3360645, -0.28169715, 0.38507035, 0.4910931, -0.26959077, -0.27293965, 0.03708711, 0.22344975, -0.22714743, 0.50872856, -0.07594319, -0.39853033, -0.39815092, -0.2683047, -0.0655588, -0.45789593, -0.026800066)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1092582356]
+[node name="serverroom_CableTieDispenser" type="StaticBody3D" unique_id=1192733652]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1627775909]
 mesh = SubResource("ArrayMesh_tjuyv")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27350" type="CollisionShape3D" parent="." unique_id=600619926]
-shape = SubResource("ConvexPolygonShape3D_evh1v")
+[node name="@CollisionShape3D@23484" type="CollisionShape3D" parent="." unique_id=1157850922]
+shape = SubResource("ConvexPolygonShape3D_8ejy7")

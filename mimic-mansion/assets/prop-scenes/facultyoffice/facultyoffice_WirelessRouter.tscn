@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i6aio")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_swjxi"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kdmrd"]
 points = PackedVector3Array(-0.44561034, -0.37036353, 0.41357508, 0.474756, -0.16197509, 0.44533908, -0.3544746, 0.36488274, -0.47478938, 0.36347777, -0.3367404, -0.49201825, 0.37938845, 0.37822223, -0.44433916, -0.36725557, -0.3367404, -0.49201825, -0.3831662, -0.16197509, 0.5089444, 0.41332147, -0.3722619, 0.44654518, 0.45629168, -0.36967227, -0.22846922, -0.49444443, -0.16197509, -0.2853756, -0.49444443, -0.16197509, 0.39765996, 0.4906667, -0.16197509, -0.3012023, -0.46181113, -0.3710657, -0.22933961, -0.36725557, 0.37822223, -0.4283134, 0.34766358, -0.14607376, 0.49301818, 0.35211036, 0.36635804, -0.47669485, -0.35134488, -0.32083908, -0.50794446, -0.37155142, -0.31116018, 0.49345574, 0.4906667, -0.16197509, 0.41358617, 0.38235006, -0.31048054, 0.49236813, 0.47433126, -0.3256757, 0.38448828, 0.22826695, -0.37145177, -0.3217861, 0.36347777, 0.37822223, -0.4283134, -0.3831662, 0.3623209, -0.44433916, -0.35134488, -0.14607376, 0.49301818, -0.47776687, -0.31008106, 0.39959937, -0.370152, -0.3714283, 0.46082437, 0.37938845, -0.16197509, 0.5089444, -0.44671243, -0.14607376, 0.4612653, 0.33517003, 0.042815894, -0.48977184, -0.47853374, -0.16197509, -0.33305472, 0.47237286, -0.30903846, -0.2899969)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1155518801]
+[node name="facultyoffice_WirelessRouter" type="StaticBody3D" unique_id=1596487779]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=2137754882]
 mesh = SubResource("ArrayMesh_2tyuj")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27196" type="CollisionShape3D" parent="." unique_id=2108581975]
-shape = SubResource("ConvexPolygonShape3D_swjxi")
+[node name="@CollisionShape3D@23330" type="CollisionShape3D" parent="." unique_id=2091837639]
+shape = SubResource("ConvexPolygonShape3D_kdmrd")

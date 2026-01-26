@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_00ikc")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1jcmr"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u61dk"]
 points = PackedVector3Array(-0.5086488, -0.46474838, -0.050448414, 0.48280868, 0.43393597, 0.042518932, 0.4799966, -0.43886787, 0.042255245, 0.5085488, 0.45726752, -0.050448414, -0.4797357, 0.43105987, 0.042221405, 0.5085488, -0.46474838, -0.050448414, -0.5086488, 0.45726752, -0.050448414, -0.481856, -0.44046265, 0.042420223)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=2050898222]
+[node name="lecturehall_EmergencyExitMap" type="StaticBody3D" unique_id=1239745507]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=548628453]
 mesh = SubResource("ArrayMesh_pguro")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27262" type="CollisionShape3D" parent="." unique_id=569850338]
-shape = SubResource("ConvexPolygonShape3D_1jcmr")
+[node name="@CollisionShape3D@23396" type="CollisionShape3D" parent="." unique_id=1746973240]
+shape = SubResource("ConvexPolygonShape3D_u61dk")

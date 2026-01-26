@@ -46,14 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mecto")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fqisu"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cpdsw"]
 points = PackedVector3Array(-0.33173436, -0.44174552, -0.2259637, -0.31635264, -0.45668828, -0.256302, -0.30056417, 0.47105673, -0.25581244, -0.13978685, -0.23853406, 0.2729095, 0.32336786, -0.441986, -0.25657368, 0.13721427, 0.3272172, 0.21077302, 0.19846235, -0.34529948, 0.21270292, -0.33062047, 0.47706813, -0.02917822, 0.29255748, 0.47186813, -0.25625744, -0.33062047, -0.47706813, -0.02917822, 0.30551445, -0.49301025, -0.02917822, 0.33729726, 0.46122563, -0.02917822, -0.11650964, 0.34454507, 0.21224372, 0.24188042, 0.5089524, -0.02917822, -0.23513517, -0.22259194, 0.20923129, 0.19420625, -0.22259194, 0.25692376, 0.33729726, -0.46122563, -0.02917822, -0.13225916, -0.3465389, 0.24354699, 0.2630391, -0.48894736, -0.25722474, -0.29876924, -0.49301025, -0.02917822, -0.33044246, 0.40962264, -0.2554344, -0.187461, 0.5089524, -0.02917822, 0.33740196, 0.37954134, -0.19480737, -0.2562921, 0.48882025, -0.2571572, -0.18807197, 0.32397175, 0.17919742, 0.22598903, -0.22259194, 0.22516407, 0.1464636, -0.23853406, 0.2729095, -0.2711668, -0.48813024, -0.25679064, 0.27977842, 0.4914486, -0.24311757, 0.16721377, 0.32763126, 0.1961148, 0.10905954, -0.34729993, 0.24407631, 0.3230796, 0.44158778, -0.25634024)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1452809235]
+[node name="studentcafe_WaterDispenser" type="StaticBody3D" unique_id=1072577220]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=668127709]
 mesh = SubResource("ArrayMesh_ywwna")
 skeleton = NodePath("")
 
-[node name="@CollisionShape3D@27106" type="CollisionShape3D" parent="." unique_id=1444480897]
-shape = SubResource("ConvexPolygonShape3D_fqisu")
+[node name="@CollisionShape3D@23240" type="CollisionShape3D" parent="." unique_id=836533357]
+shape = SubResource("ConvexPolygonShape3D_cpdsw")
