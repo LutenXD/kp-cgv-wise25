@@ -57,7 +57,7 @@ albedo_color = Color(0.6, 0.5, 0.4, 1)
 
 [node name="Teakitchen" unique_id=758067993 instance=ExtResource("1_3x8uo")]
 
-[node name="DoorSouth0" type="Node3D" parent="Walls" index="2" unique_id=126030638]
+[node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=126030638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0" index="0" unique_id=1038383577]
@@ -68,7 +68,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2mrp3")
 [node name="DoorWall" parent="Walls/DoorSouth0" index="1" unique_id=288271030 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_a3ulv")
 
-[node name="DoorEast0" type="Node3D" parent="Walls" index="4" unique_id=1680462794]
+[node name="DoorEast0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1680462794]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast0" index="0" unique_id=1626629077]

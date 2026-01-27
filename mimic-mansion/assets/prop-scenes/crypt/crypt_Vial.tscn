@@ -53,7 +53,6 @@ points = PackedVector3Array(0.18908624, 0.19100262, 0.027444642, -0.19381349, -0
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=992507850]
 mesh = SubResource("ArrayMesh_wn6gb")
-skeleton = NodePath("")
 
 [node name="@CollisionShape3D@23457" type="CollisionShape3D" parent="." unique_id=1775875306]
 shape = SubResource("ConvexPolygonShape3D_f3po2")

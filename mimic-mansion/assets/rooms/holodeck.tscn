@@ -81,13 +81,13 @@ albedo_color = Color(0.7, 0.7, 0.65, 1)
 
 [node name="Holodeck" unique_id=1137580905 instance=ExtResource("1_u1jhc")]
 
-[node name="WallNorth0" parent="Walls" index="0"]
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.9)
 
-[node name="MeshInstance3D" parent="Walls/WallNorth0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
 material_override = ExtResource("2_rlb11")
 
-[node name="WallNorth1" type="StaticBody3D" parent="Walls" index="1" unique_id=364871614]
+[node name="WallNorth1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=364871614]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -14.9)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" index="0" unique_id=486787895]
@@ -97,13 +97,13 @@ mesh = SubResource("BoxMesh_35vyj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth1" index="1" unique_id=1919510457]
 shape = SubResource("BoxShape3D_olytw")
 
-[node name="WallSouth0" parent="Walls" index="2"]
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
 
-[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
 material_override = ExtResource("2_rlb11")
 
-[node name="WallSouth1" type="StaticBody3D" parent="Walls" index="3" unique_id=2009601660]
+[node name="WallSouth1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2009601660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
 visible = false
 
@@ -114,7 +114,7 @@ mesh = SubResource("BoxMesh_35vyj")
 shape = SubResource("BoxShape3D_olytw")
 disabled = true
 
-[node name="DoorSouth1" type="Node3D" parent="Walls" index="4" unique_id=1730320601]
+[node name="DoorSouth1" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1730320601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth1" index="0" unique_id=1000391711]
@@ -125,13 +125,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f702a")
 [node name="DoorWall" parent="Walls/DoorSouth1" index="1" unique_id=288271030 instance=ExtResource("3_skp5l")]
 material_override = ExtResource("2_rlb11")
 
-[node name="WallEast0" parent="Walls" index="5"]
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=2137167074]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.9, 2, 0)
 
-[node name="MeshInstance3D" parent="Walls/WallEast0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallEast0" index="0" unique_id=1170511803]
 material_override = ExtResource("2_rlb11")
 
-[node name="WallEast1" type="StaticBody3D" parent="Walls" index="6" unique_id=1190660704]
+[node name="WallEast1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="6" unique_id=1190660704]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.9, 2, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast1" index="0" unique_id=580900016]
@@ -141,13 +141,13 @@ mesh = SubResource("BoxMesh_35vyj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallEast1" index="1" unique_id=1496314288]
 shape = SubResource("BoxShape3D_olytw")
 
-[node name="WallWest0" parent="Walls" index="7"]
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="7" unique_id=6000773]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
 
-[node name="MeshInstance3D" parent="Walls/WallWest0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallWest0" index="0" unique_id=965472030]
 material_override = ExtResource("2_rlb11")
 
-[node name="WallWest1" type="StaticBody3D" parent="Walls" index="8" unique_id=1681588112]
+[node name="WallWest1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="8" unique_id=1681588112]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest1" index="0" unique_id=1613080527]
@@ -157,10 +157,10 @@ mesh = SubResource("BoxMesh_35vyj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallWest1" index="1" unique_id=981371242]
 shape = SubResource("BoxShape3D_olytw")
 
-[node name="MeshInstance3D" parent="Floor/Floor00" index="0"]
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_c6pyh")
 
-[node name="Floor01" type="StaticBody3D" parent="Floor" index="1" unique_id=842796557]
+[node name="Floor01" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="1" unique_id=842796557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor01" index="0" unique_id=641261300]
@@ -170,7 +170,7 @@ mesh = SubResource("BoxMesh_4cgsm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=927064402]
 shape = SubResource("BoxShape3D_tdltf")
 
-[node name="Floor10" type="StaticBody3D" parent="Floor" index="2" unique_id=1459913431]
+[node name="Floor10" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="2" unique_id=1459913431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor10" index="0" unique_id=829942912]
@@ -180,7 +180,7 @@ mesh = SubResource("BoxMesh_4cgsm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor10" index="1" unique_id=564250337]
 shape = SubResource("BoxShape3D_tdltf")
 
-[node name="Floor11" type="StaticBody3D" parent="Floor" index="3" unique_id=1821454045]
+[node name="Floor11" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="3" unique_id=1821454045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor11" index="0" unique_id=1829257690]
@@ -193,25 +193,25 @@ shape = SubResource("BoxShape3D_tdltf")
 [node name="StaticBody3D" parent="Floor/Floor11" index="2" unique_id=1824154060 instance=ExtResource("4_vq6e1")]
 transform = Transform3D(0.18577743, 0, 0.074072585, 0, 0.2, 0, -0.074072585, 0, 0.18577743, -4.5879693, 1.2955546, -3.5344992)
 
-[node name="Ceiling00" parent="Ceiling" index="0"]
+[node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
 material_override = ExtResource("4_wqhjx")
 
-[node name="Ceiling01" type="MeshInstance3D" parent="Ceiling" index="1" unique_id=57572678]
+[node name="Ceiling01" type="MeshInstance3D" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="1" unique_id=57572678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4.1, 0)
 material_override = ExtResource("4_wqhjx")
 mesh = SubResource("BoxMesh_4cgsm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 
-[node name="Ceiling10" type="MeshInstance3D" parent="Ceiling" index="2" unique_id=480440761]
+[node name="Ceiling10" type="MeshInstance3D" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="2" unique_id=480440761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -10)
 material_override = ExtResource("4_wqhjx")
 mesh = SubResource("BoxMesh_4cgsm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 
-[node name="Ceiling11" type="MeshInstance3D" parent="Ceiling" index="3" unique_id=1180596370]
+[node name="Ceiling11" type="MeshInstance3D" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="3" unique_id=1180596370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4.1, -10)
 material_override = ExtResource("4_wqhjx")
 mesh = SubResource("BoxMesh_4cgsm")

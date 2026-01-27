@@ -33,29 +33,29 @@ albedo_color = Color(0.6, 0.5, 0.4, 1)
 
 [node name="Smalllectureroom" unique_id=819269736 instance=ExtResource("1_romwe")]
 
-[node name="WallNorth0" parent="Walls" index="0"]
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
 
-[node name="WallSouth0" parent="Walls" index="1"]
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
 visible = false
 
-[node name="DoorSouth0" type="Node3D" parent="Walls" index="2" unique_id=415895558]
+[node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=415895558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
 
 [node name="DoorWall" parent="Walls/DoorSouth0" index="0" unique_id=288271030 instance=ExtResource("2_sj1sp")]
 material = SubResource("StandardMaterial3D_n08f3")
 
-[node name="WallEast0" parent="Walls" index="3"]
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.9, 2, 0)
 
-[node name="WallWest0" parent="Walls" index="4"]
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=6000773]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
 
-[node name="MeshInstance3D" parent="Floor/Floor00" index="0"]
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_iiqlw")
 
-[node name="Ceiling00" parent="Ceiling" index="0"]
+[node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
 material_override = ExtResource("4_jimqv")
 

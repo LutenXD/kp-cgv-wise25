@@ -1,5 +1,5 @@
 [gd_scene format=3 uid="uid://dkg8w5cjay1qd"]
 
-[node name="RoomTemplate" type="Node3D"]
+[node name="RoomTemplate" type="Node3D" unique_id=1414804496]
 
-[node name="Connections" type="Node" parent="."]
+[node name="Connections" type="Node" parent="." unique_id=221473340]
