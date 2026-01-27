@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://uqb5rigsgygs"]
+
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="1_rf24v"]
+[ext_resource type="Script" uid="uid://qpqfpxtbc30q" path="res://entities/NPCs/evaluator.gd" id="2_cefsd"]
+
+[node name="Evaluator" unique_id=766133172 instance=ExtResource("1_rf24v")]
+script = ExtResource("2_cefsd")
+evaluator_pre_instructions = ""
+evaluator_post_instructions = ""
+
+[node name="ScoreLabel" type="Label3D" parent="." index="7" unique_id=1798176545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1107852, 0)
+billboard = 2
+modulate = Color(1, 1, 0, 1)
+text = "0/0"

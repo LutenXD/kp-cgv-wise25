@@ -1,0 +1,103 @@
+{
+  "rooms": [
+	{
+	  "name": "art_gallery",
+	  "width": 2,
+	  "length": 1,
+	  "doors": {
+		"north": [],
+		"east": [0],
+		"south": [0],
+		"west": [0]
+	  }
+	},
+	{
+	  "name": "attic",
+	  "width": 1,
+	  "length": 1,
+	  "doors": {
+		"north": [],
+		"east": [],
+		"south": [0],
+		"west": []
+	  }
+	},
+	{
+	  "name": "basement_dungeon",
+	  "width": 2,
+	  "length": 2,
+	  "doors": {
+		"north": [],
+		"east": [],
+		"south": [0,1],
+		"west": []
+	  }
+	},
+	{
+	  "name": "chapel_crypt",
+	  "width": 1,
+	  "length": 2,
+	  "doors": {
+		"north": [],
+		"east": [1],
+		"south": [0],
+		"west": [1]
+	  }
+	},
+	{
+	  "name": "courtyard_garden",
+	  "width": 1,
+	  "length": 1,
+	  "doors": {
+		"north": [0],
+		"east": [0],
+		"south": [0],
+		"west": [0]
+	  }
+	},
+	{
+	  "name": "dining_room",
+	  "width": 1,
+	  "length": 2,
+	  "doors": {
+		"north": [0],
+		"east": [],
+		"south": [0],
+		"west": []
+	  }
+	},
+	{
+	  "name": "grand_foyer",
+	  "width": 1,
+	  "length": 1,
+	  "doors": {
+		"north": [0],
+		"east": [0],
+		"south": [0],
+		"west": [0]
+	  }
+	},
+	{
+	  "name": "hallway",
+	  "width": 1,
+	  "length": 1,
+	  "doors": {
+		"north": [0],
+		"east": [0],
+		"south": [0],
+		"west": [0]
+	  }
+	},
+	{
+	  "name": "kitchen_pantry",
+	  "width": 1,
+	  "length": 1,
+	  "doors": {
+		"north": [],
+		"east": [],
+		"south": [0],
+		"west": [0]
+	  }
+	}
+  ]
+}

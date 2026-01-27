@@ -3,10 +3,12 @@ extends Node3D
 @onready var info_panel = $UI/InfoPanel
 @onready var info_title = $UI/InfoPanel/MarginContainer/VBoxContainer/Title
 @onready var info_text = $UI/InfoPanel/MarginContainer/VBoxContainer/ScrollContainer/InfoText
+
 @onready var player = $player
 @onready var camera = $player/Camera3D
 
 var lore_manager: LoreManager
+var room_layout_manager
 var selected_items: Array = []
 var current_sphere = null
 var all_lore_items: Array = []
@@ -14,32 +16,55 @@ var spawned_mimics: Array = []
 
 const RAY_LENGTH = 100.0
 
-# Define mimic spawn locations
-const MIMIC_SPAWN_POSITIONS = [
-	Vector3(5, 1, 0),
-	Vector3(-5, 1, 0),
-	Vector3(0, 1, 5),
-	Vector3(0, 1, -5),
-	Vector3(3, 1, 3),
-	Vector3(-3, 1, -3),
-]
-
 func _ready():
 	info_panel.hide()
 	
-	# Check if we're continuing a game
+	# Check if we're continuing a game (has saved lore data)
 	var settings = get_game_settings()
-	if settings and settings.is_game_in_progress():
+	var state = settings.load_game_state() if settings else {}
+	
+	if settings and settings.is_game_in_progress() and not state.get("selected_lore", []).is_empty():
+		# Load saved state without recreating rooms or mimics
 		load_saved_state()
 	else:
-		initialize_lore_system()
+		# Set up new game
+		# Remove the default room from the scene if it exists
+		var default_room = get_node_or_null("Room")
+		if default_room:
+			default_room.queue_free()
+		
+		# Create and initialize room layout manager
+		room_layout_manager = RoomLayoutManager.new()
+		add_child(room_layout_manager)
+		
+		# Wait a frame to ensure the room layout manager is ready
+		await get_tree().process_frame
+		
+		# Spawn the starting room
+		room_layout_manager.spawn_starting_room()
+		
+		# Position player in the room
+		if player:
+			player.global_position = Vector3(0, 1, 0)
+			#print("Player positioned at: ", player.global_position)
+		
+		# initialize_lore_system()
 
 func get_game_settings():
 	if has_node("/root/GameSettings"):
 		return get_node("/root/GameSettings")
 	return null
 
-func spawn_mimics(sphere_data: Dictionary):
+
+
+func _process(_delta):
+	pass
+
+
+
+
+
+func spawn_mimics(sphere_data: Dictionary, generate_statements: bool = true):
 	# Create InteractiveSpheres parent node if it doesn't exist
 	var spheres_parent = get_node_or_null("InteractiveSpheres")
 	if not spheres_parent:
@@ -50,30 +75,50 @@ func spawn_mimics(sphere_data: Dictionary):
 	# Get mimic count from settings
 	var settings = get_game_settings()
 	var count = settings.get_mimic_count() if settings else 3
-	count = min(count, MIMIC_SPAWN_POSITIONS.size())  # Don't exceed available positions
+	
+	# Define fixed spawn positions around the origin
+	var available_positions = [
+		Vector3(3, 1, 0),
+		Vector3(-3, 1, 0),
+		Vector3(0, 1, 3),
+		Vector3(0, 1, -3),
+		Vector3(2, 1, 2),
+		Vector3(-2, 1, -2),
+		Vector3(4, 1, 4),
+		Vector3(-4, 1, -4),
+		Vector3(5, 1, 0),
+		Vector3(0, 1, 5)
+	]
+	
+	# Don't exceed available positions
+	count = min(count, available_positions.size())
 	
 	# Clear existing mimics
 	spawned_mimics.clear()
 	
-	# Spawn mimics at the first N positions
+	# Randomly select positions
+	available_positions.shuffle()
+	
+	# Spawn mimics at selected positions
 	for i in range(count):
-		var position = MIMIC_SPAWN_POSITIONS[i]
+		var position = available_positions[i]
 		var mimic_id = "mimic" + str(i + 1)
 		var mimic = create_mimic("Mimic_" + str(i + 1), mimic_id, position)
 		
 		# Assign lore items if available
 		if sphere_data.has(mimic_id):
 			mimic.set_lore_items(sphere_data[mimic_id])
-			print("Mimic ", i + 1, " assigned ", sphere_data[mimic_id].size(), " lore items")
+			#print("Mimic ", i + 1, " assigned ", sphere_data[mimic_id].size(), " lore items")
 		
 		spheres_parent.add_child(mimic)
 		spawned_mimics.append(mimic)
-		print("Spawned mimic at position: ", position)
+		#print("Spawned mimic at position: ", position)
 	
-	print("Total mimics spawned: ", count)
+	#print("Total mimics spawned: ", count)
 	
-	# Generate statements about other mimics and add them to each mimic
-	generate_mimic_statements()
+	# Only generate new statements for new games, not when loading saved data
+	if generate_statements:
+		generate_mimic_statements()
 
 func generate_mimic_statements():
 	"""Generate statements about whether other mimics are honest or liars"""
@@ -232,31 +277,47 @@ func create_mimic(mimic_name: String, mimic_id: String, position: Vector3) -> St
 func load_saved_state():
 	var settings = get_game_settings()
 	if not settings:
-		initialize_lore_system()
 		return
 	
 	var state = settings.load_game_state()
+	
+	# Remove the default room from the scene if it exists
+	var default_room = get_node_or_null("Room")
+	if default_room:
+		default_room.queue_free()
+	
+	# Create and initialize room layout manager for continuing game too
+	room_layout_manager = RoomLayoutManager.new()
+	add_child(room_layout_manager)
+	
+	# Wait a frame to ensure the room layout manager is ready
+	await get_tree().process_frame
+	
+	# Restore room layout from saved data
+	if state.has("spawned_rooms") and not state["spawned_rooms"].is_empty():
+		room_layout_manager.restore_room_layout(state["spawned_rooms"])
+	else:
+		# Fallback: spawn starting room if no saved layout
+		room_layout_manager.spawn_starting_room()
 	
 	# Restore player position
 	if player and state.has("player_position"):
 		player.global_position = state["player_position"]
 	
-	# Restore lore system
+	# Restore lore system data and respawn mimics with saved data
 	if state.has("selected_lore") and not state["selected_lore"].is_empty():
 		all_lore_items = state["selected_lore"]
-		
-		# Restore sphere assignments by spawning mimics with saved data
-		if state.has("sphere_assignments"):
-			var sphere_data = state["sphere_assignments"]
-			spawn_mimics(sphere_data)
 		
 		# Restore selected items
 		if state.has("selected_items"):
 			selected_items = state["selected_items"]
 		
+		# Respawn mimics with their saved lore assignments (don't generate new statements)
+		if state.has("sphere_assignments"):
+			spawn_mimics(state["sphere_assignments"], false)
+		
 		print("Game state loaded - continuing from saved position")
-	else:
-		initialize_lore_system()
+		print("Restored ", state["spawned_rooms"].size(), " rooms and ", spawned_mimics.size(), " mimics")
 
 func initialize_lore_system():
 	# Create and initialize lore manager
@@ -312,9 +373,12 @@ func initialize_lore_system():
 	
 	# Store sphere assignments for saving
 	if settings:
-		settings.save_game_state(player.global_position, selected_lore, sphere_data, [])
+		var rooms_data = []
+		if room_layout_manager:
+			rooms_data = room_layout_manager.spawned_rooms
+		settings.save_game_state(player.global_position, selected_lore, sphere_data, [], rooms_data)
 	
-	print("Lore system initialized successfully")
+	#print("Lore system initialized successfully")
 
 func _input(event):
 	if event.is_action_pressed("ui_select") or (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
@@ -347,14 +411,14 @@ func show_info(info: Dictionary):
 	info_title.text = info.name
 	info_text.text = info.text
 	info_panel.show()
-	print("\nViewing sphere: " + info.name)
-	print("Press 1, 2, or 3 to select items from this sphere")
-	print("Press M to assign selected items as mimics\n")
+	#print("\nViewing sphere: " + info.name)
+	#print("Press 1, 2, or 3 to select items from this sphere")
+	#print("Press M to assign selected items as mimics\n")
 
 func _unhandled_input(event):
 	# Press ESC to return to main menu
-	if event.is_action_pressed("ui_cancel"):
-		return_to_main_menu()
+#	if event.is_action_pressed("ui_cancel"):
+#		return_to_main_menu()
 	
 	# Press number keys (1-3) to select items from the current sphere
 	if info_panel.visible and current_sphere:
@@ -377,7 +441,13 @@ func return_to_main_menu():
 		for mimic in spawned_mimics:
 			if mimic:
 				sphere_data[mimic.sphere_id] = mimic.get_lore_items()
-		settings.save_game_state(player.global_position, all_lore_items, sphere_data, selected_items)
+		
+		# Save room layout
+		var rooms_data = []
+		if room_layout_manager:
+			rooms_data = room_layout_manager.spawned_rooms
+		
+		settings.save_game_state(player.global_position, all_lore_items, sphere_data, selected_items, rooms_data)
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
@@ -400,7 +470,7 @@ func select_item(index: int):
 			var desc2 = item.get("description", "No description")
 			print("Selected item: [" + item.get("category", "Unknown") + "] " + desc2.substr(0, 50) + "...")
 		
-		print("Total selected: " + str(selected_items.size()))
+		#print("Total selected: " + str(selected_items.size()))
 
 func assign_mimics():
 	if selected_items.is_empty():
@@ -415,9 +485,9 @@ func assign_mimics():
 		var desc = desc_full.substr(0, 50) + "..."
 		
 		if is_true:
-			print("✓ CORRECT! [" + category + "] - This is TRUE (not a mimic)")
+			print("CORRECT! [" + category + "] - This is TRUE (not a mimic)")
 		else:
-			print("✗ MIMIC FOUND! [" + category + "] - This is FALSE")
+			print("MIMIC FOUND! [" + category + "] - This is FALSE")
 			print("  Description: " + desc)
 	
 	print("Total items marked: " + str(selected_items.size()))

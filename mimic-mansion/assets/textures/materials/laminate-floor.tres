@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djfbob3ys4ffh"]
+
+[ext_resource type="Texture2D" uid="uid://p4kqtsyh5pec" path="res://assets/textures/materials/laminate-floor/albedo.png" id="1_qyjxg"]
+[ext_resource type="Texture2D" uid="uid://bsrs5sfskmo4u" path="res://assets/textures/materials/laminate-floor/height.png" id="2_j6lgv"]
+[ext_resource type="Texture2D" uid="uid://d334dfbwxan4b" path="res://assets/textures/materials/laminate-floor/metallic.png" id="3_e2nhk"]
+[ext_resource type="Texture2D" uid="uid://cpkojw7vcecqx" path="res://assets/textures/materials/laminate-floor/normal.png" id="4_bb200"]
+[ext_resource type="Texture2D" uid="uid://dpacfx4a8o3d3" path="res://assets/textures/materials/laminate-floor/roughness.png" id="5_ovr6m"]
+
+[resource]
+albedo_texture = ExtResource("1_qyjxg")
+metallic_texture = ExtResource("3_e2nhk")
+roughness_texture = ExtResource("5_ovr6m")
+normal_enabled = true
+normal_texture = ExtResource("4_bb200")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_j6lgv")
+uv1_triplanar = true

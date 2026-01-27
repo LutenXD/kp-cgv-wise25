@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://di85uy5vlmdn6"]
+
+[ext_resource type="Texture2D" uid="uid://dv2v06it8ww5r" path="res://assets/textures/materials/mansion_stone_fireplace_2/albedo.png" id="1_oto0f"]
+[ext_resource type="Texture2D" uid="uid://bphq8t38201c0" path="res://assets/textures/materials/mansion_stone_fireplace_2/height.png" id="2_6obmw"]
+[ext_resource type="Texture2D" uid="uid://dmlmfnj1cemfw" path="res://assets/textures/materials/mansion_stone_fireplace_2/metallic.png" id="3_d1umc"]
+[ext_resource type="Texture2D" uid="uid://5mobds48j0ii" path="res://assets/textures/materials/mansion_stone_fireplace_2/normal.png" id="4_nuwjt"]
+[ext_resource type="Texture2D" uid="uid://db2mga2abx1uf" path="res://assets/textures/materials/mansion_stone_fireplace_2/roughness.png" id="5_wc18v"]
+
+[resource]
+albedo_texture = ExtResource("1_oto0f")
+metallic_texture = ExtResource("3_d1umc")
+roughness_texture = ExtResource("5_wc18v")
+normal_enabled = true
+normal_texture = ExtResource("4_nuwjt")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_6obmw")
+uv1_scale = Vector3(10, 10, 10)

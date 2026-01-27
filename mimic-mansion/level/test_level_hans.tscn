@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://clh44pav52xs3"]
+
+[ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="1_m01il"]
+[ext_resource type="PackedScene" uid="uid://c7a0m8fuf6p0o" path="res://level/props/prop.tscn" id="2_rjjpg"]
+[ext_resource type="PackedScene" uid="uid://bdsmh7qkd65fl" path="res://assets/props/textured_mesh.glb" id="4_m01il"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_amuej"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dsqel"]
+sky_material = SubResource("ProceduralSkyMaterial_amuej")
+
+[sub_resource type="Environment" id="Environment_s65ib"]
+background_mode = 2
+sky = SubResource("Sky_dsqel")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_w72v2"]
+
+[sub_resource type="Gradient" id="Gradient_amuej"]
+colors = PackedColorArray(0, 0, 0, 1, 0.1882353, 0.5529412, 0.23921569, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dsqel"]
+noise_type = 3
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s65ib"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_dsqel")
+color_ramp = SubResource("Gradient_amuej")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w72v2"]
+albedo_texture = SubResource("NoiseTexture2D_s65ib")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_owtjd"]
+material = SubResource("StandardMaterial3D_w72v2")
+size = Vector2(100, 100)
+
+[node name="TestLevel" type="Node3D" unique_id=134961324]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=607157690]
+environment = SubResource("Environment_s65ib")
+
+[node name="HUD" parent="." unique_id=1105173164 instance=ExtResource("1_m01il")]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=2061971244]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=993342506]
+shape = SubResource("WorldBoundaryShape3D_w72v2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=850927344]
+mesh = SubResource("PlaneMesh_owtjd")
+
+[node name="Prop" parent="." unique_id=1113012891 instance=ExtResource("2_rjjpg")]
+model = ExtResource("4_m01il")

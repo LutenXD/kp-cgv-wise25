@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bkr1ic4d8dtvh"
+path.s3tc="res://.godot/imported/studentcafe_CoffeeMachine_0.png-f894b6630c8f97b4b297c54b75d4c9a6.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8d6352b707fb7d89bbf1d42f286d3e66"
+}
+
+[deps]
+
+source_file="res://assets/props/studentcafe/studentcafe_CoffeeMachine_0.png"
+dest_files=["res://.godot/imported/studentcafe_CoffeeMachine_0.png-f894b6630c8f97b4b297c54b75d4c9a6.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

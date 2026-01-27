@@ -1,30 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1epn1qimdddd"]
+[gd_scene load_steps=4 format=3 uid="uid://c1epn1qimdddd"]
 
 [ext_resource type="Script" uid="uid://ddndwinwdw1we" path="res://scripts/player.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://c6g2o88n1y6l5" path="res://scripts/game_manager.gd" id="2_game_manager"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
-albedo_color = Color(0.4, 0.3, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_floor"]
-material = SubResource("StandardMaterial3D_floor")
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
-albedo_color = Color(0.7, 0.7, 0.65, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
-albedo_color = Color(0.6, 0.5, 0.4, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wall"]
-material = SubResource("StandardMaterial3D_walls")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
-size = Vector3(10, 4, 0.2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 height = 1.8
@@ -45,61 +22,12 @@ light_color = Color(1, 0.95, 0.85, 1)
 light_energy = 1.5
 omni_range = 10.0
 
-[node name="Room" type="Node3D" parent="."]
-
-[node name="Floor" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floor"]
-mesh = SubResource("BoxMesh_floor")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor"]
-shape = SubResource("BoxShape3D_floor")
-
-[node name="Ceiling" type="MeshInstance3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-mesh = SubResource("BoxMesh_floor")
-surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
-
-[node name="WallNorth" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallNorth"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallNorth"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallSouth" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallSouth"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallSouth"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallEast" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 2, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallEast"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallEast"]
-shape = SubResource("BoxShape3D_wall")
-
-[node name="WallWest" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 2, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallWest"]
-mesh = SubResource("BoxMesh_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallWest"]
-shape = SubResource("BoxShape3D_wall")
-
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_yqjtg")
+
+[node name="note_book" parent="player" instance=ExtResource("3_lnu2h")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.1909194, -0.8908211)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
 shape = SubResource("CapsuleShape3D_player")
@@ -110,6 +38,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="InteractiveSpheres" type="Node3D" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RoomDisplay" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "Unknown Room"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Crosshair" type="CenterContainer" parent="UI"]
 anchors_preset = 15
@@ -171,3 +111,5 @@ bbcode_enabled = true
 text = "Information about the sphere will appear here."
 fit_content = true
 scroll_active = false
+
+[node name="HUD" parent="." instance=ExtResource("4_lbhrr")]

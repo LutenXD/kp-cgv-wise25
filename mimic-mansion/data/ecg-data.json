@@ -1,0 +1,62 @@
+[
+	{
+		"question": "How do you compute the angle between two three dimensional vectors?",
+		"answer": "Use the dot product. Divide the dot product of the two vectors by the product of their lengths. Then take the arccosine of that value.",
+		"explanation": "The dot product connects directly to the angle between two vectors. For two non zero vectors, the dot product equals the product of their lengths times the cosine of the angle. So you first compute the dot product. Then compute each vector length. Divide the dot product by the product of the two lengths. The result is the cosine of the angle. Apply the arccosine to get the angle. In numerical code, a stable alternative is to use a function called atan2. You give it two inputs: the length of the cross product, and the dot product. This often behaves better when the angle is very small or very close to one hundred eighty degrees."
+	},
+	{
+		"question": "How do you compute the area of a triangle in three dimensions, given its vertices p1, p2, and p3?",
+		"answer": "Form two edge vectors and take their cross product. The triangle area is half of the length of that cross product.",
+		"explanation": "Take the vector from p1 to p2, and call it a. Take the vector from p1 to p3, and call it b. The cross product of a and b is perpendicular to the triangle plane. Its length equals the area of the parallelogram spanned by the two edges. A triangle is exactly half of that parallelogram. Therefore the triangle area equals one half times the length of the cross product."
+	},
+	{
+		"question": "How can you test whether two vectors are perpendicular?",
+		"answer": "Compute their dot product. They are perpendicular if the dot product is zero.",
+		"explanation": "Two vectors are perpendicular when the angle between them is ninety degrees. The cosine of ninety degrees is zero. The dot product equals the product of the vector lengths times the cosine of the angle. So if the dot product is zero, the cosine term must be zero, which means the vectors are orthogonal. In practice, with floating point numbers, you often check whether the dot product is close to zero within a small tolerance."
+	},
+	{
+		"question": "What is the scalar triple product, and what does it compute?",
+		"answer": "It is the dot product of one vector with the cross product of the other two. It gives the signed volume of the parallelepiped spanned by the three vectors.",
+		"explanation": "Take three vectors u, v, and w. First compute the cross product of v and w. Then take the dot product of u with that cross product. The absolute value of the result equals the volume of the parallelepiped formed by the three vectors. The sign tells you the orientation, meaning whether the three vectors form a right handed or left handed system. The same value can be computed as the determinant of the three by three matrix built from the vectors, depending on whether you place them as rows or columns. If you want the volume of the tetrahedron defined by the same spanning vectors, you take the absolute value and divide by six."
+	},
+	{
+		"question": "Given two vectors, how do you determine the direction of their cross product?",
+		"answer": "Use the right hand rule. Curl the fingers of your right hand from the first vector toward the second. Your thumb points in the cross product direction.",
+		"explanation": "The cross product produces a vector that is perpendicular to both input vectors. Its direction depends on the order of the inputs. Point your right hand index finger along the first vector. Point your middle finger along the second vector, using the smaller rotation from the first to the second. Your thumb then points in the direction of the cross product. If you swap the vectors, the result flips direction."
+	},
+	{
+		"question": "Given a foot point on a plane and a normalized plane normal, how do you compute the perpendicular distance from any point to that plane, and what does a negative distance mean?",
+		"answer": "Compute the dot product of the unit normal with the vector from the foot point to the given point. A negative value means the point lies on the opposite side of the plane from the normal direction.",
+		"explanation": "A plane can be defined by a point r on the plane and a unit normal vector n. For any point x, form the difference vector x minus r. Take the dot product of n with that difference. The result is the signed perpendicular distance. If the distance is zero, the point lies on the plane. If the distance is positive, the point is on the side the normal points to. If the distance is negative, the point is on the opposite side. To project the point onto the plane, subtract the distance times the unit normal from the point."
+	},
+	{
+		"question": "Name two different ways to specify a plane in three dimensional space.",
+		"answer": "You can use three non collinear points. Or you can use one point and a normal vector.",
+		"explanation": "One common representation uses three points that are not on a single line. These three points uniquely define a plane. Another common representation uses one known point on the plane and a normal vector. This leads directly to an implicit plane equation that says the dot product of the normal with x minus the point is zero. A related form is the Hesse normal form, which uses a unit normal and the signed distance of the plane from the origin."
+	},
+	{
+		"question": "What are barycentric coordinates, and how can they be computed?",
+		"answer": "They are three weights for the triangle vertices that sum to one. The point equals the weighted average of the vertices. You compute them by solving a small linear system or by using area ratios.",
+		"explanation": "For a triangle with vertices p0, p1, and p2, barycentric coordinates describe a point p using three weights. Call them sigma zero, sigma one, and sigma two. The point p equals sigma zero times p0 plus sigma one times p1 plus sigma two times p2. The weights add up to one. To compute the weights in two dimensions, you can solve a three by three linear system built from the vertex coordinates and the point coordinates. Another method uses areas: each weight equals the area of a sub triangle divided by the area of the whole triangle, with a consistent orientation."
+	},
+	{
+		"question": "How do barycentric coordinates tell you whether a point lies inside a triangle?",
+		"answer": "Compute the three weights. The point is inside or on the boundary if all weights are between zero and one, and they sum to one.",
+		"explanation": "Barycentric coordinates describe convex combinations. If all three weights are non negative and add up to one, the point lies in the triangle or on its edges. If all three weights are strictly greater than zero, the point lies strictly inside. If one weight is zero and the others are non negative, the point lies on the corresponding edge. If any weight is negative, the point lies outside the triangle. In floating point computations, you usually allow a small tolerance around zero."
+	},
+	{
+		"question": "How do you interpolate colors from a triangle's vertices to a point inside the triangle using barycentric coordinates?",
+		"answer": "Use the same three weights and take a weighted average of the three vertex colors.",
+		"explanation": "Assign a color to each triangle vertex, for example as red green blue values. For a point inside the triangle, compute its barycentric weights sigma zero, sigma one, and sigma two. Then compute the point color as sigma zero times color zero plus sigma one times color one plus sigma two times color two. This is linear interpolation over the triangle in an affine sense. The same method works for other attributes such as texture coordinates or normals, with appropriate handling when needed."
+	},
+	{
+		"question": "How is an implicit curve defined, and how does it compare to a parametric curve?",
+		"answer": "An implicit curve is the set of points where a function value is zero. A parametric curve is a function that maps a parameter to a point on the curve.",
+		"explanation": "In two dimensions, an implicit curve is defined by a scalar function f of x and y. The curve is all points where f equals zero. Often the sign of f tells you which side is inside or outside. A parametric curve introduces a parameter t. It defines a point as a function of t, such as x of t and y of t. The implicit form defines the set directly. The parametric form provides an explicit way to traverse the curve in order."
+	},
+	{
+		"question": "What are typical advantages and disadvantages of implicit versus parametric representations?",
+		"answer": "Implicit models handle closed shapes and topology changes well, but they are not naturally suited for boundaries and texture mapping. Parametric models are intuitive to edit and easy to texture, but patch stitching and smoothness constraints can be difficult.",
+		"explanation": "Implicit representations are good for describing closed contours and surfaces. They can naturally merge and split when the defining function changes, which makes topology changes easy. They also generalize well across dimensions. However, they do not naturally encode explicit boundaries, and they do not directly provide a surface parameterization for texturing. Parametric representations are often controlled by points or coefficients, so they are intuitive to edit. They provide a parameter domain that supports texturing and other mappings. But building complex shapes from multiple patches can be hard. You must enforce continuity conditions to avoid cracks and unwanted sharp transitions."
+	}
+]

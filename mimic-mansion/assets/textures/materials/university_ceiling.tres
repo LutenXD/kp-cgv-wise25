@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://biggh1yg368kv"]
+
+[ext_resource type="Texture2D" uid="uid://ck3txigch5r2t" path="res://assets/textures/materials/university_ceiling/albedo.png" id="1_a4hnj"]
+[ext_resource type="Texture2D" uid="uid://greiphplp4b3" path="res://assets/textures/materials/university_ceiling/height.png" id="2_bxn4w"]
+[ext_resource type="Texture2D" uid="uid://cbswfp32h5c55" path="res://assets/textures/materials/university_ceiling/metallic.png" id="3_ya7dx"]
+[ext_resource type="Texture2D" uid="uid://t8r7guij8kld" path="res://assets/textures/materials/university_ceiling/normal.png" id="4_2ykkc"]
+[ext_resource type="Texture2D" uid="uid://dvtbkyfyo7jro" path="res://assets/textures/materials/university_ceiling/roughness.png" id="5_3xnnf"]
+
+[resource]
+albedo_texture = ExtResource("1_a4hnj")
+metallic_texture = ExtResource("3_ya7dx")
+roughness_texture = ExtResource("5_3xnnf")
+normal_enabled = true
+normal_texture = ExtResource("4_2ykkc")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_bxn4w")
+uv1_triplanar = true

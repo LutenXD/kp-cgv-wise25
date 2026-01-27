@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c7a0m8fuf6p0o"]
+
+[ext_resource type="Script" uid="uid://cy4aopdl4etgn" path="res://level/props/prop.gd" id="1_lp7bn"]
+[ext_resource type="PackedScene" uid="uid://bdsmh7qkd65fl" path="res://assets/props/textured_mesh.glb" id="2_yh802"]
+
+[node name="Prop" type="StaticBody3D" unique_id=1113012891]
+script = ExtResource("1_lp7bn")
+model = ExtResource("2_yh802")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1593625543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8345437)

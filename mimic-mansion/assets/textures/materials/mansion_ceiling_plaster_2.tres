@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b00ur8w8nvvww"]
+
+[ext_resource type="Texture2D" uid="uid://cuqxbep7fvd47" path="res://assets/textures/materials/mansion_ceiling_plaster_2/albedo.png" id="1_aq55k"]
+[ext_resource type="Texture2D" uid="uid://bpr8op3i8qwdb" path="res://assets/textures/materials/mansion_ceiling_plaster_2/height.png" id="2_bn5qj"]
+[ext_resource type="Texture2D" uid="uid://ckhai3fh7muck" path="res://assets/textures/materials/mansion_ceiling_plaster_2/metallic.png" id="3_oglna"]
+[ext_resource type="Texture2D" uid="uid://da10q6jvgbbsc" path="res://assets/textures/materials/mansion_ceiling_plaster_2/normal.png" id="4_nfunj"]
+[ext_resource type="Texture2D" uid="uid://8np67bka75fi" path="res://assets/textures/materials/mansion_ceiling_plaster_2/roughness.png" id="5_2d6id"]
+
+[resource]
+albedo_texture = ExtResource("1_aq55k")
+metallic_texture = ExtResource("3_oglna")
+roughness_texture = ExtResource("5_2d6id")
+normal_enabled = true
+normal_texture = ExtResource("4_nfunj")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_bn5qj")
+uv1_triplanar = true

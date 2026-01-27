@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dkg8w5cjay1qd"]
+
+[node name="RoomTemplate" type="Node3D"]
+
+[node name="Connections" type="Node" parent="."]

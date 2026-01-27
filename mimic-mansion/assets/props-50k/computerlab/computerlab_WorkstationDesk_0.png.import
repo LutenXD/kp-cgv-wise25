@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dhxw54de7m21i"
+path.s3tc="res://.godot/imported/computerlab_WorkstationDesk_0.png-e166ac0e89424e3be366ec532b66cb3a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2e9c9d6a33a6041f0e298c887702eec9"
+}
+
+[deps]
+
+source_file="res://assets/props-50k/computerlab/computerlab_WorkstationDesk_0.png"
+dest_files=["res://.godot/imported/computerlab_WorkstationDesk_0.png-e166ac0e89424e3be366ec532b66cb3a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
