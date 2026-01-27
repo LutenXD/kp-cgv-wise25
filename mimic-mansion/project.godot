@@ -111,4 +111,4 @@ fly={
 
 [rendering]
 
-mesh_lod/lod_change/threshold_pixels=8.0
+mesh_lod/lod_change/threshold_pixels=4.0
