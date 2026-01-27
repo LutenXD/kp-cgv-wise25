@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vebtx1fq72n" path="res://assets/prop-scenes/computerlab/computerlab_VRHeadset.tscn" id="40_iors0"]
 [ext_resource type="PackedScene" uid="uid://d17dego0mc27o" path="res://assets/prop-scenes/computerlab/computerlab_Webcam.tscn" id="41_0prka"]
 [ext_resource type="PackedScene" uid="uid://wdxre6ve30ei" path="res://assets/prop-scenes/computerlab/computerlab_WorkstationDesk.tscn" id="42_2soet"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="44_p5w6j"]
 [ext_resource type="PackedScene" uid="uid://c73qqbwoo3rje" path="res://assets/prop-scenes/computerlab/computerlab_CeilingTileLight.tscn" id="44_ptp48"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db4si"]
@@ -392,7 +393,7 @@ transform = Transform3D(0.9537299, 0.0040328205, 0.30063742, -0.3002201, -0.0415
 light_color = Color(1, 0.83137256, 0.31764707, 1)
 light_energy = 2.0
 light_indirect_energy = 2.0
-light_size = 0.335
+light_size = 0.262
 shadow_enabled = true
 
 [node name="StaticBody3D84" parent="Props" index="56" unique_id=1967205213 instance=ExtResource("29_uot12")]
@@ -517,6 +518,7 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 11.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
 light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
+light_size = 0.207
 shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
@@ -528,6 +530,7 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.10
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
 light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
+light_size = 0.207
 shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
@@ -539,6 +542,7 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.10
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
 light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
+light_size = 0.207
 shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
@@ -550,6 +554,12 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 11.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
 light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
+light_size = 0.207
 shadow_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
+
+[node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("44_p5w6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.920462, 1.1165183, -6.694353)
+prop_path = "uid://bj04gcvqm7m33"
+voice_kokoro = "random"

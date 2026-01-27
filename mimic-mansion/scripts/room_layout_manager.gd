@@ -1,6 +1,9 @@
 extends Node3D
 class_name RoomLayoutManager
 
+
+signal finished
+
 # Path to the rotated rooms folder
 const ROT_ROOMS_PATH = "res://assets/rot_rooms/"
 
@@ -9,6 +12,8 @@ const ROOM_SIZE = 10.0  # Base size of a room (10x10 units)
 var grid = {}  # Dictionary to track occupied grid positions
 var spawned_rooms = []
 var available_doors = []
+
+var door_scene: PackedScene = preload("res://entities/interactable_door.tscn")
 
 
 func get_base_room_name(room_name: String) -> String:
@@ -30,7 +35,7 @@ func is_room_variant_spawned(room_name: String) -> bool:
 			return true
 	return false
 
-func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 10) -> void:
+func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 6) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	
@@ -56,8 +61,9 @@ func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room
 	for i in range(number_of_connected_rooms):
 		spawn_connected_room(filler_room_name)
 	
-	prints("\n", grid)
-	prints("\n", spawned_rooms)
+	finished.emit()
+	#prints("\n", grid)
+	#prints("\n", spawned_rooms)
 
 
 func spawn_connected_room(filler_room_name: String = "none") -> void:
@@ -94,9 +100,9 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 		var parent_door_position = parent_door["node"].global_position
 		var child_door_position = room_with_door["door"]["node"].global_position
 		
-		printt("parent door pos:", parent_door_position)
-		printt("child door pos:", child_door_position)
-		printt("global pos:", new_room.global_position)
+		#printt("parent door pos:", parent_door_position)
+		#printt("child door pos:", child_door_position)
+		#printt("global pos:", new_room.global_position)
 		
 		#new_room.global_transform = parent_door_position * child_door_position.affine_inverse()
 		new_room.global_position = parent_door_position - (child_door_position - new_room.global_position)
@@ -143,6 +149,14 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 			set_door_visible(room_with_door["door"], true)
 			disable_wall_at_door(parent_door)
 			disable_wall_at_door(room_with_door["door"])
+			
+			# Spawn door
+			var door_node: Node3D = door_scene.instantiate()
+			get_parent().add_child(door_node)
+			door_node.global_position = parent_door_position
+			
+			if parent_door["direction"] == "east" or parent_door["direction"] == "west":
+				door_node.rotation.y = PI / 2.0 
 			
 			var new_doors = get_room_doors(new_room)
 			for door in new_doors:

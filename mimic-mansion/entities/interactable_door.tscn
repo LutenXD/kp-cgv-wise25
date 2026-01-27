@@ -135,6 +135,7 @@ _data = {
 script = SubResource("GDScript_wfpq4")
 
 [node name="Frame" type="StaticBody3D" parent="." unique_id=1311409016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Frame" unique_id=140107332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
@@ -161,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
 shape = SubResource("ConvexPolygonShape3D_qq2lw")
 
 [node name="AnimatableBody3D" type="StaticBody3D" parent="." unique_id=906564133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=1729884116]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)

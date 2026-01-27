@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bcaksrcgd3y4k" path="res://utils/chat_http_request.gd" id="4_s5tgr"]
 [ext_resource type="Script" uid="uid://dmi0visvifrro" path="res://utils/tts_http_request.gd" id="5_bdre0"]
 
-[node name="Mimic" type="Node3D" unique_id=766133172]
+[node name="Mimic" type="Node3D" unique_id=766133172 groups=["mimic"]]
 script = ExtResource("1_ikkii")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=616544448]
