@@ -1,20 +1,16 @@
 @tool
 extends EditorScript
 
-
 const SOURCE_ROOT := "res://assets/props-50k"
 const DEST_ROOT   := "res://assets/prop-scenes-50k"
-
 
 func _run():
 	var dir := DirAccess.open(SOURCE_ROOT)
 	if dir == null:
 		push_error("Source root does not exist: " + SOURCE_ROOT)
 		return
-		
 	_process_directory(SOURCE_ROOT, DEST_ROOT)
 	print("Folder processing completed.")
-
 
 func _process_directory(src_path: String, dst_path: String) -> void:
 	# Ensure destination directory exists
@@ -49,8 +45,15 @@ func _process_directory(src_path: String, dst_path: String) -> void:
 	for glb in glb_files:
 		_create_scene_from_glb(glb, dst_path)
 
-
 func _create_scene_from_glb(glb_path: String, dst_path: String) -> void:
+	# Check if scene already exists
+	var scene_name := glb_path.get_file().get_basename() + ".tscn"
+	var save_path := dst_path + "/" + scene_name
+	
+	if FileAccess.file_exists(save_path):
+		print("Scene already exists, skipping: ", save_path)
+		return
+	
 	var glb_scene := load(glb_path)
 	if glb_scene == null:
 		push_error("Failed to load GLB: " + glb_path)
@@ -86,15 +89,11 @@ func _create_scene_from_glb(glb_path: String, dst_path: String) -> void:
 	var packed_scene := PackedScene.new()
 	packed_scene.pack(static_body)
 	
-	var scene_name := glb_path.get_file().get_basename() + ".tscn"
-	var save_path := dst_path + "/" + scene_name
-	
 	var err := ResourceSaver.save(packed_scene, save_path)
 	if err != OK:
 		push_error("Failed to save scene: " + save_path)
 	else:
 		print("Created scene: ", save_path)
-
 
 func _find_mesh_instances(node: Node) -> Array[MeshInstance3D]:
 	var result: Array[MeshInstance3D] = []
