@@ -56,4 +56,6 @@ mesh = SubResource("ArrayMesh_br2oj")
 skeleton = NodePath("")
 
 [node name="@CollisionShape3D@23259" type="CollisionShape3D" parent="." unique_id=1508830822]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_5ucik")
+disabled = true
