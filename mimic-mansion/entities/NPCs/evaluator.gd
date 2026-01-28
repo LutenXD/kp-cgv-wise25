@@ -21,6 +21,8 @@ func _ready() -> void:
 
 
 func set_evaluator_instructions() -> void:
+	if statements.is_empty():
+		return
 	self.set_instructions(evaluator_pre_instructions + str(statements[question_idx]) + evaluator_post_instructions)
 	#print(str(statements[question_idx]))
 	score_label.text = str(question_idx) + "/" + str(num_questions)

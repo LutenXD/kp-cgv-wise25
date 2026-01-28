@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://2muea82newgl"]
+[gd_scene format=3 uid="uid://b2mo3jlyocc57"]
 
-[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_fohyt"]
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_fohyt"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="2_bqtts"]
-[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="2_p041r"]
 [ext_resource type="PackedScene" uid="uid://clblyyrkwtnd0" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_HandSanitizerDispenser.tscn" id="2_uk57g"]
+[ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_5cooa"]
 [ext_resource type="Material" uid="uid://dktolols1hpas" path="res://assets/textures/materials/university_tile_floor_2.tres" id="3_jrfrv"]
 [ext_resource type="PackedScene" uid="uid://bqga8jmi4kovf" path="res://assets/prop-scenes/universitytoilet/universitytoilet_PedestalSink.tscn" id="3_r78x7"]
 [ext_resource type="PackedScene" uid="uid://dvk143sbxqivo" path="res://assets/prop-scenes/universitytoilet/universitytoilet_RoundMirror.tscn" id="4_uk57g"]
@@ -12,64 +12,56 @@
 [ext_resource type="PackedScene" uid="uid://dhan5w1iu81bf" path="res://assets/prop-scenes/universitytoilet/universitytoilet_PlasterWall.tscn" id="7_bqtts"]
 [ext_resource type="PackedScene" uid="uid://cg3ajhn30la4u" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperDispenser.tscn" id="8_r78x7"]
 [ext_resource type="PackedScene" uid="uid://c1sylh1escyrw" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_TrashCanLarge.tscn" id="9_uk57g"]
-[ext_resource type="PackedScene" uid="uid://v5pipcs0mdps" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
 [ext_resource type="PackedScene" uid="uid://dllgc23227vg7" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperRoll.tscn" id="14_5cooa"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
-albedo_color = Color(0.45, 0.28, 0.22, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_jrfrv"]
-material = SubResource("StandardMaterial3D_walls")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofnwc"]
-transparency = 1
-albedo_color = Color(0.45, 0.28, 0.22, 0.3)
 
 [sub_resource type="FogMaterial" id="FogMaterial_5cooa"]
 density = 8.0
 
 [node name="Toilet" unique_id=151750742 instance=ExtResource("1_fohyt")]
 
-[node name="WallSouth0" parent="Walls" index="1"]
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+visible = false
+
+[node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
+material_override = ExtResource("2_bqtts")
+
+[node name="DoorNorth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1625667657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+
+[node name="DoorWall" parent="Walls/DoorNorth0" index="0" unique_id=288271030 instance=ExtResource("3_5cooa")]
+material = ExtResource("2_bqtts")
+
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
 
-[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
 material_override = ExtResource("2_bqtts")
 
-[node name="WallEast0" parent="Walls" index="2"]
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.9, 2, 0)
 
-[node name="MeshInstance3D" parent="Walls/WallEast0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallEast0" index="0" unique_id=1170511803]
 material_override = ExtResource("2_bqtts")
 
-[node name="WallWest0" parent="Walls" index="3"]
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=6000773]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
 
-[node name="MeshInstance3D" parent="Walls/WallWest0" index="0"]
+[node name="MeshInstance3D" parent="Walls/WallWest0" index="0" unique_id=965472030]
 material_override = ExtResource("2_bqtts")
 
-[node name="MeshInstance3D" parent="Floor/Floor00" index="0"]
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_jrfrv")
 
-[node name="StaticBody3D" parent="Floor/Floor00" index="2" unique_id=840257529 instance=ExtResource("2_uk57g")]
+[node name="StaticBody3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="2" unique_id=840257529 instance=ExtResource("2_uk57g")]
 transform = Transform3D(3.774895e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 3.774895e-08, 4.6401796, 1.7139512, -3.8820424)
 
-[node name="Ceiling00" parent="Ceiling" index="0"]
+[node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
 material_override = ExtResource("5_jrfrv")
 
-[node name="DoorNorth0" type="Node3D" parent="." index="3" unique_id=1625667657]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorNorth0" index="0" unique_id=1610693195]
-mesh = SubResource("BoxMesh_jrfrv")
-surface_material_override/0 = SubResource("StandardMaterial3D_ofnwc")
-
-[node name="Player" parent="." index="4" unique_id=947552428 instance=ExtResource("2_p041r")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3586558, 0, -1.8515471)
-
-[node name="Props" type="Node" parent="." index="5" unique_id=204298416]
+[node name="Props" type="Node3D" parent="." index="3" unique_id=873887950]
 
 [node name="Mirror" parent="Props" index="0" unique_id=737018624 instance=ExtResource("4_uk57g")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.742, 2.0406935, -2.6697564)
@@ -185,7 +177,7 @@ transform = Transform3D(-0.3, 0, -7.450581e-09, 0, 0.3, 0, 7.450581e-09, 0, -0.3
 [node name="CeilingLamp" parent="Props" index="37" unique_id=480566793 instance=ExtResource("15_5cooa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5298971, 3.3104005, 0.12731051)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="6" unique_id=202111538]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="4" unique_id=202111538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61051786, 2.6641436, 0.04594332)
 light_color = Color(0.7764706, 1, 0.9843137, 1)
 light_energy = 2.0
@@ -194,7 +186,7 @@ shadow_enabled = true
 omni_range = 12.016
 omni_attenuation = 2.0
 
-[node name="FogVolume" type="FogVolume" parent="." index="7" unique_id=1517315426]
+[node name="FogVolume" type="FogVolume" parent="." index="5" unique_id=1517315426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079841614, 1.0518132, 0.80340576)
 size = Vector3(10, 10, 10.770142)
 material = SubResource("FogMaterial_5cooa")

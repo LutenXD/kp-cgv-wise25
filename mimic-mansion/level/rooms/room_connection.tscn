@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1lu6prw4k35l"]
+[gd_scene format=3 uid="uid://d1lu6prw4k35l"]
 
 [ext_resource type="Script" uid="uid://5lw0xlktr3u6" path="res://level/rooms/RoomConnection.gd" id="1_c4fe4"]
 
-[node name="RoomConnection" type="Marker3D"]
+[node name="RoomConnection" type="Marker3D" unique_id=202977611]
 script = ExtResource("1_c4fe4")
 metadata/_custom_type_script = "uid://5lw0xlktr3u6"
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=781834411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

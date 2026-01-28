@@ -43,26 +43,26 @@ _data = {
 &"appear": SubResource("Animation_02sal")
 }
 
-[node name="note_book" type="Node3D"]
+[node name="note_book" type="Node3D" unique_id=1560951017]
 script = ExtResource("1_b403g")
 
-[node name="BookPlaceholder" type="MeshInstance3D" parent="."]
+[node name="BookPlaceholder" type="MeshInstance3D" parent="." unique_id=1320937022]
 transform = Transform3D(-1.9161812e-08, -3.9287535e-08, -1, -0.89879405, 0.43837115, 0, 0.43837115, 0.89879405, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("1_747sg")
 
-[node name="subviewport sprite" type="Sprite3D" parent="BookPlaceholder"]
+[node name="subviewport sprite" type="Sprite3D" parent="BookPlaceholder" unique_id=440345339]
 transform = Transform3D(0.0033876505, -0.27997932, 0.00016617775, -0.04890041, -0.000428088, 0.2756964, -0.27567592, -0.0033646175, -0.04890198, -0.07276398, 0.20914, 0.58510876)
 texture = SubResource("ViewportTexture_b403g")
 region_enabled = true
 region_rect = Rect2(0, 0, 322, 512)
 
-[node name="book_viewport" type="SubViewport" parent="BookPlaceholder"]
+[node name="book_viewport" type="SubViewport" parent="BookPlaceholder" unique_id=788689655]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(322, 512)
 render_target_update_mode = 4
 
-[node name="Book Text UI" parent="BookPlaceholder/book_viewport" instance=ExtResource("2_b403g")]
+[node name="Book Text UI" parent="BookPlaceholder/book_viewport" unique_id=54747428 instance=ExtResource("2_b403g")]
 custom_minimum_size = Vector2(500, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,7 +71,7 @@ offset_left = -71.1
 offset_right = 106.899994
 offset_bottom = 0.0
 
-[node name="Menu viewport container" type="SubViewportContainer" parent="."]
+[node name="Menu viewport container" type="SubViewportContainer" parent="." unique_id=1241807800]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,12 +79,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="menu_subviewport" type="SubViewport" parent="Menu viewport container"]
+[node name="menu_subviewport" type="SubViewport" parent="Menu viewport container" unique_id=1836729447]
 handle_input_locally = false
 size = Vector2i(1002, 512)
 render_target_update_mode = 0
 
-[node name="Label" type="Label" parent="Menu viewport container/menu_subviewport"]
+[node name="Label" type="Label" parent="Menu viewport container/menu_subviewport" unique_id=60694829]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -98,21 +98,19 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Press esc to close"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lvois")
-}
-autoplay = "appear"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1152300024]
+libraries/ = SubResource("AnimationLibrary_lvois")
+autoplay = &"appear"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=906431199]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=84680550]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="close button" type="Button" parent="CanvasLayer/Control"]
+[node name="close button" type="Button" parent="CanvasLayer/Control" unique_id=1651469076]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

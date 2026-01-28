@@ -19,10 +19,10 @@ var tts_model: String = "Kokoro-82M"
 @export_enum("de_DE-thorsten_emotional-medium", "en_US-ljspeech-high", "fransop_finetune", "frm01-1000", "hans", "jacob", "frederik", "frans", "jans", "frob", "fransob", "bruno", "brans", "brob", "frunob", "fruno", "frunons", "janso", "jansunik") 
 var voice_piper: String = "fransop_finetune"
 
-@export_enum("af_heart", "am_echo", "af_river", "am_santa", "bm_fable") 
+@export_enum("random", "af_heart", "am_echo", "af_river", "am_santa", "bm_fable") 
 var voice_kokoro: String = "af_heart"
 
-@export_enum("alloy", "echo", "fable", "nova", "shimmer")
+@export_enum("random", "alloy", "echo", "fable", "nova", "shimmer")
 var voice_tts_1: String = "fable"
 
 @export_multiline var instructions: String = "Du bist ein böser NPC Geist in einem Videospiel, der versucht den Spieler in eine Falle zu locken. Antworte kurz und verwende keine Lautsprache."
@@ -62,9 +62,15 @@ func _ready() -> void:
 		"piper":
 			tts_voice = voice_piper
 		"Kokoro-82M":
-			tts_voice = voice_kokoro
+			if voice_kokoro == "random":
+				tts_voice = ["af_heart", "am_echo", "af_river", "am_santa", "bm_fable"].pick_random()
+			else:
+				tts_voice = voice_kokoro
 		"tts-1-hd":
-			tts_voice = voice_tts_1
+			if voice_tts_1 == "random":
+				tts_voice = ["alloy", "echo", "fable", "nova", "shimmer"].pick_random()
+			else:
+				tts_voice = voice_tts_1
 	
 	chat_request.chat_model = chat_model
 	chat_request.system_instructions = instructions
@@ -177,21 +183,16 @@ func _update_prop() -> void:
 	mimic_mesh = node.get_child(0)
 	
 	mimic_mesh.owner = null
-	node.remove_child(mimic_mesh)
-	
 	mimic_mesh.mesh = mimic_mesh.mesh.duplicate()
-	
+	node.remove_child(mimic_mesh)
 	static_body_3d.add_child(mimic_mesh)
-	node.queue_free()
 	
-	mimic_mesh.create_convex_collision(true, true)
-	
-	var shape: Node = mimic_mesh.get_child(0).get_child(0)
+	var shape: Node = node.get_child(-1)
 	shape.owner = null
-	mimic_mesh.get_child(0).remove_child(shape)
+	node.remove_child(shape)
+	node.queue_free()
 	#shape.rotation.x = PI / 2.0
 	static_body_3d.add_child(shape)
-	mimic_mesh.get_child(0).queue_free()
 	
 	if is_inside_tree():
 		if Engine.is_editor_hint():
