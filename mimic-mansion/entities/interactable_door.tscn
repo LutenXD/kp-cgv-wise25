@@ -14,7 +14,6 @@ var player: Player
 var tween: Tween
 
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interactable_component: InteractableComponent = $AnimatableBody3D/InteractableComponent
 @onready var animatable_body_3d: StaticBody3D = $AnimatableBody3D
 
@@ -186,84 +185,6 @@ shadow_mesh = SubResource("ArrayMesh_bp5jj")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qq2lw"]
 points = PackedVector3Array(-0.026941612, -0.625, -1.25751, -0.03568, -0.62120694, -1.25751, 0.026934627, -0.625, -1.25751, -0.026941612, -0.625, 1.24249, -0.03568, -0.62120694, -1.06492, -0.03568, 0.6210846, -1.25751, 0.03568, -0.62120694, -1.25751, 0.026934627, -0.625, 1.24249, -0.026941612, 0.6248777, 1.24249, -0.03568, 0.6210846, -1.06492, -0.026941612, 0.6248777, -1.25751, 0.03568, 0.6210846, -1.25751, 0.03568, -0.62120694, -1.06492, 0.026934627, 0.625, 1.24249, 0.026934627, 0.625, -1.25751, 0.03568, 0.6210846, -1.06492)
 
-[sub_resource type="Animation" id="Animation_qq2lw"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody3D:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatableBody3D:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatableBody3D:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_hvoeb"]
-resource_name = "open"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody3D:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatableBody3D:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -2, -0.23333335, 0.013180733, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatableBody3D:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bsbnc"]
-_data = {
-&"RESET": SubResource("Animation_qq2lw"),
-&"open": SubResource("Animation_hvoeb")
-}
-
 [node name="InteractableDoor" type="Node3D" unique_id=1352723989]
 script = SubResource("GDScript_wfpq4")
 
@@ -322,8 +243,5 @@ text = "Press \"e\" to open"
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 1.5, -0.15)
 visible = false
 text = "Press \"e\" to open"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41240774]
-libraries/ = SubResource("AnimationLibrary_bsbnc")
 
 [connection signal="interacted" from="AnimatableBody3D/InteractableComponent" to="." method="_on_interactable_component_interacted"]
