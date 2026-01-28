@@ -49,11 +49,10 @@ shadow_mesh = SubResource("ArrayMesh_exgf0")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f57tl"]
 points = PackedVector3Array(0.2873567, 0.5088515, 0.0265382, -0.3487516, -0.46122956, -0.13243906, -0.3487516, -0.46122956, 0.121983714, 0.3350289, -0.47707048, 0.15380874, 0.3350289, -0.4293485, -0.14835158, -0.28505173, 0.5088515, -0.03702313, -0.30101097, 0.49291098, 0.0265382, 0.2873567, 0.5088515, -0.03702313, -0.3327924, -0.44528905, 0.15380874, 0.3509881, 0.111234844, 0.0265382, 0.32241204, -0.48972264, -0.12733173, -0.3327924, -0.4293485, -0.14835158, -0.32166117, -0.49198684, -0.12793313, -0.3487516, 0.111234844, 0.0265382, -0.3327924, -0.47707048, 0.15380874, 0.3350289, -0.44528905, 0.15380874, -0.30101097, 0.49291098, -0.03702313, -0.28505173, 0.5088515, 0.0265382, 0.30324745, 0.49291098, 0.0265382, 0.3161273, -0.4801443, 0.13021693, -0.31402305, -0.48034582, 0.13027044, -0.3487516, -0.44528905, -0.13243906, 0.3509881, 0.0794534, 0.0265382, -0.3487516, -0.44528905, 0.121983714)
 
-[node name="" type="StaticBody3D" unique_id=2083805021]
+[node name="holodeck_HugeWhiteboard" type="StaticBody3D" unique_id=1701854139]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=489993465]
 mesh = SubResource("ArrayMesh_yddu2")
-skeleton = NodePath("")
 
-[node name="@CollisionShape3D@69333" type="CollisionShape3D" parent="." unique_id=1363054711]
+[node name="@CollisionShape3D@143572" type="CollisionShape3D" parent="." unique_id=1222037073]
 shape = SubResource("ConvexPolygonShape3D_f57tl")

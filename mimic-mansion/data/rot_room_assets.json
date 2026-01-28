@@ -1,596 +1,648 @@
 {
   "rooms": [
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "art_gallery",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "art_gallery_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          1
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "art_gallery_rot180",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          1
-        ]
-      },
-      "length": 2.0,
-      "name": "art_gallery_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "attic_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0,
-          1.0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0,
-          1
-        ],
-        "north": [],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          1,
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot180",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [],
-        "west": [
-          1,
-          0
-        ]
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          1.0
-        ],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          1.0
-        ]
-      },
-      "length": 2.0,
-      "name": "chapel_crypt",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "chapel_crypt_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 2.0,
-      "name": "chapel_crypt_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          1
-        ],
-        "south": [
-          1
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "chapel_crypt_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "dining_room",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "dining_room_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "dining_room_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "dining_room_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot270",
-      "width": 1.0
-    }
+	{
+	  "doors": {
+		"east": [
+		  0.0
+		],
+		"north": [],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  0.0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "art_gallery",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "art_gallery_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  1
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "art_gallery_rot180",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2.0,
+	  "name": "art_gallery_rot270",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0.0
+		],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "attic",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "attic_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "attic_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "attic_rot270",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0.0,
+		  1.0
+		],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "basement_dungeon",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0,
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "basement_dungeon_rot90",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1,
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "basement_dungeon_rot180",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  1,
+		  0
+		]
+	  },
+	  "length": 2.0,
+	  "name": "basement_dungeon_rot270",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  1.0
+		],
+		"north": [],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  1.0
+		]
+	  },
+	  "length": 2.0,
+	  "name": "chapel_crypt",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "chapel_crypt_rot90",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2.0,
+	  "name": "chapel_crypt_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [
+		  1
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "chapel_crypt_rot270",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0.0
+		],
+		"north": [
+		  0.0
+		],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  0.0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "courtyard_garden",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "courtyard_garden_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "courtyard_garden_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "courtyard_garden_rot270",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0.0
+		],
+		"south": [
+		  0.0
+		],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "dining_room",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "dining_room_rot90",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "dining_room_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "dining_room_rot270",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1.0
+		],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "holodeck",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "holodeck_rot90",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2.0,
+	  "name": "holodeck_rot180",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2.0,
+	  "name": "holodeck_rot270",
+	  "width": 2.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0.0
+		],
+		"north": [
+		  0.0
+		],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  0.0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "grand_foyer",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "grand_foyer_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "grand_foyer_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "grand_foyer_rot270",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0.0
+		],
+		"north": [
+		  0.0
+		],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  0.0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "hallway",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "hallway_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "hallway_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "hallway_rot270",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0.0
+		],
+		"west": [
+		  0.0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "kitchen_pantry",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "kitchen_pantry_rot90",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1.0,
+	  "name": "kitchen_pantry_rot180",
+	  "width": 1.0
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1.0,
+	  "name": "kitchen_pantry_rot270",
+	  "width": 1.0
+	}
   ]
 }

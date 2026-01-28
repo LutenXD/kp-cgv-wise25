@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://buvheufyh4i3v"]
+
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_romwe"]
+[ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_sj1sp"]
+[ext_resource type="Material" uid="uid://djfbob3ys4ffh" path="res://assets/textures/materials/laminate-floor.tres" id="3_iiqlw"]
+[ext_resource type="PackedScene" uid="uid://bpidc80u35jr8" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_TrashCanSmall.tscn" id="3_wuwxv"]
+[ext_resource type="Material" uid="uid://biggh1yg368kv" path="res://assets/textures/materials/university_ceiling.tres" id="4_jimqv"]
+[ext_resource type="PackedScene" uid="uid://ba20p40u80kxg" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_PowerOutletStrip.tscn" id="5_bpsv8"]
+[ext_resource type="PackedScene" uid="uid://d3m6s6et1a6yk" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_DeskFan.tscn" id="6_jimqv"]
+[ext_resource type="PackedScene" uid="uid://mw7paqtrb2pm" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_DigitalClock.tscn" id="7_35xrv"]
+[ext_resource type="PackedScene" uid="uid://dw5mjqeqkkm5n" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_MicStand.tscn" id="9_mbiki"]
+[ext_resource type="PackedScene" uid="uid://brybhf64ninr2" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_FireExtinguisher.tscn" id="10_2wvef"]
+[ext_resource type="PackedScene" uid="uid://eqiqshegsxyp" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_ClockTimer.tscn" id="11_s4gbg"]
+[ext_resource type="PackedScene" uid="uid://ciuwpw0rvplcv" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_AirPurifierMini.tscn" id="12_87bvn"]
+[ext_resource type="PackedScene" uid="uid://cb5jardk7hkh0" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_Projector.tscn" id="13_5lt34"]
+[ext_resource type="PackedScene" uid="uid://cclkg07hjivql" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_RoomSignage.tscn" id="14_dww5e"]
+[ext_resource type="PackedScene" uid="uid://dpfai26ij8wa7" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_Screen.tscn" id="15_3eiio"]
+[ext_resource type="PackedScene" uid="uid://bvemyrsvllke" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_Speaker.tscn" id="16_ckkfx"]
+[ext_resource type="PackedScene" uid="uid://h4qkuwddpt6y" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_StudentChair.tscn" id="17_xpcgg"]
+[ext_resource type="PackedScene" uid="uid://bpna5bb88a6ca" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_StudentDesk.tscn" id="18_uqb83"]
+[ext_resource type="PackedScene" uid="uid://cwpkkclyutl7v" path="res://assets/prop-scenes-50k/smalllectureroom/smalllectureroom_StudentLockers.tscn" id="20_dxux4"]
+[ext_resource type="PackedScene" uid="uid://bsbv1qvunqjhd" path="res://assets/prop-scenes-50k/lecturehall/lecturehall_Chair.tscn" id="21_bpsv8"]
+[ext_resource type="PackedScene" uid="uid://dofy3l8uceljg" path="res://assets/prop-scenes-50k/smalllectureroom/smalllectureroom_TeachingPodium.tscn" id="21_murl8"]
+[ext_resource type="PackedScene" uid="uid://pfu0lu5vl6rq" path="res://assets/prop-scenes-50k/smalllectureroom/smalllectureroom_WhiteboardMarker.tscn" id="22_21mux"]
+[ext_resource type="PackedScene" uid="uid://dsr5ga3avwmsk" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_Blackboard.tscn" id="22_jimqv"]
+[ext_resource type="PackedScene" uid="uid://ddrv1lqxdevh4" path="res://assets/prop-scenes/lecturehall/lecturehall_ProjectorScreen.tscn" id="23_35xrv"]
+[ext_resource type="PackedScene" uid="uid://bwr4jpwo06sbk" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_CableCord.tscn" id="24_vy23n"]
+[ext_resource type="PackedScene" uid="uid://bijtx5rw5muhr" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_CeilingLight.tscn" id="26_35xrv"]
+[ext_resource type="PackedScene" uid="uid://uqb5rigsgygs" path="res://entities/NPCs/evaluator.tscn" id="27_jimqv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n08f3"]
+albedo_color = Color(0.6, 0.5, 0.4, 1)
+
+[node name="Smalllectureroom" unique_id=819269736 instance=ExtResource("1_romwe")]
+
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
+visible = false
+
+[node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=415895558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
+
+[node name="DoorWall" parent="Walls/DoorSouth0" index="0" unique_id=288271030 instance=ExtResource("2_sj1sp")]
+material = SubResource("StandardMaterial3D_n08f3")
+
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.9, 2, 0)
+
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=6000773]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
+
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
+material_override = ExtResource("3_iiqlw")
+
+[node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
+material_override = ExtResource("4_jimqv")
+
+[node name="Props" type="Node3D" parent="." index="3" unique_id=1867997466]
+
+[node name="smalllectureroom_TrashCanSmall" parent="Props" index="0" unique_id=1096413994 instance=ExtResource("3_wuwxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3750715, 0.50075364, 4.329874)
+
+[node name="smalllectureroom_PowerOutletStrip" parent="Props" index="1" unique_id=1578658215 instance=ExtResource("5_bpsv8")]
+transform = Transform3D(0.8325057, 0, 0.5540165, 0, 1, 0, -0.5540165, 0, 0.8325057, 1.5836308, 1.2674589, 0.4707222)
+
+[node name="smalllectureroom_DeskFan" parent="Props" index="2" unique_id=275223614 instance=ExtResource("6_jimqv")]
+transform = Transform3D(0.36059922, 0, -0.93272084, 0, 1, 0, 0.93272084, 0, 0.36059922, -0.826815, 1.6270255, -0.030183077)
+
+[node name="smalllectureroom_DigitalClock" parent="Props" index="3" unique_id=1794355833 instance=ExtResource("7_35xrv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.37912, 3.1110811, 4.0742135)
+
+[node name="smalllectureroom_MicStand" parent="Props" index="4" unique_id=1670896584 instance=ExtResource("9_mbiki")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.380404, 1.5040382, -0.46093416)
+
+[node name="smalllectureroom_FireExtinguisher" parent="Props" index="5" unique_id=81968563 instance=ExtResource("10_2wvef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55369, 0.50096893, -3.696044)
+
+[node name="smalllectureroom_ClockTimer" parent="Props" index="6" unique_id=232583661 instance=ExtResource("11_s4gbg")]
+transform = Transform3D(0.06875683, 0, -0.49525, 0, 0.5, 0, 0.49525, 0, 0.06875683, 2.8077283, 1.3059002, -0.5833477)
+
+[node name="smalllectureroom_AirPurifierMini" parent="Props" index="7" unique_id=99002588 instance=ExtResource("12_87bvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.304041, 0.5008824, -4.3980083)
+
+[node name="smalllectureroom_Projector" parent="Props" index="8" unique_id=65001952 instance=ExtResource("13_5lt34")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2654747, 3.6501055, 0.9404189)
+
+[node name="smalllectureroom_RoomSignage" parent="Props" index="9" unique_id=1964044804 instance=ExtResource("14_dww5e")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, 1.4909221, 2.2721367, 4.7938776)
+
+[node name="smalllectureroom_Screen" parent="Props" index="10" unique_id=1855356810 instance=ExtResource("15_3eiio")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.5455523, 2.439068, -2.8766594)
+
+[node name="smalllectureroom_Speaker" parent="Props" index="11" unique_id=1070823463 instance=ExtResource("16_ckkfx")]
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, -4.3447795, 0.4086036, -4.302603)
+
+[node name="smalllectureroom_StudentChair" parent="Props" index="12" unique_id=835298206 instance=ExtResource("17_xpcgg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2117581, 0.6620203, -4.2845592)
+
+[node name="smalllectureroom_StudentChair2" parent="Props" index="13" unique_id=1036510951 instance=ExtResource("17_xpcgg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.32913303, 0.6620203, -4.3152437)
+
+[node name="smalllectureroom_StudentChair3" parent="Props" index="14" unique_id=1755848998 instance=ExtResource("17_xpcgg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.6675557, 0.6620203, -4.286303)
+
+[node name="smalllectureroom_StudentChair4" parent="Props" index="15" unique_id=2020275862 instance=ExtResource("17_xpcgg")]
+transform = Transform3D(0.14912215, 0, 1.9944329, 0, 2, 0, -1.9944329, 0, 0.14912215, -4.313557, 0.6620208, -2.6547613)
+
+[node name="smalllectureroom_StudentDesk" parent="Props" index="16" unique_id=2074304440 instance=ExtResource("18_uqb83")]
+transform = Transform3D(3.9340247e-07, 0, 3, 0, 3, 0, -3, 0, 3.9340247e-07, 0.68753517, 0.5850042, 0.5464951)
+
+[node name="smalllectureroom_StudentDesk4" parent="Props" index="17" unique_id=1927625062 instance=ExtResource("18_uqb83")]
+transform = Transform3D(3.9340247e-07, 0, 3, 0, 3, 0, -3, 0, 3.9340247e-07, -1.7537895, 0.5850042, 0.5464951)
+
+[node name="smalllectureroom_StudentDesk3" parent="Props" index="18" unique_id=1250827951 instance=ExtResource("18_uqb83")]
+transform = Transform3D(-3, 0, 2.6226832e-07, 0, 3, 0, -2.6226832e-07, 0, -3, -0.45170724, 0.5850042, -0.6277919)
+
+[node name="smalllectureroom_StudentDesk2" parent="Props" index="19" unique_id=971956276 instance=ExtResource("18_uqb83")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 1.9860883, 0.5850042, -0.6133907)
+
+[node name="smalllectureroom_StudentLockers2" parent="Props" index="20" unique_id=777150671 instance=ExtResource("20_dxux4")]
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -3.138782, 0.7954572, 4.3863425)
+
+[node name="smalllectureroom_TeachingPodium" parent="Props" index="21" unique_id=1077832263 instance=ExtResource("21_murl8")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 2.9013646, 0.95315576, -1.6733057)
+
+[node name="smalllectureroom_WhiteboardMarker2" parent="Props" index="22" unique_id=1245636227 instance=ExtResource("22_21mux")]
+transform = Transform3D(0.059086736, 0, -0.2941237, 0, 0.29999998, 0, 0.2941237, 0, 0.059086736, 1.2366787, 1.1919254, -0.021960258)
+
+[node name="smalllectureroom_WhiteboardMarker3" parent="Props" index="23" unique_id=326051503 instance=ExtResource("22_21mux")]
+transform = Transform3D(-0.23774756, 0, 0.18296465, 0, 0.29999998, 0, -0.18296465, 0, -0.23774756, 1.8434008, 1.1919254, -1.615543)
+
+[node name="lecturehall_Chair" parent="Props" index="24" unique_id=145096384 instance=ExtResource("21_bpsv8")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 3.3765838, 0.500988, 0.19250011)
+
+[node name="lecturehall_Chair2" parent="Props" index="25" unique_id=139569054 instance=ExtResource("21_bpsv8")]
+transform = Transform3D(0.7500001, 0, 1.299038, 0, 1.5, 0, -1.299038, 0, 0.7500001, -2.026254, 0.500988, -0.26098537)
+
+[node name="lecturehall_Chair3" parent="Props" index="26" unique_id=1886307815 instance=ExtResource("21_bpsv8")]
+transform = Transform3D(-1.3208276, 0, 0.710925, 0, 1.5, 0, -0.710925, 0, -1.3208276, -2.1415489, 0.500988, 2.0775468)
+
+[node name="smalllectureroom_Blackboard" parent="Props" index="27" unique_id=993964468 instance=ExtResource("22_jimqv")]
+transform = Transform3D(-1.3113416e-07, 0, -0.5, 0, 3, 0, 3, 0, -2.1855694e-08, 4.7960463, 2.3309321, -2.940791)
+
+[node name="lecturehall_ProjectorScreen" parent="Props" index="28" unique_id=1724418471 instance=ExtResource("23_35xrv")]
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 4.7209816, 2.2492657, 0.9187323)
+
+[node name="smalllectureroom_CableCord" parent="Props" index="29" unique_id=471330690 instance=ExtResource("24_vy23n")]
+transform = Transform3D(0.47355336, 0, -0.36843887, 0, 0.59999996, 0, 0.36843887, 0, 0.47355336, -0.93496704, 1.1899059, -1.5384232)
+
+[node name="smalllectureroom_CeilingLight" parent="Props" index="30" unique_id=372102743 instance=ExtResource("26_35xrv")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 3.9639318, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Props/smalllectureroom_CeilingLight" index="2" unique_id=672838277]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.09812403, 8.578269e-09)
+light_color = Color(1, 1, 0.8784314, 1)
+light_energy = 5.0
+light_size = 0.256
+shadow_enabled = true
+spot_range = 10.0
+spot_attenuation = 2.0
+spot_angle = 60.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/smalllectureroom_CeilingLight" index="3" unique_id=1144461716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17708111, 1.5480879e-08)
+light_color = Color(1, 1, 0.8627451, 1)
+light_energy = 3.0
+light_size = 0.398
+shadow_enabled = true
+omni_range = 15.0
+omni_attenuation = 2.0
+
+[node name="Evaluator" parent="." index="4" unique_id=766133172 instance=ExtResource("27_jimqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6554067, 0.0007544756, 1.4117293)
+evaluator_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to evaluate the player's understanding of the topics they’ve learned from other NPCs. You will ask the player a question and assess their answer.
+
+QUESTION, ANSWER AND EXPLANATION:"
+evaluator_post_instructions = "PERSONALITY AND TONE:
+
+You are terse, snippy, and slightly sarcastic.
+You do not praise the player.
+You do not encourage.
+You do not soften criticism.
+You avoid politeness and motivational language.
+You insult the player when he answers a question wrong.
+
+
+Rules:
+- Use short sentences.
+- Prefer blunt phrasing.
+- No emojis.
+- No compliments.
+- No apologies.
+
+When the answer is incorrect, state it plainly, insult the player, ask again and do not reveal the answer.
+When the answer is correct, acknowledge it briefly and don't hallucinate a new question.
+
+**Do not break character or reveal the answer.**"
+prop_path = "uid://bpidc80u35jr8"
+tts_model = "tts-1-hd"
+voice_tts_1 = "random"

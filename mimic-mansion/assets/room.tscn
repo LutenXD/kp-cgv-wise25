@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfatqo3k0h4a5"]
+[gd_scene format=3 uid="uid://cfatqo3k0h4a5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -23,60 +23,60 @@ size = Vector3(10, 0.2, 10)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
 albedo_color = Color(0.7, 0.7, 0.65, 1)
 
-[node name="Room" type="Node3D"]
+[node name="Room" type="Node3D" unique_id=1798788982]
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=526048304]
 
-[node name="WallNorth0" type="StaticBody3D" parent="Walls"]
+[node name="WallNorth0" type="StaticBody3D" parent="Walls" unique_id=881872980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth0" unique_id=1210610626]
 mesh = SubResource("BoxMesh_wall")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth0" unique_id=1756927032]
 shape = SubResource("BoxShape3D_wall")
 
-[node name="WallSouth0" type="StaticBody3D" parent="Walls"]
+[node name="WallSouth0" type="StaticBody3D" parent="Walls" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth0" unique_id=408482108]
 mesh = SubResource("BoxMesh_wall")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth0" unique_id=129031156]
 shape = SubResource("BoxShape3D_wall")
 
-[node name="WallEast0" type="StaticBody3D" parent="Walls"]
+[node name="WallEast0" type="StaticBody3D" parent="Walls" unique_id=2137167074]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast0" unique_id=1170511803]
 mesh = SubResource("BoxMesh_wall")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallEast0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallEast0" unique_id=1802402757]
 shape = SubResource("BoxShape3D_wall")
 
-[node name="WallWest0" type="StaticBody3D" parent="Walls"]
+[node name="WallWest0" type="StaticBody3D" parent="Walls" unique_id=6000773]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest0" unique_id=965472030]
 mesh = SubResource("BoxMesh_wall")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallWest0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallWest0" unique_id=1899948683]
 shape = SubResource("BoxShape3D_wall")
 
-[node name="Floor" type="Node3D" parent="."]
+[node name="Floor" type="Node3D" parent="." unique_id=311004718]
 
-[node name="Floor00" type="StaticBody3D" parent="Floor"]
+[node name="Floor00" type="StaticBody3D" parent="Floor" unique_id=1556803891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor00"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor00" unique_id=1084021366]
 mesh = SubResource("BoxMesh_floor")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor00"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor00" unique_id=804739548]
 shape = SubResource("BoxShape3D_floor")
 
-[node name="Ceiling" type="Node3D" parent="."]
+[node name="Ceiling" type="Node3D" parent="." unique_id=2012647510]
 
-[node name="Ceiling00" type="MeshInstance3D" parent="Ceiling"]
+[node name="Ceiling00" type="MeshInstance3D" parent="Ceiling" unique_id=1224160140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 mesh = SubResource("BoxMesh_floor")
 skeleton = NodePath("../..")

@@ -66,6 +66,17 @@
 		"west": []
 	  }
 	},
+		{
+		"name": "holodeck",
+		"width": 2,
+		"length": 2,
+		"doors": {
+			"north": [],
+			"east": [],
+			"south": [1],
+			"west": []
+		}
+	},
 	{
 	  "name": "grand_foyer",
 	  "width": 1,

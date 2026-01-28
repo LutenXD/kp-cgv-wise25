@@ -1,65 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1vyrmki5vwqh"]
+[gd_scene format=3 uid="uid://b1vyrmki5vwqh"]
 
 [ext_resource type="PackedScene" uid="uid://dkg8w5cjay1qd" path="res://level/rooms/room_template.tscn" id="1_v3smk"]
 [ext_resource type="PackedScene" uid="uid://d1lu6prw4k35l" path="res://level/rooms/room_connection.tscn" id="2_0scek"]
 
-[node name="Corridor" instance=ExtResource("1_v3smk")]
+[node name="Corridor" unique_id=1311437905 instance=ExtResource("1_v3smk")]
 
-[node name="RoomConnection" parent="Connections" index="0" instance=ExtResource("2_0scek")]
+[node name="RoomConnection" parent="Connections" index="0" unique_id=1195035832 instance=ExtResource("2_0scek")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 6.5)
 
-[node name="RoomConnection2" parent="Connections" index="1" instance=ExtResource("2_0scek")]
+[node name="RoomConnection2" parent="Connections" index="1" unique_id=966651736 instance=ExtResource("2_0scek")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.5)
 
-[node name="RoomConnection3" parent="Connections" index="2" instance=ExtResource("2_0scek")]
+[node name="RoomConnection3" parent="Connections" index="2" unique_id=1126638117 instance=ExtResource("2_0scek")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
 
-[node name="RoomConnection4" parent="Connections" index="3" instance=ExtResource("2_0scek")]
+[node name="RoomConnection4" parent="Connections" index="3" unique_id=1285593732 instance=ExtResource("2_0scek")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.5, 0, -2)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." index="1" unique_id=662731784]
 use_collision = true
 
-[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" index="0"]
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" index="0" unique_id=709215640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26000977, 0)
 size = Vector3(3, 0.5, 13)
 
-[node name="Ceil" type="CSGCombiner3D" parent="CSGCombiner3D" index="1"]
+[node name="Ceil" type="CSGCombiner3D" parent="CSGCombiner3D" index="1" unique_id=1165094013]
 visible = false
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Ceil" index="0"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Ceil" index="0" unique_id=1413271228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 size = Vector3(3, 1.5, 13)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/Ceil" index="1"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/Ceil" index="1" unique_id=1460475277]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.382207, 0)
 operation = 2
 radius = 1.5
 height = 13.0
 
-[node name="Wall1" type="CSGCombiner3D" parent="CSGCombiner3D" index="2"]
+[node name="Wall1" type="CSGCombiner3D" parent="CSGCombiner3D" index="2" unique_id=1459964607]
 
-[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D/Wall1" index="0"]
+[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D/Wall1" index="0" unique_id=151708548]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.5, 1.5, 0)
 size = Vector3(3, 0.1, 13)
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/Wall1" index="1"]
+[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/Wall1" index="1" unique_id=1953483828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 0)
 operation = 2
 size = Vector3(1, 3, 1.5)
 
-[node name="Wall2" type="CSGCombiner3D" parent="CSGCombiner3D" index="3"]
+[node name="Wall2" type="CSGCombiner3D" parent="CSGCombiner3D" index="3" unique_id=162050442]
 
-[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D/Wall2" index="0"]
+[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D/Wall2" index="0" unique_id=625625528]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1.5, 1.5, 0)
 size = Vector3(3, 0.1, 13)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Wall2" index="1"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/Wall2" index="1" unique_id=681545305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, -2)
 operation = 2
 size = Vector3(1, 3, 1.5)
 
-[node name="Label3D" type="Label3D" parent="." index="2"]
+[node name="Label3D" type="Label3D" parent="." index="2" unique_id=1337692686]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 billboard = 2
 text = "Room 0"

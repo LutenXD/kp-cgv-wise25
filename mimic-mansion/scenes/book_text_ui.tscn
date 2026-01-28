@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl2awe1igqvxl" path="res://scenes/note_book_text_edit.gd" id="1_stgxg"]
 
-[node name="Book Text UI" type="Control"]
+[node name="Book Text UI" type="Control" unique_id=1107098071]
 layout_mode = 3
 anchor_right = 0.555
 anchor_bottom = 1.4720001
@@ -11,7 +11,7 @@ offset_bottom = 0.15991211
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=991202158]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 ratio = 0.6945
 
-[node name="TextEdit" type="TextEdit" parent="AspectRatioContainer"]
+[node name="TextEdit" type="TextEdit" parent="AspectRatioContainer" unique_id=1365699807]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/background_color = Color(0, 0, 0, 0)

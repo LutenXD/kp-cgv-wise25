@@ -49,11 +49,10 @@ shadow_mesh = SubResource("ArrayMesh_k6dqe")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u8yas"]
 points = PackedVector3Array(-0.49301025, -0.17663518, 0.029861905, 0.5089524, 0.1891619, 0.013954029, 0.5089524, 0.1891619, -0.01785238, 0.5089524, -0.19255239, 0.013954029, -0.5089524, -0.19255239, -0.01785238, -0.5089524, 0.1891619, -0.01785238, -0.49301025, 0.1891619, 0.029861905, 0.5089524, -0.19255239, -0.01785238, 0.49301025, -0.17663518, 0.029861905, 0.49301025, 0.1891619, 0.029861905, -0.5089524, 0.1891619, 0.013954029)
 
-[node name="" type="StaticBody3D" unique_id=1302194286]
+[node name="foyer_ArtDisplay" type="StaticBody3D" unique_id=1803803159]
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=1933335374]
 mesh = SubResource("ArrayMesh_6ba0s")
-skeleton = NodePath("")
 
-[node name="@CollisionShape3D@69282" type="CollisionShape3D" parent="." unique_id=1322985650]
+[node name="@CollisionShape3D@143521" type="CollisionShape3D" parent="." unique_id=1696280545]
 shape = SubResource("ConvexPolygonShape3D_u8yas")
