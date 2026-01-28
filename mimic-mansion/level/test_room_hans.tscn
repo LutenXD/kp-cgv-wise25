@@ -8,3 +8,6 @@
 [node name="CoolTorch" parent="." index="3" unique_id=460490926 instance=ExtResource("2_2hfps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4938989, 4.688869)
 flicker_speed = 0.6
+
+[node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=411994852]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.3395208, 0)

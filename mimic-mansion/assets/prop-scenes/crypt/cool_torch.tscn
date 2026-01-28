@@ -15,3 +15,15 @@ light_size = 0.319
 shadow_enabled = true
 omni_range = 107.257
 omni_attenuation = 2.0
+<<<<<<< HEAD
+=======
+
+[node name="Timer" type="Timer" parent="." index="3" unique_id=1024751041]
+wait_time = 3.0
+one_shot = true
+
+[node name="Camera3D" type="Camera3D" parent="." index="4" unique_id=163229259]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.3945954e-07, 0, -2.7958539)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+>>>>>>> 25e5a10f5bcf86a6b96e816cdd3bbd11fec14933
