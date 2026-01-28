@@ -1,0 +1,401 @@
+[gd_scene format=3 uid="uid://cp1jxfpbeut17"]
+
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_yurly"]
+[ext_resource type="Material" uid="uid://b3suv8a2knqeg" path="res://assets/textures/materials/university_wall_paint.tres" id="2_tfewv"]
+[ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_xp381"]
+[ext_resource type="Material" uid="uid://dliib7sp1rg4f" path="res://assets/textures/materials/mansion_dark_wood_paneling_2.tres" id="4_edbs1"]
+[ext_resource type="Material" uid="uid://ct1vhil7bxt16" path="res://assets/textures/materials/mansion_wall_plaster.tres" id="5_fxjjm"]
+[ext_resource type="PackedScene" uid="uid://bw7atki36niqb" path="res://assets/prop-scenes/studentcafe/studentcafe_BaristaCounter.tscn" id="5_t2bhw"]
+[ext_resource type="PackedScene" uid="uid://dybadwdvk8bnb" path="res://assets/prop-scenes/studentcafe/studentcafe_CoffeeBeanCan.tscn" id="6_xgofj"]
+[ext_resource type="PackedScene" uid="uid://bht5t8ii6t7vc" path="res://assets/prop-scenes/studentcafe/studentcafe_CoffeeCup.tscn" id="7_30con"]
+[ext_resource type="PackedScene" uid="uid://cpeonn61ufcly" path="res://assets/prop-scenes/studentcafe/studentcafe_CookieJar.tscn" id="9_hm8do"]
+[ext_resource type="PackedScene" uid="uid://br5u7ipixdtc5" path="res://assets/prop-scenes/studentcafe/studentcafe_CozySofa.tscn" id="11_gilmm"]
+[ext_resource type="PackedScene" uid="uid://jcaeeaffuvh6" path="res://assets/prop-scenes/studentcafe/studentcafe_FloorRug.tscn" id="12_x2bn2"]
+[ext_resource type="PackedScene" uid="uid://3bgub177fi6w" path="res://assets/prop-scenes/studentcafe/studentcafe_GlassCup.tscn" id="13_apdye"]
+[ext_resource type="PackedScene" uid="uid://brr58k726om4h" path="res://assets/prop-scenes/studentcafe/studentcafe_HandSanitizer.tscn" id="14_74641"]
+[ext_resource type="PackedScene" uid="uid://bk600npinncdu" path="res://assets/prop-scenes/studentcafe/studentcafe_HighTopStools.tscn" id="15_jey8c"]
+[ext_resource type="PackedScene" uid="uid://cr1gao2dsfivx" path="res://assets/prop-scenes/studentcafe/studentcafe_IceBin.tscn" id="16_6qynu"]
+[ext_resource type="PackedScene" uid="uid://8vo4oikxhjga" path="res://assets/prop-scenes/studentcafe/studentcafe_MenuBoard.tscn" id="17_8lvgp"]
+[ext_resource type="PackedScene" uid="uid://b8n2bma5usw0v" path="res://assets/prop-scenes/studentcafe/studentcafe_NapkinHolder.tscn" id="18_cshxa"]
+[ext_resource type="PackedScene" uid="uid://bkryq45fe5l5x" path="res://assets/prop-scenes/studentcafe/studentcafe_PaymentTerminal.tscn" id="19_lj4t7"]
+[ext_resource type="PackedScene" uid="uid://dsvhqsaqy0433" path="res://assets/prop-scenes/studentcafe/studentcafe_PlantPot.tscn" id="20_edbs1"]
+[ext_resource type="PackedScene" uid="uid://dnfyvwr4a4u41" path="res://assets/prop-scenes/studentcafe/studentcafe_RecycleBin.tscn" id="21_fxjjm"]
+[ext_resource type="PackedScene" uid="uid://bal14xj6lvqw6" path="res://assets/prop-scenes/studentcafe/studentcafe_StirringSpoon.tscn" id="23_yqnaf"]
+[ext_resource type="PackedScene" uid="uid://c4v7o1w2rciuo" path="res://assets/prop-scenes/studentcafe/studentcafe_SugarDispenser.tscn" id="24_enmdt"]
+[ext_resource type="PackedScene" uid="uid://tni0gx0k2w73" path="res://assets/prop-scenes/studentcafe/studentcafe_TeaCup.tscn" id="25_w3kan"]
+[ext_resource type="PackedScene" uid="uid://bjwcp1iighd8n" path="res://assets/prop-scenes/studentcafe/studentcafe_TrashCan.tscn" id="26_k48h0"]
+[ext_resource type="PackedScene" uid="uid://3quhlm71s5hi" path="res://assets/prop-scenes/studentcafe/studentcafe_WaterDispenser.tscn" id="27_3m1b2"]
+[ext_resource type="PackedScene" uid="uid://bsdwx6ncbixvj" path="res://assets/prop-scenes-50k/studentcafe/studentcafe_CozyBench.tscn" id="27_an21k"]
+[ext_resource type="PackedScene" uid="uid://drpjiyp63h4c8" path="res://assets/prop-scenes-50k/studentcafe/studentcafe_SnackDisplay.tscn" id="28_psdop"]
+[ext_resource type="PackedScene" uid="uid://b5ysqd7x0w04m" path="res://assets/prop-scenes/facultyoffice/facultyoffice_SideTable.tscn" id="28_yqnaf"]
+[ext_resource type="PackedScene" uid="uid://q1mjermbl1mv" path="res://assets/prop-scenes/lecturehall/lecturehall_Chair.tscn" id="29_enmdt"]
+[ext_resource type="PackedScene" uid="uid://csolkjajqfst" path="res://assets/prop-scenes/special/special_MateIceTeaBottle.tscn" id="31_w3kan"]
+[ext_resource type="PackedScene" uid="uid://c3etobosrx2py" path="res://assets/prop-scenes/special/special_UtahTeapotGray.tscn" id="32_k48h0"]
+[ext_resource type="PackedScene" uid="uid://bonhg7bhsncv2" path="res://assets/prop-scenes/special/special_UtahTeapotGreen.tscn" id="33_3m1b2"]
+[ext_resource type="PackedScene" uid="uid://c0o0qb1qxf87b" path="res://assets/prop-scenes/special/special_UtahTeapotRed.tscn" id="34_psdop"]
+[ext_resource type="PackedScene" uid="uid://c0b0wtmfoibv8" path="res://assets/prop-scenes/special/special_UtahTeapotYellow.tscn" id="35_p7ptg"]
+[ext_resource type="PackedScene" uid="uid://b3u0qpgjids7f" path="res://assets/prop-scenes/teakitchen/teakitchen_CoffeeCup.tscn" id="36_avk3f"]
+[ext_resource type="PackedScene" uid="uid://riysorhnl7" path="res://assets/prop-scenes/teakitchen/teakitchen_GlassBottle.tscn" id="37_e68iu"]
+[ext_resource type="PackedScene" uid="uid://cn2watidp8nqb" path="res://assets/prop-scenes/extra/extra_pictureCircuit.tscn" id="38_86r48"]
+[ext_resource type="PackedScene" uid="uid://dwpmejvxifp04" path="res://assets/prop-scenes/extra/extra_pictureLake.tscn" id="39_5p2il"]
+[ext_resource type="PackedScene" uid="uid://xt8egpiu7v6p" path="res://assets/prop-scenes/extra/extra_pictureLandscape.tscn" id="40_3x4qf"]
+[ext_resource type="PackedScene" uid="uid://c3bsgkw7lnvps" path="res://assets/prop-scenes/extra/extra_pictureSunset.tscn" id="41_ekf4j"]
+[ext_resource type="PackedScene" uid="uid://bsfsetjw2trjf" path="res://assets/prop-scenes/extra/extra_standing_lamp5.tscn" id="43_hgxx4"]
+[ext_resource type="PackedScene" uid="uid://nl16wrkac8ll" path="res://assets/prop-scenes/extra/extra_standing_lamp6.tscn" id="44_o3vku"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="45_lj4t7"]
+[ext_resource type="PackedScene" uid="uid://c0kl54xce6gos" path="res://assets/prop-scenes/extra/extra_ceiling_lamp2.tscn" id="45_qbyo7"]
+[ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="46_ffee4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
+albedo_color = Color(0.6, 0.5, 0.4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall"]
+material = SubResource("StandardMaterial3D_walls")
+size = Vector3(10, 4, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(10, 4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48ern"]
+albedo_color = Color(0.4, 0.3, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ldh6s"]
+material = SubResource("StandardMaterial3D_48ern")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd1vx"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
+albedo_color = Color(0.7, 0.7, 0.65, 1)
+
+[node name="Studentcafe" unique_id=1798788982 instance=ExtResource("1_yurly")]
+
+[node name="Walls" parent="." index="0" unique_id=526048304]
+metadata/_edit_lock_ = true
+
+[node name="WallNorth0" parent="Walls" index="0" unique_id=881872980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+
+[node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
+material_override = ExtResource("2_tfewv")
+
+[node name="WallNorth1" type="StaticBody3D" parent="Walls" index="1" unique_id=146751714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -4.9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" index="0" unique_id=1931331709]
+material_override = ExtResource("2_tfewv")
+mesh = SubResource("BoxMesh_wall")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth1" index="1" unique_id=1226681558]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallSouth0" parent="Walls" index="2" unique_id=1267843663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
+
+[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
+material_override = ExtResource("2_tfewv")
+
+[node name="WallSouth1" type="StaticBody3D" parent="Walls" index="3" unique_id=1891836789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=1625689943]
+material_override = ExtResource("2_tfewv")
+mesh = SubResource("BoxMesh_wall")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth1" index="1" unique_id=502814325]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="DoorSouth1" type="Node3D" parent="Walls" index="4" unique_id=32453767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
+
+[node name="DoorWall" parent="Walls/DoorSouth1" index="0" unique_id=288271030 instance=ExtResource("3_xp381")]
+material_override = ExtResource("2_tfewv")
+
+[node name="WallEast0" parent="Walls" index="5" unique_id=2137167074]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.9, 2, 0)
+
+[node name="MeshInstance3D" parent="Walls/WallEast0" index="0" unique_id=1170511803]
+material_override = ExtResource("2_tfewv")
+
+[node name="WallWest0" parent="Walls" index="6" unique_id=6000773]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
+
+[node name="MeshInstance3D" parent="Walls/WallWest0" index="0" unique_id=965472030]
+material_override = ExtResource("2_tfewv")
+
+[node name="DoorWest0" type="Node3D" parent="Walls" index="7" unique_id=1164704430]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.9, 2, 0)
+
+[node name="DoorWall" parent="Walls/DoorWest0" index="0" unique_id=2065276247 instance=ExtResource("3_xp381")]
+material_override = ExtResource("2_tfewv")
+
+[node name="Floor" parent="." index="1" unique_id=311004718]
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
+material_override = ExtResource("4_edbs1")
+
+[node name="Floor01" type="StaticBody3D" parent="Floor" index="1" unique_id=1124597920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor01" index="0" unique_id=807202836]
+material_override = ExtResource("4_edbs1")
+mesh = SubResource("BoxMesh_ldh6s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=509638801]
+shape = SubResource("BoxShape3D_nd1vx")
+
+[node name="Ceiling" parent="." index="2" unique_id=2012647510]
+metadata/_edit_lock_ = true
+
+[node name="Ceiling00" parent="Ceiling" index="0" unique_id=1224160140]
+material_override = ExtResource("5_fxjjm")
+
+[node name="Ceiling01" type="MeshInstance3D" parent="Ceiling" index="1" unique_id=1966148666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 0)
+material_override = ExtResource("5_fxjjm")
+mesh = SubResource("BoxMesh_ldh6s")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
+
+[node name="Props" type="Node3D" parent="." index="3" unique_id=387356749]
+
+[node name="studentcafe_BaristaCounter" parent="Props" index="0" unique_id=63117569 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 11.10934, 0.8044443, 0.06799269)
+
+[node name="studentcafe_BaristaCounter2" parent="Props" index="1" unique_id=387126816 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 8.073375, 0.8044443, 0.06799269)
+
+[node name="studentcafe_BaristaCounter4" parent="Props" index="2" unique_id=1438963041 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-2.4, 0, -3.6238995e-07, 0, 2.4, 0, 3.6238995e-07, 0, -2.4, 12.540156, 0.64355546, -4.2545233)
+
+[node name="studentcafe_BaristaCounter5" parent="Props" index="3" unique_id=604524549 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-2.4, 0, -3.6238995e-07, 0, 2.4, 0, 3.6238995e-07, 0, -2.4, 10.088398, 0.64355546, -4.2545233)
+
+[node name="studentcafe_BaristaCounter6" parent="Props" index="4" unique_id=1183520926 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-2.4, 0, -3.6238995e-07, 0, 2.4, 0, 3.6238995e-07, 0, -2.4, 7.6662683, 0.64355546, -4.2545233)
+
+[node name="studentcafe_BaristaCounter3" parent="Props" index="5" unique_id=2057472688 instance=ExtResource("5_t2bhw")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 5.933715, 0.8044443, -3.161582)
+
+[node name="studentcafe_CoffeeBeanCan" parent="Props" index="6" unique_id=1588807061 instance=ExtResource("6_xgofj")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 12.9412565, 1.6769968, -4.159561)
+
+[node name="studentcafe_CoffeeCup" parent="Props" index="7" unique_id=1042111039 instance=ExtResource("7_30con")]
+transform = Transform3D(0.10706052, 0, 0.2802464, 0, 0.29999998, 0, -0.2802464, 0, 0.10706052, 5.654546, 1.7259394, -4.1654263)
+
+[node name="studentcafe_CookieJar" parent="Props" index="8" unique_id=1663027323 instance=ExtResource("9_hm8do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.088185, 1.7739704, -4.339216)
+
+[node name="studentcafe_CozySofa" parent="Props" index="9" unique_id=559516026 instance=ExtResource("11_gilmm")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -0.9127381, 0.8653471, -3.9605885)
+
+[node name="studentcafe_FloorRug" parent="Props" index="10" unique_id=83426748 instance=ExtResource("12_x2bn2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0061804056, 0.009982247, 0.0070462227)
+
+[node name="studentcafe_GlassCup" parent="Props" index="11" unique_id=1623155358 instance=ExtResource("13_apdye")]
+transform = Transform3D(0.23294924, 0, 0.18903609, 0, 0.29999998, 0, -0.18903609, 0, 0.23294924, 11.435891, 1.7529222, -0.20348501)
+
+[node name="studentcafe_GlassCup2" parent="Props" index="12" unique_id=1235373480 instance=ExtResource("13_apdye")]
+transform = Transform3D(-0.2693714, 0, -0.13205698, 0, 0.29999998, 0, 0.13205698, 0, -0.2693714, 11.114861, 1.7529222, -0.14638412)
+
+[node name="studentcafe_GlassCup3" parent="Props" index="13" unique_id=109754198 instance=ExtResource("13_apdye")]
+transform = Transform3D(0.09028166, 0, -0.28609303, 0, 0.29999998, 0, 0.28609303, 0, 0.09028166, 11.738993, 1.7529222, 0.0084834695)
+
+[node name="studentcafe_GlassCup4" parent="Props" index="14" unique_id=1389854117 instance=ExtResource("13_apdye")]
+transform = Transform3D(-0.05679546, 0, -0.29457474, 0, 0.29999998, 0, 0.29457474, 0, -0.05679546, 11.407342, 1.7529222, 0.06921482)
+
+[node name="studentcafe_HandSanitizer" parent="Props" index="15" unique_id=1531371848 instance=ExtResource("14_74641")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.531292, 2.604137, -2.3506935)
+
+[node name="studentcafe_HighTopStools" parent="Props" index="16" unique_id=1222664116 instance=ExtResource("15_jey8c")]
+transform = Transform3D(0.34375495, 0, 1.9702367, 0, 2, 0, -1.9702367, 0, 0.34375495, 4.265643, 0.88928187, -3.1179628)
+
+[node name="studentcafe_HighTopStools2" parent="Props" index="17" unique_id=1641869364 instance=ExtResource("15_jey8c")]
+transform = Transform3D(0.4676034, 0, -1.9445689, 0, 2, 0, 1.9445689, 0, 0.4676034, 1.6406277, 0.88928187, 3.2698371)
+
+[node name="studentcafe_IceBin" parent="Props" index="18" unique_id=1741692702 instance=ExtResource("16_6qynu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.946938, 0.44416296, -0.98804057)
+
+[node name="studentcafe_MenuBoard" parent="Props" index="19" unique_id=155131853 instance=ExtResource("17_8lvgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.690358, 2.3816984, 4.863086)
+
+[node name="studentcafe_NapkinHolder" parent="Props" index="20" unique_id=1622610238 instance=ExtResource("18_cshxa")]
+transform = Transform3D(-0.0686445, 0, -0.4952655, 0, 0.5, 0, 0.4952655, 0, -0.0686445, 9.219156, 1.760875, 0.01864785)
+
+[node name="studentcafe_PaymentTerminal" parent="Props" index="21" unique_id=1267120327 instance=ExtResource("19_lj4t7")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 7.2241316, 1.2940999, 0.12950206)
+
+[node name="studentcafe_PlantPot" parent="Props" index="22" unique_id=1764876478 instance=ExtResource("20_edbs1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.04102, 0.7406736, 4.019477)
+
+[node name="studentcafe_PlantPot2" parent="Props" index="23" unique_id=1083589579 instance=ExtResource("20_edbs1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.041731, 0.7406736, 4.019477)
+
+[node name="studentcafe_RecycleBin" parent="Props" index="24" unique_id=1512009128 instance=ExtResource("21_fxjjm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.26008, 0.7440235, -4.309552)
+
+[node name="studentcafe_StirringSpoon" parent="Props" index="25" unique_id=681228414 instance=ExtResource("23_yqnaf")]
+transform = Transform3D(0.2781632, 0, 0.5316251, 0, 0.6, 0, -0.5316251, 0, 0.2781632, 6.041676, 1.646053, -2.8854778)
+
+[node name="studentcafe_StirringSpoon2" parent="Props" index="26" unique_id=741472454 instance=ExtResource("23_yqnaf")]
+transform = Transform3D(-0.5860191, 0, -0.12876968, 0, 0.6, 0, 0.12876968, 0, -0.5860191, 5.7897983, 1.646053, -3.8791065)
+
+[node name="studentcafe_StirringSpoon3" parent="Props" index="27" unique_id=109906112 instance=ExtResource("23_yqnaf")]
+transform = Transform3D(-0.254624, 0, 0.54329234, 0, 0.59999996, 0, -0.54329234, 0, -0.254624, 5.6251335, 1.646053, -2.0168715)
+
+[node name="studentcafe_SugarDispenser" parent="Props" index="28" unique_id=336205668 instance=ExtResource("24_enmdt")]
+transform = Transform3D(0.17604911, 0, 0.094903685, 0, 0.2, 0, -0.094903685, 0, 0.17604911, 6.186415, 1.7038599, -4.254378)
+
+[node name="studentcafe_SugarDispenser2" parent="Props" index="29" unique_id=854467295 instance=ExtResource("24_enmdt")]
+transform = Transform3D(0.17604911, 0, 0.094903685, 0, 0.2, 0, -0.094903685, 0, 0.17604911, 9.307764, 1.7038599, 0.53579664)
+
+[node name="studentcafe_TeaCup" parent="Props" index="30" unique_id=1607954809 instance=ExtResource("25_w3kan")]
+transform = Transform3D(-0.049695022, 0, -0.29585537, 0, 0.29999998, 0, 0.29585537, 0, -0.049695022, 5.763912, 1.706322, -2.3357124)
+
+[node name="studentcafe_TrashCan" parent="Props" index="31" unique_id=1909941423 instance=ExtResource("26_k48h0")]
+transform = Transform3D(-0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, -0.7071067, -4.336526, 0.46341288, -4.30281)
+
+[node name="studentcafe_WaterDispenser" parent="Props" index="32" unique_id=1072577220 instance=ExtResource("27_3m1b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.623338, 2.0698156, -4.5703073)
+
+[node name="studentcafe_CozyBench2" parent="Props" index="33" unique_id=1212278412 instance=ExtResource("27_an21k")]
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 6.9630756, 0.9853568, 4.013632)
+
+[node name="facultyoffice_SideTable" parent="Props" index="34" unique_id=834244819 instance=ExtResource("28_yqnaf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.07711601, 0.78308254, 3.4055004)
+
+[node name="facultyoffice_SideTable2" parent="Props" index="35" unique_id=818957978 instance=ExtResource("28_yqnaf")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -1.0186156, 0.29700392, -1.9499855)
+
+[node name="lecturehall_Chair" parent="Props" index="36" unique_id=913141737 instance=ExtResource("29_enmdt")]
+transform = Transform3D(0.14024413, 0, 1.9950769, 0, 2, 0, -1.9950769, 0, 0.14024413, -1.6074097, 1.0178794, 3.6930692)
+
+[node name="studentcafe_SnackDisplay" parent="Props" index="37" unique_id=767566494 instance=ExtResource("28_psdop")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 5.8940954, 0.98345095, -0.746685)
+
+[node name="special_MateIceTeaBottle" parent="Props" index="38" unique_id=1454370101 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.7031655, 1.629964, -4.4759007)
+
+[node name="special_MateIceTeaBottle2" parent="Props" index="39" unique_id=1857750076 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.9788117, 1.629964, -4.4329944)
+
+[node name="special_MateIceTeaBottle3" parent="Props" index="40" unique_id=598839182 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.815946, 1.629964, -4.2122254)
+
+[node name="special_MateIceTeaBottle4" parent="Props" index="41" unique_id=2100686965 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 11.703911, 1.629964, -4.428977)
+
+[node name="special_MateIceTeaBottle5" parent="Props" index="42" unique_id=1226804199 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 12.12228, 1.6299396, -4.3769493)
+
+[node name="special_MateIceTeaBottle6" parent="Props" index="43" unique_id=1680034378 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.039118975, 1.874997, 4.0378313)
+
+[node name="special_MateIceTeaBottle7" parent="Props" index="44" unique_id=1809332438 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.2133613, 1.3143586, -1.8600187)
+
+[node name="special_MateIceTeaBottle8" parent="Props" index="45" unique_id=1162702071 instance=ExtResource("31_w3kan")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.64693475, 1.3143586, -1.6587715)
+
+[node name="special_UtahTeapotGray" parent="Props" index="46" unique_id=1615599604 instance=ExtResource("32_k48h0")]
+transform = Transform3D(-0.6619625, 0, -0.44922787, 0, 0.8, 0, 0.44922787, 0, -0.6619625, 10.495273, 1.8726909, -0.06521717)
+
+[node name="special_UtahTeapotGreen" parent="Props" index="47" unique_id=1889636377 instance=ExtResource("33_3m1b2")]
+transform = Transform3D(0.5638314, 0, -0.41484234, 0, 0.7, 0, 0.41484234, 0, 0.5638314, 10.625559, 1.5295079, -4.1870513)
+
+[node name="special_UtahTeapotYellow" parent="Props" index="48" unique_id=432021339 instance=ExtResource("35_p7ptg")]
+transform = Transform3D(0.5984898, 0, 0.04254332, 0, 0.59999996, 0, -0.04254332, 0, 0.5984898, 11.150401, 1.4921873, -4.095647)
+
+[node name="teakitchen_CoffeeCup" parent="Props" index="49" unique_id=1713931013 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.53339165, 1.6387119, 3.0919487)
+
+[node name="teakitchen_CoffeeCup2" parent="Props" index="50" unique_id=1833413636 instance=ExtResource("36_avk3f")]
+transform = Transform3D(-0.26277587, 0, -0.14473712, 0, 0.29999998, 0, 0.14473712, 0, -0.26277587, 0.43526763, 1.638712, 3.6962218)
+
+[node name="teakitchen_CoffeeCup3" parent="Props" index="51" unique_id=2019940832 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.26277587, -2.6226832e-08, 0.14473711, -2.2972596e-08, -0.29999998, -1.265332e-08, 0.14473711, 0, -0.26277587, 8.373538, 1.3946803, -4.1173096)
+
+[node name="teakitchen_CoffeeCup4" parent="Props" index="52" unique_id=1787279513 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.26277587, -2.6226832e-08, 0.14473711, -2.2972596e-08, -0.29999998, -1.265332e-08, 0.14473711, 0, -0.26277587, 8.602073, 1.3946803, -4.1031866)
+
+[node name="teakitchen_CoffeeCup5" parent="Props" index="53" unique_id=1739254304 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.26277587, -2.6226832e-08, 0.14473711, -2.2972596e-08, -0.29999998, -1.265332e-08, 0.14473711, 0, -0.26277587, 8.335466, 1.3946803, -4.354066)
+
+[node name="teakitchen_CoffeeCup6" parent="Props" index="54" unique_id=782904495 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.26277587, -2.6226832e-08, 0.14473711, -2.2972596e-08, -0.29999998, -1.265332e-08, 0.14473711, 0, -0.26277587, 8.569377, 1.3946803, -4.393601)
+
+[node name="teakitchen_CoffeeCup7" parent="Props" index="55" unique_id=44905106 instance=ExtResource("36_avk3f")]
+transform = Transform3D(0.26277587, -2.6226832e-08, 0.14473711, -2.2972596e-08, -0.29999998, -1.265332e-08, 0.14473711, 0, -0.26277587, 8.569377, 1.3946803, -4.393601)
+
+[node name="teakitchen_GlassBottle" parent="Props" index="56" unique_id=395307030 instance=ExtResource("37_e68iu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.866345, 1.8481522, -0.043342493)
+
+[node name="StaticBody3D" parent="Props" index="57" unique_id=1629753645 instance=ExtResource("38_86r48")]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 3.8200932, 2.9770925, 4.7436237)
+
+[node name="StaticBody3D2" parent="Props" index="58" unique_id=2094590305 instance=ExtResource("39_5p2il")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.0841584, 2.9558158, -4.7765727)
+
+[node name="StaticBody3D3" parent="Props" index="59" unique_id=22762413 instance=ExtResource("40_3x4qf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.40132535, 2.9734275, -4.6843004)
+
+[node name="StaticBody3D4" parent="Props" index="60" unique_id=166649994 instance=ExtResource("41_ekf4j")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.7421193, 2.6070082, 3.1553419)
+
+[node name="StaticBody3D7" parent="Props" index="61" unique_id=2110601920 instance=ExtResource("43_hgxx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031731308, 2.038886, 3.4191158)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D7" index="2" unique_id=781474992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28959465, 0)
+light_color = Color(1, 1, 0.7529412, 1)
+light_energy = 2.0
+light_size = 0.3
+shadow_enabled = true
+omni_attenuation = 2.0
+
+[node name="StaticBody3D8" parent="Props" index="62" unique_id=348778320 instance=ExtResource("44_o3vku")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.6291986, 1.0179015, -4.039253)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D8" index="2" unique_id=991057566]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.4632315, 0)
+light_color = Color(1, 1, 0.8352941, 1)
+light_energy = 3.0
+light_size = 0.302
+shadow_enabled = true
+spot_range = 7.5496726
+spot_attenuation = 2.0
+spot_angle = 80.0
+
+[node name="StaticBody3D5" parent="Props" index="63" unique_id=1789668460 instance=ExtResource("45_qbyo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075182915, 3.7309895, -0.05899608)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D5" index="2" unique_id=734282338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31471753, 0)
+light_color = Color(1, 1, 0.8745098, 1)
+light_energy = 4.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 8.806278
+omni_attenuation = 2.0
+
+[node name="StaticBody3D9" parent="Props" index="64" unique_id=480566793 instance=ExtResource("46_ffee4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.894389, 3.39683, -1.4231409)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D9" index="2" unique_id=1695481588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58920264, 0)
+light_color = Color(1, 1, 0.6509804, 1)
+light_energy = 5.0
+light_indirect_energy = 3.0
+light_size = 0.3
+shadow_enabled = true
+omni_range = 11.148252
+omni_attenuation = 2.0
+
+[node name="special_UtahTeapotRed" parent="Props" index="65" unique_id=1419795965 instance=ExtResource("34_psdop")]
+transform = Transform3D(-0.58909714, 0, 0.37810645, 0, 0.7, 0, -0.37810645, 0, -0.58909714, -0.09726905, 1.9219178, 2.8107452)
+
+[node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("45_lj4t7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.560096, 1.2586836, -4.093292)
+prop_path = "uid://bmnnqikoey5gw"

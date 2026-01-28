@@ -12,6 +12,5 @@ metallic_texture = ExtResource("3_bchun")
 roughness_texture = ExtResource("5_uuuhe")
 normal_enabled = true
 normal_texture = ExtResource("4_yblvq")
-heightmap_enabled = true
 heightmap_texture = ExtResource("2_1vnri")
 uv1_triplanar = true

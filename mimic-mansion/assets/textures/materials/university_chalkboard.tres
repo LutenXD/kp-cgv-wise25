@@ -12,6 +12,5 @@ metallic_texture = ExtResource("3_u58tk")
 roughness_texture = ExtResource("5_o2uad")
 normal_enabled = true
 normal_texture = ExtResource("4_o8gt2")
-heightmap_enabled = true
 heightmap_texture = ExtResource("2_boewq")
 uv1_scale = Vector3(10, 10, 10)
