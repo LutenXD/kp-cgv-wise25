@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7jkoeggtd0vx"]
+
+[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_0vue2"]
+[ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="2_2hfps"]
+
+[node name="TestRoomHans" unique_id=1522887538 instance=ExtResource("1_0vue2")]
+
+[node name="CoolTorch" parent="." index="3" unique_id=460490926 instance=ExtResource("2_2hfps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4938989, 4.688869)
+flicker_speed = 0.6
