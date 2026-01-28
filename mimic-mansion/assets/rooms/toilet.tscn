@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://v5pipcs0mdps" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
 [ext_resource type="PackedScene" uid="uid://dllgc23227vg7" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperRoll.tscn" id="14_5cooa"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
-[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="16_j47ya"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_5cooa"]
 density = 0.4
@@ -193,6 +192,3 @@ omni_attenuation = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055473328, 1.9562627, 0.0466156)
 size = Vector3(10.048737, 4.063904, 9.838776)
 material = SubResource("FogMaterial_5cooa")
-
-[node name="Player" parent="FogVolume" index="0" unique_id=947552428 instance=ExtResource("16_j47ya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8222995, 0)
