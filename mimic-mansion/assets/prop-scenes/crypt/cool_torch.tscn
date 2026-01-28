@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://nrgyj0v3yhp1"]
 
 [ext_resource type="PackedScene" uid="uid://bi7x8w8wbl6np" path="res://assets/prop-scenes/crypt/crypt_WallTorch.tscn" id="1_di40p"]
+[ext_resource type="Script" uid="uid://bki4oxadlcaru" path="res://assets/prop-scenes/crypt/cool_torch.gd" id="2_213tu"]
 
 [node name="CoolTorch" unique_id=460490926 instance=ExtResource("1_di40p")]
+script = ExtResource("2_213tu")
+flicker_speed = 1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="2" unique_id=158238167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0082530975, 0.33782744, -0.13679957)
