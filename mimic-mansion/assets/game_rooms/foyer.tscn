@@ -284,6 +284,9 @@ surface_material_override/0 = ExtResource("1_squi4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/CeilingWallNorth2"]
 shape = SubResource("BoxShape3D_maxj3")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Ceiling"]
+transform = Transform3D(0.45087755, 0.87040454, -0.197751, 0, 0.22154845, 0.9751494, 0.8925858, -0.43967298, 0.09989122, 0, 8, 0)
+
 [node name="Decor" type="Node3D" parent="."]
 
 [node name="ArtDisplay" parent="Decor" instance=ExtResource("4_k2gqi")]

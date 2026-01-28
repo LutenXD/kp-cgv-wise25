@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl4pjhcacdyub"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cl4pjhcacdyub"]
 
 [ext_resource type="Texture2D" uid="uid://c8jh2qttg8om2" path="res://assets/textures/materials/mansion_wood_floor_2/albedo.png" id="1_s1e1i"]
 [ext_resource type="Texture2D" uid="uid://b5a2248krrd4x" path="res://assets/textures/materials/mansion_wood_floor_2/height.png" id="2_qv7lf"]
@@ -14,4 +14,4 @@ normal_enabled = true
 normal_texture = ExtResource("4_iww2y")
 heightmap_enabled = true
 heightmap_texture = ExtResource("2_qv7lf")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(30, 30, 30)
