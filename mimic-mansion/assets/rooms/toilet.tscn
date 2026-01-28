@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b2mo3jlyocc57"]
+[gd_scene format=3 uid="uid://2muea82newgl"]
 
-[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_fohyt"]
+[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_fohyt"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="2_bqtts"]
 [ext_resource type="PackedScene" uid="uid://clblyyrkwtnd0" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_HandSanitizerDispenser.tscn" id="2_uk57g"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_5cooa"]
@@ -12,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://dhan5w1iu81bf" path="res://assets/prop-scenes/universitytoilet/universitytoilet_PlasterWall.tscn" id="7_bqtts"]
 [ext_resource type="PackedScene" uid="uid://cg3ajhn30la4u" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperDispenser.tscn" id="8_r78x7"]
 [ext_resource type="PackedScene" uid="uid://c1sylh1escyrw" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_TrashCanLarge.tscn" id="9_uk57g"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="10_vdmyx"]
+[ext_resource type="PackedScene" uid="uid://v5pipcs0mdps" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
 [ext_resource type="PackedScene" uid="uid://dllgc23227vg7" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperRoll.tscn" id="14_5cooa"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
+[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="16_j47ya"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_5cooa"]
-density = 8.0
+density = 0.4
 
 [node name="Toilet" unique_id=151750742 instance=ExtResource("1_fohyt")]
 
@@ -88,28 +90,29 @@ transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 4.325, 0.7346053, 2.5282042)
 
 [node name="Urinal" parent="Props" index="8" unique_id=1310584842 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, 3.5596552, 0.94, 4.578)
+transform = Transform3D(-1.1978866, -0.07118856, -1.8119498e-07, -0.07118856, 1.1978866, 0, 1.8087586e-07, 1.0749174e-08, -1.2, 3.5596552, 1.1125042, 4.578)
 
 [node name="Urinal2" parent="Props" index="9" unique_id=762680066 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, 2.3596551, 0.94, 4.578)
+transform = Transform3D(-1.1992705, 0.041837536, -1.8119498e-07, 0.041837536, 1.1992705, 0, 1.8108481e-07, -6.3172925e-09, -1.2, 2.3596551, 0.94, 4.578)
 
 [node name="Urinal3" parent="Props" index="10" unique_id=1013012754 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, 1.1596551, 0.94, 4.578)
+transform = Transform3D(-1.1988193, -0.05322206, -1.8119498e-07, -0.05322206, 1.1988193, -8.881784e-16, 1.8101667e-07, 8.036308e-09, -1.2, 1.1596551, 0.94, 4.578)
 
 [node name="Urinal4" parent="Props" index="11" unique_id=2030895511 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, -0.040344924, 0.94, 4.578)
+transform = Transform3D(-1.197417, 0.07869274, -1.8119498e-07, 0.07869274, 1.197417, 8.881784e-16, 1.8080496e-07, -1.1882274e-08, -1.2, -0.040344924, 0.94, 4.578)
 
 [node name="Urinal5" parent="Props" index="12" unique_id=1721567094 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, -1.240345, 0.94, 4.578)
+transform = Transform3D(-1.1876746, -0.17154858, -1.8119498e-07, -0.17154858, 1.1876746, 0, 1.793339e-07, 2.5903114e-08, -1.2, -1.240345, 0.94, 4.578)
 
-[node name="Urinal6" parent="Props" index="13" unique_id=749545298 instance=ExtResource("6_7hoo6")]
-transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, -2.440345, 0.94, 4.578)
+[node name="Mimic" parent="Props" index="13" unique_id=766133172 instance=ExtResource("10_vdmyx")]
+transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, -2.440345, 0.35409534, 4.578)
+prop_path = "uid://b137bwkgytxqm"
 
 [node name="PlasterWall" parent="Props" index="14" unique_id=552516296 instance=ExtResource("7_bqtts")]
-transform = Transform3D(-6.5567065e-08, 6.5567086e-08, -1.5, 1.5, -6.556708e-08, -6.556707e-08, -6.5567086e-08, -1.5, -6.556708e-08, 3.0258875, 1.259, 4.692)
+transform = Transform3D(0.03379537, 6.556708e-08, -1.4996192, 1.4996192, -6.556708e-08, 0.03379537, -6.40732e-08, -1.5, -6.702768e-08, 3.0258875, 1.259, 4.692)
 
 [node name="PlasterWall2" parent="Props" index="15" unique_id=27462396 instance=ExtResource("7_bqtts")]
-transform = Transform3D(-6.5567065e-08, 6.5567086e-08, -1.5, 1.5, -6.556708e-08, -6.556707e-08, -6.5567086e-08, -1.5, -6.556708e-08, 1.8159391, 1.259, 4.692)
+transform = Transform3D(-0.061427202, 6.5567086e-08, -1.4987416, 1.4987416, -6.556708e-08, -0.061427202, -6.8197146e-08, -1.5, -6.282701e-08, 1.8159391, 1.259, 4.692)
 
 [node name="PlasterWall3" parent="Props" index="16" unique_id=1025084125 instance=ExtResource("7_bqtts")]
 transform = Transform3D(-6.5567065e-08, 6.5567086e-08, -1.5, 1.5, -6.556708e-08, -6.556707e-08, -6.5567086e-08, -1.5, -6.556708e-08, 0.6149372, 1.259, 4.692)
@@ -187,6 +190,9 @@ omni_range = 12.016
 omni_attenuation = 2.0
 
 [node name="FogVolume" type="FogVolume" parent="." index="5" unique_id=1517315426]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079841614, 1.0518132, 0.80340576)
-size = Vector3(10, 10, 10.770142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055473328, 1.9562627, 0.0466156)
+size = Vector3(10.048737, 4.063904, 9.838776)
 material = SubResource("FogMaterial_5cooa")
+
+[node name="Player" parent="FogVolume" index="0" unique_id=947552428 instance=ExtResource("16_j47ya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8222995, 0)
