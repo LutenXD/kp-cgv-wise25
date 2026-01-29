@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dcgrdn7ba5t7l" path="res://ui/hud.tscn" id="2_o8hf1"]
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="3_4sqru"]
 [ext_resource type="Script" uid="uid://vvha4n54dfv7" path="res://utils/light_flicker.gd" id="5_ta1pv"]
+[ext_resource type="Script" uid="uid://jy4sym0dop3s" path="res://addons/godot_material_footsteps/core/material_footstep_player_3d.gd" id="3_o8hf1"]
+[ext_resource type="Script" uid="uid://cfs28riswyejx" path="res://addons/godot_material_footsteps/resources/material_footstep.gd" id="4_4sqru"]
 [ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
 
 [sub_resource type="Environment" id="Environment_4sqru"]
@@ -21,6 +23,18 @@ fog_density = 0.1
 adjustment_brightness = 0.72
 adjustment_saturation = 1.28
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_twcmp"]
+
+[sub_resource type="Resource" id="Resource_1xng4"]
+script = ExtResource("4_4sqru")
+material_name = "crypta"
+movement_sound = SubResource("AudioStreamRandomizer_twcmp")
+metadata/_custom_type_script = "uid://cfs28riswyejx"
+
+[sub_resource type="Resource" id="Resource_xke78"]
+script = ExtResource("4_4sqru")
+metadata/_custom_type_script = "uid://cfs28riswyejx"
+
 [node name="Game" type="Node3D" unique_id=1598571889]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=120330231]
@@ -29,7 +43,16 @@ environment = SubResource("Environment_4sqru")
 [node name="HUD" parent="." unique_id=364530958 node_paths=PackedStringArray("player") instance=ExtResource("2_o8hf1")]
 player = NodePath("../Player")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1855074384]
+
 [node name="Player" parent="." unique_id=947552428 instance=ExtResource("3_4sqru")]
+
+[node name="MaterialFootstepPlayer3D" type="RayCast3D" parent="Player" unique_id=1286032956 node_paths=PackedStringArray("character")]
+script = ExtResource("3_o8hf1")
+character = NodePath("..")
+material_footstep_sound_map = Array[ExtResource("4_4sqru")]([SubResource("Resource_1xng4"), SubResource("Resource_xke78")])
+accepted_meta_data_names = PackedStringArray("surface_type")
+metadata/_custom_type_script = "uid://jy4sym0dop3s"
 
 [node name="MimicManager" type="Node3D" parent="." unique_id=1896974085]
 script = ExtResource("1_ta1pv")

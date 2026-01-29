@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://3g2nynipki2o"]
+[gd_scene format=3 uid="uid://dgf5bn18uvue"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_3x8uo"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_t1jaq"]
 [ext_resource type="PackedScene" uid="uid://ce660kbnym6r0" path="res://assets/prop-scenes/teakitchen/teakitchen_TeaShelf.tscn" id="3_0gbfn"]
+[ext_resource type="Material" uid="uid://dec37om4pg62p" path="res://assets/textures/materials/mansion_marble_floor_2.tres" id="3_t1jaq"]
 [ext_resource type="PackedScene" uid="uid://b04b33gffmvn4" path="res://assets/prop-scenes/foyer/foyer_Planter.tscn" id="4_6kclw"]
 [ext_resource type="PackedScene" uid="uid://bp6xmpugeaqjc" path="res://assets/prop-scenes/teakitchen/teakitchen_NapkinBox.tscn" id="5_htwfb"]
 [ext_resource type="PackedScene" uid="uid://bgmwqcasp3gc3" path="res://assets/prop-scenes/teakitchen/teakitchen_WallClock.tscn" id="6_o8hh3"]
@@ -78,6 +79,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0kb6g")
 
 [node name="DoorWall" parent="Walls/DoorEast0" index="1" unique_id=1553913665 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_v8l37")
+
+[node name="MeshInstance3D" parent="Floor/Floor00" index="0"]
+material_override = ExtResource("3_t1jaq")
 
 [node name="props" type="Node3D" parent="." index="3" unique_id=1985051441]
 
@@ -209,7 +213,7 @@ transform = Transform3D(0.016330704, 0, 0.35962942, 0, 0.36, 0, -0.35962942, 0, 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights" index="0" unique_id=598938470]
 transform = Transform3D(0.3758692, -0.122146755, 0.91858727, -0.9264367, -0.027157733, 0.3754698, -0.020915672, -0.9921404, -0.123368986, -0.45510638, 3.6157453, 0.8049868)
 light_color = Color(1, 0.8320167, 0.5347449, 1)
-light_energy = 25.62
+light_energy = 16.0
 light_indirect_energy = 1.188
 shadow_enabled = true
 spot_range = 13.992
@@ -218,7 +222,7 @@ spot_angle = 70.84
 [node name="SpotLight3D2" type="SpotLight3D" parent="lights" index="1" unique_id=4287045]
 transform = Transform3D(0.84384686, -0.49110252, 0.21619613, -0.45717344, -0.4470867, 0.7688342, -0.28091797, -0.7476174, -0.6017917, 0.042607993, 3.6157453, 0.751214)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -226,7 +230,7 @@ spot_angle = 70.84
 [node name="SpotLight3D3" type="SpotLight3D" parent="lights" index="2" unique_id=1648461250]
 transform = Transform3D(0.2859894, 0.0691284, -0.95573604, 0.9582328, -0.02063172, 0.28524423, 2.407794e-10, -0.99739444, -0.07214156, 0.3521605, 3.6868174, 0.710336)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -234,7 +238,7 @@ spot_angle = 70.84
 [node name="SpotLight3D4" type="SpotLight3D" parent="lights" index="3" unique_id=2061508086]
 transform = Transform3D(-0.0559884, -0.98023206, 0.18976423, 0.91552734, 0.02542483, 0.40145147, -0.39834034, 0.19621098, 0.8960057, 0.13840765, 3.5479019, 0.26064587)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -242,7 +246,7 @@ spot_angle = 70.84
 [node name="SpotLight3D5" type="SpotLight3D" parent="lights" index="4" unique_id=1495870272]
 transform = Transform3D(-0.55137014, -0.38628766, -0.7394409, -0.21236035, -0.7921598, 0.5721765, -0.80678004, 0.47250897, 0.3547411, 0.6207029, 3.6087754, 0.12203145)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -250,7 +254,7 @@ spot_angle = 70.84
 [node name="SpotLight3D6" type="SpotLight3D" parent="lights" index="5" unique_id=1479191844]
 transform = Transform3D(-0.9649874, -0.13286583, -0.22615483, -0.07735889, -0.67969406, 0.729405, -0.2506291, 0.7213617, 0.64561784, 0.2205385, 3.5572875, -0.09718996)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
