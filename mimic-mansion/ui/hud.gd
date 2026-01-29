@@ -10,6 +10,8 @@ class_name HUD
 @onready var fps_label: Label = $FPSLabel
 @onready var PauseMenu: CanvasLayer = $PauseMenu
 @onready var OptionsMenu: CanvasLayer = $OptionsMenu
+@onready var GameFinishedScreen: CanvasLayer = %GameFinishedScreen
+
 
 
 func _ready() -> void:
@@ -44,6 +46,7 @@ func continue_game():
 	#get_tree().change_scene_to_file("res://scenes/game.tscn")
 	PauseMenu.hide()
 	OptionsMenu.hide()
+	GameFinishedScreen.hide()
 	call_deferred("_capture_mouse")
 	get_tree().paused = false
 
@@ -73,3 +76,7 @@ func set_subtitle(text: String) -> void:
 
 func append_subtitle(text: String) -> void:
 	caption_text_label.text += text
+
+
+func finish_game() -> void:
+	$GameFinishedScreen.show()
