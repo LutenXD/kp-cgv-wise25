@@ -56,6 +56,7 @@ folder_colors={
 
 player=""
 mimic=""
+flickering_light="group for flickering ceiling lights"
 
 [input]
 
