@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dgf5bn18uvue"]
+[gd_scene format=3 uid="uid://3g2nynipki2o"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_3x8uo"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_t1jaq"]
@@ -58,8 +58,14 @@ albedo_color = Color(0.6, 0.5, 0.4, 1)
 
 [node name="Teakitchen" unique_id=758067993 instance=ExtResource("1_3x8uo")]
 
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.99)
+
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
+
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=126030638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0" index="0" unique_id=1038383577]
 visible = false
@@ -69,8 +75,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2mrp3")
 [node name="DoorWall" parent="Walls/DoorSouth0" index="1" unique_id=288271030 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_a3ulv")
 
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
+
 [node name="DoorEast0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1680462794]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast0" index="0" unique_id=1626629077]
 visible = false
@@ -80,8 +89,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0kb6g")
 [node name="DoorWall" parent="Walls/DoorEast0" index="1" unique_id=1553913665 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_v8l37")
 
-[node name="MeshInstance3D" parent="Floor/Floor00" index="0"]
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=6000773]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.99, 2, 0)
+
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_t1jaq")
+metadata/surface_type = "carpet"
 
 [node name="props" type="Node3D" parent="." index="3" unique_id=1985051441]
 
@@ -110,7 +123,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.66
 transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, -3.520122, 0.8261635, -3.8805017)
 
 [node name="teakitchen_WallClock" parent="props" index="8" unique_id=301629911 instance=ExtResource("6_o8hh3")]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -4.804881, 2.9924192, -3.1976297)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -4.758444, 2.9924192, -3.1976297)
 
 [node name="teakitchen_CeilingLight" parent="props" index="9" unique_id=702928047 instance=ExtResource("8_brfdu")]
 transform = Transform3D(-0.9886858, 0, 0.1500013, -0.010714264, 0.99744576, -0.07061966, -0.14961816, -0.07142781, -0.98616046, 0.040421814, 3.7010412, 0.33524632)
@@ -188,7 +201,7 @@ transform = Transform3D(0.29593647, 4.302037e-09, -0.04920957, 2.5582195e-16, -0
 transform = Transform3D(-0.26638716, 0, -0.33754686, 0, 0.43, 0, 0.33754686, 0, -0.26638716, -4.645192, 1.4141136, 0.9592629)
 
 [node name="teakitchen_PaperTowelHolder" parent="props" index="34" unique_id=426211062 instance=ExtResource("20_333wq")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7747655, 2.1942897, -0.016322374)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7465196, 2.1942897, -0.016322374)
 
 [node name="teakitchen_WaterPitcher" parent="props" index="35" unique_id=31829661 instance=ExtResource("21_6grbw")]
 transform = Transform3D(0.53, 0, 0, 0, 0.53, 0, 0, 0, 0.53, -0.39379668, 1.4457521, -0.94663656)
