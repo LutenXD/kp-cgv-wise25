@@ -20,15 +20,3 @@ func _process(delta):
 	var range_flicker = noise.get_noise_1d(time_offset * 3.0 + 100.0)
 	$OmniLight3D.omni_range = 90.0 + range_flicker * 20.0
 	
-func animate_torch() -> void:
-	if tween:
-		tween.kill()
-	var tween = get_tree().create_tween()
-	tween.tween_property($OmniLight3D, "light_energy", 4.5+randf(), 1.5 + 0.5*randf()).set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property($OmniLight3D, "light_energy", 8.0+randf(), 1.5 + 0.5*randf()).set_trans(Tween.TRANS_LINEAR)
-
-
-func _on_timer_timeout() -> void:
-	print("animate torch")
-	animate_torch()
-	$Timer.start(4.0 + 2.0*randf())
