@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://or37sm7vbo10"]
+[gd_scene format=3 uid="uid://bjx0ok1yq4e7b"]
 
-[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_1jius"]
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_1jius"]
 [ext_resource type="PackedScene" uid="uid://cte820e5t4fm4" path="res://assets/prop-scenes/library/library_FloorMat.tscn" id="2_0mq2b"]
 [ext_resource type="Material" uid="uid://coktg6g18js6k" path="res://assets/textures/materials/soundabsorbing-wall.tres" id="2_6gjg2"]
 [ext_resource type="Material" uid="uid://bq7k6a4n4nm1i" path="res://assets/textures/materials/mansion_wood_paneling.tres" id="3_dtjg0"]
 [ext_resource type="PackedScene" uid="uid://bosd0gkdjt4fd" path="res://assets/prop-scenes/library/library_GlobeTable.tscn" id="3_hko2v"]
 [ext_resource type="Material" uid="uid://dliib7sp1rg4f" path="res://assets/textures/materials/mansion_dark_wood_paneling_2.tres" id="5_a7jxe"]
-[ext_resource type="PackedScene" uid="uid://dv214blji0eev" path="res://assets/prop-scenes-50k/library/library_LibraryBookShelf2.tscn" id="5_dtjg0"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes-50k/library/library_LibraryBookShelf2.tscn" id="5_dtjg0"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="6_a7jxe"]
 [ext_resource type="PackedScene" uid="uid://bklur5uperle8" path="res://assets/prop-scenes/lecturehall/lecturehall_WallClock.tscn" id="6_x2kqa"]
 [ext_resource type="Material" uid="uid://biggh1yg368kv" path="res://assets/textures/materials/university_ceiling.tres" id="7_jcqt2"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://dwpmejvxifp04" path="res://assets/prop-scenes/extra/extra_pictureLake.tscn" id="36_ppjom"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="37_4fjha"]
 [ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="37_fci7f"]
-[ext_resource type="PackedScene" uid="uid://xoxu7h0q1s6h" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="37_ppjom"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="37_ppjom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0d6v"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -184,6 +184,9 @@ polygon = PackedVector2Array(-5, 0, -5, 6, 5, 6, 5, 0, 0.9, 0, 0.9, 2.9, -0.9, 2
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("5_a7jxe")
 
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "wood"
+
 [node name="Floor01" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="1" unique_id=1517685705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.1, 0)
 
@@ -193,6 +196,7 @@ mesh = SubResource("BoxMesh_kuclu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=625234049]
 shape = SubResource("BoxShape3D_2wabc")
+metadata/surface_type = "wood"
 
 [node name="lecturehall_WallClock" parent="Floor/Floor01" index="2" unique_id=219203202 instance=ExtResource("6_x2kqa")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 14.649, 3.918, 0.024)
@@ -206,6 +210,7 @@ mesh = SubResource("BoxMesh_kuclu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor03" index="1" unique_id=281929380]
 shape = SubResource("BoxShape3D_2wabc")
+metadata/surface_type = "wood"
 
 [node name="Floor02" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="3" unique_id=1100431171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.1, -10)
@@ -216,6 +221,7 @@ mesh = SubResource("BoxMesh_kuclu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor02" index="1" unique_id=1630498797]
 shape = SubResource("BoxShape3D_2wabc")
+metadata/surface_type = "wood"
 
 [node name="Ceiling" parent="." index="2" unique_id=2012647510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

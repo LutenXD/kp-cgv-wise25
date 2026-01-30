@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://2muea82newgl"]
+[gd_scene format=3 uid="uid://dcfoxi7e1iw7q"]
 
-[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_fohyt"]
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_fohyt"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="2_bqtts"]
 [ext_resource type="PackedScene" uid="uid://clblyyrkwtnd0" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_HandSanitizerDispenser.tscn" id="2_uk57g"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_5cooa"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cg3ajhn30la4u" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperDispenser.tscn" id="8_r78x7"]
 [ext_resource type="PackedScene" uid="uid://c1sylh1escyrw" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_TrashCanLarge.tscn" id="9_uk57g"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="10_vdmyx"]
-[ext_resource type="PackedScene" uid="uid://v5pipcs0mdps" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
 [ext_resource type="PackedScene" uid="uid://dllgc23227vg7" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperRoll.tscn" id="14_5cooa"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
 
@@ -59,6 +59,9 @@ material_override = ExtResource("2_bqtts")
 
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_jrfrv")
+
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "marble"
 
 [node name="StaticBody3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="2" unique_id=840257529 instance=ExtResource("2_uk57g")]
 transform = Transform3D(3.774895e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 3.774895e-08, 4.6401796, 1.7139512, -3.8820424)

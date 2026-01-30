@@ -193,6 +193,10 @@ shape = SubResource("BoxShape3D_olytw")
 
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_c6pyh")
+metadata/surface_type = "holodeck"
+
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "holodeck"
 
 [node name="Floor01" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="1" unique_id=842796557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
@@ -200,9 +204,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor01" index="0" unique_id=641261300]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=927064402]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="Floor10" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="2" unique_id=1459913431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
@@ -210,9 +216,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor10" index="0" unique_id=829942912]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor10" index="1" unique_id=564250337]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="Floor11" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="3" unique_id=1821454045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, -10)
@@ -220,9 +228,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, -10)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor11" index="0" unique_id=1829257690]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor11" index="1" unique_id=574680678]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="StaticBody3D" parent="Floor/Floor11" index="2" unique_id=1824154060 instance=ExtResource("4_vq6e1")]
 transform = Transform3D(0.18577743, 0, 0.074072585, 0, 0.2, 0, -0.074072585, 0, 0.18577743, -4.5879693, 1.2955546, -3.5344992)
