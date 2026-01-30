@@ -14,6 +14,7 @@ var question_idx: int = 0
 
 @onready var score_label: Label3D = $ScoreLabel
 
+signal evaluation_passed
 
 func _ready() -> void:
 	super._ready()
@@ -38,3 +39,5 @@ func _on_chat_request_correctness_received(is_correct: bool) -> void:
 			thinking = true
 		else:
 			self.set_instructions(evaluator_pre_instructions + "every question was successfully answered. Praise the player!")
+			print("evaluation passed, emitting signal")
+			evaluation_passed.emit()

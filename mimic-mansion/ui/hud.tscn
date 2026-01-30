@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b2q4mighsgdd5" path="res://ui/hud.gd" id="1_rbyyf"]
 [ext_resource type="PackedScene" uid="uid://bhwq8yxr5m3y7" path="res://ui/pause_menu.tscn" id="2_546lt"]
 [ext_resource type="PackedScene" uid="uid://cj7y2xqr8iqwf" path="res://ui/options_menu.tscn" id="3_7ihmi"]
+[ext_resource type="PackedScene" uid="uid://bbrs7v4jixtnc" path="res://ui/game_finished_screen.tscn" id="4_7ihmi"]
 
 [node name="HUD" type="CanvasLayer" unique_id=364530958 groups=["HUD"]]
 process_mode = 3
@@ -48,8 +49,13 @@ text = "60.0"
 
 [node name="OptionsMenu" parent="." unique_id=821714189 instance=ExtResource("3_7ihmi")]
 layer = 7
+visible = false
 
 [node name="PauseMenu" parent="." unique_id=1187400153 instance=ExtResource("2_546lt")]
+
+[node name="GameFinishedScreen" parent="." unique_id=86324881 instance=ExtResource("4_7ihmi")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="close_options" from="OptionsMenu" to="." method="_on_options_menu_close_options"]
 [connection signal="continue_game" from="PauseMenu" to="." method="_on_main_menu_continue_game"]

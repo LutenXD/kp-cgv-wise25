@@ -12,6 +12,8 @@ var humgold: Evaluator
 @onready var room_layout_manager: RoomLayoutManager = $"../RoomLayoutManager"
 
 
+signal finish_game
+
 func _ready() -> void:
 	room_layout_manager.call_deferred("spawn_starting_room")
 
@@ -37,5 +39,10 @@ func _on_room_layout_manager_finished() -> void:
 		humgold.statements = statements
 		#await get_tree().process_frame # fuck this
 		humgold.set_evaluator_instructions()
+		
+		humgold.evaluation_passed.connect(_on_evaluation_passed)
 	else:
 		print("mööp")
+		
+func _on_evaluation_passed() -> void:
+	$"../HUD".finish_game()
