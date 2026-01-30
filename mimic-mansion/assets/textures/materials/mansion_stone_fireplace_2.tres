@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://di85uy5vlmdn6"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://di85uy5vlmdn6"]
 
 [ext_resource type="Texture2D" uid="uid://dv2v06it8ww5r" path="res://assets/textures/materials/mansion_stone_fireplace_2/albedo.png" id="1_oto0f"]
 [ext_resource type="Texture2D" uid="uid://bphq8t38201c0" path="res://assets/textures/materials/mansion_stone_fireplace_2/height.png" id="2_6obmw"]
