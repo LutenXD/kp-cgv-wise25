@@ -20,6 +20,8 @@ var flying: bool = false
 
 
 func _ready() -> void:
+	Settings.update.connect(func (): look_sensitivity = Settings.mouse_sensitivity)
+	look_sensitivity = Settings.mouse_sensitivity
 	var idx = AudioServer.get_bus_index("Record")
 	effect = AudioServer.get_bus_effect(idx, 0)
 

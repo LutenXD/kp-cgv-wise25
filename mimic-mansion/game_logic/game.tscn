@@ -88,6 +88,8 @@ sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 fog_density = 0.1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 adjustment_brightness = 0.72
 adjustment_saturation = 1.28
 
@@ -251,10 +253,8 @@ metadata/_custom_type_script = "uid://jy4sym0dop3s"
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Player" unique_id=152119312]
 stream = SubResource("AudioStreamRandomizer_iy51i")
 autoplay = true
-bus = &"Music"
 
 [node name="StepsAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player" unique_id=377208954]
-bus = &"steps"
 
 [node name="MimicManager" type="Node3D" parent="." unique_id=1896974085]
 script = ExtResource("1_ta1pv")

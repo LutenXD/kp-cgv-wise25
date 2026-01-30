@@ -22,8 +22,9 @@ driver/enable_input=true
 
 [autoload]
 
-SaveManager="*res://scripts/save_manager.gd"
-GameSettings="*res://scripts/game_settings.gd"
+SaveManager="res://scripts/save_manager.gd"
+GameSettings="res://scripts/game_settings.gd"
+Settings="*uid://bmi3pcfi2s2aj"
 
 [display]
 
@@ -47,6 +48,7 @@ enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg", "res://addons/god
 folder_colors={
 "res://entities/": "green",
 "res://game_logic/": "pink",
+"res://globals/": "red",
 "res://level/": "green",
 "res://ui/": "green",
 "res://utils/": "green"
