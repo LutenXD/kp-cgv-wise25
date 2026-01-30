@@ -48,7 +48,6 @@ offset_bottom = 23.0
 text = "60.0"
 
 [node name="OptionsMenu" parent="." unique_id=821714189 instance=ExtResource("3_7ihmi")]
-process_mode = 3
 layer = 7
 visible = false
 

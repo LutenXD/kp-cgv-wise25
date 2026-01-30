@@ -29,16 +29,18 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause") \
-	&& !PauseMenu.visible && !OptionsMenu.visible:
-		PauseMenu.show()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().paused = true
-		print("opening menu")
-	
-	elif event.is_action_pressed("pause"):
-		print("closing menu")
-		continue_game()
+	if event.is_action_pressed("pause"):
+		if !PauseMenu.visible && !OptionsMenu.visible:
+			PauseMenu.show()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().paused = true
+			print("opening menu")
+		elif OptionsMenu.visible:
+			print("closing options")
+			OptionsMenu.hide()
+		else:
+			print("closing menu")
+			continue_game()
 
 
 func continue_game():
@@ -60,14 +62,11 @@ func _on_main_menu_continue_game() -> void:
 
 
 func _on_pause_menu_open_settings() -> void:
-	PauseMenu.hide()
 	OptionsMenu.show()
 
 
 func _on_options_menu_close_options() -> void:
-	print("wtf")
 	OptionsMenu.hide()
-	PauseMenu.show()
 
 
 func set_subtitle(text: String) -> void:

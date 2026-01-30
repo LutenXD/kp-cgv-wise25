@@ -35,7 +35,8 @@ func is_room_variant_spawned(room_name: String) -> bool:
 			return true
 	return false
 
-func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 10) -> void:
+
+func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 8) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	
@@ -105,7 +106,7 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 		#printt("global pos:", new_room.global_position)
 		
 		#new_room.global_transform = parent_door_position * child_door_position.affine_inverse()
-		new_room.global_position = parent_door_position - (child_door_position - new_room.global_position)
+		new_room.global_position = round(parent_door_position - (child_door_position - new_room.global_position))
 
 		# Check for collisions
 		var collision_detected = false
@@ -187,7 +188,7 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	var parent_door_position = parent_door["node"].global_position
 	var child_door_position = filler_room["door"]["node"].global_position
 	
-	new_room.global_position = parent_door_position - (child_door_position - new_room.global_position)
+	new_room.global_position = round(parent_door_position - (child_door_position - new_room.global_position))
 	
 	# Check for collisions
 	var collision_detected = false
@@ -231,6 +232,14 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	set_door_visible(filler_room["door"], true)
 	disable_wall_at_door(parent_door)
 	disable_wall_at_door(filler_room["door"])
+	
+	# Spawn door
+	var door_node: Node3D = door_scene.instantiate()
+	get_parent().add_child(door_node)
+	door_node.global_position = parent_door_position
+	
+	if parent_door["direction"] == "east" or parent_door["direction"] == "west":
+		door_node.rotation.y = PI / 2.0 
 	
 	# Add new doors to available_doors (excluding the connection door)
 	var new_doors = get_room_doors(new_room)

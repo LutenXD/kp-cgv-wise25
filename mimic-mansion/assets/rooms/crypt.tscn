@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://7pi0kc0alkof"]
+[gd_scene format=3 uid="uid://dbx2xrs8tdumd"]
 
-[ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_h11cd"]
+[ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_h11cd"]
 [ext_resource type="Material" uid="uid://d2aluiqg5tgc7" path="res://assets/textures/materials/cobble-floor-2.tres" id="2_v1beu"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_lo5k8"]
 [ext_resource type="Material" uid="uid://baj8qsdchnep1" path="res://assets/textures/materials/cobble-floor.tres" id="3_r3vl8"]
 [ext_resource type="PackedScene" uid="uid://dwts2vxt5ddkn" path="res://assets/prop-scenes/crypt/crypt_MarbleAltar.tscn" id="3_t2il0"]
 [ext_resource type="PackedScene" uid="uid://dea5beg50bdkt" path="res://assets/prop-scenes/crypt/crypt_TatteredBanner.tscn" id="3_yqovh"]
-[ext_resource type="PackedScene" uid="uid://6lf1oo8ncqv0" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
 [ext_resource type="PackedScene" uid="uid://j8dxcb3jg8jg" path="res://assets/prop-scenes/crypt/crypt_Sarcophagus.tscn" id="4_shybk"]
-[ext_resource type="PackedScene" uid="uid://dbvqgkseku2ik" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
 [ext_resource type="PackedScene" uid="uid://bggpj5akpbw64" path="res://assets/prop-scenes/crypt/crypt_Cobweb.tscn" id="5_jtbvu"]
 [ext_resource type="PackedScene" uid="uid://betgk7b1p72mb" path="res://assets/prop-scenes/crypt/crypt_StatueGuardian.tscn" id="6_4lw08"]
 [ext_resource type="PackedScene" uid="uid://cdkhxyl8df0i5" path="res://assets/prop-scenes/crypt/crypt_Lantern.tscn" id="8_frxo3"]
@@ -20,14 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://pkw0ni6d3gjf" path="res://assets/prop-scenes/crypt/crypt_DustyChalice.tscn" id="14_wl5el"]
 [ext_resource type="PackedScene" uid="uid://s1uoe3f2107v" path="res://assets/prop-scenes/crypt/crypt_SkullCandle.tscn" id="15_grgol"]
 [ext_resource type="PackedScene" uid="uid://dqmoealhgolw4" path="res://assets/prop-scenes/crypt/crypt_SkullSkull.tscn" id="17_t0k0u"]
-[ext_resource type="PackedScene" uid="uid://cukid78dsqhvv" path="res://assets/prop-scenes/crypt/crypt_portrait2.tscn" id="18_dxwq3"]
-[ext_resource type="PackedScene" uid="uid://dysfasnr4u2pk" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_portrait2.tscn" id="18_dxwq3"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
 [ext_resource type="PackedScene" uid="uid://bg2egeqhh6h4f" path="res://assets/prop-scenes/crypt/crypt_Vial.tscn" id="23_lo5k8"]
-[ext_resource type="PackedScene" uid="uid://bfv6mmbgg8jve" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
-[ext_resource type="PackedScene" uid="uid://6ti04uecjsvq" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
 [ext_resource type="PackedScene" uid="uid://btbs7gt5yyqq1" path="res://assets/prop-scenes/crypt/crypt_HiddenDoor.tscn" id="26_f5ygi"]
-[ext_resource type="PackedScene" uid="uid://cwct1e64tcq0k" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
-[ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -120,6 +120,10 @@ shape = SubResource("BoxShape3D_1mq03")
 
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_r3vl8")
+metadata/surface_type = "stone"
+
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "stone"
 
 [node name="Floor01" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="1" unique_id=298238454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
@@ -127,9 +131,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor01" index="0" unique_id=1371230337]
 material_override = ExtResource("3_r3vl8")
 mesh = SubResource("BoxMesh_kdgvq")
+metadata/surface_type = "stone"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=234236707]
 shape = SubResource("BoxShape3D_xwtfv")
+metadata/surface_type = "stone"
 
 [node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
 material_override = ExtResource("2_v1beu")

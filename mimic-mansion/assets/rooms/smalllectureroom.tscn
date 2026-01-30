@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://buvheufyh4i3v"]
+[gd_scene format=3 uid="uid://dhi6du4foaswp"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_romwe"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_sj1sp"]
@@ -36,26 +36,28 @@ albedo_color = Color(0.6, 0.5, 0.4, 1)
 [node name="Smalllectureroom" unique_id=819269736 instance=ExtResource("1_romwe")]
 
 [node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.8)
 
 [node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=415895558]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
 
 [node name="DoorWall" parent="Walls/DoorSouth0" index="0" unique_id=288271030 instance=ExtResource("2_sj1sp")]
 material = SubResource("StandardMaterial3D_n08f3")
 
 [node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.9, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.8, 2, 0)
 
 [node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=6000773]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.8, 2, 0)
 
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_iiqlw")
+
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "laminate"
 
 [node name="Ceiling00" parent="Ceiling" parent_id_path=PackedInt32Array(2012647510) index="0" unique_id=1224160140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
@@ -64,7 +66,7 @@ material_override = ExtResource("4_jimqv")
 [node name="Props" type="Node3D" parent="." index="3" unique_id=1867997466]
 
 [node name="smalllectureroom_TrashCanSmall" parent="Props" index="0" unique_id=1096413994 instance=ExtResource("3_wuwxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3750715, 0.50075364, 4.329874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.211598, 0.50075364, 4.329874)
 
 [node name="smalllectureroom_PowerOutletStrip" parent="Props" index="1" unique_id=1578658215 instance=ExtResource("5_bpsv8")]
 transform = Transform3D(0.8325057, 0, 0.5540165, 0, 1, 0, -0.5540165, 0, 0.8325057, 1.5836308, 1.2301085, 0.4707222)
@@ -73,19 +75,19 @@ transform = Transform3D(0.8325057, 0, 0.5540165, 0, 1, 0, -0.5540165, 0, 0.83250
 transform = Transform3D(0.36059922, 0, -0.93272084, 0, 1, 0, 0.93272084, 0, 0.36059922, -0.826815, 1.6270255, -0.030183077)
 
 [node name="smalllectureroom_DigitalClock" parent="Props" index="3" unique_id=1794355833 instance=ExtResource("7_35xrv")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.37912, 3.1110811, 4.0742135)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3735023, 3.1110811, 4.0742135)
 
 [node name="smalllectureroom_MicStand" parent="Props" index="4" unique_id=1670896584 instance=ExtResource("9_mbiki")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.380404, 1.5040382, -0.46093416)
 
 [node name="smalllectureroom_FireExtinguisher" parent="Props" index="5" unique_id=81968563 instance=ExtResource("10_2wvef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55369, 0.50096893, -3.696044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3902164, 0.50096893, -3.696044)
 
 [node name="smalllectureroom_ClockTimer" parent="Props" index="6" unique_id=232583661 instance=ExtResource("11_s4gbg")]
 transform = Transform3D(0.06875683, 0, -0.49525, 0, 0.5, 0, 0.49525, 0, 0.06875683, 2.8077283, 1.3059002, -0.5833477)
 
 [node name="smalllectureroom_AirPurifierMini" parent="Props" index="7" unique_id=99002588 instance=ExtResource("12_87bvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.304041, 0.5008824, -4.3980083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.304041, 0.5008824, -4.32732)
 
 [node name="smalllectureroom_Projector" parent="Props" index="8" unique_id=65001952 instance=ExtResource("13_5lt34")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2654747, 3.6501055, 0.9404189)
@@ -94,22 +96,22 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.26
 transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, 1.4909221, 2.2721367, 4.7938776)
 
 [node name="smalllectureroom_Screen" parent="Props" index="10" unique_id=1855356810 instance=ExtResource("15_3eiio")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.5455523, 2.439068, -2.8766594)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.348974, 2.439068, -2.8766594)
 
 [node name="smalllectureroom_Speaker" parent="Props" index="11" unique_id=1070823463 instance=ExtResource("16_ckkfx")]
-transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, -4.3447795, 0.4086036, -4.302603)
+transform = Transform3D(0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881907, -4.2236466, 0.4086036, -4.1801395)
 
 [node name="smalllectureroom_StudentChair" parent="Props" index="12" unique_id=835298206 instance=ExtResource("17_xpcgg")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2117581, 0.6620203, -4.2845592)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.2117581, 0.6620203, -4.138979)
 
 [node name="smalllectureroom_StudentChair2" parent="Props" index="13" unique_id=1036510951 instance=ExtResource("17_xpcgg")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.32913303, 0.6620203, -4.3152437)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.32913303, 0.6620203, -4.1696634)
 
 [node name="smalllectureroom_StudentChair3" parent="Props" index="14" unique_id=1755848998 instance=ExtResource("17_xpcgg")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.6675557, 0.6620203, -4.286303)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.6675557, 0.6620203, -4.1407223)
 
 [node name="smalllectureroom_StudentChair4" parent="Props" index="15" unique_id=2020275862 instance=ExtResource("17_xpcgg")]
-transform = Transform3D(0.14912215, 0, 1.9944329, 0, 2, 0, -1.9944329, 0, 0.14912215, -4.313557, 0.6620208, -2.6547613)
+transform = Transform3D(0.14912215, 0, 1.9944329, 0, 2, 0, -1.9944329, 0, 0.14912215, -4.1751976, 0.6620208, -2.551396)
 
 [node name="smalllectureroom_StudentDesk" parent="Props" index="16" unique_id=2074304440 instance=ExtResource("18_uqb83")]
 transform = Transform3D(3.9340247e-07, 0, 3, 0, 3, 0, -3, 0, 3.9340247e-07, 0.68753517, 0.5850042, 0.5464951)
@@ -124,7 +126,7 @@ transform = Transform3D(-3, 0, 2.6226832e-07, 0, 3, 0, -2.6226832e-07, 0, -3, -0
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 1.9860883, 0.5850042, -0.6133907)
 
 [node name="smalllectureroom_StudentLockers2" parent="Props" index="20" unique_id=777150671 instance=ExtResource("20_dxux4")]
-transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -3.138782, 0.7954572, 4.3863425)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -3.0059617, 0.7954572, 4.25141)
 
 [node name="smalllectureroom_TeachingPodium" parent="Props" index="21" unique_id=1077832263 instance=ExtResource("21_murl8")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 2.9013646, 0.95315576, -1.6733057)
@@ -148,7 +150,7 @@ transform = Transform3D(-1.1447172, 0, 0.616135, 0, 1.3, 0, -0.616135, 0, -1.144
 transform = Transform3D(-1.3113416e-07, 0, -0.5, 0, 3, 0, 3, 0, -2.1855694e-08, 4.7960463, 2.3309321, -2.940791)
 
 [node name="lecturehall_ProjectorScreen" parent="Props" index="28" unique_id=1724418471 instance=ExtResource("23_35xrv")]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 4.7209816, 2.2492657, 0.9187323)
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 4.557508, 2.2492657, 0.9187323)
 
 [node name="smalllectureroom_CableCord" parent="Props" index="29" unique_id=471330690 instance=ExtResource("24_vy23n")]
 transform = Transform3D(0.47355336, 0, -0.36843887, 0, 0.59999996, 0, 0.36843887, 0, 0.47355336, -0.93496704, 1.1899059, -1.5384232)
@@ -179,10 +181,10 @@ omni_attenuation = 2.0
 transform = Transform3D(0.1315684, -0.2695371, -0.0062828646, 0.2692303, 0.13171837, -0.012856718, 0.014309773, 8.1959606e-10, 0.29965848, 3.2245197, 1.3602746, -1.6026269)
 
 [node name="special_MateIceTeaBottle" parent="Props" index="32" unique_id=1454370101 instance=ExtResource("28_mbiki")]
-transform = Transform3D(0.322916, 0, 0.23606196, 0, 0.4, 0, -0.23606196, 0, 0.322916, -2.3092263, 1.7616924, 4.49784)
+transform = Transform3D(0.322916, 0, 0.23606196, 0, 0.4, 0, -0.23606196, 0, 0.322916, -2.176406, 1.7616924, 4.3629074)
 
 [node name="special_MateIceTeaBottle2" parent="Props" index="33" unique_id=1022034984 instance=ExtResource("28_mbiki")]
-transform = Transform3D(0.322916, 0, 0.23606196, 0, 0.4, 0, -0.23606196, 0, 0.322916, -4.064896, 1.7616924, 4.42176)
+transform = Transform3D(0.322916, 0, 0.23606196, 0, 0.4, 0, -0.23606196, 0, 0.322916, -3.9320757, 1.7616924, 4.2868276)
 
 [node name="special_MateIceTeaBottle3" parent="Props" index="34" unique_id=627269475 instance=ExtResource("28_mbiki")]
 transform = Transform3D(-0.3139711, 0, 0.24783492, 0, 0.4, 0, -0.24783492, 0, -0.3139711, -0.52280426, 1.394595, 1.1234747)

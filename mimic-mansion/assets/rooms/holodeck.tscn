@@ -116,13 +116,13 @@ rings = 8
 [node name="Holodeck" unique_id=1137580905 instance=ExtResource("1_u1jhc")]
 
 [node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.8)
 
 [node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
 material_override = ExtResource("2_rlb11")
 
 [node name="WallNorth1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=364871614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -14.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -14.8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" index="0" unique_id=486787895]
 material_override = ExtResource("2_rlb11")
@@ -132,13 +132,13 @@ mesh = SubResource("BoxMesh_35vyj")
 shape = SubResource("BoxShape3D_olytw")
 
 [node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=1267843663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
 
 [node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
 material_override = ExtResource("2_rlb11")
 
 [node name="WallSouth1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2009601660]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=904470347]
@@ -149,7 +149,7 @@ shape = SubResource("BoxShape3D_olytw")
 disabled = true
 
 [node name="DoorSouth1" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1730320601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth1" index="0" unique_id=1000391711]
 visible = false
@@ -160,13 +160,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f702a")
 material_override = ExtResource("2_rlb11")
 
 [node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=2137167074]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.9, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.8, 2, 0)
 
 [node name="MeshInstance3D" parent="Walls/WallEast0" index="0" unique_id=1170511803]
 material_override = ExtResource("2_rlb11")
 
 [node name="WallEast1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="6" unique_id=1190660704]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.9, 2, -10)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 14.8, 2, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast1" index="0" unique_id=580900016]
 material_override = ExtResource("2_rlb11")
@@ -176,13 +176,13 @@ mesh = SubResource("BoxMesh_35vyj")
 shape = SubResource("BoxShape3D_olytw")
 
 [node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="7" unique_id=6000773]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.8, 2, 0)
 
 [node name="MeshInstance3D" parent="Walls/WallWest0" index="0" unique_id=965472030]
 material_override = ExtResource("2_rlb11")
 
 [node name="WallWest1" type="StaticBody3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="8" unique_id=1681588112]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.9, 2, -10)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.8, 2, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest1" index="0" unique_id=1613080527]
 material_override = ExtResource("2_rlb11")
@@ -193,6 +193,10 @@ shape = SubResource("BoxShape3D_olytw")
 
 [node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
 material_override = ExtResource("3_c6pyh")
+metadata/surface_type = "holodeck"
+
+[node name="CollisionShape3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="1" unique_id=804739548]
+metadata/surface_type = "holodeck"
 
 [node name="Floor01" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="1" unique_id=842796557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
@@ -200,9 +204,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor01" index="0" unique_id=641261300]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor01" index="1" unique_id=927064402]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="Floor10" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="2" unique_id=1459913431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
@@ -210,9 +216,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -10)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor10" index="0" unique_id=829942912]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor10" index="1" unique_id=564250337]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="Floor11" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(311004718) index="3" unique_id=1821454045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, -10)
@@ -220,9 +228,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.1, -10)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/Floor11" index="0" unique_id=1829257690]
 material_override = ExtResource("3_c6pyh")
 mesh = SubResource("BoxMesh_4cgsm")
+metadata/surface_type = "holodeck"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor11" index="1" unique_id=574680678]
 shape = SubResource("BoxShape3D_tdltf")
+metadata/surface_type = "holodeck"
 
 [node name="StaticBody3D" parent="Floor/Floor11" index="2" unique_id=1824154060 instance=ExtResource("4_vq6e1")]
 transform = Transform3D(0.18577743, 0, 0.074072585, 0, 0.2, 0, -0.074072585, 0, 0.18577743, -4.5879693, 1.2955546, -3.5344992)
@@ -255,19 +265,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 [node name="Props" type="Node3D" parent="." index="3" unique_id=1254896522]
 
 [node name="StaticBody3D" parent="Props" index="0" unique_id=496156305 instance=ExtResource("6_lc4g3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.243289, 0.49740565, -5.507369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.144897, 0.49740565, -5.507369)
 
 [node name="StaticBody3D2" parent="Props" index="1" unique_id=1764335279 instance=ExtResource("6_lc4g3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.243289, 0.49740565, -4.490039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.144897, 0.49740565, -4.490039)
 
 [node name="StaticBody3D3" parent="Props" index="2" unique_id=1178693624 instance=ExtResource("8_0l2oo")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 14.213037, 0.9756167, -2.216237)
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 14.143605, 0.9756167, -2.216237)
 
 [node name="StaticBody3D4" parent="Props" index="3" unique_id=1391002040 instance=ExtResource("9_533xm")]
-transform = Transform3D(0.54835707, 0, 0.24352528, 0, 0.6, 0, -0.24352528, 0, 0.54835707, -1.7077023, 1.4021732, -14.410798)
+transform = Transform3D(0.54835707, 0, 0.24352528, 0, 0.6, 0, -0.24352528, 0, 0.54835707, -1.7077023, 1.4021732, -14.240035)
 
 [node name="StaticBody3D42" parent="Props" index="4" unique_id=1989671107 instance=ExtResource("9_533xm")]
-transform = Transform3D(0.49539918, 0, -0.3384962, 0, 0.6000001, 0, 0.3384962, 0, 0.49539918, 2.65247, 1.4021732, -14.205235)
+transform = Transform3D(0.49539918, 0, -0.3384962, 0, 0.6000001, 0, 0.3384962, 0, 0.49539918, 2.65247, 1.4021732, -14.0344715)
 
 [node name="StaticBody3D43" parent="Props" index="5" unique_id=1603978671 instance=ExtResource("9_533xm")]
 transform = Transform3D(0.82566524, 0, -0.56416035, 0, 1, 0, 0.56416035, 0, 0.82566524, -4.348281, 0.50874996, 4.39155)
@@ -276,19 +286,19 @@ transform = Transform3D(0.82566524, 0, -0.56416035, 0, 1, 0, 0.56416035, 0, 0.82
 transform = Transform3D(-0.009913385, 0, -0.9999508, 0, 1, 0, 0.9999508, 0, -0.009913385, -4.3618855, 0.50874996, 3.7129197)
 
 [node name="StaticBody3D5" parent="Props" index="7" unique_id=1320858844 instance=ExtResource("10_oaal1")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.535291, 2.4810784, 4.573757)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.535291, 2.4810784, 4.3860874)
 
 [node name="StaticBody3D39" parent="Props" index="8" unique_id=1741143919 instance=ExtResource("10_oaal1")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 4.4573717, 1.6739594, -11.435779)
 
 [node name="StaticBody3D7" parent="Props" index="9" unique_id=243524911 instance=ExtResource("11_hkgnv")]
-transform = Transform3D(1.7759501, -0.5230948, 0.75655407, 0.5650847, 1.9185096, 0, -0.7257281, 0.21375859, 1.8513849, -4.3626547, 0.5669435, -3.0815938)
+transform = Transform3D(1.7759501, -0.5230948, 0.75655407, 0.5650847, 1.9185096, 0, -0.7257281, 0.21375859, 1.8513849, -4.2453914, 0.5669435, -3.0815938)
 
 [node name="StaticBody3D6" parent="Props" index="10" unique_id=1487454260 instance=ExtResource("12_wh66b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.5176497, 1.330345, -8.643848)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.3169727, 1.330345, -8.643848)
 
 [node name="StaticBody3D30" parent="Props" index="11" unique_id=720761141 instance=ExtResource("12_wh66b")]
-transform = Transform3D(0.21213202, -0.21213202, -9.2725845e-09, 0, -1.3113415e-08, 0.29999998, -0.21213202, -0.21213202, -9.2725845e-09, -4.5176497, 0.90137446, -9.422259)
+transform = Transform3D(0.21213202, -0.21213202, -9.2725845e-09, 0, -1.3113415e-08, 0.29999998, -0.21213202, -0.21213202, -9.2725845e-09, -4.310142, 0.90137446, -9.422259)
 
 [node name="StaticBody3D8" parent="Props" index="12" unique_id=756464607 instance=ExtResource("13_negjm")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.878349, 1.6851057, 0.012196064)
@@ -297,16 +307,16 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.878349, 1.6851057, 0
 transform = Transform3D(-0.49999946, 0, -0.0007418083, 0, 0.5, 0, 0.0007418083, 0, -0.49999946, 14.884202, 1.5736573, 1.1171209)
 
 [node name="StaticBody3D9" parent="Props" index="14" unique_id=966399413 instance=ExtResource("14_qwi5q")]
-transform = Transform3D(0.36300966, 0, 0.4777279, 0, 0.6000001, 0, -0.4777279, 0, 0.36300966, -4.5118623, 1.348316, -11.246049)
+transform = Transform3D(0.36300966, 0, 0.4777279, 0, 0.6000001, 0, -0.4777279, 0, 0.36300966, -4.345876, 1.348316, -11.246049)
 
 [node name="StaticBody3D46" parent="Props" index="15" unique_id=200462735 instance=ExtResource("14_qwi5q")]
-transform = Transform3D(0.58849156, 0, 0.116951466, 0, 0.6000001, 0, -0.116951466, 0, 0.58849156, -1.4186803, 1.2405164, -13.47674)
+transform = Transform3D(0.58849156, 0, 0.116951466, 0, 0.6000001, 0, -0.116951466, 0, 0.58849156, -1.4186803, 1.2405164, -13.305977)
 
 [node name="StaticBody3D11" parent="Props" index="16" unique_id=412863317 instance=ExtResource("15_uot12")]
-transform = Transform3D(-1.09278474e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278474e-07, 13.959467, 0.5525838, -8.348999)
+transform = Transform3D(-1.09278474e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278474e-07, 13.881378, 0.5525838, -8.348999)
 
 [node name="StaticBody3D22" parent="Props" index="17" unique_id=2028327932 instance=ExtResource("15_uot12")]
-transform = Transform3D(-1.09278474e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278474e-07, 13.970784, 0.5525838, -10.936827)
+transform = Transform3D(-1.09278474e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278474e-07, 13.892695, 0.5525838, -10.936827)
 
 [node name="StaticBody3D26" parent="Props" index="18" unique_id=291016873 instance=ExtResource("15_uot12")]
 transform = Transform3D(4.86768e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, 4.86768e-07, 4.0815315, 0.5525838, -13.284061)
@@ -327,19 +337,19 @@ transform = Transform3D(4.86768e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, 4.86768e-07, 5.
 transform = Transform3D(4.86768e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, 4.86768e-07, 5.632758, 0.5525838, -8.215784)
 
 [node name="StaticBody3D28" parent="Props" index="24" unique_id=842559628 instance=ExtResource("15_uot12")]
-transform = Transform3D(-2.5, 0, 3.774895e-07, 0, 2.5, 0, -3.774895e-07, 0, -2.5, -0.7438922, 0.5525838, -13.960337)
+transform = Transform3D(-2.5, 0, 3.774895e-07, 0, 2.5, 0, -3.774895e-07, 0, -2.5, -0.7438922, 0.5525838, -13.789574)
 
 [node name="StaticBody3D29" parent="Props" index="25" unique_id=164870560 instance=ExtResource("15_uot12")]
-transform = Transform3D(-2.5, 0, 3.774895e-07, 0, 2.5, 0, -3.774895e-07, 0, -2.5, 1.9306941, 0.5525838, -13.960337)
+transform = Transform3D(-2.5, 0, 3.774895e-07, 0, 2.5, 0, -3.774895e-07, 0, -2.5, 1.9306941, 0.5525838, -13.789574)
 
 [node name="StaticBody3D10" parent="Props" index="26" unique_id=1518781653 instance=ExtResource("16_u2345")]
-transform = Transform3D(0.15529145, 0, 0.5795555, 0, 0.6, 0, -0.5795555, 0, 0.15529145, -4.4978595, 1.9512737, -9.106189)
+transform = Transform3D(0.15529145, 0, 0.5795555, 0, 0.6, 0, -0.5795555, 0, 0.15529145, -4.2771034, 1.9512737, -9.106189)
 
 [node name="StaticBody3D12" parent="Props" index="27" unique_id=1049060152 instance=ExtResource("17_oknmh")]
-transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -4.289888, 1.4729202, -5.7154517)
+transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -4.2368836, 1.4729202, -5.7154517)
 
 [node name="StaticBody3D13" parent="Props" index="28" unique_id=512760415 instance=ExtResource("18_6kjh7")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.07383, 0.74707294, -14.689692)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9.07383, 0.74707294, -14.617953)
 
 [node name="StaticBody3D15" parent="Props" index="29" unique_id=600337968 instance=ExtResource("19_lbiuq")]
 transform = Transform3D(0.96464944, 0, 0.26353633, 0, 1, 0, -0.26353633, 0, 0.96464944, -4.2159657, 0.5009701, -14.174429)
@@ -357,16 +367,16 @@ transform = Transform3D(0.3752596, 0, -0.13849269, 0, 0.4, 0, 0.13849269, 0, 0.3
 transform = Transform3D(-0.23314993, 0, -0.32502475, 0, 0.39999998, 0, 0.32502475, 0, -0.23314993, 3.5628123, 1.2931329, -14.135698)
 
 [node name="StaticBody3D41" parent="Props" index="34" unique_id=286797503 instance=ExtResource("20_smkc6")]
-transform = Transform3D(0.1403183, 0, 0.37458077, 0, 0.39999998, 0, -0.37458077, 0, 0.1403183, -4.4794264, 1.8019841, -9.767392)
+transform = Transform3D(0.1403183, 0, 0.37458077, 0, 0.39999998, 0, -0.37458077, 0, 0.1403183, -4.217946, 1.8019841, -9.767392)
 
 [node name="StaticBody3D17" parent="Props" index="35" unique_id=1576340035 instance=ExtResource("21_uq3ds")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.4583044, 0.82975495, -9.172127)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.294778, 0.82975495, -9.172127)
 
 [node name="StaticBody3D45" parent="Props" index="36" unique_id=1685518800 instance=ExtResource("21_uq3ds")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.4583044, 0.82975495, -11.441639)
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.338993, 0.82975495, -11.441639)
 
 [node name="StaticBody3D27" parent="Props" index="37" unique_id=349615837 instance=ExtResource("21_uq3ds")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5071478, 0.82975495, 4.4440875)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.5071478, 0.82975495, 4.2564178)
 
 [node name="StaticBody3D16" parent="Props" index="38" unique_id=47428430 instance=ExtResource("22_cuip7")]
 transform = Transform3D(-6.556708e-09, 0, -0.14999999, 0, 0.14999999, 0, 0.14999999, 0, -6.556708e-09, 14.878028, 1.5898288, -0.38306236)
@@ -393,7 +403,7 @@ transform = Transform3D(-1.6543224, 0, 0.39143103, 0, 1.6999999, 0, -0.39143103,
 transform = Transform3D(-0.06929141, 0, 1.6985874, 0, 1.6999999, 0, -1.6985874, 0, -0.06929141, 2.3454967, 0.8614384, -12.086742)
 
 [node name="StaticBody3D38" parent="Props" index="46" unique_id=278817266 instance=ExtResource("23_ri2xt")]
-transform = Transform3D(0.61478966, 0, -1.5849398, 0, 1.7000002, 0, 1.5849398, 0, 0.61478966, 14.219231, 0.8614385, -14.203836)
+transform = Transform3D(0.61478966, 0, -1.5849398, 0, 1.7000002, 0, 1.5849398, 0, 0.61478966, 14.141142, 0.8614385, -14.124033)
 
 [node name="StaticBody3D23" parent="Props" index="47" unique_id=1388407076 instance=ExtResource("23_ri2xt")]
 transform = Transform3D(-7.430936e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.430936e-08, 12.867505, 0.8614385, -8.2596)
@@ -402,19 +412,19 @@ transform = Transform3D(-7.430936e-08, 0, 1.7, 0, 1.7, 0, -1.7, 0, -7.430936e-08
 transform = Transform3D(1.1971201, 0, 1.2070227, 0, 1.7, 0, -1.2070227, 0, 1.1971201, 12.746607, 0.8614385, -10.356989)
 
 [node name="StaticBody3D19" parent="Props" index="49" unique_id=113664225 instance=ExtResource("24_r5x7u")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.295243, 2.1889772, 4.603223)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.295243, 2.1889772, 4.415553)
 
 [node name="StaticBody3D20" parent="Props" index="50" unique_id=1950599025 instance=ExtResource("25_skp5l")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.5105042, 3.6043482, -1.3826799)
 
 [node name="StaticBody3D25" parent="Props" index="51" unique_id=1153225704 instance=ExtResource("25_skp5l")]
-transform = Transform3D(0.012591288, 0.59844977, -0.041223105, 0.00016954119, -0.041235726, -0.5985813, -0.5998678, 0.012549869, -0.0010344496, 14.603458, 3.3167942, -4.9943614)
+transform = Transform3D(0.012591288, 0.59844977, -0.041223105, 0.00016954119, -0.041235726, -0.5985813, -0.5998678, 0.012549869, -0.0010344496, 14.399999, 3.3167942, -4.9943614)
 
 [node name="StaticBody3D21" parent="Props" index="52" unique_id=1923191124 instance=ExtResource("26_ptp48")]
-transform = Transform3D(0.338987, -0.06494941, 0.3617588, -0.056000333, 0.47725832, 0.13816117, -0.36325175, -0.1341869, 0.3162943, -4.5129704, 0.11498688, -11.493802)
+transform = Transform3D(0.338987, -0.06494941, 0.3617588, -0.056000333, 0.47725832, 0.13816117, -0.36325175, -0.1341869, 0.3162943, -4.348319, 0.11498688, -11.493802)
 
 [node name="StaticBody3D49" parent="Props" index="53" unique_id=1374730277 instance=ExtResource("27_negjm")]
-transform = Transform3D(0.99823165, 0, -0.05944574, 0, 1, 0, 0.05944574, 0, 0.99823165, -4.439512, 0.2595055, -0.8399911)
+transform = Transform3D(0.99823165, 0, -0.05944574, 0, 1, 0, 0.05944574, 0, 0.99823165, -4.3417106, 0.2595055, -0.8399911)
 
 [node name="StaticBody3D50" parent="Props" index="54" unique_id=365843912 instance=ExtResource("28_qwi5q")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.5030794, 1.316039, -9.032578)
@@ -442,7 +452,7 @@ light_size = 0.335
 shadow_enabled = true
 
 [node name="StaticBody3D52" parent="Props" index="57" unique_id=1727887583 instance=ExtResource("29_uot12")]
-transform = Transform3D(-0.30409953, 0, 0.9526403, 0, 1, 0, -0.9526403, 0, -0.30409953, 0.28876972, 1.5848806, -14.254664)
+transform = Transform3D(-0.30409953, 0, 0.9526403, 0, 1, 0, -0.9526403, 0, -0.30409953, 0.28876972, 1.5848806, -14.083901)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D52" index="2" unique_id=579364451]
 transform = Transform3D(0.7087785, -0.49469328, 0.5029033, -0.4046226, 0.29887885, 0.86426383, -0.57785267, -0.81605756, 0.011674777, -0.3405838, 0.22162533, 0.0060329437)
@@ -453,28 +463,28 @@ light_size = 0.335
 shadow_enabled = true
 
 [node name="StaticBody3D53" parent="Props" index="58" unique_id=1335478241 instance=ExtResource("30_u2345")]
-transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 14.396192, 1.1859267, -11.591267)
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 14.318103, 1.1859267, -11.591267)
 
 [node name="StaticBody3D54" parent="Props" index="59" unique_id=1774836930 instance=ExtResource("31_oknmh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.063947, 0.5009684, -12.489054)
 
 [node name="StaticBody3D55" parent="Props" index="60" unique_id=1796384751 instance=ExtResource("31_oknmh")]
-transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 14.043647, 1.4895706, -7.492562)
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 13.965558, 1.4895706, -7.492562)
 
 [node name="StaticBody3D56" parent="Props" index="61" unique_id=1490609019 instance=ExtResource("31_oknmh")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.072479, 1.4895706, -14.314998)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.072479, 1.4895706, -14.144235)
 
 [node name="StaticBody3D75" parent="Props" index="62" unique_id=2020780734 instance=ExtResource("31_oknmh")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.1241262, 0.39270768, -14.117251)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.1241262, 0.39270768, -13.946488)
 
 [node name="StaticBody3D57" parent="Props" index="63" unique_id=400455292 instance=ExtResource("31_oknmh")]
-transform = Transform3D(0.39999998, 0, -0.69282037, 0, 0.8, 0, 0.69282037, 0, 0.39999998, 3.727915, 0.40894926, -13.426804)
+transform = Transform3D(0.39999998, 0, -0.69282037, 0, 0.8, 0, 0.69282037, 0, 0.39999998, 3.727915, 0.40894926, -13.388958)
 
 [node name="StaticBody3D58" parent="Props" index="64" unique_id=1322827665 instance=ExtResource("32_r5x7u")]
 transform = Transform3D(0.85, 0, 1.4722435, 0, 1.7000003, 0, -1.4722435, 0, 0.85, 2.8130403, 0.86280143, -8.632686)
 
 [node name="StaticBody3D59" parent="Props" index="65" unique_id=1275173070 instance=ExtResource("33_skp5l")]
-transform = Transform3D(0.34700128, -0.19890939, -0.0050169807, -0.016451593, -0.038733106, 0.39778012, -0.19829135, -0.34486926, -0.041782044, -4.5308805, 0.51469463, -8.691528)
+transform = Transform3D(0.34700128, -0.19890939, -0.0050169807, -0.016451593, -0.038733106, 0.39778012, -0.19829135, -0.34486926, -0.041782044, -4.3357763, 0.51469463, -8.691528)
 
 [node name="StaticBody3D60" parent="Props" index="66" unique_id=2024695935 instance=ExtResource("33_skp5l")]
 transform = Transform3D(0.28863603, -0.27652234, -0.014988301, -0.016451592, -0.038733102, 0.39778012, -0.2764392, -0.2864178, -0.039322525, 5.087439, 1.1323819, -8.167341)
@@ -486,22 +496,22 @@ transform = Transform3D(0.06817425, 0, -0.69667226, 0, 0.7, 0, 0.69667226, 0, 0.
 transform = Transform3D(-0.15213986, 0, -0.68326676, 0, 0.70000005, 0, 0.68326676, 0, -0.15213986, 3.795308, 1.1617296, -11.603562)
 
 [node name="StaticBody3D73" parent="Props" index="69" unique_id=1156695034 instance=ExtResource("34_ptp48")]
-transform = Transform3D(0.69627696, 0, 0.07210061, 0, 0.70000005, 0, -0.07210061, 0, 0.69627696, 1.822324, 1.1617296, -13.618539)
+transform = Transform3D(0.69627696, 0, 0.07210061, 0, 0.70000005, 0, -0.07210061, 0, 0.69627696, 1.822324, 1.1617296, -13.447776)
 
 [node name="StaticBody3D74" parent="Props" index="70" unique_id=457155869 instance=ExtResource("34_ptp48")]
-transform = Transform3D(0.69995534, 0.0038205278, 0.0069283247, -0.0038191993, 0.6999895, -0.00015308068, -0.00692904, 0.00011525769, 0.6999657, -0.5681492, 1.1617298, -13.538511)
+transform = Transform3D(0.69995534, 0.0038205278, 0.0069283247, -0.0038191993, 0.6999895, -0.00015308068, -0.00692904, 0.00011525769, 0.6999657, -0.5681492, 1.1617298, -13.367748)
 
 [node name="StaticBody3D62" parent="Props" index="71" unique_id=409908214 instance=ExtResource("35_p5w6j")]
-transform = Transform3D(0.96759033, 0, 0.25252524, 0, 1, 0, -0.25252524, 0, 0.96759033, 10.41243, 0.43292993, -14.339744)
+transform = Transform3D(0.96759033, 0, 0.25252524, 0, 1, 0, -0.25252524, 0, 0.96759033, 10.41243, 0.43292993, -14.268005)
 
 [node name="StaticBody3D77" parent="Props" index="72" unique_id=1238372076 instance=ExtResource("35_p5w6j")]
-transform = Transform3D(-1.2922211, 0, 0.14200097, 0, 1.3, 0, -0.14200097, 0, -1.2922211, 1.9838419, 1.6197491, -14.223409)
+transform = Transform3D(-1.2922211, 0, 0.14200097, 0, 1.3, 0, -0.14200097, 0, -1.2922211, 1.9838419, 1.6197491, -14.090491)
 
 [node name="StaticBody3D79" parent="Props" index="73" unique_id=2031063095 instance=ExtResource("35_p5w6j")]
-transform = Transform3D(0.007306218, 0, 1.2999792, 0, 1.3, 0, -1.2999792, 0, 0.007306218, 14.401689, 1.6071794, -8.641093)
+transform = Transform3D(0.007306218, 0, 1.2999792, 0, 1.3, 0, -1.2999792, 0, 0.007306218, 14.3236, 1.6071794, -8.641093)
 
 [node name="StaticBody3D63" parent="Props" index="74" unique_id=1918795834 instance=ExtResource("35_p5w6j")]
-transform = Transform3D(0.9572488, 0, -0.28926584, 0, 1, 0, 0.28926584, 0, 0.9572488, 11.170212, 0.43580407, -14.1996155)
+transform = Transform3D(0.9572488, 0, -0.28926584, 0, 1, 0, 0.28926584, 0, 0.9572488, 11.170212, 0.43580407, -14.127877)
 
 [node name="StaticBody3D64" parent="Props" index="75" unique_id=1123908093 instance=ExtResource("36_dirbt")]
 transform = Transform3D(-0.27889588, 0, 0.53124106, 0, 0.59999996, 0, -0.53124106, 0, -0.27889588, 5.74458, 1.1743633, -14.049479)
@@ -513,16 +523,16 @@ transform = Transform3D(0.058734655, 0, -0.19118117, 0, 0.2, 0, 0.19118117, 0, 0
 transform = Transform3D(-0.12930474, 0, -0.15257882, 0, 0.2, 0, 0.15257882, 0, -0.12930474, 3.7720895, 1.1284457, -10.852845)
 
 [node name="StaticBody3D81" parent="Props" index="78" unique_id=1708466254 instance=ExtResource("37_kpntp")]
-transform = Transform3D(0.12690833, 0, -0.15457773, 0, 0.2, 0, 0.15457773, 0, 0.12690833, 2.6760478, 1.1284457, -13.699598)
+transform = Transform3D(0.12690833, 0, -0.15457773, 0, 0.2, 0, 0.15457773, 0, 0.12690833, 2.6760478, 1.1284457, -13.528835)
 
 [node name="StaticBody3D82" parent="Props" index="79" unique_id=951856058 instance=ExtResource("37_kpntp")]
-transform = Transform3D(0.19998905, 0, -0.0020943657, 0, 0.2, 0, 0.0020943657, 0, 0.19998905, 0.09795201, 1.1284457, -13.699598)
+transform = Transform3D(0.19998905, 0, -0.0020943657, 0, 0.2, 0, 0.0020943657, 0, 0.19998905, 0.09795201, 1.1284457, -13.528835)
 
 [node name="StaticBody3D83" parent="Props" index="80" unique_id=210755874 instance=ExtResource("37_kpntp")]
-transform = Transform3D(0.1668638, 0, -0.11025639, 0, 0.2, 0, 0.11025639, 0, 0.1668638, -4.511322, 1.657375, -10.926689)
+transform = Transform3D(0.1668638, 0, -0.11025639, 0, 0.2, 0, 0.11025639, 0, 0.1668638, -4.326403, 1.657375, -10.926689)
 
 [node name="StaticBody3D66" parent="Props" index="81" unique_id=268747408 instance=ExtResource("38_oyxon")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.4932203, 0.8098632, -12.026591)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.3094273, 0.8098632, -12.026591)
 
 [node name="StaticBody3D67" parent="Props" index="82" unique_id=1678158977 instance=ExtResource("39_csj03")]
 transform = Transform3D(-0.68802786, 0, -0.1289101, 0, 0.70000005, 0, 0.1289101, 0, -0.68802786, 11.6102495, 0.059670568, -14.394433)
@@ -531,7 +541,7 @@ transform = Transform3D(-0.68802786, 0, -0.1289101, 0, 0.70000005, 0, 0.1289101,
 transform = Transform3D(0.4202317, 0.12513916, -0.40956742, 0, 0.57381344, 0.17532286, 0.42825842, -0.12279372, 0.40189102, 3.7893822, 1.2512021, -10.168986)
 
 [node name="StaticBody3D69" parent="Props" index="84" unique_id=135673119 instance=ExtResource("40_iors0")]
-transform = Transform3D(-0.5318046, -0.081180304, 0.26569468, 0, 0.57381344, 0.17532286, -0.27781993, 0.15539585, -0.5085944, -4.4791865, 1.791565, -11.756621)
+transform = Transform3D(-0.5318046, -0.081180304, 0.26569468, 0, 0.57381344, 0.17532286, -0.27781993, 0.15539585, -0.5085944, -4.3236074, 1.791565, -11.756621)
 
 [node name="StaticBody3D70" parent="Props" index="85" unique_id=96391709 instance=ExtResource("41_0prka")]
 transform = Transform3D(0.06701166, 0, -0.13419923, 0, 0.14999999, 0, 0.13419923, 0, 0.06701166, 4.164611, 1.1578605, -8.605099)
@@ -600,31 +610,31 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 13.734884, 1.3098812, -
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 5.708131, 1.3098812, -13.58133)
 
 [node name="special_MateIceTeaBottle4" parent="Props" index="95" unique_id=1430492472 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.9064503, 1.3098814, -13.880188)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.9064503, 1.3098814, -13.709425)
 
 [node name="special_MateIceTeaBottle5" parent="Props" index="96" unique_id=376103702 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0037801, 0.1972044, -13.355393)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0037801, 0.1972044, -13.222476)
 
 [node name="special_MateIceTeaBottle6" parent="Props" index="97" unique_id=2028121866 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0158925, 0.1972044, -13.515777)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0158925, 0.1972044, -13.345014)
 
 [node name="special_MateIceTeaBottle7" parent="Props" index="98" unique_id=2085988561 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.1486952, 0.1972044, -13.417684)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.1486952, 0.1972044, -13.284766)
 
 [node name="special_MateIceTeaBottle8" parent="Props" index="99" unique_id=370625156 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.159063, 0.1972044, -13.56247)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.159063, 0.1972044, -13.391707)
 
 [node name="special_MateIceTeaBottle9" parent="Props" index="100" unique_id=1948816517 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0429873, 0.1972044, -13.677698)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.0429873, 0.1972044, -13.506935)
 
 [node name="special_MateIceTeaBottle10" parent="Props" index="101" unique_id=927913512 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.2525187, 0.1972044, -13.685378)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.2525187, 0.1972044, -13.514615)
 
 [node name="special_MateIceTeaBottle11" parent="Props" index="102" unique_id=253660766 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.3227782, 0.1972044, -13.538048)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.3227782, 0.1972044, -13.367285)
 
 [node name="special_MateIceTeaBottle12" parent="Props" index="103" unique_id=1878225688 instance=ExtResource("48_3f5a5")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.12083, 0.1972044, -13.275259)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.12083, 0.1972044, -13.142342)
 
 [node name="special_3DPrinter" parent="Props" index="104" unique_id=1613724275 instance=ExtResource("49_4x5el")]
 transform = Transform3D(0.5311324, 0, 0.84728885, 0, 1, 0, -0.84728885, 0, 0.5311324, 5.9566455, 1.5976624, -7.7784195)
@@ -636,7 +646,7 @@ transform = Transform3D(0.28284273, 0.28284273, 1.2363448e-08, 0, -1.7484556e-08
 transform = Transform3D(0.15722252, 0, -0.2555016, 0, 0.29999998, 0, 0.2555016, 0, 0.15722252, 5.763669, 1.1173279, -10.943791)
 
 [node name="special_GearSet" parent="Props" index="107" unique_id=948251023 instance=ExtResource("52_gnbmo")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -4.470585, 0.8228556, -11.288503)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -4.3431215, 0.8228556, -11.288503)
 
 [node name="special_MagnetSet" parent="Props" index="108" unique_id=471549578 instance=ExtResource("53_rm7jy")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.781698, 1.1191249, -9.802288)
@@ -651,7 +661,7 @@ transform = Transform3D(0.49344328, 0, 0.49650148, 0, 0.7, 0, -0.49650148, 0, 0.
 transform = Transform3D(-0.5911911, -0.10243524, 4.4047173e-08, -0.102435246, 0.59119105, 7.632021e-09, -4.470348e-08, 0, -0.5999999, -0.43516198, 0.2947034, 4.380768)
 
 [node name="special_PlasticSkeleton" parent="Props" index="112" unique_id=894443890 instance=ExtResource("57_5rs4n")]
-transform = Transform3D(-1.1698046, 0.80540156, -1.40815, 0.17202383, 1.7878907, 0.8796902, 1.6130607, 0.393415, -1.1150155, 14.294322, 0.9032481, 4.4931984)
+transform = Transform3D(-1.1698046, 0.80540156, -1.40815, 0.17202383, 1.7878907, 0.8796902, 1.6130607, 0.393415, -1.1150155, 14.18556, 0.9032481, 4.3880463)
 
 [node name="special_RubikCube" parent="Props" index="113" unique_id=1941925467 instance=ExtResource("58_lvbwp")]
 transform = Transform3D(0.14996219, 0, -0.13233043, 0, 0.2, 0, 0.13233043, 0, 0.14996219, 14.094801, 1.1956724, -9.993216)
@@ -669,31 +679,31 @@ transform = Transform3D(0.21824776, 0, -0.33521327, 0, 0.4, 0, 0.33521327, 0, 0.
 transform = Transform3D(-0.48167798, -0.10591531, 0.34171367, 0, 0.57310194, 0.1776349, -0.35775167, 0.14260471, -0.46008435, 5.75259, 1.2431312, -13.0712185)
 
 [node name="StaticBody3D90" parent="Props" index="118" unique_id=239779108 instance=ExtResource("63_elx88")]
-transform = Transform3D(-1.5999914, 0, 0.0052500186, 0, 1.6, 0, -0.0052500186, 0, -1.5999914, 7.3470545, 0.7394267, 4.0250673)
+transform = Transform3D(-1.5999914, 0, 0.0052500186, 0, 1.6, 0, -0.0052500186, 0, -1.5999914, 7.3470545, 0.7394267, 3.8373976)
 
 [node name="special_RetroFloppyDisk" parent="Props" index="119" unique_id=2099029701 instance=ExtResource("45_oyxon")]
 transform = Transform3D(0.07482989, -0.13000186, -5.6825615e-09, 0, -6.5567076e-09, 0.14999999, -0.13000186, -0.07482989, -3.2709184e-09, 4.0496683, 1.1025877, -7.8714576)
 
 [node name="StaticBody3D91" parent="Props" index="120" unique_id=2092067724 instance=ExtResource("62_w3euo")]
-transform = Transform3D(0.9725164, 0, 0.23283437, 0, 1, 0, -0.23283437, 0, 0.9725164, 14.221155, 0.411533, 3.6368818)
+transform = Transform3D(0.9725164, 0, 0.23283437, 0, 1, 0, -0.23283437, 0, 0.9725164, 14.153218, 0.411533, 3.6219199)
 
 [node name="StaticBody3D93" parent="Props" index="121" unique_id=439225070 instance=ExtResource("62_w3euo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9032135, 0.411533, 3.3757653)
 
 [node name="StaticBody3D94" parent="Props" index="122" unique_id=700988310 instance=ExtResource("62_w3euo")]
-transform = Transform3D(0.98558855, 0, -0.16916029, 0, 1, 0, 0.16916029, 0, 0.98558855, 14.26451, 0.411533, 3.2376218)
+transform = Transform3D(0.98558855, 0, -0.16916029, 0, 1, 0, 0.16916029, 0, 0.98558855, 14.215934, 0.411533, 3.233929)
 
 [node name="StaticBody3D96" parent="Props" index="123" unique_id=1103275695 instance=ExtResource("62_w3euo")]
 transform = Transform3D(0.05353851, 0, 0.9985658, 0, 1, 0, -0.9985658, 0, 0.05353851, 5.1884127, 1.5164188, -10.409766)
 
 [node name="StaticBody3D97" parent="Props" index="124" unique_id=911190731 instance=ExtResource("62_w3euo")]
-transform = Transform3D(0.99984497, 0, 0.017609552, 0, 1, 0, -0.017609552, 0, 0.99984497, -0.26763123, 1.5164188, -14.146077)
+transform = Transform3D(0.99984497, 0, 0.017609552, 0, 1, 0, -0.017609552, 0, 0.99984497, -0.26763123, 1.5164188, -13.975314)
 
 [node name="StaticBody3D92" parent="Props" index="125" unique_id=1794150368 instance=ExtResource("63_oi6vd")]
 transform = Transform3D(-0.68562776, 0, 0.72795236, 0, 1, 0, -0.72795236, 0, -0.68562776, 3.963948, 1.4819812, -13.2771435)
 
 [node name="StaticBody3D98" parent="Props" index="126" unique_id=1463324714 instance=ExtResource("63_oi6vd")]
-transform = Transform3D(-0.94754, 0, -0.31963736, 0, 1, 0, 0.31963736, 0, -0.94754, -1.3787999, 1.4819812, -14.041558)
+transform = Transform3D(-0.94754, 0, -0.31963736, 0, 1, 0, 0.31963736, 0, -0.94754, -1.3787999, 1.4819812, -13.870795)
 
 [node name="StaticBody3D95" parent="Props" index="127" unique_id=2076544595 instance=ExtResource("63_oi6vd")]
 transform = Transform3D(0.9637609, 0, 0.26676744, 0, 1, 0, -0.26676744, 0, 0.9637609, 13.962586, 0.40566936, 2.9694366)

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://drnylifxt7vpm"]
+[gd_scene format=3 uid="uid://bnx6rvrf8ejgj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.45, 0.28, 0.22, 1)

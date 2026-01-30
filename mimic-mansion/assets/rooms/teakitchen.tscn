@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_3x8uo"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_t1jaq"]
 [ext_resource type="PackedScene" uid="uid://ce660kbnym6r0" path="res://assets/prop-scenes/teakitchen/teakitchen_TeaShelf.tscn" id="3_0gbfn"]
+[ext_resource type="Material" uid="uid://dec37om4pg62p" path="res://assets/textures/materials/mansion_marble_floor_2.tres" id="3_t1jaq"]
 [ext_resource type="PackedScene" uid="uid://b04b33gffmvn4" path="res://assets/prop-scenes/foyer/foyer_Planter.tscn" id="4_6kclw"]
 [ext_resource type="PackedScene" uid="uid://bp6xmpugeaqjc" path="res://assets/prop-scenes/teakitchen/teakitchen_NapkinBox.tscn" id="5_htwfb"]
 [ext_resource type="PackedScene" uid="uid://bgmwqcasp3gc3" path="res://assets/prop-scenes/teakitchen/teakitchen_WallClock.tscn" id="6_o8hh3"]
@@ -57,8 +58,14 @@ albedo_color = Color(0.6, 0.5, 0.4, 1)
 
 [node name="Teakitchen" unique_id=758067993 instance=ExtResource("1_3x8uo")]
 
+[node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.99)
+
+[node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
+
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=126030638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0" index="0" unique_id=1038383577]
 visible = false
@@ -68,8 +75,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2mrp3")
 [node name="DoorWall" parent="Walls/DoorSouth0" index="1" unique_id=288271030 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_a3ulv")
 
+[node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
+
 [node name="DoorEast0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1680462794]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast0" index="0" unique_id=1626629077]
 visible = false
@@ -78,6 +88,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0kb6g")
 
 [node name="DoorWall" parent="Walls/DoorEast0" index="1" unique_id=1553913665 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_v8l37")
+
+[node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=6000773]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.99, 2, 0)
+
+[node name="MeshInstance3D" parent="Floor/Floor00" parent_id_path=PackedInt32Array(1556803891) index="0" unique_id=1084021366]
+material_override = ExtResource("3_t1jaq")
+metadata/surface_type = "carpet"
 
 [node name="props" type="Node3D" parent="." index="3" unique_id=1985051441]
 
@@ -106,7 +123,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.66
 transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, -3.520122, 0.8261635, -3.8805017)
 
 [node name="teakitchen_WallClock" parent="props" index="8" unique_id=301629911 instance=ExtResource("6_o8hh3")]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -4.804881, 2.9924192, -3.1976297)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -4.758444, 2.9924192, -3.1976297)
 
 [node name="teakitchen_CeilingLight" parent="props" index="9" unique_id=702928047 instance=ExtResource("8_brfdu")]
 transform = Transform3D(-0.9886858, 0, 0.1500013, -0.010714264, 0.99744576, -0.07061966, -0.14961816, -0.07142781, -0.98616046, 0.040421814, 3.7010412, 0.33524632)
@@ -184,7 +201,7 @@ transform = Transform3D(0.29593647, 4.302037e-09, -0.04920957, 2.5582195e-16, -0
 transform = Transform3D(-0.26638716, 0, -0.33754686, 0, 0.43, 0, 0.33754686, 0, -0.26638716, -4.645192, 1.4141136, 0.9592629)
 
 [node name="teakitchen_PaperTowelHolder" parent="props" index="34" unique_id=426211062 instance=ExtResource("20_333wq")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7747655, 2.1942897, -0.016322374)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.7465196, 2.1942897, -0.016322374)
 
 [node name="teakitchen_WaterPitcher" parent="props" index="35" unique_id=31829661 instance=ExtResource("21_6grbw")]
 transform = Transform3D(0.53, 0, 0, 0, 0.53, 0, 0, 0, 0.53, -0.39379668, 1.4457521, -0.94663656)
@@ -209,7 +226,7 @@ transform = Transform3D(0.016330704, 0, 0.35962942, 0, 0.36, 0, -0.35962942, 0, 
 [node name="SpotLight3D" type="SpotLight3D" parent="lights" index="0" unique_id=598938470]
 transform = Transform3D(0.3758692, -0.122146755, 0.91858727, -0.9264367, -0.027157733, 0.3754698, -0.020915672, -0.9921404, -0.123368986, -0.45510638, 3.6157453, 0.8049868)
 light_color = Color(1, 0.8320167, 0.5347449, 1)
-light_energy = 25.62
+light_energy = 16.0
 light_indirect_energy = 1.188
 shadow_enabled = true
 spot_range = 13.992
@@ -218,7 +235,7 @@ spot_angle = 70.84
 [node name="SpotLight3D2" type="SpotLight3D" parent="lights" index="1" unique_id=4287045]
 transform = Transform3D(0.84384686, -0.49110252, 0.21619613, -0.45717344, -0.4470867, 0.7688342, -0.28091797, -0.7476174, -0.6017917, 0.042607993, 3.6157453, 0.751214)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -226,7 +243,7 @@ spot_angle = 70.84
 [node name="SpotLight3D3" type="SpotLight3D" parent="lights" index="2" unique_id=1648461250]
 transform = Transform3D(0.2859894, 0.0691284, -0.95573604, 0.9582328, -0.02063172, 0.28524423, 2.407794e-10, -0.99739444, -0.07214156, 0.3521605, 3.6868174, 0.710336)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -234,7 +251,7 @@ spot_angle = 70.84
 [node name="SpotLight3D4" type="SpotLight3D" parent="lights" index="3" unique_id=2061508086]
 transform = Transform3D(-0.0559884, -0.98023206, 0.18976423, 0.91552734, 0.02542483, 0.40145147, -0.39834034, 0.19621098, 0.8960057, 0.13840765, 3.5479019, 0.26064587)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -242,7 +259,7 @@ spot_angle = 70.84
 [node name="SpotLight3D5" type="SpotLight3D" parent="lights" index="4" unique_id=1495870272]
 transform = Transform3D(-0.55137014, -0.38628766, -0.7394409, -0.21236035, -0.7921598, 0.5721765, -0.80678004, 0.47250897, 0.3547411, 0.6207029, 3.6087754, 0.12203145)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
@@ -250,7 +267,7 @@ spot_angle = 70.84
 [node name="SpotLight3D6" type="SpotLight3D" parent="lights" index="5" unique_id=1479191844]
 transform = Transform3D(-0.9649874, -0.13286583, -0.22615483, -0.07735889, -0.67969406, 0.729405, -0.2506291, 0.7213617, 0.64561784, 0.2205385, 3.5572875, -0.09718996)
 light_color = Color(1, 0.83137256, 0.53333336, 1)
-light_energy = 25.62
+light_energy = 16.0
 shadow_enabled = true
 spot_range = 13.992
 spot_angle = 70.84
