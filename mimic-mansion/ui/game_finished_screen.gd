@@ -10,7 +10,7 @@ func _on_new_game_button_pressed() -> void:
 
 
 func _on_continue_button_pressed() -> void:
-	$".".continue_game()
+	$"..".continue_game()
 
 
 func _on_exit_button_pressed() -> void:
