@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c6ovshrobocfi"]
+[gd_scene load_steps=0 format=3 uid="uid://c6ovshrobocfi"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_yurly"]
 [ext_resource type="Material" uid="uid://b3suv8a2knqeg" path="res://assets/textures/materials/university_wall_paint.tres" id="2_tfewv"]

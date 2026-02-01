@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://suvvj5b6v1fh"]
+[gd_scene load_steps=0 format=4 uid="uid://suvvj5b6v1fh"]
 
 [ext_resource type="Texture2D" uid="uid://dlxodsnwa5nfa" path="res://assets/props/teakitchen/teakitchen_large_indoor_plant1_0.png" id="1_koclq"]
 [ext_resource type="Texture2D" uid="uid://cy3g7mc431ecb" path="res://assets/props/teakitchen/teakitchen_large_indoor_plant1_1.png" id="2_10ktw"]

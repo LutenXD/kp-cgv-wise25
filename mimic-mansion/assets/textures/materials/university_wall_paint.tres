@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3suv8a2knqeg"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b3suv8a2knqeg"]
 
 [ext_resource type="Texture2D" uid="uid://tnars0b45g17" path="res://assets/textures/materials/university_wall_paint/albedo.png" id="1_dq0tn"]
 [ext_resource type="Texture2D" uid="uid://gb3dp0x16gq2" path="res://assets/textures/materials/university_wall_paint/height.png" id="2_yvw1p"]

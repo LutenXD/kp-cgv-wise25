@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cg0yuxllsufrs"]
+[gd_scene load_steps=0 format=4 uid="uid://cg0yuxllsufrs"]
 
 [ext_resource type="Texture2D" uid="uid://da84tysbbscbs" path="res://assets/props/library/library_LibraryBookShelf_0.png" id="1_g37rp"]
 [ext_resource type="Texture2D" uid="uid://bi0y563oaxm7s" path="res://assets/props/library/library_LibraryBookShelf_1.png" id="2_gpiq7"]

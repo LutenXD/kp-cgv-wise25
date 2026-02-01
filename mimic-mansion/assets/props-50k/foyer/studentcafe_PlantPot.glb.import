@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://g14fuhk4ji68"
-path="res://.godot/imported/studentcafe_PlantPot.glb-d79c3514d125cdd2f91de4584d4135b0.scn"
+path="res://.godot/imported/studentcafe_PlantPot.glb-212676727b9a934fdf63dd2a277fef1a.scn"
 
 [deps]
 
-source_file="res://assets/props-50k/studentcafe/studentcafe_PlantPot.glb"
-dest_files=["res://.godot/imported/studentcafe_PlantPot.glb-d79c3514d125cdd2f91de4584d4135b0.scn"]
+source_file="res://assets/props-50k/foyer/studentcafe_PlantPot.glb"
+dest_files=["res://.godot/imported/studentcafe_PlantPot.glb-212676727b9a934fdf63dd2a277fef1a.scn"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b7jkoeggtd0vx"]
+[gd_scene load_steps=0 format=3 uid="uid://b7jkoeggtd0vx"]
 
 [ext_resource type="PackedScene" path="res://assets/room.tscn" id="1_0vue2"]
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="2_2hfps"]
