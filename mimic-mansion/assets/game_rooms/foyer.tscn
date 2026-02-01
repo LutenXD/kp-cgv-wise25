@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dekbc320wd0vb" path="res://assets/props/crypt/crypt_StatueGuardian.glb" id="27_kxrpv"]
 [ext_resource type="PackedScene" uid="uid://bl1pvtbua2odh" path="res://assets/prop-scenes/facultyoffice/facultyoffice_PlantPot.tscn" id="28_b4xy5"]
 [ext_resource type="PackedScene" uid="uid://bpern081py0vs" path="res://assets/prop-scenes-50k/studentcafe/studentcafe_PlantPot.tscn" id="30_2w7m1"]
-[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="31_af44e"]
+[ext_resource type="PackedScene" uid="uid://uqb5rigsgygs" path="res://entities/NPCs/evaluator.tscn" id="31_af44e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 size = Vector3(10, 4, 0.2)
@@ -586,6 +586,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9800158, 0.49796563, -11.53
 [node name="studentcafe_PlantPot2" parent="Decor" instance=ExtResource("30_2w7m1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.30307, 0.49796563, 4.1548805)
 
-[node name="Mimic" parent="." instance=ExtResource("31_af44e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5263708, -2.2472985)
+[node name="Evaluator" parent="." instance=ExtResource("31_af44e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.4501398, -2.103)
 prop_path = "Decor/crypt_StatueGuardian"
