@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dcfoxi7e1iw7q"]
+[gd_scene load_steps=0 format=3 uid="uid://dcfoxi7e1iw7q"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_fohyt"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="2_bqtts"]

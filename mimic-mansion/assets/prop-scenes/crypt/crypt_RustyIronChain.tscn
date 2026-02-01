@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dysfasnr4u2pk"]
+[gd_scene load_steps=0 format=4 uid="uid://dysfasnr4u2pk"]
 
 [ext_resource type="Texture2D" uid="uid://b2xe6yugnatju" path="res://assets/props/crypt/crypt_RustyIronChain_0.png" id="1_5vvum"]
 [ext_resource type="Texture2D" uid="uid://ctk78us1dpkaj" path="res://assets/props/crypt/crypt_RustyIronChain_1.png" id="2_60k6v"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b7ve6sxwjwdq3"]
+[gd_scene load_steps=0 format=3 uid="uid://b7ve6sxwjwdq3"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_u1jhc"]
 [ext_resource type="Material" uid="uid://bxtq63vvjlpgu" path="res://assets/textures/materials/university_whiteboard.tres" id="2_rlb11"]

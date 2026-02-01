@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dwv8q5lwobfi0"]
+[gd_scene load_steps=0 format=4 uid="uid://dwv8q5lwobfi0"]
 
 [ext_resource type="Texture2D" uid="uid://co77uwlcyb4tr" path="res://assets/props/holodeck/holodeck_PCScreen_0.png" id="1_g48ou"]
 [ext_resource type="Texture2D" uid="uid://bprc307wlfqh0" path="res://assets/props/holodeck/holodeck_PCScreen_1.png" id="2_3po67"]

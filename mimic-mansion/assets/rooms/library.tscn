@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjx0ok1yq4e7b"]
+[gd_scene load_steps=0 format=3 uid="uid://bjx0ok1yq4e7b"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_1jius"]
 [ext_resource type="PackedScene" uid="uid://cte820e5t4fm4" path="res://assets/prop-scenes/library/library_FloorMat.tscn" id="2_0mq2b"]
