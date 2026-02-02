@@ -406,10 +406,10 @@ transform = Transform3D(-0.09908891, 0, 0.79383975, 0, 0.80000037, 0, -0.7938397
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp2" index="2" unique_id=245340773]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLamp4" parent="Props" index="50" unique_id=400613416 instance=ExtResource("17_ejkv5")]
@@ -418,10 +418,10 @@ transform = Transform3D(0.5726711, 0, -0.5586124, 0, 0.8000005, 0, 0.5586124, 0,
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp4" index="2" unique_id=234964620]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLamp5" parent="Props" index="51" unique_id=948562285 instance=ExtResource("17_ejkv5")]
@@ -430,10 +430,10 @@ transform = Transform3D(0.5726711, 0, -0.5586124, 0, 0.8000005, 0, 0.5586124, 0,
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp5" index="2" unique_id=1681118494]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor" parent="Props" index="52" unique_id=1869392230 instance=ExtResource("18_556t4")]
@@ -442,9 +442,10 @@ transform = Transform3D(0.0598855, 0, 0.7977555, 0, 0.8, 0, -0.7977555, 0, 0.059
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor" index="2" unique_id=102776644]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor3" parent="Props" index="53" unique_id=778711915 instance=ExtResource("18_556t4")]
@@ -453,9 +454,10 @@ transform = Transform3D(0.21081558, 0, -0.7717233, 0, 0.8, 0, 0.7717233, 0, 0.21
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor3" index="2" unique_id=1750360298]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor4" parent="Props" index="54" unique_id=411924961 instance=ExtResource("18_556t4")]
@@ -464,9 +466,10 @@ transform = Transform3D(0.21081558, 0, -0.7717233, 0, 0.8, 0, 0.7717233, 0, 0.21
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor4" index="2" unique_id=604712739]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor2" parent="Props" index="55" unique_id=832457675 instance=ExtResource("18_556t4")]
@@ -475,9 +478,10 @@ transform = Transform3D(0.0598855, 0, 0.7977555, 0, 0.8, 0, -0.7977555, 0, 0.059
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor2" index="2" unique_id=1130284837]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 3.0
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="special_RubikCube" parent="Props" index="56" unique_id=1941925467 instance=ExtResource("22_duwdh")]
