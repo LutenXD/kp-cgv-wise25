@@ -119,7 +119,8 @@ rings = 8
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2smek"]
 streams_count = 3
 stream_0/stream = ExtResource("67_rm7jy")
-stream_2/stream = ExtResource("68_utxqs")
+stream_1/stream = ExtResource("68_utxqs")
+stream_2/stream = ExtResource("69_xtbjp")
 
 [node name="Holodeck" unique_id=1137580905 instance=ExtResource("1_u1jhc")]
 
@@ -729,6 +730,7 @@ linear_stiffness = 1.0
 pressure_coefficient = 16000.0
 ray_pickable = false
 
+<<<<<<< HEAD
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1817351969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01371, 0, -5.013711)
 stream = SubResource("AudioStreamRandomizer_2smek")
@@ -737,3 +739,11 @@ max_distance = 10.0
 script = ExtResource("69_xtbjp")
 min_interval_sec = 40.0
 max_interval_sec = 80.0
+=======
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1412637156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
+stream = SubResource("AudioStreamRandomizer_2smek")
+unit_size = 100.0
+max_distance = 10.0
+panning_strength = 0.0
+>>>>>>> 1f2f99d (jakop)

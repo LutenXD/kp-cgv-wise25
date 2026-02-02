@@ -59,7 +59,7 @@ region_rect = Rect2(0, 0, 322, 512)
 [node name="book_viewport" type="SubViewport" parent="BookPlaceholder" unique_id=788689655]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(322, 512)
+size = Vector2i(737, 1062)
 render_target_update_mode = 4
 
 [node name="Book Text UI" parent="BookPlaceholder/book_viewport" unique_id=54747428 instance=ExtResource("2_b403g")]

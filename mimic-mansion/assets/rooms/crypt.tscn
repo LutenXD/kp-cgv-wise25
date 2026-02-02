@@ -918,8 +918,8 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.58
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.5828934, 2.4375255, -2.3381443)
 
 [node name="Mimic" parent="." index="9" unique_id=766133172 instance=ExtResource("28_lo5k8")]
-transform = Transform3D(-6.465301e-08, -1.5456354e-08, 1.5, -0.17680009, 1.4895442, 7.728177e-09, -1.4895442, -0.17680009, -6.602412e-08, -2.8619046, 1.5051498, -6.585899)
-prop_path = "uid://cukid78dsqhvv"
+transform = Transform3D(1.9578717e-07, 1.5456353e-08, 1.5, -0.17680009, 1.4895442, 7.728177e-09, -1.4895442, -0.17680009, 1.962442e-07, -2.8619046, 1.5051498, -6.585899)
+prop_path = "uid://b3gvjtw2okkos"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
 

@@ -145,10 +145,10 @@ material_override = ExtResource("1_xh3b6")
 
 [node name="DoorWest0" type="Node3D" parent="Walls" unique_id=409327555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
-visible = false
 
 [node name="DoorWall" parent="Walls/DoorWest0" unique_id=124077577 instance=ExtResource("3_i61g2")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -2, 0.1)
+visible = false
 material_override = ExtResource("1_xh3b6")
 
 [node name="Floor" type="Node3D" parent="." unique_id=937527173]
