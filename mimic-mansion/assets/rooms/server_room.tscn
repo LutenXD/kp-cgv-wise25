@@ -36,29 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://dphf67jjo4ecw" path="res://assets/prop-scenes/computerlab/computerlab_NetworkSwitch.tscn" id="34_7dknq"]
 [ext_resource type="PackedScene" uid="uid://cvls7k6773jtb" path="res://assets/prop-scenes/computerlab/computerlab_SurgeProtector.tscn" id="35_fue0l"]
 [ext_resource type="PackedScene" uid="uid://wdxre6ve30ei" path="res://assets/prop-scenes/computerlab/computerlab_WorkstationDesk.tscn" id="36_t875m"]
-[ext_resource type="PackedScene" uid="uid://ds3jhm0iytcta" path="res://entities/player/player.tscn" id="37_bf7pw"]
 [ext_resource type="PackedScene" uid="uid://c7t0ku1mndkrj" path="res://assets/prop-scenes/extra/extra_ceiling_lamp1.tscn" id="38_3r1mr"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bf7pw"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_3r1mr"]
-sky_material = SubResource("ProceduralSkyMaterial_bf7pw")
-
-[sub_resource type="Environment" id="Environment_hvjpx"]
-background_mode = 2
-sky = SubResource("Sky_3r1mr")
-tonemap_mode = 4
-ssr_enabled = true
-ssao_enabled = true
-ssao_radius = 2.0
-ssao_power = 2.0
-ssao_light_affect = 1.0
-ssao_ao_channel_affect = 1.0
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.55, 0.55, 0.58, 1)
@@ -81,9 +59,6 @@ size = Vector3(10, 0.2, 10)
 size = Vector3(10, 0.2, 10)
 
 [node name="Room" type="Node3D" unique_id=1101916344]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=575555711]
-environment = SubResource("Environment_hvjpx")
 
 [node name="Walls" type="Node3D" parent="." unique_id=811581564]
 
@@ -651,5 +626,3 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.51334757, -0.041684628, -8.
 prop_path = "uid://beymsgt0kbm25"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
-
-[node name="Player" parent="." unique_id=947552428 instance=ExtResource("37_bf7pw")]

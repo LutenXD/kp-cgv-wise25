@@ -12,8 +12,6 @@ var humgold: Evaluator
 @onready var room_layout_manager: RoomLayoutManager = $"../RoomLayoutManager"
 
 
-signal finish_game
-
 func _ready() -> void:
 	room_layout_manager.call_deferred("spawn_starting_room")
 

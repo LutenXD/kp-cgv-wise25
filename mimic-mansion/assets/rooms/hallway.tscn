@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="6_1o7hx"]
 [ext_resource type="PackedScene" uid="uid://b5ysqd7x0w04m" path="res://assets/prop-scenes/facultyoffice/facultyoffice_SideTable.tscn" id="8_coa7k"]
 [ext_resource type="PackedScene" uid="uid://p3nc1k26dc6i" path="res://assets/props-50k/facultyoffice/facultyoffice_PlantPot.glb" id="9_5n7xp"]
-[ext_resource type="PackedScene" uid="uid://bfxxn2n4r5xnc" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant4.tscn" id="9_d0utv"]
-[ext_resource type="PackedScene" uid="uid://dlted20o5c7yi" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="10_n2w4y"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant4.tscn" id="9_d0utv"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="10_n2w4y"]
 [ext_resource type="PackedScene" uid="uid://dp620wjilk5b1" path="res://assets/prop-scenes/library/library_FireExtinguisher.tscn" id="11_nuqw8"]
 [ext_resource type="PackedScene" uid="uid://c24eolfjp6i2s" path="res://assets/prop-scenes/library/library_Router.tscn" id="14_c4cah"]
 
@@ -139,7 +139,6 @@ shape = SubResource("BoxShape3D_floor")
 metadata/surface_type = "laminate"
 
 [node name="Ceiling" type="Node3D" parent="." unique_id=2093376626]
-visible = false
 
 [node name="Ceiling00" type="MeshInstance3D" parent="Ceiling" unique_id=1802280566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
