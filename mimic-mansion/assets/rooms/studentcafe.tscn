@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://c6ovshrobocfi"]
+[gd_scene format=3 uid="uid://cp1jxfpbeut17"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_yurly"]
 [ext_resource type="Material" uid="uid://b3suv8a2knqeg" path="res://assets/textures/materials/university_wall_paint.tres" id="2_tfewv"]
@@ -44,16 +44,19 @@
 [ext_resource type="PackedScene" uid="uid://nl16wrkac8ll" path="res://assets/prop-scenes/extra/extra_standing_lamp6.tscn" id="44_o3vku"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="45_lj4t7"]
 [ext_resource type="PackedScene" uid="uid://c0kl54xce6gos" path="res://assets/prop-scenes/extra/extra_ceiling_lamp2.tscn" id="45_qbyo7"]
+[ext_resource type="PackedScene" uid="uid://t0xu1jab4wwc" path="res://assets/prop-scenes/teakitchen/teakitchen_MiniFridge.tscn" id="46_an21k"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="46_ffee4"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sofatable.tscn" id="47_yqnaf"]
+[ext_resource type="PackedScene" uid="uid://bgrfjj4gv2el2" path="res://assets/prop-scenes/teakitchen/teakitchen_SpiceRack.tscn" id="48_enmdt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldh6s"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_wall"]
-material = SubResource("StandardMaterial3D_walls")
+[sub_resource type="BoxMesh" id="BoxMesh_nd1vx"]
+material = SubResource("StandardMaterial3D_ldh6s")
 size = Vector3(10, 4, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_brl01"]
 size = Vector3(10, 4, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48ern"]
@@ -66,7 +69,7 @@ size = Vector3(10, 0.2, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd1vx"]
 size = Vector3(10, 0.2, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upot2"]
 albedo_color = Color(0.7, 0.7, 0.65, 1)
 
 [node name="Studentcafe" unique_id=1798788982 instance=ExtResource("1_yurly")]
@@ -85,10 +88,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -4.8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" index="0" unique_id=1931331709]
 material_override = ExtResource("2_tfewv")
-mesh = SubResource("BoxMesh_wall")
+mesh = SubResource("BoxMesh_nd1vx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallNorth1" index="1" unique_id=1226681558]
-shape = SubResource("BoxShape3D_wall")
+shape = SubResource("BoxShape3D_brl01")
 
 [node name="WallSouth0" parent="Walls" index="2" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
@@ -101,10 +104,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=1625689943]
 material_override = ExtResource("2_tfewv")
-mesh = SubResource("BoxMesh_wall")
+mesh = SubResource("BoxMesh_nd1vx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth1" index="1" unique_id=502814325]
-shape = SubResource("BoxShape3D_wall")
+shape = SubResource("BoxShape3D_brl01")
 
 [node name="DoorSouth1" type="Node3D" parent="Walls" index="4" unique_id=32453767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
@@ -151,6 +154,7 @@ shape = SubResource("BoxShape3D_nd1vx")
 metadata/surface_type = "wood"
 
 [node name="Ceiling" parent="." index="2" unique_id=2012647510]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Ceiling00" parent="Ceiling" index="0" unique_id=1224160140]
@@ -161,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 0)
 material_override = ExtResource("5_edbs1")
 mesh = SubResource("BoxMesh_ldh6s")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ceiling")
+surface_material_override/0 = SubResource("StandardMaterial3D_upot2")
 
 [node name="Props" type="Node3D" parent="." index="3" unique_id=387356749]
 
@@ -368,7 +372,7 @@ light_color = Color(1, 1, 0.8352941, 1)
 light_energy = 3.0
 light_size = 0.302
 shadow_enabled = true
-spot_range = 7.5496726
+spot_range = 12.737
 spot_attenuation = 2.0
 spot_angle = 80.0
 
@@ -378,10 +382,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075182915, 3.7309895, -0.05
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D5" index="2" unique_id=734282338 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31471753, 0)
 light_color = Color(1, 1, 0.8745098, 1)
-light_energy = 4.0
+light_energy = 5.0
 light_size = 1.0
 shadow_enabled = true
-omni_range = 8.806278
+omni_range = 11.241873
 omni_attenuation = 2.0
 
 [node name="StaticBody3D9" parent="Props" index="64" unique_id=480566793 instance=ExtResource("46_ffee4")]
@@ -390,11 +394,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.624767, 3.39683, -1.309459
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D9" index="2" unique_id=1695481588 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58920264, 0)
 light_color = Color(1, 1, 0.6509804, 1)
-light_energy = 5.0
+light_energy = 6.0
 light_indirect_energy = 3.0
 light_size = 0.3
 shadow_enabled = true
-omni_range = 11.148252
+omni_range = 12.233663
 omni_attenuation = 2.0
 
 [node name="special_UtahTeapotRed" parent="Props" index="65" unique_id=1419795965 instance=ExtResource("34_psdop")]
@@ -403,3 +407,12 @@ transform = Transform3D(-0.4207837, 0, 0.27007604, 0, 0.5, 0, -0.27007604, 0, -0
 [node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("45_lj4t7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.219032, 1.1793655, -4.292323)
 prop_path = "uid://bmnnqikoey5gw"
+
+[node name="teakitchen_MiniFridge" parent="." index="5" unique_id=1393667838 instance=ExtResource("46_an21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3117886, 0.49558508, -4.3060226)
+
+[node name="StaticBody3D" parent="." index="6" unique_id=489566085 instance=ExtResource("47_yqnaf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0167346, 0.17608535, 1.9191127)
+
+[node name="teakitchen_SpiceRack" parent="." index="7" unique_id=2042299985 instance=ExtResource("48_enmdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.380756, 2.5832932, -4.6173277)
