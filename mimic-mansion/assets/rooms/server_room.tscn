@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dry7tkmq8k0cx"]
 
 [ext_resource type="Material" uid="uid://bxtq63vvjlpgu" path="res://assets/textures/materials/university_whiteboard.tres" id="1_xh3b6"]
-[ext_resource type="PackedScene" uid="uid://ce37a4gv6tw3y" path="res://assets/prop-scenes/special/special_DoorFrame.tscn" id="2_kb17t"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="3_i61g2"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="3_ljejh"]
 [ext_resource type="Material" uid="uid://biggh1yg368kv" path="res://assets/textures/materials/university_ceiling.tres" id="4_0vulg"]
@@ -130,20 +129,12 @@ surface_material_override/0 = ExtResource("1_xh3b6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 shape = SubResource("BoxShape3D_maxj3")
 
-[node name="DoorWest0a" parent="Walls" unique_id=743578310 instance=ExtResource("2_kb17t")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2, 0)
-visible = false
-
-[node name="DoorEast0a" parent="Walls" unique_id=210279492 instance=ExtResource("2_kb17t")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 2, 0)
-visible = false
-
 [node name="DoorEast0" type="Node3D" parent="Walls" unique_id=828543945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0)
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorEast0" unique_id=778412583 instance=ExtResource("3_i61g2")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05, -2, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -2, 0.1)
 material_override = ExtResource("1_xh3b6")
 
 [node name="DoorWest0" type="Node3D" parent="Walls" unique_id=409327555]
@@ -151,7 +142,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorWest0" unique_id=124077577 instance=ExtResource("3_i61g2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.05, -2, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -2, 0.1)
 material_override = ExtResource("1_xh3b6")
 
 [node name="Floor" type="Node3D" parent="." unique_id=937527173]
