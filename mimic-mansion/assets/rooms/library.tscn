@@ -37,6 +37,10 @@
 [ext_resource type="PackedScene" uid="uid://dwpmejvxifp04" path="res://assets/prop-scenes/extra/extra_pictureLake.tscn" id="36_ppjom"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="37_4fjha"]
 [ext_resource type="PackedScene" uid="uid://xoxu7h0q1s6h" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="37_ppjom"]
+[ext_resource type="AudioStream" uid="uid://bck268l5fdcy5" path="res://assets/sounds/effects/outputs/Library/library_book_cart_roll.wav" id="38_cdk86"]
+[ext_resource type="AudioStream" uid="uid://biefp868j1qrb" path="res://assets/sounds/effects/outputs/Library/library_ladder_step.wav" id="39_luep3"]
+[ext_resource type="AudioStream" uid="uid://caek007rs7xpd" path="res://assets/sounds/effects/outputs/Library/library_ventilation_soft.wav" id="40_jx1ea"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="41_rf5ao"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0d6v"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -61,6 +65,12 @@ size = Vector3(10, 0.2, 10)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edwv7"]
 albedo_color = Color(0.7, 0.7, 0.65, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nhma3"]
+streams_count = 3
+stream_0/stream = ExtResource("38_cdk86")
+stream_1/stream = ExtResource("39_luep3")
+stream_2/stream = ExtResource("40_jx1ea")
+
 [node name="Library" unique_id=1798788982 instance=ExtResource("1_1jius")]
 
 [node name="WallNorth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="0" unique_id=881872980]
@@ -83,7 +93,6 @@ shape = SubResource("BoxShape3D_gc0m2")
 
 [node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.197, 3, 14.8)
-visible = false
 
 [node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -4.7683716e-07, 0, -4.7683716e-07)
@@ -167,12 +176,12 @@ material_override = ExtResource("2_6gjg2")
 polygon = PackedVector2Array(-5, 0, -5, 6, 5, 6, 5, 0, 0.9, 0, 0.9, 2.9, -0.9, 2.9, -0.9, 0)
 
 [node name="DoorEast1" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="11" unique_id=1447564368]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5.2, 2, -9.689956)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5.2, 2, -10)
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorEast1" index="0" unique_id=1487695909 instance=ExtResource("6_a7jxe")]
 material_override = ExtResource("3_dtjg0")
-polygon = PackedVector2Array(-5, 0, -5, 6, 5, 6, 5, 0, 0.9, 0, 0.9, 2.9, -0.9, 2.9, -0.9, 0)
+polygon = PackedVector2Array(-5.31, 0, -5.31, 6, 5, 6, 5, 0, 0.9, 0, 0.9, 2.9, -0.9, 2.9, -0.9, 0)
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="12" unique_id=1315359556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 14.8)
@@ -407,10 +416,10 @@ transform = Transform3D(-0.09908891, 0, 0.79383975, 0, 0.80000037, 0, -0.7938397
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp2" index="2" unique_id=245340773]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 1.196
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLamp4" parent="Props" index="50" unique_id=400613416 instance=ExtResource("17_ejkv5")]
@@ -419,10 +428,10 @@ transform = Transform3D(0.5726711, 0, -0.5586124, 0, 0.8000005, 0, 0.5586124, 0,
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp4" index="2" unique_id=234964620]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 1.196
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLamp5" parent="Props" index="51" unique_id=948562285 instance=ExtResource("17_ejkv5")]
@@ -431,10 +440,10 @@ transform = Transform3D(0.5726711, 0, -0.5586124, 0, 0.8000005, 0, 0.5586124, 0,
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLamp5" index="2" unique_id=1681118494]
 transform = Transform3D(1.1772754, 0.15482637, -0.3905781, 0.39360887, -4.6566107e-08, 1.1864108, 0.14695022, -1.2403744, -0.048752908, 0.37037945, 0.21586943, 0.02275157)
 light_color = Color(1, 1, 0.7647059, 1)
-light_energy = 1.196
+light_energy = 4.0
 light_size = 0.355
 shadow_enabled = true
-spot_range = 1.319
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor" parent="Props" index="52" unique_id=1869392230 instance=ExtResource("18_556t4")]
@@ -443,8 +452,10 @@ transform = Transform3D(0.0598855, 0, 0.7977555, 0, 0.8, 0, -0.7977555, 0, 0.059
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor" index="2" unique_id=102776644]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor3" parent="Props" index="53" unique_id=778711915 instance=ExtResource("18_556t4")]
@@ -453,8 +464,10 @@ transform = Transform3D(0.21081558, 0, -0.7717233, 0, 0.8, 0, 0.7717233, 0, 0.21
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor3" index="2" unique_id=1750360298]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor4" parent="Props" index="54" unique_id=411924961 instance=ExtResource("18_556t4")]
@@ -463,8 +476,10 @@ transform = Transform3D(0.21081558, 0, -0.7717233, 0, 0.8, 0, 0.7717233, 0, 0.21
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor4" index="2" unique_id=604712739]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="library_ReadingLampFloor2" parent="Props" index="55" unique_id=832457675 instance=ExtResource("18_556t4")]
@@ -473,8 +488,10 @@ transform = Transform3D(0.0598855, 0, 0.7977555, 0, 0.8, 0, -0.7977555, 0, 0.059
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/library_ReadingLampFloor2" index="2" unique_id=1130284837]
 transform = Transform3D(1.25, 0, 0, 0, -0.40646517, 1.1820686, 0, -1.1820686, -0.40646517, -0.0040614605, 0.2973627, 0.20630455)
 light_color = Color(1, 1, 0.76862746, 1)
+light_energy = 4.0
 light_size = 1.0
 shadow_enabled = true
+spot_range = 3.0
 spot_attenuation = 2.0
 
 [node name="special_RubikCube" parent="Props" index="56" unique_id=1941925467 instance=ExtResource("22_duwdh")]
@@ -561,7 +578,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -10)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D" index="2" unique_id=1995867031 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 6.0
+light_energy = 7.0
 light_size = 0.075
 shadow_enabled = true
 omni_range = 10.0
@@ -573,7 +590,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.238915, 5, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D2" index="2" unique_id=442388433 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 6.0
+light_energy = 7.0
 light_size = 0.075
 shadow_enabled = true
 omni_range = 10.0
@@ -585,7 +602,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D18" index="2" unique_id=1439500359 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 6.0
+light_energy = 7.0
 light_size = 0.075
 shadow_enabled = true
 omni_range = 10.0
@@ -597,7 +614,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 10)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D19" index="2" unique_id=1762015098 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 6.0
+light_energy = 7.0
 light_size = 0.075
 shadow_enabled = true
 omni_range = 10.0
@@ -612,10 +629,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.386444, 0.76342624,
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StandingLamp" index="2" unique_id=1477258443]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0.4665352, 0)
 light_color = Color(1, 1, 0.6039216, 1)
-light_energy = 0.8
+light_energy = 2.0
 light_size = 0.182
 shadow_enabled = true
-omni_range = 4.0
 omni_attenuation = 1.3
 
 [node name="StandingLamp3" parent="Props" index="88" unique_id=1675757166 instance=ExtResource("35_4fjha")]
@@ -624,10 +640,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.173656, 0.76342624,
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StandingLamp3" index="2" unique_id=307762012]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0.4665352, 0)
 light_color = Color(1, 1, 0.6039216, 1)
-light_energy = 0.8
+light_energy = 2.0
 light_size = 0.182
 shadow_enabled = true
-omni_range = 4.0
 omni_attenuation = 1.3
 
 [node name="StandingLamp4" parent="Props" index="89" unique_id=1700844031 instance=ExtResource("35_4fjha")]
@@ -636,10 +651,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.284085, 0.76342624,
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StandingLamp4" index="2" unique_id=1798790851]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0.4665352, 0)
 light_color = Color(1, 1, 0.6039216, 1)
-light_energy = 0.8
+light_energy = 2.0
 light_size = 0.182
 shadow_enabled = true
-omni_range = 4.0
 omni_attenuation = 1.3
 
 [node name="StandingLamp2" parent="Props" index="90" unique_id=1615107897 instance=ExtResource("35_4fjha")]
@@ -648,10 +662,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.483914, 0.76342624,
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StandingLamp2" index="2" unique_id=1318787838]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0, 0.4665352, 0)
 light_color = Color(1, 1, 0.6039216, 1)
-light_energy = 0.8
+light_energy = 2.0
 light_size = 0.182
 shadow_enabled = true
-omni_range = 4.0
 omni_attenuation = 1.3
 
 [node name="StaticBody3D20" parent="Props" index="91" unique_id=1629753645 instance=ExtResource("35_fci7f")]
@@ -667,9 +680,18 @@ transform = Transform3D(-1.3567041, 0, 1.4694741, 0, 2, 0, -1.4694741, 0, -1.356
 transform = Transform3D(-0.98994946, 0, 0.98994946, 0, 1.4, 0, -0.98994946, 0, -0.98994946, -13.770803, 0.47409713, 13.775815)
 
 [node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("37_4fjha")]
-transform = Transform3D(3.019916e-07, 0, 4, 0, 4, 0, -4, 0, 3.019916e-07, -9.784166, 0.03535199, -0.0047144294)
+transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, -9.784166, 0.017675996, -0.0047144294)
 prop_path = "uid://bejconrjo66pk"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_kokoro = "random"
 voice_tts_1 = "random"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" unique_id=44411179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.132471, 4.360674, 0)
+stream = SubResource("AudioStreamRandomizer_nhma3")
+unit_size = 100.0
+max_distance = 5.0
+script = ExtResource("41_rf5ao")
+min_interval_sec = 30.0
+max_interval_sec = 90.0

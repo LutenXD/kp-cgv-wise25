@@ -66,6 +66,9 @@
 [ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
 [ext_resource type="PackedScene" uid="uid://doaohxtxltkvk" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
 [ext_resource type="PackedScene" uid="uid://mn67q826hnfd" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
+[ext_resource type="AudioStream" uid="uid://dpfowtygkvwid" path="res://assets/sounds/effects/outputs/Holodeck/holodeck_control_panel_hum.wav" id="67_rm7jy"]
+[ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="68_utxqs"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="69_xtbjp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db4si"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -112,6 +115,11 @@ roughness_texture = ExtResource("47_iors0")
 material = SubResource("StandardMaterial3D_p8uoa")
 radial_segments = 16
 rings = 8
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2smek"]
+streams_count = 3
+stream_0/stream = ExtResource("67_rm7jy")
+stream_2/stream = ExtResource("68_utxqs")
 
 [node name="Holodeck" unique_id=1137580905 instance=ExtResource("1_u1jhc")]
 
@@ -720,3 +728,12 @@ mesh = SubResource("SphereMesh_oyxon")
 linear_stiffness = 1.0
 pressure_coefficient = 16000.0
 ray_pickable = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1817351969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01371, 0, -5.013711)
+stream = SubResource("AudioStreamRandomizer_2smek")
+unit_size = 100.0
+max_distance = 10.0
+script = ExtResource("69_xtbjp")
+min_interval_sec = 40.0
+max_interval_sec = 80.0

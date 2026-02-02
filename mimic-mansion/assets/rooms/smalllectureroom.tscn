@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dhi6du4foaswp"]
+[gd_scene format=3 uid="uid://dhi6du4foaswp"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_romwe"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_sj1sp"]
@@ -29,9 +29,21 @@
 [ext_resource type="PackedScene" uid="uid://bf6upmk3bdcax" path="res://assets/prop-scenes/smalllectureroom/smalllectureroom_PodiumLaserPointer.tscn" id="27_vy23n"]
 [ext_resource type="PackedScene" uid="uid://csolkjajqfst" path="res://assets/prop-scenes/special/special_MateIceTeaBottle.tscn" id="28_mbiki"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="29_2wvef"]
+[ext_resource type="AudioStream" uid="uid://cavr2tbid2kg7" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_blackboard_chalk.wav" id="30_87bvn"]
+[ext_resource type="AudioStream" uid="uid://csvny46rnb3" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_chair_scrape.wav" id="31_5lt34"]
+[ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="32_dww5e"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="33_3eiio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n08f3"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ckkfx"]
+streams_count = 3
+stream_0/stream = ExtResource("30_87bvn")
+stream_0/weight = 4.0
+stream_1/stream = ExtResource("31_5lt34")
+stream_2/stream = ExtResource("32_dww5e")
+stream_2/weight = 2.0
 
 [node name="Smalllectureroom" unique_id=819269736 instance=ExtResource("1_romwe")]
 
@@ -199,3 +211,12 @@ chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_kokoro = "random"
 voice_tts_1 = "random"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" unique_id=140874491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, 0)
+stream = SubResource("AudioStreamRandomizer_ckkfx")
+unit_size = 100.0
+max_distance = 5.0
+script = ExtResource("33_3eiio")
+min_interval_sec = 20.0
+max_interval_sec = 40.0
