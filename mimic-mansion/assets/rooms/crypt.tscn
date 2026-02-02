@@ -6,9 +6,9 @@
 [ext_resource type="Material" uid="uid://baj8qsdchnep1" path="res://assets/textures/materials/cobble-floor.tres" id="3_r3vl8"]
 [ext_resource type="PackedScene" uid="uid://dwts2vxt5ddkn" path="res://assets/prop-scenes/crypt/crypt_MarbleAltar.tscn" id="3_t2il0"]
 [ext_resource type="PackedScene" uid="uid://dea5beg50bdkt" path="res://assets/prop-scenes/crypt/crypt_TatteredBanner.tscn" id="3_yqovh"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
+[ext_resource type="PackedScene" uid="uid://6lf1oo8ncqv0" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
 [ext_resource type="PackedScene" uid="uid://j8dxcb3jg8jg" path="res://assets/prop-scenes/crypt/crypt_Sarcophagus.tscn" id="4_shybk"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
+[ext_resource type="PackedScene" uid="uid://dbvqgkseku2ik" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
 [ext_resource type="PackedScene" uid="uid://bggpj5akpbw64" path="res://assets/prop-scenes/crypt/crypt_Cobweb.tscn" id="5_jtbvu"]
 [ext_resource type="PackedScene" uid="uid://betgk7b1p72mb" path="res://assets/prop-scenes/crypt/crypt_StatueGuardian.tscn" id="6_4lw08"]
 [ext_resource type="PackedScene" uid="uid://cdkhxyl8df0i5" path="res://assets/prop-scenes/crypt/crypt_Lantern.tscn" id="8_frxo3"]
@@ -20,14 +20,16 @@
 [ext_resource type="PackedScene" uid="uid://pkw0ni6d3gjf" path="res://assets/prop-scenes/crypt/crypt_DustyChalice.tscn" id="14_wl5el"]
 [ext_resource type="PackedScene" uid="uid://s1uoe3f2107v" path="res://assets/prop-scenes/crypt/crypt_SkullCandle.tscn" id="15_grgol"]
 [ext_resource type="PackedScene" uid="uid://dqmoealhgolw4" path="res://assets/prop-scenes/crypt/crypt_SkullSkull.tscn" id="17_t0k0u"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
+[ext_resource type="PackedScene" uid="uid://dysfasnr4u2pk" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
 [ext_resource type="PackedScene" uid="uid://bg2egeqhh6h4f" path="res://assets/prop-scenes/crypt/crypt_Vial.tscn" id="23_lo5k8"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
+[ext_resource type="PackedScene" uid="uid://bfv6mmbgg8jve" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
+[ext_resource type="PackedScene" uid="uid://6ti04uecjsvq" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
 [ext_resource type="PackedScene" uid="uid://btbs7gt5yyqq1" path="res://assets/prop-scenes/crypt/crypt_HiddenDoor.tscn" id="26_f5ygi"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
+[ext_resource type="PackedScene" uid="uid://cwct1e64tcq0k" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="28_lo5k8"]
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
+[ext_resource type="AudioStream" uid="uid://pbcd7ogt5l7t" path="res://assets/sounds/effects/outputs/Crypt/crypt_hidden_door_mechanism.wav" id="29_f5ygi"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="30_hcp8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -51,6 +53,10 @@ size = Vector3(10, 0.2, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5tvj"]
 albedo_color = Color(0.7, 0.7, 0.65, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wjwru"]
+streams_count = 1
+stream_0/stream = ExtResource("29_f5ygi")
 
 [node name="crypt" unique_id=1333850712 instance=ExtResource("1_h11cd")]
 
@@ -148,6 +154,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5tvj")
 
 [node name="Props" type="Node3D" parent="." index="3" unique_id=219710503]
+visible = false
 
 [node name="Cobweb" parent="Props" index="0" unique_id=2007813466 instance=ExtResource("5_jtbvu")]
 transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -2.5839353, 3.536001, -12.59453)
@@ -911,7 +918,16 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.58
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.5828934, 2.4375255, -2.3381443)
 
 [node name="Mimic" parent="." index="9" unique_id=766133172 instance=ExtResource("28_lo5k8")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, -0.17680007, 1.4895442, 7.728175e-09, 1.4895442, 0.17680007, -6.511004e-08, -2.8619046, 1.5051498, -6.585899)
-prop_path = "uid://b3gvjtw2okkos"
+transform = Transform3D(-6.465301e-08, -1.5456354e-08, 1.5, -0.17680009, 1.4895442, 7.728177e-09, -1.4895442, -0.17680009, -6.602412e-08, -2.8619046, 1.5051498, -6.585899)
+prop_path = "uid://cukid78dsqhvv"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="10" unique_id=1039117687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7497015, 3.5647528, -5.548259)
+stream = SubResource("AudioStreamRandomizer_wjwru")
+unit_size = 100.0
+max_distance = 5.0
+script = ExtResource("30_hcp8m")
+min_interval_sec = 60.0
+max_interval_sec = 90.0
