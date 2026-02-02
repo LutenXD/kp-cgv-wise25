@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="6_1o7hx"]
 [ext_resource type="PackedScene" uid="uid://b5ysqd7x0w04m" path="res://assets/prop-scenes/facultyoffice/facultyoffice_SideTable.tscn" id="8_coa7k"]
 [ext_resource type="PackedScene" uid="uid://p3nc1k26dc6i" path="res://assets/props-50k/facultyoffice/facultyoffice_PlantPot.glb" id="9_5n7xp"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant4.tscn" id="9_d0utv"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="10_n2w4y"]
+[ext_resource type="PackedScene" uid="uid://bfxxn2n4r5xnc" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant4.tscn" id="9_d0utv"]
+[ext_resource type="PackedScene" uid="uid://dlted20o5c7yi" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="10_n2w4y"]
 [ext_resource type="PackedScene" uid="uid://dp620wjilk5b1" path="res://assets/prop-scenes/library/library_FireExtinguisher.tscn" id="11_nuqw8"]
 [ext_resource type="PackedScene" uid="uid://c24eolfjp6i2s" path="res://assets/prop-scenes/library/library_Router.tscn" id="14_c4cah"]
 
@@ -252,46 +252,45 @@ transform = Transform3D(-0.9999999, -2.5243544e-29, -8.742275e-08, -4.2351647e-2
 [node name="Light" parent="Decor" unique_id=1310024876 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-4.3711385e-08, -1, -3.8213705e-15, 4.3711385e-08, 1.9106855e-15, -0.99999994, 0.99999994, -4.371139e-08, 4.3711385e-08, 1.4, 3.575, -3.5)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light" unique_id=157496072 groups=["flickering_light"]]
-transform = Transform3D(1, -9.981636e-08, 6.9665255e-08, -6.966525e-08, -0.93864363, -0.3448885, 9.981636e-08, 0.3448885, -0.9386437, 0, 0.36157286, 0.007144451)
-light_energy = 4.0
-light_size = 0.3
+[node name="OmniLight3D" type="OmniLight3D" parent="Decor/Light" unique_id=803016760 groups=["flickering_light"]]
+transform = Transform3D(1, -1.7763568e-14, 0, 2.1316282e-14, 1, 6.352747e-22, 0, 2.1175824e-22, 1, 0, 0.15177071, 0.047719717)
+light_energy = 5.0
+light_size = 0.005
 shadow_enabled = true
-spot_range = 10.0
-spot_attenuation = 2.0
+omni_range = 9.195
+omni_attenuation = 2.0
 
 [node name="Light2" parent="Decor" unique_id=136084938 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-4.3711385e-08, 1, -4.3711385e-08, 0, -4.371139e-08, -0.99999994, -0.99999994, -4.371139e-08, 1.9106853e-15, -1.4, 3.575, 3.5)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light2" unique_id=130596750 groups=["flickering_light"]]
-transform = Transform3D(1, -9.9816376e-08, 6.966526e-08, -6.966525e-08, -0.9386437, -0.34488854, 9.9816376e-08, 0.34488854, -0.9386437, 0, 0.048087, 0.016638279)
-light_energy = 4.0
-light_size = 0.5
+[node name="OmniLight3D" type="OmniLight3D" parent="Decor/Light2" unique_id=1449765456 groups=["flickering_light"]]
+transform = Transform3D(1, -1.4210855e-14, 0, 1.0658141e-14, 1, -3.5527137e-15, 0, -8.3518686e-23, 1, 0, 0.15177071, 0.045239687)
+light_energy = 5.0
+light_size = 0.005
 shadow_enabled = true
-spot_range = 10.0
-spot_attenuation = 2.0
+omni_range = 9.195
+omni_attenuation = 2.0
 
 [node name="Light3" parent="Decor" unique_id=1569220662 instance=ExtResource("5_w70ul")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.371139e-08, -0.99999994, 0, 1, -4.3711385e-08, 3.5, 3.575, -1.4)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light3" unique_id=1665767857 groups=["flickering_light"]]
-transform = Transform3D(1, -9.981636e-08, 6.966525e-08, -6.966525e-08, -0.93864363, -0.34488857, 9.981636e-08, 0.34488857, -0.93864363, 0, 0, 0)
-light_energy = 4.0
-light_size = 0.5
+[node name="OmniLight3D" type="OmniLight3D" parent="Decor/Light3" unique_id=2099513277 groups=["flickering_light"]]
+transform = Transform3D(1, -1.4210861e-14, 1.00974154e-28, 1.4210861e-14, 1, -3.5527137e-15, -1.009742e-28, 0, 1, 0, 0.067557454, 0.0488317)
+light_energy = 5.0
+light_size = 0.005
 shadow_enabled = true
-spot_range = 10.0
-spot_attenuation = 2.0
+omni_range = 9.195
+omni_attenuation = 2.0
 
 [node name="Light4" parent="Decor" unique_id=1032343423 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-0.99999994, -8.742278e-08, 3.8213705e-15, 0, -4.371139e-08, -0.99999994, 8.742277e-08, -1, 4.3711385e-08, -3.5, 3.575, 1.4)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light4" unique_id=1236421883 groups=["flickering_light"]]
-transform = Transform3D(1, -9.9816354e-08, 6.966526e-08, -6.966525e-08, -0.9386437, -0.34488854, 9.981636e-08, 0.34488854, -0.9386437, -4.7683716e-07, 0.13613272, 0.02639103)
-light_energy = 4.0
-light_size = 0.5
+[node name="OmniLight3D" type="OmniLight3D" parent="Decor/Light4" unique_id=484904853 groups=["flickering_light"]]
+transform = Transform3D(1, 1.4210855e-14, 0, -2.1316282e-14, 1, -3.5527137e-15, 0, 0, 1, -1.1920929e-06, 0.15177071, 0.041814804)
+light_energy = 5.0
 shadow_enabled = true
-spot_range = 10.0
-spot_attenuation = 2.0
+omni_range = 9.195
+omni_attenuation = 2.0
 
 [node name="facultyoffice_PlantPot" parent="Decor" unique_id=44259663 instance=ExtResource("9_5n7xp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5356812, 0.50097156, -1.5327079)
