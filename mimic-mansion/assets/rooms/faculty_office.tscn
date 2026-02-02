@@ -41,6 +41,9 @@
 [ext_resource type="PackedScene" uid="uid://b6wt8nspeprqi" path="res://assets/props-50k/computerlab/computerlab_MonitorArm.glb" id="40_2b3k4"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="41_2l0rj"]
 [ext_resource type="PackedScene" uid="uid://dxuxfoonbnmnb" path="res://assets/prop-scenes-50k/special/special_RubikCube.tscn" id="42_jk7cl"]
+[ext_resource type="PackedScene" uid="uid://7pp12pkayc3u" path="res://assets/prop-scenes/extra/extra_FoyerSculpture.tscn" id="43_n08x1"]
+[ext_resource type="PackedScene" uid="uid://csolkjajqfst" path="res://assets/prop-scenes/special/special_MateIceTeaBottle.tscn" id="44_1qbe1"]
+[ext_resource type="PackedScene" uid="uid://cm88x7ats3o6u" path="res://assets/prop-scenes/extra/extra_standing_lamp4.tscn" id="45_l2tjd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.95, 0.92, 0.85, 1)
@@ -148,6 +151,8 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 2.5,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
+shadow_enabled = true
+omni_attenuation = 2.0
 
 [node name="StaticBody3D3" parent="Ceiling/Ceiling00" unique_id=1864425082 instance=ExtResource("5_1qbe1")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 2.5, -0.122, -2.5)
@@ -156,6 +161,8 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 2.5,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
+shadow_enabled = true
+omni_attenuation = 2.0
 
 [node name="StaticBody3D4" parent="Ceiling/Ceiling00" unique_id=2004114584 instance=ExtResource("5_1qbe1")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -2.5, -0.122, -2.5)
@@ -164,6 +171,8 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -2.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
+shadow_enabled = true
+omni_attenuation = 2.0
 
 [node name="StaticBody3D2" parent="Ceiling/Ceiling00" unique_id=1375065369 instance=ExtResource("5_1qbe1")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -2.5, -0.122, 2.5)
@@ -172,6 +181,8 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -2.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06686592, 0)
 light_energy = 8.423
 light_size = 0.113
+shadow_enabled = true
+omni_attenuation = 2.0
 
 [node name="Decor" type="Node3D" parent="." unique_id=363647469]
 
@@ -191,7 +202,7 @@ transform = Transform3D(-0.013514737, 0, -0.29969543, 0, 0.29999998, 0, 0.299695
 transform = Transform3D(-0.013514737, 0, -0.29969543, 0, 0.29999998, 0, 0.29969543, 0, -0.013514737, -1.9719688, 2.5676148, 4.76862)
 
 [node name="StaticBody3D4" parent="Decor" unique_id=1773748698 instance=ExtResource("8_gpfut")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.7225723, 1.7205603, -0.4384104)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.7225723, 1.3454887, -0.4384104)
 
 [node name="StaticBody3D6" parent="Decor" unique_id=661647332 instance=ExtResource("10_h5pyv")]
 transform = Transform3D(0.44261566, 0.23257554, 1.0166199e-08, 0, -2.1855694e-08, 0.5, 0.23257554, -0.44261566, -1.9347345e-08, -2.4491732, 1.4597039, -4.2601213)
@@ -236,7 +247,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.5116286, 1.3928962, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0739117, 0.60097194, 4.358724)
 
 [node name="StaticBody3D18" parent="Decor" unique_id=1264624968 instance=ExtResource("22_dftap")]
-transform = Transform3D(1.8789192, 0, -0.68531936, 0, 2, 0, 0.68531936, 0, 1.8789192, 1.2101774, 0.86019146, 0.1273495)
+transform = Transform3D(1.8789192, 0, -0.68531936, 0, 2, 0, 0.68531936, 0, 1.8789192, 1.2101774, 0.4820403, 0.1273495)
 
 [node name="StaticBody3D19" parent="Decor" unique_id=1799940484 instance=ExtResource("23_vley7")]
 transform = Transform3D(1.0381433, 0, 1.7094615, 0, 2, 0, -1.7094615, 0, 1.0381433, -0.397295, 1.0881085, -0.7385982)
@@ -330,8 +341,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056101084, 0.17435312, -0.2
 light_color = Color(0.41000003, 0.74433327, 1, 1)
 light_energy = 0.175
 
+[node name="StaticBody3D45" parent="Decor" unique_id=412747913 instance=ExtResource("43_n08x1")]
+transform = Transform3D(0.03871923, 0, -0.9992501, 0, 1, 0, 0.9992501, 0, 0.03871923, 4.3917365, 3.372421, 3.0464377)
+
+[node name="special_MateIceTeaBottle" parent="Decor" unique_id=1454370101 instance=ExtResource("44_1qbe1")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.930299, 1.4266797, -0.02707246)
+
+[node name="StaticBody3D46" parent="Decor" unique_id=917134303 instance=ExtResource("45_l2tjd")]
+transform = Transform3D(-0.41643947, 0, -0.9091634, 0, 1, 0, 0.9091634, 0, -0.41643947, 1.2511803, 1.730813, -0.21084735)
+
+[node name="SpotLight3D" type="OmniLight3D" parent="Decor/StaticBody3D46" unique_id=786089089]
+transform = Transform3D(0.9091045, -0.011379331, -0.4164127, 0.41643968, -2.7890357e-08, 0.90916336, -0.010345668, -0.9999352, 0.004738778, 0.27897274, 0.2897179, 0.00045835972)
+light_color = Color(1, 1, 0.73333335, 1)
+light_energy = 5.0
+light_size = 0.012
+shadow_enabled = true
+omni_range = 4.0
+omni_attenuation = 2.0
+
 [node name="Mimic" parent="." unique_id=1529121464 instance=ExtResource("41_2l0rj")]
-transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 1.2436271, 1.4789263, 0.2311889)
+transform = Transform3D(0.42320815, 0, 0.2662609, 0, 0.5, 0, -0.2662609, 0, 0.42320815, 1.0844883, 1.0134958, 0.3761879)
 prop_path = "uid://brjx5srjyio3s"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
