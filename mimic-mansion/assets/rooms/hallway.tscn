@@ -8,7 +8,12 @@
 [ext_resource type="Material" uid="uid://0pdmou1fywn1" path="res://assets/textures/materials/university_ceiling_tiles.tres" id="4_vydx8"]
 [ext_resource type="PackedScene" uid="uid://g4guqag4l5xh" path="res://assets/prop-scenes/foyer/foyer_LightingColumn.tscn" id="5_w70ul"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="6_1o7hx"]
+[ext_resource type="PackedScene" uid="uid://b5ysqd7x0w04m" path="res://assets/prop-scenes/facultyoffice/facultyoffice_SideTable.tscn" id="8_coa7k"]
 [ext_resource type="PackedScene" uid="uid://p3nc1k26dc6i" path="res://assets/props-50k/facultyoffice/facultyoffice_PlantPot.glb" id="9_5n7xp"]
+[ext_resource type="PackedScene" uid="uid://bfxxn2n4r5xnc" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant4.tscn" id="9_d0utv"]
+[ext_resource type="PackedScene" uid="uid://dlted20o5c7yi" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="10_n2w4y"]
+[ext_resource type="PackedScene" uid="uid://dp620wjilk5b1" path="res://assets/prop-scenes/library/library_FireExtinguisher.tscn" id="11_nuqw8"]
+[ext_resource type="PackedScene" uid="uid://c24eolfjp6i2s" path="res://assets/prop-scenes/library/library_Router.tscn" id="14_c4cah"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 size = Vector3(9.9, 4, 0.2)
@@ -42,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.01)
 shape = SubResource("BoxShape3D_maxj3")
 
 [node name="StaticBody3D2" parent="Walls/WallNorth0" unique_id=572722319 instance=ExtResource("2_8a8p1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09025997, 0.8684149, 3.1261113)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.8, 3.126)
 
 [node name="WallSouth0" type="StaticBody3D" parent="Walls" unique_id=2007557001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
@@ -57,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.01)
 shape = SubResource("BoxShape3D_maxj3")
 
 [node name="StaticBody3D5" parent="Walls/WallSouth0" unique_id=1526585238 instance=ExtResource("3_1o7hx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51680005, 1.0105436, -3.1379256)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.8, -3.138)
 
 [node name="WallEast0" type="StaticBody3D" parent="Walls" unique_id=1343019839]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
@@ -72,7 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.01)
 shape = SubResource("BoxShape3D_maxj3")
 
 [node name="StaticBody3D4" parent="Walls/WallEast0" unique_id=2134020296 instance=ExtResource("3_1o7hx")]
-transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0.48763323, 0.8505583, -3.1427503)
+transform = Transform3D(-2, 0, 3.019916e-07, 0, 2, 0, -3.019916e-07, 0, -2, 0, 0.8, -3.143)
 
 [node name="WallWest0" type="StaticBody3D" parent="Walls" unique_id=1520922288]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
@@ -87,14 +92,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.01)
 shape = SubResource("BoxShape3D_maxj3")
 
 [node name="StaticBody3D3" parent="Walls/WallWest0" unique_id=1772310905 instance=ExtResource("4_huh8d")]
-transform = Transform3D(1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, 1, 0.1286844, 0.86330533, 3.171558)
+transform = Transform3D(2, 0, 8.742278e-08, 0, 2, 0, -8.742278e-08, 0, 2, 0, 0.8, 3.21)
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" unique_id=889300257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorSouth0" unique_id=892887834 instance=ExtResource("6_1o7hx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -0.05)
 material_override = ExtResource("1_vsigo")
 
 [node name="DoorEast0" type="Node3D" parent="Walls" unique_id=1455100042]
@@ -102,7 +107,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 2
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorEast0" unique_id=1238493717 instance=ExtResource("6_1o7hx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -0.05)
 material_override = ExtResource("1_vsigo")
 
 [node name="DoorWest0" type="Node3D" parent="Walls" unique_id=250359734]
@@ -110,7 +115,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorWest0" unique_id=30894866 instance=ExtResource("6_1o7hx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.15)
 material_override = ExtResource("1_vsigo")
 
 [node name="DoorNorth0" type="Node3D" parent="Walls" unique_id=1044552542]
@@ -118,7 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 visible = false
 
 [node name="DoorWall" parent="Walls/DoorNorth0" unique_id=1145725680 instance=ExtResource("6_1o7hx")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -2, -0.05)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -2, 0.1)
 material_override = ExtResource("1_vsigo")
 
 [node name="Floor" type="Node3D" parent="." unique_id=889616614]
@@ -231,45 +235,67 @@ shape = SubResource("BoxShape3D_maxj3")
 
 [node name="Decor" type="Node3D" parent="." unique_id=1983405119]
 
+[node name="facultyoffice_SideTable" parent="Decor" unique_id=834244819 instance=ExtResource("8_coa7k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.5724943, 0.19577052, 3.5553951)
+
+[node name="StaticBody3D" parent="Decor" unique_id=1279906199 instance=ExtResource("9_d0utv")]
+transform = Transform3D(1.5, 6.556708e-08, -1.4210855e-14, -6.5567065e-08, 1.4999996, -4.767977e-08, 3.8393164e-14, 4.767977e-08, 1.4999996, 1.2501925, 0.4953475, -2.9718137)
+
+[node name="StaticBody3D2" parent="Decor" unique_id=1524850377 instance=ExtResource("10_n2w4y")]
+transform = Transform3D(1, 2.9646153e-21, -1.6703725e-22, -4.6586812e-21, 0.9999989, 0, 6.3948846e-14, 0, 0.9999989, -1.6210521, 0.86183167, 3.5869393)
+
+[node name="library_FireExtinguisher" parent="Decor" unique_id=1586809821 instance=ExtResource("11_nuqw8")]
+transform = Transform3D(-4.3711378e-08, -2.5243547e-29, 0.9999998, -4.2351647e-22, 0.99999976, 0, -0.99999994, -2.5243544e-29, -4.3711378e-08, 1.6674494, 0.5007739, 3.6269782)
+
+[node name="library_FireExtinguisher2" parent="Decor" unique_id=931002242 instance=ExtResource("11_nuqw8")]
+transform = Transform3D(-0.9999999, -2.5243544e-29, -8.742275e-08, -4.2351647e-22, 0.99999976, 0, 8.742275e-08, 2.5243546e-29, -0.99999976, -3.6770892, 0.5007739, -1.613522)
+
 [node name="Light" parent="Decor" unique_id=1310024876 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-4.3711385e-08, -1, -3.8213705e-15, 4.3711385e-08, 1.9106855e-15, -0.99999994, 0.99999994, -4.371139e-08, 4.3711385e-08, 1.4, 3.575, -3.5)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light" unique_id=157496072]
-transform = Transform3D(1, -9.981636e-08, 6.966525e-08, -6.966525e-08, -0.93864363, -0.34488857, 9.981636e-08, 0.34488857, -0.93864363, 0, 0, 0)
-light_energy = 2.0
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light" unique_id=157496072 groups=["flickering_light"]]
+transform = Transform3D(1, -9.981636e-08, 6.9665255e-08, -6.966525e-08, -0.93864363, -0.3448885, 9.981636e-08, 0.3448885, -0.9386437, 0, 0.36157286, 0.007144451)
+light_energy = 4.0
 light_size = 0.3
 shadow_enabled = true
 spot_range = 10.0
+spot_attenuation = 2.0
 
 [node name="Light2" parent="Decor" unique_id=136084938 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-4.3711385e-08, 1, -4.3711385e-08, 0, -4.371139e-08, -0.99999994, -0.99999994, -4.371139e-08, 1.9106853e-15, -1.4, 3.575, 3.5)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light2" unique_id=130596750]
-transform = Transform3D(1, -9.981636e-08, 6.966525e-08, -6.966525e-08, -0.93864363, -0.34488857, 9.981636e-08, 0.34488857, -0.93864363, 0, 0, 0)
-light_energy = 2.0
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light2" unique_id=130596750 groups=["flickering_light"]]
+transform = Transform3D(1, -9.9816376e-08, 6.966526e-08, -6.966525e-08, -0.9386437, -0.34488854, 9.9816376e-08, 0.34488854, -0.9386437, 0, 0.048087, 0.016638279)
+light_energy = 4.0
 light_size = 0.5
 shadow_enabled = true
 spot_range = 10.0
+spot_attenuation = 2.0
 
 [node name="Light3" parent="Decor" unique_id=1569220662 instance=ExtResource("5_w70ul")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.371139e-08, -0.99999994, 0, 1, -4.3711385e-08, 3.5, 3.575, -1.4)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light3" unique_id=1665767857]
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light3" unique_id=1665767857 groups=["flickering_light"]]
 transform = Transform3D(1, -9.981636e-08, 6.966525e-08, -6.966525e-08, -0.93864363, -0.34488857, 9.981636e-08, 0.34488857, -0.93864363, 0, 0, 0)
-light_energy = 2.0
+light_energy = 4.0
 light_size = 0.5
 shadow_enabled = true
 spot_range = 10.0
+spot_attenuation = 2.0
 
 [node name="Light4" parent="Decor" unique_id=1032343423 instance=ExtResource("5_w70ul")]
 transform = Transform3D(-0.99999994, -8.742278e-08, 3.8213705e-15, 0, -4.371139e-08, -0.99999994, 8.742277e-08, -1, 4.3711385e-08, -3.5, 3.575, 1.4)
 
-[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light4" unique_id=1236421883]
-transform = Transform3D(1, -9.981636e-08, 6.966525e-08, -6.966525e-08, -0.93864363, -0.34488857, 9.981636e-08, 0.34488857, -0.93864363, 0, 0, 0)
-light_energy = 2.0
+[node name="DirectionalLight3D" type="SpotLight3D" parent="Decor/Light4" unique_id=1236421883 groups=["flickering_light"]]
+transform = Transform3D(1, -9.9816354e-08, 6.966526e-08, -6.966525e-08, -0.9386437, -0.34488854, 9.981636e-08, 0.34488854, -0.9386437, -4.7683716e-07, 0.13613272, 0.02639103)
+light_energy = 4.0
 light_size = 0.5
 shadow_enabled = true
 spot_range = 10.0
+spot_attenuation = 2.0
 
 [node name="facultyoffice_PlantPot" parent="Decor" unique_id=44259663 instance=ExtResource("9_5n7xp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5356812, 0.50097156, -1.5327079)
+
+[node name="library_Router" parent="." unique_id=544471397 instance=ExtResource("14_c4cah")]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 3.580145, 3.643644, 1.63089)
