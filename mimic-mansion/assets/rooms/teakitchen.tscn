@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://3g2nynipki2o"]
+[gd_scene load_steps=0 format=3 uid="uid://3g2nynipki2o"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_3x8uo"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_t1jaq"]
 [ext_resource type="PackedScene" uid="uid://ce660kbnym6r0" path="res://assets/prop-scenes/teakitchen/teakitchen_TeaShelf.tscn" id="3_0gbfn"]
 [ext_resource type="Material" uid="uid://dec37om4pg62p" path="res://assets/textures/materials/mansion_marble_floor_2.tres" id="3_t1jaq"]
-[ext_resource type="PackedScene" uid="uid://b04b33gffmvn4" path="res://assets/prop-scenes/foyer/foyer_Planter.tscn" id="4_6kclw"]
+[ext_resource type="PackedScene" uid="uid://bbxyktkncsqqv" path="res://assets/prop-scenes-50k/foyer/foyer_Planter.tscn" id="4_6kclw"]
 [ext_resource type="PackedScene" uid="uid://bp6xmpugeaqjc" path="res://assets/prop-scenes/teakitchen/teakitchen_NapkinBox.tscn" id="5_htwfb"]
 [ext_resource type="PackedScene" uid="uid://bgmwqcasp3gc3" path="res://assets/prop-scenes/teakitchen/teakitchen_WallClock.tscn" id="6_o8hh3"]
 [ext_resource type="PackedScene" uid="uid://bl1pvtbua2odh" path="res://assets/prop-scenes/facultyoffice/facultyoffice_PlantPot.tscn" id="7_ha2jd"]

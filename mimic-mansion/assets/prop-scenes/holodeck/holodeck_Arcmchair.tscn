@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://doaohxtxltkvk"]
+[gd_scene load_steps=0 format=4 uid="uid://doaohxtxltkvk"]
 
 [ext_resource type="Texture2D" uid="uid://kr2wsixdxs13" path="res://assets/props/holodeck/holodeck_Arcmchair_0.png" id="1_jt2np"]
 [ext_resource type="Texture2D" uid="uid://buys7rk5qmvjm" path="res://assets/props/holodeck/holodeck_Arcmchair_1.png" id="2_35n4x"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhi6du4foaswp"]
+[gd_scene load_steps=0 format=3 uid="uid://dhi6du4foaswp"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_romwe"]
 [ext_resource type="PackedScene" uid="uid://dgn5l5862y8ol" path="res://assets/prop-scenes/DoorWall.tscn" id="2_sj1sp"]
@@ -168,7 +168,7 @@ spot_range = 10.0
 spot_attenuation = 2.0
 spot_angle = 60.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props/smalllectureroom_CeilingLight" index="3" unique_id=1144461716]
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/smalllectureroom_CeilingLight" index="3" unique_id=1144461716 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17708111, 1.5480879e-08)
 light_color = Color(1, 1, 0.8627451, 1)
 light_energy = 3.0

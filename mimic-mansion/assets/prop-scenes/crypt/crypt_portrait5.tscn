@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ncgpi313vulj"]
+[gd_scene load_steps=0 format=4 uid="uid://ncgpi313vulj"]
 
 [ext_resource type="Texture2D" uid="uid://cyaj31peafqit" path="res://assets/props/crypt/crypt_portrait5_0.png" id="1_x70en"]
 [ext_resource type="Texture2D" uid="uid://dnip2a23cnn6" path="res://assets/props/crypt/crypt_portrait5_1.png" id="2_yjen5"]

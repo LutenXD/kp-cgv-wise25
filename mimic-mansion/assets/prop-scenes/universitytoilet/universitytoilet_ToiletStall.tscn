@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://v5pipcs0mdps"]
+[gd_scene load_steps=0 format=4 uid="uid://v5pipcs0mdps"]
 
 [ext_resource type="Texture2D" uid="uid://bp82lyfrk7cab" path="res://assets/props/universitytoilet/universitytoilet_ToiletStall_0.png" id="1_vsajc"]
 [ext_resource type="Texture2D" uid="uid://cdtyl4mi4h108" path="res://assets/props/universitytoilet/universitytoilet_ToiletStall_1.png" id="2_dae11"]

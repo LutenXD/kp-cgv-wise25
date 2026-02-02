@@ -2,4 +2,8 @@
 .godot/
 
 # Ignore generated rotated room variants
-mimic-mansion/assets/game_rooms/
+mimic-mansion/assets/game_rooms/rot_rooms/
+
+# Explicitly include specific rooms
+!mimic-mansion/assets/game_rooms/foyer.tscn
+!mimic-mansion/assets/game_rooms/ServerRoom.tscn

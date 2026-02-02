@@ -36,7 +36,7 @@ func is_room_variant_spawned(room_name: String) -> bool:
 	return false
 
 
-func spawn_starting_room(starting_room_name: String = "grand_foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 8) -> void:
+func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 8) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	

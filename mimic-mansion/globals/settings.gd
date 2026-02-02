@@ -24,6 +24,8 @@ var volume_music: float = 50.0:
 var volume_sound: float = 50.0:
 	set(v):
 		volume_sound = v
+		AudioServer.set_bus_volume_db(2, linear_to_db(volume_sound * 0.04))
+		AudioServer.set_bus_mute(2, volume_sound * 0.1 < 0.01)
 		AudioServer.set_bus_volume_db(3, linear_to_db(volume_sound * 0.04))
 		AudioServer.set_bus_mute(3, volume_sound * 0.1 < 0.01)
 		AudioServer.set_bus_volume_db(5, linear_to_db(volume_sound * 0.04))

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dbx2xrs8tdumd"]
+[gd_scene load_steps=0 format=3 uid="uid://dbx2xrs8tdumd"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_h11cd"]
 [ext_resource type="Material" uid="uid://d2aluiqg5tgc7" path="res://assets/textures/materials/cobble-floor-2.tres" id="2_v1beu"]

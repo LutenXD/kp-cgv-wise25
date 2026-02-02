@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c6ovshrobocfi"]
+[gd_scene load_steps=0 format=3 uid="uid://c6ovshrobocfi"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_yurly"]
 [ext_resource type="Material" uid="uid://b3suv8a2knqeg" path="res://assets/textures/materials/university_wall_paint.tres" id="2_tfewv"]
@@ -351,7 +351,7 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -4.6
 [node name="StaticBody3D7" parent="Props" index="61" unique_id=2110601920 instance=ExtResource("43_hgxx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031731308, 1.7329772, 3.4191158)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D7" index="2" unique_id=781474992]
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D7" index="2" unique_id=781474992 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28959465, 0)
 light_color = Color(1, 1, 0.7529412, 1)
 light_energy = 2.0
@@ -362,7 +362,7 @@ omni_attenuation = 2.0
 [node name="StaticBody3D8" parent="Props" index="62" unique_id=348778320 instance=ExtResource("44_o3vku")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.7076638, 1.0179015, -3.9539695)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D8" index="2" unique_id=991057566]
+[node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D8" index="2" unique_id=991057566 groups=["flickering_light"]]
 transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.4632315, 0)
 light_color = Color(1, 1, 0.8352941, 1)
 light_energy = 3.0
@@ -375,7 +375,7 @@ spot_angle = 80.0
 [node name="StaticBody3D5" parent="Props" index="63" unique_id=1789668460 instance=ExtResource("45_qbyo7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075182915, 3.7309895, -0.05899608)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D5" index="2" unique_id=734282338]
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D5" index="2" unique_id=734282338 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31471753, 0)
 light_color = Color(1, 1, 0.8745098, 1)
 light_energy = 4.0
@@ -387,7 +387,7 @@ omni_attenuation = 2.0
 [node name="StaticBody3D9" parent="Props" index="64" unique_id=480566793 instance=ExtResource("46_ffee4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.624767, 3.39683, -1.3094593)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D9" index="2" unique_id=1695481588]
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D9" index="2" unique_id=1695481588 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.58920264, 0)
 light_color = Color(1, 1, 0.6509804, 1)
 light_energy = 5.0
