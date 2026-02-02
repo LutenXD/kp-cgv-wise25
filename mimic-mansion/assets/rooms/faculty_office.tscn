@@ -43,7 +43,12 @@
 [ext_resource type="PackedScene" uid="uid://dxuxfoonbnmnb" path="res://assets/prop-scenes-50k/special/special_RubikCube.tscn" id="42_jk7cl"]
 [ext_resource type="PackedScene" uid="uid://7pp12pkayc3u" path="res://assets/prop-scenes/extra/extra_FoyerSculpture.tscn" id="43_n08x1"]
 [ext_resource type="PackedScene" uid="uid://csolkjajqfst" path="res://assets/prop-scenes/special/special_MateIceTeaBottle.tscn" id="44_1qbe1"]
+[ext_resource type="AudioStream" uid="uid://dj1j7ce8e2pkb" path="res://assets/sounds/effects/outputs/FacultyOffice/office_leather_chair_creak.wav" id="45_gpfut"]
 [ext_resource type="PackedScene" uid="uid://cm88x7ats3o6u" path="res://assets/prop-scenes/extra/extra_standing_lamp4.tscn" id="45_l2tjd"]
+[ext_resource type="AudioStream" uid="uid://4qeh157546rl" path="res://assets/sounds/effects/outputs/FacultyOffice/office_conference_phone_idle.wav" id="46_771fn"]
+[ext_resource type="AudioStream" uid="uid://ftokmfoepxt3" path="res://assets/sounds/effects/outputs/FacultyOffice/office_paper_adjust.wav" id="47_h5pyv"]
+[ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="48_ohr0w"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="49_6irdo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.95, 0.92, 0.85, 1)
@@ -64,6 +69,13 @@ size = Vector3(10, 0.2, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
 size = Vector3(10, 0.2, 10)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5tkc4"]
+streams_count = 4
+stream_0/stream = ExtResource("45_gpfut")
+stream_1/stream = ExtResource("46_771fn")
+stream_2/stream = ExtResource("47_h5pyv")
+stream_3/stream = ExtResource("48_ohr0w")
 
 [node name="Room" type="Node3D" unique_id=1376299447]
 
@@ -365,3 +377,11 @@ prop_path = "uid://brjx5srjyio3s"
 chat_model = "openai/gpt-oss-120b"
 tts_model = "tts-1-hd"
 voice_tts_1 = "random"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=568848784]
+stream = SubResource("AudioStreamRandomizer_5tkc4")
+unit_size = 100.0
+max_distance = 5.0
+script = ExtResource("49_6irdo")
+min_interval_sec = 30.0
+max_interval_sec = 80.0

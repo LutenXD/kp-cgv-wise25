@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bsjagusa73wlg" path="res://assets/prop-scenes/lecturehall/lecturehall_Whiteboard.tscn" id="3_g1kj2"]
 [ext_resource type="PackedScene" uid="uid://q1mjermbl1mv" path="res://assets/prop-scenes/lecturehall/lecturehall_Chair.tscn" id="3_yu1o8"]
 [ext_resource type="Material" uid="uid://djfbob3ys4ffh" path="res://assets/textures/materials/laminate-floor.tres" id="4_1waj8"]
-[ext_resource type="PackedScene" uid="uid://ci6jg7jrrbgtf" path="res://assets/prop-scenes/lecturehall/lecturehall_Polylux.tscn" id="4_hv47o"]
 [ext_resource type="PackedScene" uid="uid://ddrv1lqxdevh4" path="res://assets/prop-scenes/lecturehall/lecturehall_ProjectorScreen.tscn" id="5_4nep8"]
 [ext_resource type="PackedScene" uid="uid://doha4frql0ct8" path="res://assets/prop-scenes/holodeck/holodeck_Projector.tscn" id="7_26wfs"]
 [ext_resource type="PackedScene" uid="uid://bq1bjkqn74gqe" path="res://assets/prop-scenes/lecturehall/lecturehall_FireExtinguisher.tscn" id="7_eebwu"]
@@ -26,8 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://bbhhlf6tb2s4" path="res://assets/prop-scenes/lecturehall/lecturehall_PowerStrip.tscn" id="22_mhve6"]
 [ext_resource type="PackedScene" uid="uid://cofdkjjh2pebo" path="res://assets/prop-scenes/foyer/foyer_WasteBasket.tscn" id="23_xola0"]
 [ext_resource type="AudioStream" uid="uid://bkpfrabp42ywn" path="res://assets/sounds/effects/outputs/LectureHall/lecturehall_chair_shift.wav" id="26_2fsa8"]
-[ext_resource type="AudioStream" uid="uid://dyypbagyohw8o" path="res://assets/sounds/effects/outputs/LectureHall/lecturehall_light_panel_hum.wav" id="27_6oom2"]
-[ext_resource type="AudioStream" uid="uid://xv83e28alnge" path="res://assets/sounds/effects/outputs/LectureHall/lecturehall_room_tone.wav" id="28_b6hka"]
+[ext_resource type="AudioStream" uid="uid://cavr2tbid2kg7" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_blackboard_chalk.wav" id="27_2fsa8"]
+[ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="28_6oom2"]
+[ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="29_2fsa8"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="29_3drwx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kft4"]
@@ -73,8 +73,8 @@ albedo_color = Color(0.7, 0.7, 0.65, 1)
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_k10er"]
 streams_count = 3
 stream_0/stream = ExtResource("26_2fsa8")
-stream_1/stream = ExtResource("27_6oom2")
-stream_2/stream = ExtResource("28_b6hka")
+stream_1/stream = ExtResource("27_2fsa8")
+stream_2/stream = ExtResource("28_6oom2")
 
 [node name="lecturehall" unique_id=1532466948 instance=ExtResource("1_v7xgl")]
 
@@ -484,82 +484,79 @@ transform = Transform3D(-6.250728e-08, 0, 1.43, 0, 1.43, 0, -1.43, 0, -6.250728e
 [node name="lecturehall_Chair48" parent="props" index="52" unique_id=1607318738 instance=ExtResource("3_yu1o8")]
 transform = Transform3D(-6.250728e-08, 0, 1.43, 0, 1.43, 0, -1.43, 0, -6.250728e-08, 4.8744984, 0.72778326, 1.5150164)
 
-[node name="lecturehall_Polylux" parent="props" index="53" unique_id=162082842 instance=ExtResource("4_hv47o")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.957214, 1.5745319, -5.4716907)
-
-[node name="lecturehall_ProjectorScreen" parent="props" index="54" unique_id=1634677536 instance=ExtResource("5_4nep8")]
+[node name="lecturehall_ProjectorScreen" parent="props" index="53" unique_id=1634677536 instance=ExtResource("5_4nep8")]
 transform = Transform3D(-2.797529e-07, 0, -6.4, 0, 6.4, 0, 6.4, 0, -2.797529e-07, 14.727583, 4.847, -5)
 
-[node name="holodeck_Projector" parent="props" index="55" unique_id=478525051 instance=ExtResource("7_26wfs")]
+[node name="holodeck_Projector" parent="props" index="54" unique_id=478525051 instance=ExtResource("7_26wfs")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.3364482, 7.5, -5)
 
-[node name="lecturehall_LightPanel" parent="props" index="56" unique_id=752833745 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel" parent="props" index="55" unique_id=752833745 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 10, 7.881, -10)
 
-[node name="lecturehall_LightPanel2" parent="props" index="57" unique_id=1739447920 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel2" parent="props" index="56" unique_id=1739447920 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 10, 7.8809996, -5)
 
-[node name="lecturehall_LightPanel3" parent="props" index="58" unique_id=1324502379 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel3" parent="props" index="57" unique_id=1324502379 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 10, 7.880999, 1)
 
-[node name="lecturehall_LightPanel4" parent="props" index="59" unique_id=283913381 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel4" parent="props" index="58" unique_id=283913381 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 5, 7.880999, 1)
 
-[node name="lecturehall_LightPanel6" parent="props" index="60" unique_id=1206500541 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel6" parent="props" index="59" unique_id=1206500541 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 5, 7.8809996, -5)
 
-[node name="lecturehall_LightPanel9" parent="props" index="61" unique_id=1564098545 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel9" parent="props" index="60" unique_id=1564098545 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 7.8809996, -5)
 
-[node name="lecturehall_LightPanel7" parent="props" index="62" unique_id=594431310 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel7" parent="props" index="61" unique_id=594431310 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 5, 7.881, -10)
 
-[node name="lecturehall_LightPanel8" parent="props" index="63" unique_id=1493606869 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel8" parent="props" index="62" unique_id=1493606869 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 7.881, -10)
 
-[node name="lecturehall_LightPanel5" parent="props" index="64" unique_id=2096303721 instance=ExtResource("8_mti78")]
+[node name="lecturehall_LightPanel5" parent="props" index="63" unique_id=2096303721 instance=ExtResource("8_mti78")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 7.880999, 1)
 
-[node name="lecturehall_PodiumRemote" parent="props" index="65" unique_id=1238531878 instance=ExtResource("9_gdop2")]
+[node name="lecturehall_PodiumRemote" parent="props" index="64" unique_id=1238531878 instance=ExtResource("9_gdop2")]
 transform = Transform3D(0.05251251, -0.3460382, -1.4470944e-08, -2.7375946e-09, -1.5052061e-08, 0.35, -0.3460382, -0.05251251, -4.964953e-09, 11.32905, 1.1581525, -5.9105554)
 
-[node name="lecturehall_FireExtinguisher" parent="props" index="66" unique_id=1174997781 instance=ExtResource("7_eebwu")]
+[node name="lecturehall_FireExtinguisher" parent="props" index="65" unique_id=1174997781 instance=ExtResource("7_eebwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45479, 1, 4.779879)
 
-[node name="lecturehall_FireExtinguisher2" parent="props" index="67" unique_id=1865437178 instance=ExtResource("7_eebwu")]
+[node name="lecturehall_FireExtinguisher2" parent="props" index="66" unique_id=1865437178 instance=ExtResource("7_eebwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4831896, 1, -14.765674)
 
-[node name="lecturehall_StagePodium" parent="props" index="68" unique_id=1720565125 instance=ExtResource("8_26wfs")]
+[node name="lecturehall_StagePodium" parent="props" index="67" unique_id=1720565125 instance=ExtResource("8_26wfs")]
 transform = Transform3D(-6.9938224e-08, 0, 1.6, 0, 1.6, 0, -1.6, 0, -6.9938224e-08, 11.464555, 0.78850967, -6.5448275)
 
-[node name="lecturehall_WallClock" parent="props" index="69" unique_id=2125560611 instance=ExtResource("9_mti78")]
+[node name="lecturehall_WallClock" parent="props" index="68" unique_id=2125560611 instance=ExtResource("9_mti78")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 14.777, 6.3, -11.19)
 
-[node name="lecturehall_WallClockSecondary" parent="props" index="70" unique_id=363183380 instance=ExtResource("10_g3rs1")]
+[node name="lecturehall_WallClockSecondary" parent="props" index="69" unique_id=363183380 instance=ExtResource("10_g3rs1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.870313, 6.3, 1.5844821)
 
-[node name="holodeck_GrayOfficeTable" parent="props" index="71" unique_id=1857367831 instance=ExtResource("14_mti78")]
+[node name="holodeck_GrayOfficeTable" parent="props" index="70" unique_id=1857367831 instance=ExtResource("14_mti78")]
 transform = Transform3D(-1.13212494e-07, 0, 2.59, 0, 2.59, 0, -2.59, 0, -1.13212494e-07, 11.12469, 0.5698402, -4.7588773)
 
-[node name="lecturehall_MicPod" parent="props" index="72" unique_id=316861081 instance=ExtResource("18_g1kj2")]
+[node name="lecturehall_MicPod" parent="props" index="71" unique_id=316861081 instance=ExtResource("18_g1kj2")]
 transform = Transform3D(-0.00025831137, -0.19999984, -8.742271e-09, 0, -8.742278e-09, 0.2, -0.19999984, 0.00025831137, 1.1291148e-11, 11.300394, 1.1665438, -3.6879768)
 
-[node name="lecturehall_WallBanner" parent="props" index="73" unique_id=1421896881 instance=ExtResource("19_xola0")]
+[node name="lecturehall_WallBanner" parent="props" index="72" unique_id=1421896881 instance=ExtResource("19_xola0")]
 transform = Transform3D(5.85, 0, 0, 0, 5.85, 0, 0, 0, 5.85, -0.1547122, 4.6874857, -14.774584)
 
-[node name="lecturehall_WaterCooler" parent="props" index="74" unique_id=193927535 instance=ExtResource("20_mhve6")]
+[node name="lecturehall_WaterCooler" parent="props" index="73" unique_id=193927535 instance=ExtResource("20_mhve6")]
 transform = Transform3D(3.83, 0, 0, 0, 3.83, 0, 0, 0, 3.83, 13.033611, 1.8646727, -14.355584)
 
-[node name="lecturehall_LaserPointer" parent="props" index="75" unique_id=1080758594 instance=ExtResource("10_268qg")]
+[node name="lecturehall_LaserPointer" parent="props" index="74" unique_id=1080758594 instance=ExtResource("10_268qg")]
 transform = Transform3D(-0.36376363, -0.1891455, 0, -8.267811e-09, 1.5900612e-08, 0.41, -0.1891455, 0.36376363, -1.792167e-08, 11.567384, 1.2593586, -6.3881593)
 
-[node name="lecturehall_EmergencyExitMap" parent="props" index="76" unique_id=1106023589 instance=ExtResource("20_xola0")]
+[node name="lecturehall_EmergencyExitMap" parent="props" index="75" unique_id=1106023589 instance=ExtResource("20_xola0")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.408019, 2.3314433, 4.885741)
 
-[node name="lecturehall_EmergencyExitMap2" parent="props" index="77" unique_id=1061028145 instance=ExtResource("20_xola0")]
+[node name="lecturehall_EmergencyExitMap2" parent="props" index="76" unique_id=1061028145 instance=ExtResource("20_xola0")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.4080157, 2.3314433, -14.867236)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="props" index="78" unique_id=291458507]
+[node name="SpotLight3D" type="SpotLight3D" parent="props" index="77" unique_id=291458507]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.24118388, 7.8080273, 1.1924999)
 light_color = Color(1, 1, 0.83137256, 1)
 light_energy = 13.779
@@ -568,7 +565,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="props" index="79" unique_id=1696292028]
+[node name="SpotLight3D4" type="SpotLight3D" parent="props" index="78" unique_id=1696292028]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.0821595, 7.8080273, 1.1924999)
 visible = false
 light_color = Color(1, 1, 0.83137256, 1)
@@ -578,7 +575,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="props" index="80" unique_id=249393887]
+[node name="SpotLight3D5" type="SpotLight3D" parent="props" index="79" unique_id=249393887]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.0575695, 7.8080273, 0.9315517)
 light_color = Color(1, 1, 0.83137256, 1)
 light_energy = 13.779
@@ -587,13 +584,13 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="OmniLight3D" type="OmniLight3D" parent="props" index="81" unique_id=36414728]
+[node name="OmniLight3D" type="OmniLight3D" parent="props" index="80" unique_id=36414728]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 6.0483675, 3.6421423, -4.5236244)
 light_color = Color(0.9999358, 1, 0.9514751, 1)
 light_energy = 5.99
 omni_range = 425.7
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="props" index="82" unique_id=666539383]
+[node name="SpotLight3D6" type="SpotLight3D" parent="props" index="81" unique_id=666539383]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.0575695, 7.808027, -4.9658747)
 visible = false
 light_color = Color(1, 1, 0.83137256, 1)
@@ -603,7 +600,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="props" index="83" unique_id=299288986]
+[node name="SpotLight3D7" type="SpotLight3D" parent="props" index="82" unique_id=299288986]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.0575695, 7.808027, -10.167441)
 light_color = Color(1, 1, 0.83137256, 1)
 light_energy = 13.779
@@ -612,7 +609,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="props" index="84" unique_id=1173414970]
+[node name="SpotLight3D8" type="SpotLight3D" parent="props" index="83" unique_id=1173414970]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.047365, 7.808027, -10.167441)
 visible = false
 light_color = Color(1, 1, 0.83137256, 1)
@@ -622,7 +619,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="props" index="85" unique_id=109497752]
+[node name="SpotLight3D9" type="SpotLight3D" parent="props" index="84" unique_id=109497752]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.047365, 7.808027, -5.1050463)
 visible = false
 light_color = Color(1, 1, 0.83137256, 1)
@@ -632,7 +629,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="props" index="86" unique_id=1163048472]
+[node name="SpotLight3D2" type="SpotLight3D" parent="props" index="85" unique_id=1163048472]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.24118388, 7.808027, -5.122099)
 visible = false
 light_color = Color(1, 1, 0.83137256, 1)
@@ -642,7 +639,7 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="props" index="87" unique_id=1220654303]
+[node name="SpotLight3D3" type="SpotLight3D" parent="props" index="86" unique_id=1220654303]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.24118388, 7.8080263, -10.190676)
 light_color = Color(1, 1, 0.83137256, 1)
 light_energy = 13.779
@@ -651,36 +648,47 @@ shadow_enabled = true
 spot_range = 19.201
 spot_angle = 77.65
 
-[node name="lecturehall_ExitSign" parent="props" index="88" unique_id=781144046 instance=ExtResource("2_oppwy")]
+[node name="lecturehall_ExitSign" parent="props" index="87" unique_id=781144046 instance=ExtResource("2_oppwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 4.753)
 
-[node name="lecturehall_ExitSign2" parent="props" index="89" unique_id=1474025186 instance=ExtResource("2_oppwy")]
+[node name="lecturehall_ExitSign2" parent="props" index="88" unique_id=1474025186 instance=ExtResource("2_oppwy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.999998, 5, -14.801094)
 
-[node name="lecturehall_CeilingSpeakers5" parent="props" index="90" unique_id=240389539 instance=ExtResource("2_f15gi")]
+[node name="lecturehall_CeilingSpeakers5" parent="props" index="89" unique_id=240389539 instance=ExtResource("2_f15gi")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -4.8879995, 5.032, 0)
 
-[node name="lecturehall_CeilingSpeakers6" parent="props" index="91" unique_id=1813095635 instance=ExtResource("2_f15gi")]
+[node name="lecturehall_CeilingSpeakers6" parent="props" index="90" unique_id=1813095635 instance=ExtResource("2_f15gi")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -4.8879995, 5.032, -10)
 
-[node name="lecturehall_Whiteboard" parent="props" index="92" unique_id=1514326430 instance=ExtResource("3_g1kj2")]
+[node name="lecturehall_Whiteboard" parent="props" index="91" unique_id=1514326430 instance=ExtResource("3_g1kj2")]
 transform = Transform3D(-2.1724559e-07, 0, -3.342, 0, 4.97, 0, 4.97, 0, -1.4608347e-07, 14.692586, 2.50252, 1.753149)
 
-[node name="lecturehall_PowerStrip" parent="props" index="93" unique_id=1928361017 instance=ExtResource("22_mhve6")]
+[node name="lecturehall_PowerStrip" parent="props" index="92" unique_id=1928361017 instance=ExtResource("22_mhve6")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 11.413306, 0.06106685, -5.665517)
 
-[node name="foyer_WasteBasket" parent="props" index="94" unique_id=814688711 instance=ExtResource("23_xola0")]
+[node name="foyer_WasteBasket" parent="props" index="93" unique_id=814688711 instance=ExtResource("23_xola0")]
 transform = Transform3D(-0.9987141, 0, -0.050697625, 0, 1, 0, 0.050697625, 0, -0.9987141, 3.1628113, 0.49301025, 4.382215)
 
-[node name="foyer_WasteBasket3" parent="props" index="95" unique_id=1335284843 instance=ExtResource("23_xola0")]
+[node name="foyer_WasteBasket3" parent="props" index="94" unique_id=1335284843 instance=ExtResource("23_xola0")]
 transform = Transform3D(-0.9987141, 0, -0.050697625, 0, 1, 0, 0.050697625, 0, -0.9987141, 2.1821525, 0.49301025, 4.431996)
 
-[node name="foyer_WasteBasket4" parent="props" index="96" unique_id=231469773 instance=ExtResource("23_xola0")]
+[node name="foyer_WasteBasket4" parent="props" index="95" unique_id=231469773 instance=ExtResource("23_xola0")]
 transform = Transform3D(-0.9987141, 0, -0.050697625, 0, 1, 0, 0.050697625, 0, -0.9987141, 1.2294617, 0.49301025, 4.480357)
 
-[node name="foyer_WasteBasket2" parent="props" index="97" unique_id=1802464602 instance=ExtResource("23_xola0")]
+[node name="foyer_WasteBasket2" parent="props" index="96" unique_id=1802464602 instance=ExtResource("23_xola0")]
 transform = Transform3D(-0.99988097, 0, 0.015428066, 0, 1, 0, -0.015428066, 0, -0.99988097, 4.1937056, 0.49301013, 4.343481)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4" unique_id=1374880881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.866016, 0, -5.030969)
 stream = SubResource("AudioStreamRandomizer_k10er")
+unit_size = 100.0
+max_distance = 10.0
 script = ExtResource("29_3drwx")
+min_interval_sec = 30.0
+max_interval_sec = 50.0
+
+[node name="Mimic" parent="." index="5" unique_id=766133172 instance=ExtResource("29_2fsa8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.863452, 0.65852404, -6.0203857)
+prop_path = "uid://ci6jg7jrrbgtf"
+chat_model = "openai/gpt-oss-120b"
+voice_kokoro = "random"
