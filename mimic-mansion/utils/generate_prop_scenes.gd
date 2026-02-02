@@ -1,8 +1,8 @@
 @tool
 extends EditorScript
 
-const SOURCE_ROOT := "res://assets/props-50k"
-const DEST_ROOT   := "res://assets/prop-scenes-50k"
+const SOURCE_ROOT := "res://assets/props"
+const DEST_ROOT   := "res://assets/prop-scenes"
 
 func _run():
 	var dir := DirAccess.open(SOURCE_ROOT)

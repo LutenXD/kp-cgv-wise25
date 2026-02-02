@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=4 uid="uid://cukid78dsqhvv"]
+[gd_scene format=4 uid="uid://b3gvjtw2okkos"]
 
 [ext_resource type="Texture2D" uid="uid://6f3e3grnkv54" path="res://assets/props/crypt/crypt_portrait2_0.png" id="1_p7bc2"]
 [ext_resource type="Texture2D" uid="uid://dj8cuyxaoesx4" path="res://assets/props/crypt/crypt_portrait2_1.png" id="2_1n7sp"]
@@ -53,7 +53,6 @@ points = PackedVector3Array(0.41398892, 0.5053222, 0.046744447, -0.4099222, -0.5
 
 [node name="geometry_0" type="MeshInstance3D" parent="." unique_id=979655755]
 mesh = SubResource("ArrayMesh_hijr4")
-skeleton = NodePath("")
 
 [node name="@CollisionShape3D@19859" type="CollisionShape3D" parent="." unique_id=88528541]
 shape = SubResource("ConvexPolygonShape3D_tiol4")
