@@ -22,7 +22,6 @@ var flying: bool = false
 func _ready() -> void:
 	Settings.update.connect(func (): look_sensitivity = Settings.mouse_sensitivity)
 	look_sensitivity = Settings.mouse_sensitivity
-	Settings.mouse_sensitivity = look_sensitivity
 	var idx = AudioServer.get_bus_index("Record")
 	effect = AudioServer.get_bus_effect(idx, 0)
 
@@ -100,6 +99,8 @@ func record_audio() -> void:
 	if effect.is_recording_active():
 		recording = effect.get_recording()
 		effect.set_recording_active(false)
+		#$AudioStreamPlayer.stream = recording
+		#$AudioStreamPlayer.play()
 		print("recording finished")
 	else:
 		effect.set_recording_active(true)

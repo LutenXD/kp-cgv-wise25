@@ -27,9 +27,9 @@ func _on_room_layout_manager_finished() -> void:
 			humgold = mimic
 	print(mimics)
 	var num_questions: int = mimics.size()
-	var statements: Array[Dictionary] = mimic_statements.parse_json(num_questions)
+	var statements: Array = mimic_statements.parse_json(num_questions)
 	for i: int in range(num_questions):
-		#print(str(statements[i]))
+		print(str(statements[i]))
 		mimics[i].set_instructions(mimic_pre_instructions + str(statements[i]) + mimic_post_instructions)
 	
 	if humgold:

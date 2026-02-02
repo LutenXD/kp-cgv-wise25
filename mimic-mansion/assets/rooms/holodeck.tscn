@@ -63,9 +63,9 @@
 [ext_resource type="PackedScene" uid="uid://dssbm28pjhvef" path="res://assets/prop-scenes/special/special_TactileSensor.tscn" id="60_brfuk"]
 [ext_resource type="PackedScene" uid="uid://u1mskvqi2cnl" path="res://assets/prop-scenes/special/special_USBHub.tscn" id="61_xwtxi"]
 [ext_resource type="PackedScene" uid="uid://drepbfpx56erh" path="res://assets/prop-scenes/special/special_VRHeadset.tscn" id="62_ecql5"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
+[ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
+[ext_resource type="PackedScene" uid="uid://doaohxtxltkvk" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
+[ext_resource type="PackedScene" uid="uid://mn67q826hnfd" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db4si"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -711,6 +711,7 @@ transform = Transform3D(0.9637609, 0, 0.26676744, 0, 1, 0, -0.26676744, 0, 0.963
 [node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("44_p5w6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.920462, 1.1165183, -6.694353)
 prop_path = "uid://bj04gcvqm7m33"
+chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
 
 [node name="SoftBody3D" type="SoftBody3D" parent="." index="5" unique_id=573854998]

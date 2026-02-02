@@ -7,7 +7,7 @@ extends Mimic
 @export_multiline() var evaluator_post_instructions: String
 
 
-var statements: Array[Dictionary]
+var statements: Array
 var num_questions: int
 var question_idx: int = 0
 

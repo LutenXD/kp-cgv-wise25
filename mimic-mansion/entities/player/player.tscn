@@ -46,5 +46,9 @@ spot_angle = 24.0
 [node name="AudioStreamRecord" type="AudioStreamPlayer" parent="." unique_id=2035323576]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamMicrophone_symyc")
+volume_db = 24.0
 autoplay = true
 bus = &"Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2000443928]
+volume_db = 24.0
