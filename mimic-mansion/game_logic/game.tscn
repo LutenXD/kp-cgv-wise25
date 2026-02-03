@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://jy4sym0dop3s" path="res://addons/godot_material_footsteps/core/material_footstep_player_3d.gd" id="3_o8hf1"]
 [ext_resource type="Script" uid="uid://cfs28riswyejx" path="res://addons/godot_material_footsteps/resources/material_footstep.gd" id="4_4sqru"]
 [ext_resource type="AudioStream" uid="uid://dn8nodeu3v4kn" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk0.wav" id="5_8psdd"]
-[ext_resource type="Script" path="res://utils/light_flicker.gd" id="5_ta1pv"]
+[ext_resource type="Script" uid="uid://vvha4n54dfv7" path="res://utils/light_flicker.gd" id="5_ta1pv"]
 [ext_resource type="AudioStream" uid="uid://bkaftx6o86i6j" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk1.wav" id="6_lxndx"]
 [ext_resource type="AudioStream" uid="uid://cqw5k7e4t3un3" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk11.wav" id="7_2chto"]
 [ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
@@ -58,6 +58,7 @@
 [ext_resource type="AudioStream" uid="uid://dv8gxkoks3844" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk1.wav" id="65_av2hj"]
 [ext_resource type="AudioStream" uid="uid://dqs2f7etlqync" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk2.wav" id="71_yt0us"]
 [ext_resource type="AudioStream" uid="uid://ci252js86e8yl" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk3.wav" id="72_ne34r"]
+[ext_resource type="Script" uid="uid://4wove2ojf1vm" path="res://game_logic/loop_music.gd" id="73_c63r4"]
 [ext_resource type="AudioStream" uid="uid://bgty1clejs3sk" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk4.wav" id="73_hobkd"]
 [ext_resource type="AudioStream" uid="uid://c8hiedu474p80" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk5.wav" id="74_4vfon"]
 [ext_resource type="AudioStream" uid="uid://bpvdh5beerpfp" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk6.wav" id="75_quk5d"]
@@ -257,8 +258,9 @@ metadata/_custom_type_script = "uid://jy4sym0dop3s"
 [node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Player" unique_id=152119312]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_iy51i")
-autoplay = true
 bus = &"Music"
+script = ExtResource("73_c63r4")
+streams = Array[AudioStream]([ExtResource("2_lxndx"), ExtResource("91_a8a8y"), ExtResource("92_sgn01")])
 
 [node name="StepsAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player" unique_id=377208954]
 process_mode = 3
