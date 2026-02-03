@@ -46,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://c0kl54xce6gos" path="res://assets/prop-scenes/extra/extra_ceiling_lamp2.tscn" id="45_qbyo7"]
 [ext_resource type="PackedScene" uid="uid://t0xu1jab4wwc" path="res://assets/prop-scenes/teakitchen/teakitchen_MiniFridge.tscn" id="46_an21k"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="46_ffee4"]
-[ext_resource type="PackedScene" uid="uid://suvvj5b6v1fh" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant1.tscn" id="47_enmdt"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant1.tscn" id="47_enmdt"]
 [ext_resource type="PackedScene" uid="uid://bgrfjj4gv2el2" path="res://assets/prop-scenes/teakitchen/teakitchen_SpiceRack.tscn" id="48_enmdt"]
 [ext_resource type="PackedScene" uid="uid://erjy2352l6xv" path="res://assets/prop-scenes/library/library_StudyTable.tscn" id="48_w3kan"]
 [ext_resource type="AudioStream" uid="uid://brr5x277aapjf" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_trash_pedal.wav" id="50_p7ptg"]
@@ -54,7 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://dv86xb5m67oeb" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_kettle_boil.wav" id="52_e68iu"]
 [ext_resource type="AudioStream" uid="uid://bvb5oawvj8tgh" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_fridge_cycle.wav" id="53_86r48"]
 [ext_resource type="AudioStream" uid="uid://b8lm2lymjxnpq" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_cup_clink.wav" id="54_5p2il"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="55_3x4qf"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="55_3x4qf"]
 [ext_resource type="AudioStream" uid="uid://k1lqwrte0o7l" path="res://assets/sounds/effects/outputs/StudentCafe/cafe_payment_terminal_beep.wav" id="55_avk3f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldh6s"]
@@ -494,6 +494,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.886137, 0, 0)
 stream = SubResource("AudioStreamRandomizer_ekf4j")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("55_3x4qf")
 min_interval_sec = 30.0
 max_interval_sec = 80.0

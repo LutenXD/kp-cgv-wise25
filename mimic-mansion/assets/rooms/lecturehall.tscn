@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cavr2tbid2kg7" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_blackboard_chalk.wav" id="27_2fsa8"]
 [ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="28_6oom2"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="29_2fsa8"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="29_3drwx"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="29_3drwx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kft4"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -39,17 +39,6 @@ size = Vector3(10, 4, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ka3oo"]
 size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkqnb"]
-albedo_color = Color(0.25, 0.25, 0.28, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_oppwy"]
-material = SubResource("StandardMaterial3D_gkqnb")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eebwu"]
-transparency = 1
-albedo_color = Color(0.25, 0.25, 0.28, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhve6"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -98,11 +87,7 @@ shape = SubResource("BoxShape3D_ka3oo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -14.99)
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorNorth1" index="0" unique_id=1400294331]
-mesh = SubResource("BoxMesh_oppwy")
-surface_material_override/0 = SubResource("StandardMaterial3D_eebwu")
-
-[node name="DoorWall" parent="Walls/DoorNorth1" index="1" unique_id=1694738148 instance=ExtResource("2_xola0")]
+[node name="DoorWall" parent="Walls/DoorNorth1" index="0" unique_id=1694738148 instance=ExtResource("2_xola0")]
 material_override = ExtResource("2_qb0qb")
 material = SubResource("StandardMaterial3D_mhve6")
 
@@ -124,13 +109,9 @@ shape = SubResource("BoxShape3D_ka3oo")
 
 [node name="DoorSouth1" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=286239873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth1" index="0" unique_id=373547203]
 visible = false
-mesh = SubResource("BoxMesh_oppwy")
-surface_material_override/0 = SubResource("StandardMaterial3D_eebwu")
 
-[node name="DoorWall" parent="Walls/DoorSouth1" index="1" unique_id=1977971900 instance=ExtResource("2_xola0")]
+[node name="DoorWall" parent="Walls/DoorSouth1" index="0" unique_id=1977971900 instance=ExtResource("2_xola0")]
 material_override = ExtResource("2_qb0qb")
 material = SubResource("StandardMaterial3D_f0gic")
 
@@ -683,6 +664,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.866016, 0, -5.030969)
 stream = SubResource("AudioStreamRandomizer_k10er")
 unit_size = 100.0
 max_distance = 10.0
+bus = &"sfx"
 script = ExtResource("29_3drwx")
 min_interval_sec = 30.0
 max_interval_sec = 50.0

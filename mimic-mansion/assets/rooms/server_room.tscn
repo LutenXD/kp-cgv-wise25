@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://85icglvtk28x" path="res://assets/prop-scenes/special/special_PlasticSkeleton.tscn" id="28_tm2pu"]
 [ext_resource type="PackedScene" uid="uid://boyfidjk4rv0e" path="res://assets/props/holodeck/holodeck_CableSpool.glb" id="29_ubrgf"]
 [ext_resource type="PackedScene" uid="uid://deugl5wy4b1e7" path="res://assets/prop-scenes/computerlab/computerlab_CableBox.tscn" id="30_oal4f"]
-[ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="31_jsbv0"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="31_jsbv0"]
 [ext_resource type="PackedScene" uid="uid://dg6omllffekgo" path="res://assets/prop-scenes/computerlab/computerlab_DesktopTower.tscn" id="32_cfwnv"]
 [ext_resource type="PackedScene" uid="uid://dsxkfcjelkach" path="res://assets/prop-scenes/computerlab/computerlab_ErgonomicChair.tscn" id="33_b1wja"]
 [ext_resource type="PackedScene" uid="uid://dphf67jjo4ecw" path="res://assets/prop-scenes/computerlab/computerlab_NetworkSwitch.tscn" id="34_7dknq"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://wdxre6ve30ei" path="res://assets/prop-scenes/computerlab/computerlab_WorkstationDesk.tscn" id="36_t875m"]
 [ext_resource type="AudioStream" uid="uid://cy2785q12icnk" path="res://assets/sounds/effects/outputs/ServerRoom/serverroom_access_reader_beep.wav" id="37_3r1mr"]
 [ext_resource type="PackedScene" uid="uid://c7t0ku1mndkrj" path="res://assets/prop-scenes/extra/extra_ceiling_lamp1.tscn" id="38_3r1mr"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="38_hvjpx"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="38_hvjpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.55, 0.55, 0.58, 1)
@@ -629,6 +629,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014501572, 0, -9.281332)
 stream = SubResource("AudioStreamRandomizer_76u7p")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("38_hvjpx")
 min_interval_sec = 30.0
 max_interval_sec = 60.0

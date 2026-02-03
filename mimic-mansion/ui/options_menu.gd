@@ -8,7 +8,7 @@ signal close_options
 @onready var master_slider: HSlider = %MasterSlider
 @onready var music_slider: HSlider = %MusicSlider
 @onready var sfx_slider: HSlider = %SfxSlider
-
+@onready var tts_slider: HSlider = %ttsSlider
 
 
 func _ready():
@@ -17,6 +17,7 @@ func _ready():
 	master_slider.value = Settings.volume_master
 	music_slider.value = Settings.volume_music
 	sfx_slider.value = Settings.volume_sound
+	tts_slider.value = Settings.volume_tts
 
 
 func _on_back_button_pressed():
@@ -37,3 +38,7 @@ func _on_music_slider_value_changed(value: float) -> void:
 
 func _on_sfx_slider_value_changed(value: float) -> void:
 	Settings.volume_sound = value
+
+
+func _on_tts_slider_value_changed(value: float) -> void:
+	Settings.volume_tts = value

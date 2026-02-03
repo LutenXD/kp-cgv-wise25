@@ -53,9 +53,75 @@ viewport_path = NodePath("book_viewport")
 
 [sub_resource type="Animation" id="Animation_vkyxv"]
 length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("extra_OpenNotebook:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("extra_OpenNotebook:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("extra_OpenNotebook:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_02sal"]
 resource_name = "appear"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("extra_OpenNotebook:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1665, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0009999999, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("extra_OpenNotebook:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-0.68527424, 0, 0, 0.06566667, 0.22952458, 0, -1, -0.013368056, 0.25, 0),
+"times": PackedFloat32Array(0.0009999999, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("extra_OpenNotebook:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.1665, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.0009999999, 1)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lvois"]
 _data = {
@@ -63,7 +129,8 @@ _data = {
 &"appear": SubResource("Animation_02sal")
 }
 
-[node name="note_book" type="Node3D" unique_id=1560951017]
+[node name="note_book" type="Node3D" unique_id=1560951017 groups=["note_book"]]
+process_mode = 3
 script = ExtResource("1_b403g")
 
 [node name="extra_OpenNotebook" type="Node3D" parent="." unique_id=261231393]
@@ -75,7 +142,7 @@ transform = Transform3D(-1.0165139e-07, -0.7071067, 0.7071067, 0.9131902, 0.2881
 mesh = SubResource("ArrayMesh_qh2xq")
 skeleton = NodePath("")
 
-[node name="subviewport sprite" type="Sprite3D" parent="." unique_id=440345339]
+[node name="subviewport sprite" type="Sprite3D" parent="extra_OpenNotebook" unique_id=440345339]
 transform = Transform3D(0.2798359, 0.003750208, -0.008816961, 0.00012173771, 0.25624847, 0.11285657, 0.009580605, -0.1127943, 0.25609687, 0.05416274, 0.028458118, 0.10360271)
 texture = SubResource("ViewportTexture_b403g")
 region_enabled = true
@@ -140,7 +207,6 @@ text = "Press esc to close"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1152300024]
 libraries/ = SubResource("AnimationLibrary_lvois")
-autoplay = &"appear"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=906431199]
 

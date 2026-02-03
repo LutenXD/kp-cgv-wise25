@@ -43,6 +43,7 @@ material_override = ExtResource("2_bqtts")
 
 [node name="DoorNorth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1625667657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
+visible = false
 
 [node name="DoorWall" parent="Walls/DoorNorth0" index="0" unique_id=288271030 instance=ExtResource("3_5cooa")]
 material = ExtResource("2_bqtts")
@@ -211,6 +212,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4148974, 0)
 stream = SubResource("AudioStreamRandomizer_j47ya")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("17_vdmyx")
 min_interval_sec = 40.0
 max_interval_sec = 60.0

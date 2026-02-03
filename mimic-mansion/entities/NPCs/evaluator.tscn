@@ -10,6 +10,7 @@ evaluator_post_instructions = ""
 
 [node name="ScoreLabel" type="Label3D" parent="." index="6" unique_id=1798176545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1107852, 0)
+visible = false
 billboard = 2
 modulate = Color(1, 1, 0, 1)
 text = "0/0"

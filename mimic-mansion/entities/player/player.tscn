@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ds3jhm0iytcta"]
 
 [ext_resource type="Script" uid="uid://b77pq2nn1e4ry" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="PackedScene" uid="uid://cws4wjikcg5cb" path="res://scenes/note_book.tscn" id="2_abrql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfv1e"]
 
@@ -42,6 +43,9 @@ shadow_enabled = true
 spot_range = 32.0
 spot_attenuation = 2.0
 spot_angle = 24.0
+
+[node name="note_book" parent="Head/Camera3D" unique_id=1560951017 instance=ExtResource("2_abrql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38877225, -1.1511756)
 
 [node name="AudioStreamRecord" type="AudioStreamPlayer" parent="." unique_id=2035323576]
 unique_name_in_owner = true

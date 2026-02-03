@@ -63,12 +63,12 @@
 [ext_resource type="PackedScene" uid="uid://dssbm28pjhvef" path="res://assets/prop-scenes/special/special_TactileSensor.tscn" id="60_brfuk"]
 [ext_resource type="PackedScene" uid="uid://u1mskvqi2cnl" path="res://assets/prop-scenes/special/special_USBHub.tscn" id="61_xwtxi"]
 [ext_resource type="PackedScene" uid="uid://drepbfpx56erh" path="res://assets/prop-scenes/special/special_VRHeadset.tscn" id="62_ecql5"]
-[ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
-[ext_resource type="PackedScene" uid="uid://doaohxtxltkvk" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
-[ext_resource type="PackedScene" uid="uid://mn67q826hnfd" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
 [ext_resource type="AudioStream" uid="uid://dpfowtygkvwid" path="res://assets/sounds/effects/outputs/Holodeck/holodeck_control_panel_hum.wav" id="67_rm7jy"]
 [ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="68_utxqs"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="69_xtbjp"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="69_xtbjp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db4si"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -79,17 +79,6 @@ size = Vector3(10, 4, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_olytw"]
 size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1jhc"]
-albedo_color = Color(0.95, 0.92, 0.85, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_gogwu"]
-material = SubResource("StandardMaterial3D_u1jhc")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f702a"]
-transparency = 1
-albedo_color = Color(0.95, 0.92, 0.85, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sbkj"]
 albedo_color = Color(0.4, 0.3, 0.2, 1)
@@ -120,7 +109,6 @@ rings = 8
 streams_count = 3
 stream_0/stream = ExtResource("67_rm7jy")
 stream_1/stream = ExtResource("68_utxqs")
-stream_2/stream = ExtResource("69_xtbjp")
 
 [node name="Holodeck" unique_id=1137580905 instance=ExtResource("1_u1jhc")]
 
@@ -160,12 +148,7 @@ disabled = true
 [node name="DoorSouth1" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1730320601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth1" index="0" unique_id=1000391711]
-visible = false
-mesh = SubResource("BoxMesh_gogwu")
-surface_material_override/0 = SubResource("StandardMaterial3D_f702a")
-
-[node name="DoorWall" parent="Walls/DoorSouth1" index="1" unique_id=288271030 instance=ExtResource("3_skp5l")]
+[node name="DoorWall" parent="Walls/DoorSouth1" index="0" unique_id=288271030 instance=ExtResource("3_skp5l")]
 material_override = ExtResource("2_rlb11")
 
 [node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=2137167074]
@@ -261,7 +244,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -10)
 material_override = ExtResource("4_wqhjx")
 mesh = SubResource("BoxMesh_4cgsm")
-
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 
@@ -736,7 +718,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01371, 0, -5.013711)
 stream = SubResource("AudioStreamRandomizer_2smek")
 unit_size = 100.0
 max_distance = 10.0
+bus = &"sfx"
 script = ExtResource("69_xtbjp")
 min_interval_sec = 40.0
 max_interval_sec = 80.0
-

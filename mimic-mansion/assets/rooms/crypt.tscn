@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="28_lo5k8"]
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
 [ext_resource type="AudioStream" uid="uid://pbcd7ogt5l7t" path="res://assets/sounds/effects/outputs/Crypt/crypt_hidden_door_mechanism.wav" id="29_f5ygi"]
-[ext_resource type="Script" path="res://sfx_queuer.gd" id="30_hcp8m"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="30_hcp8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)

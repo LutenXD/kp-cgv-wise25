@@ -36,6 +36,7 @@ bus = &"Speech"
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=1999646119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7493918, 0)
+visible = false
 billboard = 2
 text = "TTS Model: Kokoro-82M
 Voice: af_heart"

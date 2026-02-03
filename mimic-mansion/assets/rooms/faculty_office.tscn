@@ -48,7 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://4qeh157546rl" path="res://assets/sounds/effects/outputs/FacultyOffice/office_conference_phone_idle.wav" id="46_771fn"]
 [ext_resource type="AudioStream" uid="uid://ftokmfoepxt3" path="res://assets/sounds/effects/outputs/FacultyOffice/office_paper_adjust.wav" id="47_h5pyv"]
 [ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="48_ohr0w"]
-[ext_resource type="Script" path="res://sfx_queuer.gd" id="49_6irdo"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="49_6irdo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.95, 0.92, 0.85, 1)

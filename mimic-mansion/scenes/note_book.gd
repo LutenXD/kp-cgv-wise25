@@ -37,6 +37,7 @@ func _input(event):
 
 	
 func activate_book():
+	anim_player.speed_scale = 1.0
 	anim_player.play("appear")
 	await get_tree().process_frame
 	show()
@@ -52,7 +53,8 @@ func activate_book():
 	player.set_physics_process(false)
 	player.set_process_input(false)
 	player.set_process_unhandled_input(false)
-	
+
+
 func deactivate_book():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	book_viewport.gui_disable_input = true
@@ -60,8 +62,10 @@ func deactivate_book():
 	await get_tree().process_frame
 	menu.hide()
 	text_edit.release_focus()
-	#anim_player.play("appear")
+	anim_player.speed_scale = 2.0
+	anim_player.play_backwards("appear")
 	#TODO: disappear animation
+	await anim_player.animation_finished
 	hide()
 		
 	player.set_process(true)

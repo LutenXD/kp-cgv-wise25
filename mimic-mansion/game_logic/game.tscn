@@ -59,7 +59,6 @@
 [ext_resource type="AudioStream" uid="uid://dqs2f7etlqync" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk2.wav" id="71_yt0us"]
 [ext_resource type="AudioStream" uid="uid://ci252js86e8yl" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk3.wav" id="72_ne34r"]
 [ext_resource type="AudioStream" uid="uid://bgty1clejs3sk" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk4.wav" id="73_hobkd"]
-[ext_resource type="PackedScene" uid="uid://cws4wjikcg5cb" path="res://scenes/note_book.tscn" id="73_iy51i"]
 [ext_resource type="AudioStream" uid="uid://c8hiedu474p80" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk5.wav" id="74_4vfon"]
 [ext_resource type="AudioStream" uid="uid://bpvdh5beerpfp" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk6.wav" id="75_quk5d"]
 [ext_resource type="AudioStream" uid="uid://buxt5cmwhgyle" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk7.wav" id="76_cpef1"]
@@ -265,9 +264,6 @@ bus = &"Music"
 process_mode = 3
 bus = &"steps"
 
-[node name="note_book" parent="Player" unique_id=1560951017 instance=ExtResource("73_iy51i")]
-transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 1.6370423, -1.0951401)
-
 [node name="MimicManager" type="Node3D" parent="." unique_id=1896974085]
 script = ExtResource("1_ta1pv")
 mimic_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to teach the player about the following concept. Explain the underlying concept so the player understands *why* the answer is correct.
@@ -287,57 +283,6 @@ The player is to be addressed as a \"filthy student\" or something similar.
 [node name="RoomLayoutManager" type="Node3D" parent="." unique_id=1315244910]
 script = ExtResource("7_4sqru")
 metadata/_custom_type_script = "uid://bo0nxcksr5ibk"
-
-[node name="Node3D" type="Node3D" parent="." unique_id=1889449183]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-visible = false
-
-[node name="Label3D" type="Label3D" parent="Node3D" unique_id=1015971815]
-pixel_size = 0.01
-billboard = 1
-text = "0, 0"
-
-[node name="Label3D2" type="Label3D" parent="Node3D" unique_id=1912213727]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
-pixel_size = 0.01
-billboard = 1
-text = "10, 0"
-
-[node name="Label3D3" type="Label3D" parent="Node3D" unique_id=568179204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
-pixel_size = 0.01
-billboard = 1
-text = "20, 0"
-
-[node name="Label3D4" type="Label3D" parent="Node3D" unique_id=2029977631]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.92, 0, 0)
-pixel_size = 0.01
-billboard = 1
-text = "30, 0"
-
-[node name="Label3D5" type="Label3D" parent="Node3D" unique_id=617467381]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-pixel_size = 0.01
-billboard = 1
-text = "0, 10"
-
-[node name="Label3D6" type="Label3D" parent="Node3D" unique_id=1215556738]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
-pixel_size = 0.01
-billboard = 1
-text = "10, 10"
-
-[node name="Label3D7" type="Label3D" parent="Node3D" unique_id=1644446618]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
-pixel_size = 0.01
-billboard = 1
-text = "20, 10"
-
-[node name="Label3D8" type="Label3D" parent="Node3D" unique_id=1476083254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.92, 0, 10)
-pixel_size = 0.01
-billboard = 1
-text = "30, 10"
 
 [node name="Flicker" type="Node" parent="." unique_id=994721062]
 script = ExtResource("5_ta1pv")

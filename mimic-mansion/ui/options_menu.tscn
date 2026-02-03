@@ -108,6 +108,23 @@ layout_mode = 2
 step = 5.0
 value = 20.0
 
+[node name="ttsVolume" type="VBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=672951493]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MimicLabel" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/ttsVolume" unique_id=1760220128]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Text to Speech"
+horizontal_alignment = 1
+
+[node name="ttsSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/ttsVolume" unique_id=1793909035]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+step = 5.0
+value = 20.0
+
 [node name="BackButton" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer" unique_id=1875044695]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
@@ -118,4 +135,5 @@ text = "Back to Main Menu"
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/MasterVolume/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/MusicVolume/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/SoundVolume/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/CenterContainer/VBoxContainer/ttsVolume/ttsSlider" to="." method="_on_tts_slider_value_changed"]
 [connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

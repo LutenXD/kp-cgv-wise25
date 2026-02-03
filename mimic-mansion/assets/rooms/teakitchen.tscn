@@ -26,40 +26,18 @@
 [ext_resource type="PackedScene" uid="uid://d318fnt7l835n" path="res://assets/prop-scenes/facultyoffice/facultyoffice_WallArt.tscn" id="24_0t54k"]
 [ext_resource type="PackedScene" uid="uid://bf0pvgacevdgn" path="res://assets/prop-scenes/teakitchen/teakitchen_DishSoapDispenser.tscn" id="25_nfx6j"]
 [ext_resource type="PackedScene" uid="uid://c0b0wtmfoibv8" path="res://assets/prop-scenes/special/special_UtahTeapotYellow.tscn" id="26_w4x3k"]
-[ext_resource type="PackedScene" uid="uid://xoxu7h0q1s6h" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="27_6qcr3"]
-[ext_resource type="PackedScene" uid="uid://dlted20o5c7yi" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="27_wsolw"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="27_6qcr3"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant3.tscn" id="27_wsolw"]
 [ext_resource type="AudioStream" uid="uid://b8lm2lymjxnpq" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_cup_clink.wav" id="28_ha2jd"]
 [ext_resource type="AudioStream" uid="uid://dv86xb5m67oeb" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_kettle_boil.wav" id="29_brfdu"]
 [ext_resource type="AudioStream" uid="uid://biqoxnf1v135q" path="res://assets/sounds/effects/outputs/StudentCafe/cafe_cup_set_down.wav" id="30_6qcr3"]
 [ext_resource type="AudioStream" uid="uid://catstewdxkuwv" path="res://assets/sounds/effects/outputs/StudentCafe/cafe_espresso_machine_idle.wav" id="31_wsolw"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="32_cfm1t"]
-[ext_resource type="PackedScene" uid="uid://bfsx00o6dwhj0" path="res://assets/prop-scenes/teakitchen/teakitchen_sofatable.tscn" id="34_wsolw"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="32_cfm1t"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sofatable.tscn" id="34_wsolw"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="35_cfm1t"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
-albedo_color = Color(0.45, 0.28, 0.22, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_c5tg0"]
-material = SubResource("StandardMaterial3D_walls")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mrp3"]
-transparency = 1
-albedo_color = Color(0.45, 0.28, 0.22, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3ulv"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upvfv"]
-albedo_color = Color(0.45, 0.28, 0.22, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sosxw"]
-material = SubResource("StandardMaterial3D_upvfv")
-size = Vector3(10, 4, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kb6g"]
-transparency = 1
-albedo_color = Color(0.45, 0.28, 0.22, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8l37"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -82,13 +60,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=126030638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorSouth0" index="0" unique_id=1038383577]
 visible = false
-mesh = SubResource("BoxMesh_c5tg0")
-surface_material_override/0 = SubResource("StandardMaterial3D_2mrp3")
 
-[node name="DoorWall" parent="Walls/DoorSouth0" index="1" unique_id=288271030 instance=ExtResource("2_t1jaq")]
+[node name="DoorWall" parent="Walls/DoorSouth0" index="0" unique_id=288271030 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_a3ulv")
 
 [node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
@@ -96,13 +70,9 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
 
 [node name="DoorEast0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1680462794]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/DoorEast0" index="0" unique_id=1626629077]
 visible = false
-mesh = SubResource("BoxMesh_sosxw")
-surface_material_override/0 = SubResource("StandardMaterial3D_0kb6g")
 
-[node name="DoorWall" parent="Walls/DoorEast0" index="1" unique_id=1553913665 instance=ExtResource("2_t1jaq")]
+[node name="DoorWall" parent="Walls/DoorEast0" index="0" unique_id=1553913665 instance=ExtResource("2_t1jaq")]
 material = SubResource("StandardMaterial3D_v8l37")
 
 [node name="WallWest0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="5" unique_id=6000773]
@@ -329,6 +299,7 @@ spot_range = 7.243
 stream = SubResource("AudioStreamRandomizer_hlqby")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("32_cfm1t")
 min_interval_sec = 20.0
 max_interval_sec = 50.0

@@ -30,6 +30,8 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		if get_tree().get_first_node_in_group("note_book").visible:
+			return
 		if !PauseMenu.visible && !OptionsMenu.visible:
 			PauseMenu.show()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

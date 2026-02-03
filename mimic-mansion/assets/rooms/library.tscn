@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjx0ok1yq4e7b"]
+[gd_scene format=3 uid="uid://or37sm7vbo10"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_1jius"]
 [ext_resource type="PackedScene" uid="uid://cte820e5t4fm4" path="res://assets/prop-scenes/library/library_FloorMat.tscn" id="2_0mq2b"]
@@ -36,11 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://cn2watidp8nqb" path="res://assets/prop-scenes/extra/extra_pictureCircuit.tscn" id="35_fci7f"]
 [ext_resource type="PackedScene" uid="uid://dwpmejvxifp04" path="res://assets/prop-scenes/extra/extra_pictureLake.tscn" id="36_ppjom"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="37_4fjha"]
-[ext_resource type="PackedScene" uid="uid://xoxu7h0q1s6h" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="37_ppjom"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sessel.tscn" id="37_ppjom"]
 [ext_resource type="AudioStream" uid="uid://bck268l5fdcy5" path="res://assets/sounds/effects/outputs/Library/library_book_cart_roll.wav" id="38_cdk86"]
 [ext_resource type="AudioStream" uid="uid://biefp868j1qrb" path="res://assets/sounds/effects/outputs/Library/library_ladder_step.wav" id="39_luep3"]
 [ext_resource type="AudioStream" uid="uid://caek007rs7xpd" path="res://assets/sounds/effects/outputs/Library/library_ventilation_soft.wav" id="40_jx1ea"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="41_rf5ao"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="41_rf5ao"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0d6v"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -692,6 +692,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.132471, 4.360674, 0)
 stream = SubResource("AudioStreamRandomizer_nhma3")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("41_rf5ao")
 min_interval_sec = 30.0
 max_interval_sec = 90.0

@@ -77,6 +77,24 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu" unique_id=1160564765]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 307.0
+offset_right = 489.0
+offset_bottom = 483.0
+rotation = -0.10215119
+bbcode_enabled = true
+text = "[font_size=24][center]Controls: [/center][/font_size]
+
+[table=2]
+[cell]\"WASD\"[/cell][cell]	Movement[/cell]
+[cell]\"E\"[/cell][cell]	open doors[/cell]
+[cell]\"space\"[/cell][cell]	hold while looking at mimic to speak to it[/cell]
+[cell]\"F\"[/cell][cell]	open notebook[/cell]
+[/table]"
+fit_content = true
+
 [connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

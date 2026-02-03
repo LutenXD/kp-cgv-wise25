@@ -23,8 +23,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	$AnimatableBody3D/Label3D.visible = is_same(interactable_component, player.current_interaction)
-	$AnimatableBody3D/Label3D2.visible = is_same(interactable_component, player.current_interaction)
+	#$AnimatableBody3D/Label3D.visible = is_same(interactable_component, player.current_interaction)
+	#$AnimatableBody3D/Label3D2.visible = is_same(interactable_component, player.current_interaction)
+	pass
 
 
 func _on_interactable_component_interacted() -> void:
