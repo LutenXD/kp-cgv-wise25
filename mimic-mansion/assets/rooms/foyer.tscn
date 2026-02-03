@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q0hffs3w2vuc" path="res://assets/prop-scenes-50k/extra/extra_ceiling_lamp1.tscn" id="5_6b1eo"]
 [ext_resource type="PackedScene" uid="uid://b5u6803slqkky" path="res://assets/prop-scenes/foyer/foyer_Artwork.tscn" id="5_tybol"]
 [ext_resource type="PackedScene" uid="uid://b02ccqd4sn0si" path="res://assets/prop-scenes/foyer/foyer_AutomaticDoors.tscn" id="6_0wy1h"]
-[ext_resource type="Script" uid="uid://vvha4n54dfv7" path="res://utils/light_flicker.gd" id="6_af44e"]
+[ext_resource type="Script" path="res://utils/light_flicker.gd" id="6_af44e"]
 [ext_resource type="PackedScene" uid="uid://ba8c8woqcpnwf" path="res://assets/prop-scenes/foyer/foyer_CarpetRunner.tscn" id="7_kk1hr"]
 [ext_resource type="PackedScene" uid="uid://b8l7lxxik3jej" path="res://assets/prop-scenes/foyer/foyer_CoatStand.tscn" id="8_oifj2"]
 [ext_resource type="PackedScene" uid="uid://hx8edl2q5o81" path="res://assets/prop-scenes/foyer/foyer_FireAlarm.tscn" id="9_gb8of"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://d318fnt7l835n" path="res://assets/prop-scenes/facultyoffice/facultyoffice_WallArt.tscn" id="25_b4xy5"]
 [ext_resource type="PackedScene" uid="uid://cmfdt5wjfnuls" path="res://assets/prop-scenes/lecturehall/lecturehall_WallBanner.tscn" id="26_r20xi"]
 [ext_resource type="PackedScene" uid="uid://bl1pvtbua2odh" path="res://assets/prop-scenes/facultyoffice/facultyoffice_PlantPot.tscn" id="28_b4xy5"]
-[ext_resource type="PackedScene" uid="uid://suvvj5b6v1fh" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant1.tscn" id="29_1o6fn"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_large_indoor_plant1.tscn" id="29_1o6fn"]
 [ext_resource type="PackedScene" uid="uid://bpern081py0vs" path="res://assets/prop-scenes-50k/studentcafe/studentcafe_PlantPot.tscn" id="30_2w7m1"]
 [ext_resource type="PackedScene" uid="uid://dgjlvmxkylfn0" path="res://assets/prop-scenes/extra/extra_pictureBinaryTree.tscn" id="30_6wbsg"]
 [ext_resource type="PackedScene" uid="uid://hxub41xxmja1" path="res://assets/prop-scenes/library/library_InfoBoard.tscn" id="31_18pyx"]
@@ -35,7 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://b1b01bvcfyj5n" path="res://assets/sounds/effects/outputs/Foyer/automatic_sliding_doors_cycle.wav" id="33_e4sqk"]
 [ext_resource type="AudioStream" uid="uid://ufwdcjn77qwt" path="res://assets/sounds/effects/outputs/Foyer/bench_metal_creak.wav" id="34_yc72x"]
 [ext_resource type="AudioStream" uid="uid://dm1ogjdjf788e" path="res://assets/sounds/effects/outputs/Foyer/foyer_hvac_diffuse.wav" id="35_she5p"]
-[ext_resource type="Script" path="res://sfx_queuer.gd" id="36_uiore"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="36_uiore"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 size = Vector3(10, 4, 0.2)
@@ -639,7 +639,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.4458923, 3.600587, -14.4173
 
 [node name="Evaluator" parent="." unique_id=1382209666 instance=ExtResource("31_af44e")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5, -0.021781325, -2.103)
-evaluator_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to evaluate the player's understanding of the topics they’ve learned from other NPCs. You will ask the player a question and assess their answer.
+evaluator_pre_instructions = "You are an NPC in an educational game about computer graphics. Your role is to evaluate the player's understanding of the topics they’ve learned from other NPCs. You will ask the player a question and assess their answer. Only ask the question you were given.
 
 QUESTION, ANSWER AND EXPLANATION:"
 evaluator_post_instructions = "PERSONALITY AND TONE:

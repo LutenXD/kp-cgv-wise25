@@ -22,8 +22,17 @@ var flying: bool = false
 func _ready() -> void:
 	Settings.update.connect(func (): look_sensitivity = Settings.mouse_sensitivity)
 	look_sensitivity = Settings.mouse_sensitivity
+	
 	var idx = AudioServer.get_bus_index("Record")
-	effect = AudioServer.get_bus_effect(idx, 0)
+	# Remove old AudioEffectRecord (if any)
+	for i in range(AudioServer.get_bus_effect_count(idx)):
+		var e = AudioServer.get_bus_effect(idx, i)
+		if e is AudioEffectRecord:
+			AudioServer.remove_bus_effect(idx, i)
+			break
+	
+	effect = AudioEffectRecord.new()
+	AudioServer.add_bus_effect(idx, effect, 0)
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dcfoxi7e1iw7q"]
+[gd_scene format=3 uid="uid://2muea82newgl"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_fohyt"]
 [ext_resource type="Material" uid="uid://bmjndwjfeagnl" path="res://assets/textures/materials/university_tile_floor.tres" id="2_bqtts"]
@@ -13,16 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://cg3ajhn30la4u" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperDispenser.tscn" id="8_r78x7"]
 [ext_resource type="PackedScene" uid="uid://c1sylh1escyrw" path="res://assets/prop-scenes-50k/universitytoilet/universitytoilet_TrashCanLarge.tscn" id="9_uk57g"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="10_vdmyx"]
-[ext_resource type="PackedScene" uid="uid://v5pipcs0mdps" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
+[ext_resource type="PackedScene" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletStall.tscn" id="13_ofnwc"]
 [ext_resource type="PackedScene" uid="uid://dllgc23227vg7" path="res://assets/prop-scenes/universitytoilet/universitytoilet_ToiletPaperRoll.tscn" id="14_5cooa"]
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
 [ext_resource type="AudioStream" uid="uid://dj1j7ce8e2pkb" path="res://assets/sounds/effects/outputs/FacultyOffice/office_leather_chair_creak.wav" id="17_1jwr8"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="17_vdmyx"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="17_vdmyx"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_5cooa"]
-density = 0.01
+density = 0.2
 height_falloff = 4.0
-edge_fade = 0.38637438
+edge_fade = 0.10085552
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j47ya"]
 streams_count = 1

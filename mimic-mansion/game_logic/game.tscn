@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://jy4sym0dop3s" path="res://addons/godot_material_footsteps/core/material_footstep_player_3d.gd" id="3_o8hf1"]
 [ext_resource type="Script" uid="uid://cfs28riswyejx" path="res://addons/godot_material_footsteps/resources/material_footstep.gd" id="4_4sqru"]
 [ext_resource type="AudioStream" uid="uid://dn8nodeu3v4kn" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk0.wav" id="5_8psdd"]
-[ext_resource type="Script" uid="uid://vvha4n54dfv7" path="res://utils/light_flicker.gd" id="5_ta1pv"]
+[ext_resource type="Script" path="res://utils/light_flicker.gd" id="5_ta1pv"]
 [ext_resource type="AudioStream" uid="uid://bkaftx6o86i6j" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk1.wav" id="6_lxndx"]
 [ext_resource type="AudioStream" uid="uid://cqw5k7e4t3un3" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk11.wav" id="7_2chto"]
 [ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
@@ -259,9 +259,11 @@ metadata/_custom_type_script = "uid://jy4sym0dop3s"
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_iy51i")
 autoplay = true
+bus = &"Music"
 
 [node name="StepsAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player" unique_id=377208954]
 process_mode = 3
+bus = &"steps"
 
 [node name="note_book" parent="Player" unique_id=1560951017 instance=ExtResource("73_iy51i")]
 transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 1.6370423, -1.0951401)
