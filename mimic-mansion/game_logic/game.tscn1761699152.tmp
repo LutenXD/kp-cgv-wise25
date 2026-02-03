@@ -331,6 +331,9 @@ script = ExtResource("5_ta1pv")
 min_flicker_time = 20.0
 max_flicker_time = 90.0
 
-[node name="RoomLayoutManager3" type="Node3D" parent="." unique_id=26667937]
+[node name="RoomLayoutManager3" type="Node3D" parent="." unique_id=496672105]
 script = ExtResource("75_ac5m8")
 metadata/_custom_type_script = "uid://epvauk0vup74"
+
+[connection signal="finished" from="RoomLayoutManager3" to="MimicManager" method="_on_room_layout_manager_3_finished"]
+[connection signal="finished" from="RoomLayoutManager3" to="Flicker" method="_on_room_layout_manager_3_finished"]

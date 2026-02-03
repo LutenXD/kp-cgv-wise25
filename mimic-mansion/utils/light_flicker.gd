@@ -59,3 +59,19 @@ func _on_room_layout_manager_finished() -> void:
 	for light in all_lights:
 		original_energies[light] = light.light_energy
 		schedule_next_flicker(light)
+
+
+func _on_room_layout_manager_2_finished() -> void:
+	await get_tree().process_frame
+	all_lights = get_tree().get_nodes_in_group("flickering_light")
+	for light in all_lights:
+		original_energies[light] = light.light_energy
+		schedule_next_flicker(light)
+
+
+func _on_room_layout_manager_3_finished() -> void:
+	await get_tree().process_frame
+	all_lights = get_tree().get_nodes_in_group("flickering_light")
+	for light in all_lights:
+		original_energies[light] = light.light_energy
+		schedule_next_flicker(light)

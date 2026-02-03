@@ -44,3 +44,57 @@ func _on_room_layout_manager_finished() -> void:
 		
 func _on_evaluation_passed() -> void:
 	$"../HUD".finish_game()
+
+
+func _on_room_layout_manager_2_finished() -> void:
+	await get_tree().process_frame # fuck this
+	var mimic_statements = MimicStatements.new()
+	var mimics: Array[Node] = get_tree().get_nodes_in_group("mimic")
+	
+	for mimic in mimics:
+		if mimic is Evaluator:
+			mimics.erase(mimic)
+			humgold = mimic
+	print(mimics)
+	var num_questions: int = mimics.size()
+	var statements: Array = mimic_statements.parse_json(num_questions)
+	for i: int in range(num_questions):
+		print(str(statements[i]))
+		mimics[i].set_instructions(mimic_pre_instructions + str(statements[i]) + mimic_post_instructions)
+	
+	if humgold:
+		humgold.num_questions = num_questions
+		humgold.statements = statements
+		#await get_tree().process_frame # fuck this
+		humgold.set_evaluator_instructions()
+		
+		humgold.evaluation_passed.connect(_on_evaluation_passed)
+	else:
+		print("mööp")
+
+
+func _on_room_layout_manager_3_finished() -> void:
+	await get_tree().process_frame # fuck this
+	var mimic_statements = MimicStatements.new()
+	var mimics: Array[Node] = get_tree().get_nodes_in_group("mimic")
+	
+	for mimic in mimics:
+		if mimic is Evaluator:
+			mimics.erase(mimic)
+			humgold = mimic
+	print(mimics)
+	var num_questions: int = mimics.size()
+	var statements: Array = mimic_statements.parse_json(num_questions)
+	for i: int in range(num_questions):
+		print(str(statements[i]))
+		mimics[i].set_instructions(mimic_pre_instructions + str(statements[i]) + mimic_post_instructions)
+	
+	if humgold:
+		humgold.num_questions = num_questions
+		humgold.statements = statements
+		#await get_tree().process_frame # fuck this
+		humgold.set_evaluator_instructions()
+		
+		humgold.evaluation_passed.connect(_on_evaluation_passed)
+	else:
+		print("mööp")

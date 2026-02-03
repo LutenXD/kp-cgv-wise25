@@ -1,648 +1,1252 @@
 {
   "rooms": [
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "art_gallery",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "art_gallery_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          1
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "art_gallery_rot180",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          1
-        ]
-      },
-      "length": 2.0,
-      "name": "art_gallery_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "attic_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "attic_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0,
-          1.0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0,
-          1
-        ],
-        "north": [],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          1,
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot180",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [],
-        "west": [
-          1,
-          0
-        ]
-      },
-      "length": 2.0,
-      "name": "basement_dungeon_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          1.0
-        ],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          1.0
-        ]
-      },
-      "length": 2.0,
-      "name": "chapel_crypt",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "chapel_crypt_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 2.0,
-      "name": "chapel_crypt_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          1
-        ],
-        "south": [
-          1
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "chapel_crypt_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "courtyard_garden_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "dining_room",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "dining_room_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "dining_room_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "dining_room_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          1.0
-        ],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "holodeck",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          1
-        ],
-        "north": [],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "holodeck_rot90",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 2.0,
-      "name": "holodeck_rot180",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 2.0,
-      "name": "holodeck_rot270",
-      "width": 2.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "grand_foyer_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0.0
-        ],
-        "north": [
-          0.0
-        ],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [
-          0
-        ],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "hallway_rot270",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [],
-        "south": [
-          0.0
-        ],
-        "west": [
-          0.0
-        ]
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [],
-        "south": [
-          0
-        ],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot90",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [
-          0
-        ],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": []
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot180",
-      "width": 1.0
-    },
-    {
-      "doors": {
-        "east": [],
-        "north": [
-          0
-        ],
-        "south": [],
-        "west": [
-          0
-        ]
-      },
-      "length": 1.0,
-      "name": "kitchen_pantry_rot270",
-      "width": 1.0
-    }
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "crypt",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2,
+	  "name": "crypt_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "crypt_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "crypt_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "faculty_office",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "faculty_office_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "faculty_office_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 1,
+	  "name": "faculty_office_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [
+		  1,
+		  0
+		],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "foyer",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  2
+		],
+		"south": [
+		  -1
+		],
+		"west": [
+		  -1,
+		  -1
+		]
+	  },
+	  "length": 2,
+	  "name": "foyer_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [
+		  1,
+		  0
+		],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "foyer_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  -1,
+		  -1
+		],
+		"north": [
+		  -1
+		],
+		"south": [
+		  2
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "foyer_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "hallway",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [
+		  1
+		],
+		"south": [
+		  -1
+		],
+		"west": [
+		  -1
+		]
+	  },
+	  "length": 1,
+	  "name": "hallway_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "hallway_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  -1
+		],
+		"north": [
+		  -1
+		],
+		"south": [
+		  1
+		],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 1,
+	  "name": "hallway_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "holodeck",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "holodeck_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "holodeck_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "holodeck_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [
+		  1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "lecturehall",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2,
+	  "name": "lecturehall_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [
+		  1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "lecturehall_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "lecturehall_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 1
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  1,
+		  0
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 3,
+	  "name": "library",
+	  "occupied_cells": [
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 2
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  2
+		],
+		"north": [
+		  1,
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 3,
+	  "name": "library_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 2
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  1,
+		  0
+		]
+	  },
+	  "length": 3,
+	  "name": "library_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 2
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1,
+		  0
+		],
+		"west": [
+		  2
+		]
+	  },
+	  "length": 3,
+	  "name": "library_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 1,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 2
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "server_room",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [
+		  -1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "server_room_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "name": "server_room_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  -1
+		],
+		"south": [
+		  1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "name": "server_room_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 1
+		},
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "smalllectureroom",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "smalllectureroom_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "smalllectureroom_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "smalllectureroom_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "studentcafe",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "studentcafe_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  1
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "studentcafe_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "studentcafe_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		},
+		{
+		  "x": 1,
+		  "z": 0
+		}
+	  ],
+	  "width": 2
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "teakitchen",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "teakitchen_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "teakitchen_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "teakitchen_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "toilet",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "name": "toilet_rot90",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "toilet_rot180",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	},
+	{
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "name": "toilet_rot270",
+	  "occupied_cells": [
+		{
+		  "x": 0,
+		  "z": 0
+		}
+	  ],
+	  "width": 1
+	}
   ]
 }
