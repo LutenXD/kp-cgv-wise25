@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="28_lo5k8"]
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
 [ext_resource type="AudioStream" uid="uid://pbcd7ogt5l7t" path="res://assets/sounds/effects/outputs/Crypt/crypt_hidden_door_mechanism.wav" id="29_f5ygi"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="30_hcp8m"]
+[ext_resource type="Script" path="res://sfx_queuer.gd" id="30_hcp8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -154,7 +154,6 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5tvj")
 
 [node name="Props" type="Node3D" parent="." index="3" unique_id=219710503]
-visible = false
 
 [node name="Cobweb" parent="Props" index="0" unique_id=2007813466 instance=ExtResource("5_jtbvu")]
 transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -2.5839353, 3.536001, -12.59453)
@@ -928,6 +927,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7497015, 3.5647528, -5.5482
 stream = SubResource("AudioStreamRandomizer_wjwru")
 unit_size = 100.0
 max_distance = 5.0
+bus = &"sfx"
 script = ExtResource("30_hcp8m")
 min_interval_sec = 60.0
 max_interval_sec = 90.0

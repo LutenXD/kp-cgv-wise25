@@ -35,7 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://b1b01bvcfyj5n" path="res://assets/sounds/effects/outputs/Foyer/automatic_sliding_doors_cycle.wav" id="33_e4sqk"]
 [ext_resource type="AudioStream" uid="uid://ufwdcjn77qwt" path="res://assets/sounds/effects/outputs/Foyer/bench_metal_creak.wav" id="34_yc72x"]
 [ext_resource type="AudioStream" uid="uid://dm1ogjdjf788e" path="res://assets/sounds/effects/outputs/Foyer/foyer_hvac_diffuse.wav" id="35_she5p"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="36_uiore"]
+[ext_resource type="Script" path="res://sfx_queuer.gd" id="36_uiore"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 size = Vector3(10, 4, 0.2)
@@ -685,6 +685,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
 stream = SubResource("AudioStreamRandomizer_wcilx")
 unit_size = 100.0
 max_distance = 10.0
+bus = &"sfx"
 script = ExtResource("36_uiore")
 min_interval_sec = 40.0
 max_interval_sec = 60.0

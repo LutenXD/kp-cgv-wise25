@@ -261,6 +261,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -10)
 material_override = ExtResource("4_wqhjx")
 mesh = SubResource("BoxMesh_4cgsm")
+
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0t0x")
 
@@ -730,7 +731,6 @@ linear_stiffness = 1.0
 pressure_coefficient = 16000.0
 ray_pickable = false
 
-<<<<<<< HEAD
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1817351969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01371, 0, -5.013711)
 stream = SubResource("AudioStreamRandomizer_2smek")
@@ -739,11 +739,4 @@ max_distance = 10.0
 script = ExtResource("69_xtbjp")
 min_interval_sec = 40.0
 max_interval_sec = 80.0
-=======
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="6" unique_id=1412637156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
-stream = SubResource("AudioStreamRandomizer_2smek")
-unit_size = 100.0
-max_distance = 10.0
-panning_strength = 0.0
->>>>>>> 1f2f99d (jakop)
+
