@@ -37,6 +37,8 @@ func _input(event):
 
 	
 func activate_book():
+	anim_player.play("appear")
+	await get_tree().process_frame
 	show()
 	menu.show()
 	await get_tree().process_frame
@@ -45,7 +47,6 @@ func activate_book():
 	book_viewport.handle_input_locally = true
 	await get_tree().process_frame
 	text_edit.grab_focus()
-	anim_player.play("appear")
 	
 	player.set_process(false)
 	player.set_physics_process(false)
