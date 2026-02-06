@@ -36,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://ufwdcjn77qwt" path="res://assets/sounds/effects/outputs/Foyer/bench_metal_creak.wav" id="34_yc72x"]
 [ext_resource type="AudioStream" uid="uid://dm1ogjdjf788e" path="res://assets/sounds/effects/outputs/Foyer/foyer_hvac_diffuse.wav" id="35_she5p"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="36_uiore"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c3ymo1r38e6vv" path="res://assets/rooms/foyer.occ" id="37_yc72x"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a4b51"]
 size = Vector3(10, 4, 0.2)
@@ -64,6 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth0" unique_id=2047834257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_squi4")
 
@@ -75,6 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -15)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" unique_id=501778089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_squi4")
 
@@ -108,6 +111,7 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 15, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast0" unique_id=716638054]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_squi4")
 
@@ -132,6 +136,7 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest0" unique_id=698219662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_squi4")
 
@@ -689,3 +694,7 @@ bus = &"sfx"
 script = ExtResource("36_uiore")
 min_interval_sec = 40.0
 max_interval_sec = 60.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=307492219]
+occluder = ExtResource("37_yc72x")
+bake_mask = 4294967293

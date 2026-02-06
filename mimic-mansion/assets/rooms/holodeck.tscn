@@ -139,6 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=904470347]
+layers = 2
 mesh = SubResource("BoxMesh_35vyj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/WallSouth1" index="1" unique_id=1668088988]
@@ -708,6 +709,7 @@ voice_kokoro = "random"
 
 [node name="SoftBody3D" type="SoftBody3D" parent="." index="5" unique_id=573854998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6143606, 0)
+layers = 2
 mesh = SubResource("SphereMesh_oyxon")
 linear_stiffness = 1.0
 pressure_coefficient = 16000.0
@@ -722,3 +724,5 @@ bus = &"sfx"
 script = ExtResource("69_xtbjp")
 min_interval_sec = 40.0
 max_interval_sec = 80.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="7" unique_id=1327202066]

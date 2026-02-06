@@ -56,6 +56,7 @@
 [ext_resource type="AudioStream" uid="uid://b8lm2lymjxnpq" path="res://assets/sounds/effects/outputs/TeaKitchen/teakitchen_cup_clink.wav" id="54_5p2il"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="55_3x4qf"]
 [ext_resource type="AudioStream" uid="uid://k1lqwrte0o7l" path="res://assets/sounds/effects/outputs/StudentCafe/cafe_payment_terminal_beep.wav" id="55_avk3f"]
+[ext_resource type="ArrayOccluder3D" uid="uid://vwjdxuq7ayrb" path="res://assets/rooms/studentcafe.occ" id="57_e68iu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldh6s"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -122,6 +123,7 @@ material_override = ExtResource("2_tfewv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=1625689943]
+layers = 2
 material_override = ExtResource("2_tfewv")
 mesh = SubResource("BoxMesh_nd1vx")
 
@@ -145,6 +147,7 @@ material_override = ExtResource("2_tfewv")
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.8, 2, 0)
 
 [node name="MeshInstance3D" parent="Walls/WallWest0" index="0" unique_id=965472030]
+layers = 2
 material_override = ExtResource("2_tfewv")
 
 [node name="DoorWest0" type="Node3D" parent="Walls" index="7" unique_id=1164704430]
@@ -498,3 +501,7 @@ bus = &"sfx"
 script = ExtResource("55_3x4qf")
 min_interval_sec = 30.0
 max_interval_sec = 80.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="6" unique_id=492544320]
+occluder = ExtResource("57_e68iu")
+bake_mask = 4294967293

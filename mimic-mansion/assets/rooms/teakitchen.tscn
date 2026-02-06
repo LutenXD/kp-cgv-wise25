@@ -35,6 +35,7 @@
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="32_cfm1t"]
 [ext_resource type="PackedScene" path="res://assets/prop-scenes/teakitchen/teakitchen_sofatable.tscn" id="34_wsolw"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="35_cfm1t"]
+[ext_resource type="ArrayOccluder3D" uid="uid://btkxexguc3gk2" path="res://assets/rooms/teakitchen.occ" id="36_cfm1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3ulv"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -58,6 +59,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.99)
 [node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
 
+[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
+layers = 2
+
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=126030638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.99)
 visible = false
@@ -67,6 +71,9 @@ material = SubResource("StandardMaterial3D_a3ulv")
 
 [node name="WallEast0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=2137167074]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
+
+[node name="MeshInstance3D" parent="Walls/WallEast0" index="0" unique_id=1170511803]
+layers = 2
 
 [node name="DoorEast0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="4" unique_id=1680462794]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 4.99, 2, 0)
@@ -309,3 +316,7 @@ transform = Transform3D(-0.62, 0, -9.36174e-08, 0, 0.62, 0, 9.36174e-08, 0, -0.6
 prop_path = "uid://cbmvdqvp5lgwd"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="7" unique_id=628294969]
+occluder = ExtResource("36_cfm1t")
+bake_mask = 4294967293

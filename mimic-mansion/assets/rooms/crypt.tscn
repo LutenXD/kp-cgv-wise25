@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
 [ext_resource type="AudioStream" uid="uid://pbcd7ogt5l7t" path="res://assets/sounds/effects/outputs/Crypt/crypt_hidden_door_mechanism.wav" id="29_f5ygi"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="30_hcp8m"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b0uahk2avxnyr" path="res://assets/rooms/crypt.occ" id="31_f5ygi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -64,6 +65,7 @@ stream_0/stream = ExtResource("29_f5ygi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.9)
 
 [node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
+layers = 2
 material_override = ExtResource("2_v1beu")
 
 [node name="CollisionShape3D" parent="Walls/WallNorth0" index="1" unique_id=1756927032]
@@ -79,6 +81,7 @@ material = ExtResource("2_v1beu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.9)
 
 [node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
+layers = 2
 material_override = ExtResource("2_v1beu")
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="3" unique_id=836999073]
@@ -901,28 +904,28 @@ transform = Transform3D(-0.2683464, 0, -0.5366472, 0, 0.59999996, 0, 0.5366472, 
 [node name="StaticBody3D50" parent="Props" index="106" unique_id=710539451 instance=ExtResource("27_hcp8m")]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, -2.3689308, 1.4671824, -10.75507)
 
-[node name="CoolTorch" parent="." index="4" unique_id=954299959 instance=ExtResource("29_250hy")]
+[node name="CoolTorch" parent="Props" index="107" unique_id=954299959 instance=ExtResource("29_250hy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6044111, 2.4375255, -13.717761)
 
-[node name="CoolTorch2" parent="." index="5" unique_id=460490926 instance=ExtResource("29_250hy")]
+[node name="CoolTorch2" parent="Props" index="108" unique_id=460490926 instance=ExtResource("29_250hy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6044111, 2.4375255, -10.410801)
 
-[node name="CoolTorch3" parent="." index="6" unique_id=1892281252 instance=ExtResource("29_250hy")]
+[node name="CoolTorch3" parent="Props" index="109" unique_id=1892281252 instance=ExtResource("29_250hy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.6044111, 2.4375255, 1.5161568)
 
-[node name="CoolTorch4" parent="." index="7" unique_id=2090424572 instance=ExtResource("29_250hy")]
+[node name="CoolTorch4" parent="Props" index="110" unique_id=2090424572 instance=ExtResource("29_250hy")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.5828934, 2.4375255, 4.169308)
 
-[node name="CoolTorch5" parent="." index="8" unique_id=1489317938 instance=ExtResource("29_250hy")]
+[node name="CoolTorch5" parent="Props" index="111" unique_id=1489317938 instance=ExtResource("29_250hy")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.5828934, 2.4375255, -2.3381443)
 
-[node name="Mimic" parent="." index="9" unique_id=766133172 instance=ExtResource("28_lo5k8")]
+[node name="Mimic" parent="." index="4" unique_id=766133172 instance=ExtResource("28_lo5k8")]
 transform = Transform3D(1.9578717e-07, 1.5456353e-08, 1.5, -0.17680009, 1.4895442, 7.728177e-09, -1.4895442, -0.17680009, 1.962442e-07, -2.8619046, 1.5051498, -6.585899)
 prop_path = "uid://b3gvjtw2okkos"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="10" unique_id=1039117687]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" unique_id=1039117687]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7497015, 3.5647528, -5.548259)
 stream = SubResource("AudioStreamRandomizer_wjwru")
 unit_size = 100.0
@@ -931,3 +934,7 @@ bus = &"sfx"
 script = ExtResource("30_hcp8m")
 min_interval_sec = 60.0
 max_interval_sec = 90.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="6" unique_id=1487404408]
+occluder = ExtResource("31_f5ygi")
+bake_mask = 4294967293

@@ -98,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth0" unique_id=1290437547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_4uu3n")
 
@@ -386,3 +387,6 @@ bus = &"sfx"
 script = ExtResource("49_6irdo")
 min_interval_sec = 30.0
 max_interval_sec = 80.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1082689029]
+bake_mask = 4294967293

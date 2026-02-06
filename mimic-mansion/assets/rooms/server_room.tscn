@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://cy2785q12icnk" path="res://assets/sounds/effects/outputs/ServerRoom/serverroom_access_reader_beep.wav" id="37_3r1mr"]
 [ext_resource type="PackedScene" uid="uid://c7t0ku1mndkrj" path="res://assets/prop-scenes/extra/extra_ceiling_lamp1.tscn" id="38_3r1mr"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="38_hvjpx"]
+[ext_resource type="ArrayOccluder3D" uid="uid://blxduwo4t3va6" path="res://assets/rooms/server_room.occ" id="39_hvjpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.55, 0.55, 0.58, 1)
@@ -95,6 +96,7 @@ shape = SubResource("BoxShape3D_maxj3")
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallEast0" unique_id=65242950]
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_xh3b6")
 
@@ -117,6 +119,7 @@ shape = SubResource("BoxShape3D_maxj3")
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 2, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallWest0" unique_id=1773263540]
+layers = 2
 mesh = SubResource("BoxMesh_a4b51")
 surface_material_override/0 = ExtResource("1_xh3b6")
 
@@ -633,3 +636,7 @@ bus = &"sfx"
 script = ExtResource("38_hvjpx")
 min_interval_sec = 30.0
 max_interval_sec = 60.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1311126632]
+occluder = ExtResource("39_hvjpx")
+bake_mask = 4294967293

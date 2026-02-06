@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://csvny46rnb3" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_chair_scrape.wav" id="31_5lt34"]
 [ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="32_dww5e"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="33_3eiio"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c6ctastnqi2c1" path="res://assets/rooms/smalllectureroom.occ" id="34_5lt34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n08f3"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -52,6 +53,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.8)
 
 [node name="WallSouth0" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1267843663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
+
+[node name="MeshInstance3D" parent="Walls/WallSouth0" index="0" unique_id=408482108]
+layers = 2
 
 [node name="DoorSouth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="2" unique_id=415895558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.8)
@@ -222,3 +226,7 @@ bus = &"sfx"
 script = ExtResource("33_3eiio")
 min_interval_sec = 20.0
 max_interval_sec = 40.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="6" unique_id=1696847767]
+occluder = ExtResource("34_5lt34")
+bake_mask = 4294967293

@@ -119,5 +119,7 @@ fly={
 
 [rendering]
 
+occlusion_culling/jitter_projection=false
 anti_aliasing/quality/msaa_3d=2
+occlusion_culling/use_occlusion_culling=true
 mesh_lod/lod_change/threshold_pixels=8.0

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bpem3mgireane"]
+[gd_scene format=3 uid="uid://15n02rgatjia"]
 
 [ext_resource type="PackedScene" uid="uid://cfatqo3k0h4a5" path="res://assets/room.tscn" id="1_v7xgl"]
 [ext_resource type="PackedScene" uid="uid://xcvsoc3eylq2" path="res://assets/prop-scenes/lecturehall/lecturehall_CeilingSpeakers.tscn" id="2_f15gi"]
@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cavr2tbid2kg7" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_blackboard_chalk.wav" id="27_2fsa8"]
 [ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="28_6oom2"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="29_2fsa8"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="29_3drwx"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="29_3drwx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kft4"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -77,6 +77,7 @@ material_override = ExtResource("2_qb0qb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -14.99)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallNorth1" index="0" unique_id=1087744550]
+layers = 2
 material_override = ExtResource("2_qb0qb")
 mesh = SubResource("BoxMesh_trnng")
 
@@ -101,6 +102,7 @@ material_override = ExtResource("2_qb0qb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 4.9)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/WallSouth1" index="0" unique_id=1557652335]
+layers = 2
 material_override = ExtResource("2_qb0qb")
 mesh = SubResource("BoxMesh_trnng")
 
@@ -670,7 +672,10 @@ min_interval_sec = 40.0
 max_interval_sec = 60.0
 
 [node name="Mimic" parent="." index="5" unique_id=766133172 instance=ExtResource("29_2fsa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.863452, 0.65852404, -6.0203857)
+transform = Transform3D(0.06774869, 0, 0.6967138, 0, 0.7, 0, -0.6967138, 0, 0.06774869, 11.257832, 1.0894, -5.2768064)
 prop_path = "uid://ci6jg7jrrbgtf"
 chat_model = "openai/gpt-oss-120b"
 voice_kokoro = "random"
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="6" unique_id=1139165385]
+bake_mask = 4294967293

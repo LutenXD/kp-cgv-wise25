@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cjwtjd2gog32r" path="res://assets/prop-scenes/extra/extra_ceiling_lamp5.tscn" id="15_5cooa"]
 [ext_resource type="AudioStream" uid="uid://dj1j7ce8e2pkb" path="res://assets/sounds/effects/outputs/FacultyOffice/office_leather_chair_creak.wav" id="17_1jwr8"]
 [ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="17_vdmyx"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cs0vt1nx286ij" path="res://assets/rooms/toilet.occ" id="19_ig1t8"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_5cooa"]
 density = 0.2
@@ -39,6 +40,7 @@ material = SubResource("FogMaterial_5cooa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.9)
 
 [node name="MeshInstance3D" parent="Walls/WallNorth0" index="0" unique_id=1210610626]
+layers = 2
 material_override = ExtResource("2_bqtts")
 
 [node name="DoorNorth0" type="Node3D" parent="Walls" parent_id_path=PackedInt32Array(526048304) index="1" unique_id=1625667657]
@@ -216,3 +218,7 @@ bus = &"sfx"
 script = ExtResource("17_vdmyx")
 min_interval_sec = 40.0
 max_interval_sec = 60.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="7" unique_id=1197961744]
+occluder = ExtResource("19_ig1t8")
+bake_mask = 4294967293
