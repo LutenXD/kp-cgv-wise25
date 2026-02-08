@@ -6,9 +6,9 @@
 [ext_resource type="Material" uid="uid://baj8qsdchnep1" path="res://assets/textures/materials/cobble-floor.tres" id="3_r3vl8"]
 [ext_resource type="PackedScene" uid="uid://dwts2vxt5ddkn" path="res://assets/prop-scenes/crypt/crypt_MarbleAltar.tscn" id="3_t2il0"]
 [ext_resource type="PackedScene" uid="uid://dea5beg50bdkt" path="res://assets/prop-scenes/crypt/crypt_TatteredBanner.tscn" id="3_yqovh"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
+[ext_resource type="PackedScene" uid="uid://6lf1oo8ncqv0" path="res://assets/prop-scenes/crypt/crypt_StoneAltar2.tscn" id="4_pneec"]
 [ext_resource type="PackedScene" uid="uid://j8dxcb3jg8jg" path="res://assets/prop-scenes/crypt/crypt_Sarcophagus.tscn" id="4_shybk"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
+[ext_resource type="PackedScene" uid="uid://dbvqgkseku2ik" path="res://assets/prop-scenes/crypt/crypt_StoneHead1.tscn" id="5_dxwq3"]
 [ext_resource type="PackedScene" uid="uid://bggpj5akpbw64" path="res://assets/prop-scenes/crypt/crypt_Cobweb.tscn" id="5_jtbvu"]
 [ext_resource type="PackedScene" uid="uid://betgk7b1p72mb" path="res://assets/prop-scenes/crypt/crypt_StatueGuardian.tscn" id="6_4lw08"]
 [ext_resource type="PackedScene" uid="uid://cdkhxyl8df0i5" path="res://assets/prop-scenes/crypt/crypt_Lantern.tscn" id="8_frxo3"]
@@ -20,16 +20,16 @@
 [ext_resource type="PackedScene" uid="uid://pkw0ni6d3gjf" path="res://assets/prop-scenes/crypt/crypt_DustyChalice.tscn" id="14_wl5el"]
 [ext_resource type="PackedScene" uid="uid://s1uoe3f2107v" path="res://assets/prop-scenes/crypt/crypt_SkullCandle.tscn" id="15_grgol"]
 [ext_resource type="PackedScene" uid="uid://dqmoealhgolw4" path="res://assets/prop-scenes/crypt/crypt_SkullSkull.tscn" id="17_t0k0u"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
+[ext_resource type="PackedScene" uid="uid://dysfasnr4u2pk" path="res://assets/prop-scenes/crypt/crypt_RustyIronChain.tscn" id="20_nxdg5"]
 [ext_resource type="PackedScene" uid="uid://bg2egeqhh6h4f" path="res://assets/prop-scenes/crypt/crypt_Vial.tscn" id="23_lo5k8"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
+[ext_resource type="PackedScene" uid="uid://bfv6mmbgg8jve" path="res://assets/prop-scenes/crypt/crypt_RoseVase.tscn" id="24_gdscr"]
+[ext_resource type="PackedScene" uid="uid://6ti04uecjsvq" path="res://assets/prop-scenes/crypt/crypt_ClayVase.tscn" id="25_250hy"]
 [ext_resource type="PackedScene" uid="uid://btbs7gt5yyqq1" path="res://assets/prop-scenes/crypt/crypt_HiddenDoor.tscn" id="26_f5ygi"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
+[ext_resource type="PackedScene" uid="uid://cwct1e64tcq0k" path="res://assets/prop-scenes/crypt/crypt_StoneHead2.tscn" id="27_hcp8m"]
 [ext_resource type="PackedScene" uid="uid://dhtmqv2uvnvy8" path="res://entities/NPCs/mimic.tscn" id="28_lo5k8"]
 [ext_resource type="PackedScene" uid="uid://nrgyj0v3yhp1" path="res://assets/prop-scenes/crypt/cool_torch.tscn" id="29_250hy"]
 [ext_resource type="AudioStream" uid="uid://pbcd7ogt5l7t" path="res://assets/sounds/effects/outputs/Crypt/crypt_hidden_door_mechanism.wav" id="29_f5ygi"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="30_hcp8m"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="30_hcp8m"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b0uahk2avxnyr" path="res://assets/rooms/crypt.occ" id="31_f5ygi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xatd5"]
@@ -758,6 +758,7 @@ transform = Transform3D(2.5, 0, -1.1920929e-07, 0, 2.5, 0, 5.9604645e-08, 0, 2.5
 light_color = Color(1, 0.7490196, 0.3254902, 1)
 light_energy = 0.558
 shadow_enabled = true
+distance_fade_enabled = true
 omni_attenuation = 2.0
 
 [node name="StaticBody3D23" parent="Props" index="59" unique_id=1160664504 instance=ExtResource("17_t0k0u")]

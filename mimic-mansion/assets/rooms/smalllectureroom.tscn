@@ -32,7 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://cavr2tbid2kg7" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_blackboard_chalk.wav" id="30_87bvn"]
 [ext_resource type="AudioStream" uid="uid://csvny46rnb3" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_chair_scrape.wav" id="31_5lt34"]
 [ext_resource type="AudioStream" uid="uid://d1pn3cj6akhj8" path="res://assets/sounds/effects/outputs/SmallLectureRoom/smalllecture_digital_clock_tick.wav" id="32_dww5e"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="33_3eiio"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="33_3eiio"]
 [ext_resource type="ArrayOccluder3D" uid="uid://c6ctastnqi2c1" path="res://assets/rooms/smalllectureroom.occ" id="34_5lt34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n08f3"]
@@ -181,6 +181,7 @@ light_color = Color(1, 1, 0.8784314, 1)
 light_energy = 5.0
 light_size = 0.256
 shadow_enabled = true
+distance_fade_enabled = true
 spot_range = 10.0
 spot_attenuation = 2.0
 spot_angle = 60.0
@@ -191,6 +192,7 @@ light_color = Color(1, 1, 0.8627451, 1)
 light_energy = 3.0
 light_size = 0.398
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
 

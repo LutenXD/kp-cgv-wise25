@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://nrgyj0v3yhp1"]
+[gd_scene format=3 uid="uid://nrgyj0v3yhp1"]
 
 [ext_resource type="PackedScene" uid="uid://bi7x8w8wbl6np" path="res://assets/prop-scenes/crypt/crypt_WallTorch.tscn" id="1_di40p"]
 [ext_resource type="Script" uid="uid://bki4oxadlcaru" path="res://assets/prop-scenes/crypt/cool_torch.gd" id="2_213tu"]
@@ -13,5 +13,6 @@ light_color = Color(0.99998087, 0.31218168, 0.038493436, 1)
 light_energy = 8.663
 light_size = 0.319
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 107.257
 omni_attenuation = 2.0

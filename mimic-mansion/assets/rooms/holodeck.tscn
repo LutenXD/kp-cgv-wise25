@@ -63,12 +63,13 @@
 [ext_resource type="PackedScene" uid="uid://dssbm28pjhvef" path="res://assets/prop-scenes/special/special_TactileSensor.tscn" id="60_brfuk"]
 [ext_resource type="PackedScene" uid="uid://u1mskvqi2cnl" path="res://assets/prop-scenes/special/special_USBHub.tscn" id="61_xwtxi"]
 [ext_resource type="PackedScene" uid="uid://drepbfpx56erh" path="res://assets/prop-scenes/special/special_VRHeadset.tscn" id="62_ecql5"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
+[ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="62_w3euo"]
+[ext_resource type="PackedScene" uid="uid://doaohxtxltkvk" path="res://assets/prop-scenes/holodeck/holodeck_Arcmchair.tscn" id="63_elx88"]
+[ext_resource type="PackedScene" uid="uid://mn67q826hnfd" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen2.tscn" id="63_oi6vd"]
 [ext_resource type="AudioStream" uid="uid://dpfowtygkvwid" path="res://assets/sounds/effects/outputs/Holodeck/holodeck_control_panel_hum.wav" id="67_rm7jy"]
 [ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="68_utxqs"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="69_xtbjp"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="69_xtbjp"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c8s5xv3gkh8sk" path="res://assets/rooms/holodeck.occ" id="70_utxqs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db4si"]
 albedo_color = Color(0.6, 0.5, 0.4, 1)
@@ -432,6 +433,7 @@ light_energy = 2.0
 light_indirect_energy = 2.0
 light_size = 0.262
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D84" parent="Props" index="56" unique_id=1967205213 instance=ExtResource("29_uot12")]
 transform = Transform3D(0.2841993, 0, 0.95876527, -0.04299096, 0.9989942, 0.012743474, -0.9578009, -0.044839922, 0.28391343, 13.598446, 1.5777135, -11.659415)
@@ -443,6 +445,7 @@ light_energy = 2.0
 light_indirect_energy = 2.0
 light_size = 0.335
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D52" parent="Props" index="57" unique_id=1727887583 instance=ExtResource("29_uot12")]
 transform = Transform3D(-0.30409953, 0, 0.9526403, 0, 1, 0, -0.9526403, 0, -0.30409953, 0.28876972, 1.5848806, -14.083901)
@@ -454,6 +457,7 @@ light_energy = 2.0
 light_indirect_energy = 2.0
 light_size = 0.335
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D53" parent="Props" index="58" unique_id=1335478241 instance=ExtResource("30_u2345")]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 14.318103, 1.1859267, -11.591267)
@@ -551,6 +555,7 @@ light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
 light_size = 0.207
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
 
@@ -563,6 +568,7 @@ light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
 light_size = 0.207
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
 
@@ -575,6 +581,7 @@ light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
 light_size = 0.207
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
 
@@ -587,6 +594,7 @@ light_color = Color(1, 1, 0.73333335, 1)
 light_energy = 2.0
 light_size = 0.207
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 15.0
 omni_attenuation = 2.0
 
@@ -726,3 +734,4 @@ min_interval_sec = 40.0
 max_interval_sec = 80.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="7" unique_id=1327202066]
+occluder = ExtResource("70_utxqs")

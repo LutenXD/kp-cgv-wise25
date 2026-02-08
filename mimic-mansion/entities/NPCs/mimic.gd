@@ -98,9 +98,9 @@ func _ready() -> void:
 	outline_material.grow = true
 	outline_material.grow_amount = 0.01
 	
-	if mimic_mesh:
-		mimic_material = mimic_mesh.mesh.get("surface_0/material").duplicate()
-		mimic_mesh.mesh.set("surface_0/material", mimic_material)
+	#if mimic_mesh:
+	#	mimic_material = mimic_mesh.mesh.get("surface_0/material").duplicate()
+	#	mimic_mesh.mesh.set("surface_0/material", mimic_material)
 
 
 func set_instructions(new_instructions: String) -> void:
@@ -159,11 +159,11 @@ func _process(delta: float) -> void:
 	# outline logic
 	#if not mimic_material:
 	#	return
-	
-	if speaking or thinking or is_same(interactable_component, player.current_interaction):
-		mimic_material.next_pass = outline_material
-	else:
-		mimic_material.next_pass = null
+	if mimic_material:
+		if speaking or thinking or is_same(interactable_component, player.current_interaction):
+			mimic_material.next_pass = outline_material
+		else:
+			mimic_material.next_pass = null
 
 
 func _update_prop() -> void:
@@ -201,6 +201,12 @@ func _update_prop() -> void:
 		else:
 			shape.owner = get_tree().root
 			mimic_mesh.owner = get_tree().root
+	
+	if mimic_mesh and mimic_mesh.mesh:
+		var original_material = mimic_mesh.mesh.get("surface_0/material")
+		if original_material:
+			mimic_material = original_material.duplicate()
+			mimic_mesh.mesh.set("surface_0/material", mimic_material)
 	
 	#_ready()
 

@@ -48,7 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://4qeh157546rl" path="res://assets/sounds/effects/outputs/FacultyOffice/office_conference_phone_idle.wav" id="46_771fn"]
 [ext_resource type="AudioStream" uid="uid://ftokmfoepxt3" path="res://assets/sounds/effects/outputs/FacultyOffice/office_paper_adjust.wav" id="47_h5pyv"]
 [ext_resource type="AudioStream" uid="uid://c8fbjpiobv3wi" path="res://assets/sounds/effects/outputs/FacultyOffice/office_wall_clock_tick.wav" id="48_ohr0w"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="49_6irdo"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="49_6irdo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
 albedo_color = Color(0.95, 0.92, 0.85, 1)
@@ -165,6 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
 shadow_enabled = true
+distance_fade_enabled = true
 omni_attenuation = 2.0
 
 [node name="StaticBody3D3" parent="Ceiling/Ceiling00" unique_id=1864425082 instance=ExtResource("5_1qbe1")]
@@ -175,6 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
 shadow_enabled = true
+distance_fade_enabled = true
 omni_attenuation = 2.0
 
 [node name="StaticBody3D4" parent="Ceiling/Ceiling00" unique_id=2004114584 instance=ExtResource("5_1qbe1")]
@@ -185,6 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1555891, -5.9604645e-08)
 light_energy = 8.423
 light_size = 0.113
 shadow_enabled = true
+distance_fade_enabled = true
 omni_attenuation = 2.0
 
 [node name="StaticBody3D2" parent="Ceiling/Ceiling00" unique_id=1375065369 instance=ExtResource("5_1qbe1")]
@@ -195,6 +198,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06686592, 0)
 light_energy = 8.423
 light_size = 0.113
 shadow_enabled = true
+distance_fade_enabled = true
 omni_attenuation = 2.0
 
 [node name="Decor" type="Node3D" parent="." unique_id=363647469]
@@ -353,6 +357,8 @@ transform = Transform3D(-0.9787065, 0, -0.20526487, 0, 1, 0, 0.20526487, 0, -0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056101084, 0.17435312, -0.2674904)
 light_color = Color(0.41000003, 0.74433327, 1, 1)
 light_energy = 0.175
+shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D45" parent="Decor" unique_id=412747913 instance=ExtResource("43_n08x1")]
 transform = Transform3D(0.03871923, 0, -0.9992501, 0, 1, 0, 0.9992501, 0, 0.03871923, 4.3917365, 3.372421, 3.0464377)

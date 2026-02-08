@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://85icglvtk28x" path="res://assets/prop-scenes/special/special_PlasticSkeleton.tscn" id="28_tm2pu"]
 [ext_resource type="PackedScene" uid="uid://boyfidjk4rv0e" path="res://assets/props/holodeck/holodeck_CableSpool.glb" id="29_ubrgf"]
 [ext_resource type="PackedScene" uid="uid://deugl5wy4b1e7" path="res://assets/prop-scenes/computerlab/computerlab_CableBox.tscn" id="30_oal4f"]
-[ext_resource type="PackedScene" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="31_jsbv0"]
+[ext_resource type="PackedScene" uid="uid://dwv8q5lwobfi0" path="res://assets/prop-scenes/holodeck/holodeck_PCScreen.tscn" id="31_jsbv0"]
 [ext_resource type="PackedScene" uid="uid://dg6omllffekgo" path="res://assets/prop-scenes/computerlab/computerlab_DesktopTower.tscn" id="32_cfwnv"]
 [ext_resource type="PackedScene" uid="uid://dsxkfcjelkach" path="res://assets/prop-scenes/computerlab/computerlab_ErgonomicChair.tscn" id="33_b1wja"]
 [ext_resource type="PackedScene" uid="uid://dphf67jjo4ecw" path="res://assets/prop-scenes/computerlab/computerlab_NetworkSwitch.tscn" id="34_7dknq"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://wdxre6ve30ei" path="res://assets/prop-scenes/computerlab/computerlab_WorkstationDesk.tscn" id="36_t875m"]
 [ext_resource type="AudioStream" uid="uid://cy2785q12icnk" path="res://assets/sounds/effects/outputs/ServerRoom/serverroom_access_reader_beep.wav" id="37_3r1mr"]
 [ext_resource type="PackedScene" uid="uid://c7t0ku1mndkrj" path="res://assets/prop-scenes/extra/extra_ceiling_lamp1.tscn" id="38_3r1mr"]
-[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://scripts/sfx_queuer.gd" id="38_hvjpx"]
+[ext_resource type="Script" uid="uid://byfklx6kxccwx" path="res://sfx_queuer.gd" id="38_hvjpx"]
 [ext_resource type="ArrayOccluder3D" uid="uid://blxduwo4t3va6" path="res://assets/rooms/server_room.occ" id="39_hvjpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
@@ -148,10 +148,10 @@ material_override = ExtResource("1_xh3b6")
 
 [node name="DoorWest0" type="Node3D" parent="Walls" unique_id=409327555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+visible = false
 
 [node name="DoorWall" parent="Walls/DoorWest0" unique_id=124077577 instance=ExtResource("3_i61g2")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -2, 0.1)
-visible = false
 material_override = ExtResource("1_xh3b6")
 
 [node name="Floor" type="Node3D" parent="." unique_id=937527173]
@@ -257,6 +257,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.40821934)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.2
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="Light2" parent="Decor" unique_id=110721894 instance=ExtResource("8_ad6ty")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.4586556, 2.0109367, -4.9827294)
@@ -266,6 +267,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.40821934)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.2
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="Light3" parent="Decor" unique_id=1726825630 instance=ExtResource("8_ad6ty")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0.5560404, 2.0109367, -2.2798545)
@@ -275,6 +277,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.40821934)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.2
 shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D5" parent="Decor" unique_id=1845023642 instance=ExtResource("9_hl6dm")]
 transform = Transform3D(0.798604, 0, -0.6018568, 0, 1, 0, 0.6018568, 0, 0.798604, 0.7034695, 3.1098, -2.4054997)
@@ -295,6 +298,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7971144, 1.3575313, -10.237
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33676815)
 light_color = Color(0, 1, 0.083333254, 1)
 light_energy = 0.3
+shadow_enabled = true
+distance_fade_enabled = true
 
 [node name="StaticBody3D10" parent="Decor" unique_id=1551143430 instance=ExtResource("14_eoq4o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8928804, 0.38397473, -8.159895)
@@ -607,6 +612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5547643, 0)
 light_energy = 5.0
 light_size = 0.3
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 13.909508
 omni_attenuation = 2.0
 
@@ -618,6 +624,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5547643, 0)
 light_energy = 5.0
 light_size = 0.3
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 13.909508
 omni_attenuation = 2.0
 

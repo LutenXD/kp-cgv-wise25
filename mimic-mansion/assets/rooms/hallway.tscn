@@ -257,6 +257,7 @@ transform = Transform3D(1, -1.7763568e-14, 0, 2.1316282e-14, 1, 6.352747e-22, 0,
 light_energy = 5.0
 light_size = 0.005
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 9.195
 omni_attenuation = 2.0
 
@@ -268,6 +269,7 @@ transform = Transform3D(1, -1.4210855e-14, 0, 1.0658141e-14, 1, -3.5527137e-15, 
 light_energy = 5.0
 light_size = 0.005
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 9.195
 omni_attenuation = 2.0
 
@@ -279,6 +281,7 @@ transform = Transform3D(1, -1.4210861e-14, 1.00974154e-28, 1.4210861e-14, 1, -3.
 light_energy = 5.0
 light_size = 0.005
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 9.195
 omni_attenuation = 2.0
 
@@ -289,6 +292,7 @@ transform = Transform3D(-0.99999994, -8.742278e-08, 3.8213705e-15, 0, -4.371139e
 transform = Transform3D(1, 1.4210855e-14, 0, -2.1316282e-14, 1, -3.5527137e-15, 0, 0, 1, -1.1920929e-06, 0.15177071, 0.041814804)
 light_energy = 5.0
 shadow_enabled = true
+distance_fade_enabled = true
 omni_range = 9.195
 omni_attenuation = 2.0
 
