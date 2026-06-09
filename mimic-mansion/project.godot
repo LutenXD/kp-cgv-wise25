@@ -48,7 +48,7 @@ project/assembly_name="Mimic-Mansion"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg", "res://addons/godot_material_footsteps/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_material_footsteps/plugin.cfg")
 
 [file_customization]
 

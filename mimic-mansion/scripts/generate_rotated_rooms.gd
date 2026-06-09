@@ -287,9 +287,12 @@ func create_rotated_room_data(room: Dictionary, rotation_degrees: int) -> Dictio
 	
 	# For rectangular rooms, swap width and length for 90/270 degree rotations
 	if rotation_degrees == 90 or rotation_degrees == 270:
-		var temp = rotated_room["width"]
-		rotated_room["width"] = rotated_room["length"]
+		var temp: int = rotated_room["width"]
+		rotated_room["width"] = rotated_room["length"] as int
 		rotated_room["length"] = temp
+	else:
+		rotated_room["width"] = rotated_room["width"] as int
+		rotated_room["length"] = rotated_room["length"] as int
 	
 	# Rotate door positions
 	var original_doors = room["doors"]
@@ -326,9 +329,9 @@ func rotate_doors(doors: Dictionary, rotation: int, width: int, length: int) -> 
 		var door_positions = doors[direction]
 		
 		# Transform door positions based on rotation
-		var new_positions = []
+		var new_positions: Array[int] = []
 		for pos in door_positions:
-			var new_pos = transform_door_position(pos, direction, rotation, width, length)
+			var new_pos: int = transform_door_position(pos, direction, rotation, width, length)
 			new_positions.append(new_pos)
 		
 		rotated_doors[new_direction] = new_positions
