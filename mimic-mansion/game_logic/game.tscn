@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://vvha4n54dfv7" path="res://utils/light_flicker.gd" id="5_ta1pv"]
 [ext_resource type="AudioStream" uid="uid://bkaftx6o86i6j" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk1.wav" id="6_lxndx"]
 [ext_resource type="AudioStream" uid="uid://cqw5k7e4t3un3" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk11.wav" id="7_2chto"]
-[ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="7_4sqru"]
 [ext_resource type="AudioStream" uid="uid://btnvut2f0xtid" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk2.wav" id="8_a8a8y"]
 [ext_resource type="AudioStream" uid="uid://c0nj1k05fhw2i" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk3.wav" id="9_sgn01"]
 [ext_resource type="AudioStream" uid="uid://cxmcb28pj0cum" path="res://assets/sounds/effects/steps/split/cafe_footsteps_laminate/chunk4.wav" id="10_w2u2t"]
@@ -63,6 +62,7 @@
 [ext_resource type="AudioStream" uid="uid://c8hiedu474p80" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk5.wav" id="74_4vfon"]
 [ext_resource type="AudioStream" uid="uid://bpvdh5beerpfp" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk6.wav" id="75_quk5d"]
 [ext_resource type="AudioStream" uid="uid://buxt5cmwhgyle" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk7.wav" id="76_cpef1"]
+[ext_resource type="Script" uid="uid://bo0nxcksr5ibk" path="res://scripts/room_layout_manager.gd" id="76_iy51i"]
 [ext_resource type="AudioStream" uid="uid://b51b2dxsy84mk" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk9.wav" id="77_qo37w"]
 [ext_resource type="AudioStream" uid="uid://d4nqu273roesi" path="res://assets/sounds/effects/steps/split/library_footsteps_muffled/chunk10.wav" id="78_2nnek"]
 [ext_resource type="AudioStream" uid="uid://j6o7iknw4kmt" path="res://assets/sounds/effects/steps/split/smalllecture_footsteps_hardfloor/chunk3.wav" id="79_sn6se"]
@@ -272,7 +272,7 @@ mimic_pre_instructions = "You are an NPC in an educational game about computer g
 
 **Question, Answer and Explanation:**"
 mimic_post_instructions = "
-Start the conversation by acknowledge the presence of the player.
+Start the conversation by acknowledging the presence of the player.
 You want to explain your concept to the player from the ground up.
 Don't explain things which are not part of your question.
 Address the player with a creative name.
@@ -282,14 +282,13 @@ Address the player with a creative name.
 **Do not send emojis or markdown/ latex formatted text.**
 **Answer in not more than 3 sentences at a time.**"
 
-[node name="RoomLayoutManager" type="Node3D" parent="." unique_id=1315244910]
-script = ExtResource("7_4sqru")
-metadata/_custom_type_script = "uid://bo0nxcksr5ibk"
-
 [node name="Flicker" type="Node" parent="." unique_id=994721062]
 script = ExtResource("5_ta1pv")
 min_flicker_time = 20.0
 max_flicker_time = 90.0
 
+[node name="RoomLayoutManager" type="Node3D" parent="." unique_id=731569450]
+script = ExtResource("76_iy51i")
+metadata/_custom_type_script = "uid://bo0nxcksr5ibk"
+
 [connection signal="finished" from="RoomLayoutManager" to="MimicManager" method="_on_room_layout_manager_finished"]
-[connection signal="finished" from="RoomLayoutManager" to="Flicker" method="_on_room_layout_manager_finished"]

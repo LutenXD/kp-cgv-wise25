@@ -18,7 +18,7 @@ func _run():
 	print("Output folder: ", OUTPUT_FOLDER)
 	
 	# Generate rotated room assets JSON
-	generate_rotated_room_assets_json()
+	#generate_rotated_room_assets_json()
 	
 	# Read all .tscn files from the rooms folder
 	var room_files = []

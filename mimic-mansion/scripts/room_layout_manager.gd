@@ -15,6 +15,21 @@ var available_doors = []
 
 var door_scene: PackedScene = preload("res://entities/interactable_door.tscn")
 
+# --- Performance caches -----------------------------------------------------
+# These avoid re-scanning the filesystem and re-instantiating/re-adding scenes
+# to the tree just to inspect which doors a room has. Nothing here changes
+# behavior, it just avoids repeating expensive work.
+
+var _room_files_cache: Array = []          # all room names found in ROT_ROOMS_PATH
+var _room_files_cached: bool = false
+
+var _scene_cache: Dictionary = {}          # room_name -> PackedScene
+
+var _room_door_directions_cache: Dictionary = {}  # room_name -> Array[String] of directions
+
+var _spawned_base_names: Dictionary = {}   # base_name -> true, for O(1) lookups
+# -----------------------------------------------------------------------------
+
 
 func get_base_room_name(room_name: String) -> String:
 	"""Extract base room name without rotation suffix"""
@@ -28,15 +43,88 @@ func get_base_room_name(room_name: String) -> String:
 	return base_name
 
 func is_room_variant_spawned(room_name: String) -> bool:
-	"""Check if any variant of this room is already spawned"""
-	var base_name = get_base_room_name(room_name)
-	for room_data in spawned_rooms:
-		if get_base_room_name(room_data["name"]) == base_name:
-			return true
-	return false
+	"""Check if any variant of this room is already spawned (O(1) via cache)"""
+	return _spawned_base_names.has(get_base_room_name(room_name))
+
+func _track_spawned_room(room_name: String) -> void:
+	"""Record a room as spawned, keeping the fast lookup cache in sync"""
+	spawned_rooms.append({
+		"node": null,
+		"name": room_name,
+		"position": Vector3.ZERO
+	})
+	_spawned_base_names[get_base_room_name(room_name)] = true
 
 
-func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 8) -> void:
+func _ensure_room_files_cached() -> void:
+	"""Scan the rot_rooms directory once and cache the result"""
+	if _room_files_cached:
+		return
+	_room_files_cached = true
+
+	var dir = DirAccess.open(ROT_ROOMS_PATH)
+	if not dir:
+		print("Failed to open rot_rooms directory")
+		return
+
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.ends_with(".tscn"):
+			_room_files_cache.append(file_name.replace(".tscn", ""))
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+
+func _get_scene_for_room(room_name: String) -> PackedScene:
+	"""Load (and cache) the PackedScene for a room name, avoiding repeated disk loads"""
+	if _scene_cache.has(room_name):
+		return _scene_cache[room_name]
+
+	var scene_path = ROT_ROOMS_PATH + room_name + ".tscn"
+	if not ResourceLoader.exists(scene_path):
+		return null
+
+	var scene = load(scene_path)
+	if scene:
+		_scene_cache[room_name] = scene
+	return scene
+
+
+func _get_door_directions_for_room(room_name: String) -> Array:
+	"""
+	Return which directions a room has doors in, WITHOUT adding it to the
+	scene tree (door names alone tell us this, so there's no need to pay for
+	add_child/enter-tree/position just to inspect them). Result is cached.
+	"""
+	if _room_door_directions_cache.has(room_name):
+		return _room_door_directions_cache[room_name]
+
+	var directions = []
+	var scene = _get_scene_for_room(room_name)
+
+	if scene:
+		var temp_room = scene.instantiate()
+		if temp_room:
+			var walls_node = temp_room.get_node_or_null("Walls")
+			if walls_node:
+				for child in walls_node.get_children():
+					var node_name = child.name
+					if node_name.begins_with("DoorNorth"):
+						directions.append("north")
+					elif node_name.begins_with("DoorSouth"):
+						directions.append("south")
+					elif node_name.begins_with("DoorEast"):
+						directions.append("east")
+					elif node_name.begins_with("DoorWest"):
+						directions.append("west")
+			temp_room.free()  # never entered the tree, safe to free immediately
+
+	_room_door_directions_cache[room_name] = directions
+	return directions
+
+
+func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 6) -> void:
 	"""Spawn the initial room(s) when the game starts"""
 	print("Spawning starting room with connected rooms...")
 	
@@ -53,11 +141,7 @@ func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name:
 		grid[floor_grid_position] = true
 	
 	# Track the spawned room
-	spawned_rooms.append({
-		"node": null,
-		"name": starting_room_name,
-		"position": Vector3.ZERO
-	})
+	_track_spawned_room(starting_room_name)
 
 	for i in range(number_of_connected_rooms):
 		spawn_connected_room(filler_room_name)
@@ -68,20 +152,19 @@ func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name:
 
 
 func spawn_connected_room(filler_room_name: String = "none") -> void:
-
 	if available_doors.is_empty():
 		print("No available doors to spawn connected room")
 		return
 
 	# Select a random available door
 	var parent_door = available_doors[randi() % available_doors.size()]
-	print("Spawning connected room at door: ", parent_door)
+	#print("Spawning connected room at door: ", parent_door)
 
 	# Get opposing direction
 	var opposing_direction = get_opposing_direction(parent_door["direction"])
 	
 	# Try multiple times to find a room that doesn't collide
-	var max_attempts = 10
+	var max_attempts = 3
 	var room_placed = false
 	
 	for attempt in range(max_attempts):
@@ -118,7 +201,7 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 				round(floor_tile.global_position.z)
 			)
 			if grid.has(floor_grid_position):
-				print("Collision detected at grid position: ", floor_grid_position, " (attempt ", attempt + 1, ")")
+				#print("Collision detected at grid position: ", floor_grid_position, " (attempt ", attempt + 1, ")")
 				collision_detected = true
 				break
 		
@@ -133,17 +216,13 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 					round(floor_tile.global_position.y), 
 					round(floor_tile.global_position.z)
 				)
-				printt("grid pos:", floor_grid_position)
+				#printt("grid pos:", floor_grid_position)
 				grid[floor_grid_position] = true
 			
-			print("Successfully placed room: ", new_room_name)
+			#print("Successfully placed room: ", new_room_name)
 			
 			# Track the spawned room
-			spawned_rooms.append({
-				"node": null,
-				"name": new_room_name,
-				"position": Vector3.ZERO
-			})
+			_track_spawned_room(new_room_name)
 			
 			# Room position confirmed, now enable door visibility and disable walls
 			set_door_visible(parent_door, true)
@@ -166,14 +245,15 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 					available_doors.append(door)
 			
 			available_doors.erase(parent_door)
-			print("Available doors count: ", available_doors.size())
+			#print("Available doors count: ", available_doors.size())
 			room_placed = true
 			break
 	
 	# If no room was placed after all attempts, spawn a filler room
 	if not room_placed and filler_room_name and filler_room_name != "none":
-		print("Spawning filler room: ", filler_room_name)
+		#print("Spawning filler room: ", filler_room_name)
 		spawn_filler_room(parent_door, opposing_direction, filler_room_name)
+		spawn_connected_room(filler_room_name)
 
 func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, filler_room_name: String) -> void:
 	"""Spawn a filler room when no suitable room is found"""
@@ -200,7 +280,7 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 			round(floor_tile.global_position.z)
 		)
 		if grid.has(floor_grid_position):
-			print("Filler room collision detected at: ", floor_grid_position)
+			#print("Filler room collision detected at: ", floor_grid_position)
 			collision_detected = true
 			break
 	
@@ -218,14 +298,10 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 		)
 		grid[floor_grid_position] = true
 	
-	print("Successfully placed filler room: ", new_room_name)
+	#print("Successfully placed filler room: ", new_room_name)
 	
 	# Track the spawned room
-	spawned_rooms.append({
-		"node": null,
-		"name": new_room_name,
-		"position": Vector3.ZERO
-	})
+	_track_spawned_room(new_room_name)
 	
 	# Enable door visibility and disable walls
 	set_door_visible(parent_door, true)
@@ -256,22 +332,26 @@ func get_filler_room_with_door(filler_room_name: String, direction: String) -> D
 	
 	for rot in rotations:
 		var room_name = filler_room_name + rot
+
+		# Cheap check first (no instancing) before paying for a real spawn
+		if not _get_door_directions_for_room(room_name).has(direction):
+			continue
+
 		var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
-		
-		if temp_room and has_door_in_direction(temp_room, direction):
-			var room_doors = get_room_doors(temp_room)
-			var door_in_direction = null
-			for door in room_doors:
-				if door["direction"] == direction:
-					door_in_direction = door
-					break
-			return {
-				"room": temp_room,
-				"name": room_name,
-				"door": door_in_direction
-			}
-		elif temp_room:
-			temp_room.queue_free()
+		if not temp_room:
+			continue
+
+		var room_doors = get_room_doors(temp_room)
+		var door_in_direction = null
+		for door in room_doors:
+			if door["direction"] == direction:
+				door_in_direction = door
+				break
+		return {
+			"room": temp_room,
+			"name": room_name,
+			"door": door_in_direction
+		}
 	
 	return {}
 
@@ -283,10 +363,11 @@ func set_door_visible(door_info: Dictionary, door_visible: bool) -> void:
 	var door_node = door_info["node"]
 	if door_node:
 		door_node.visible = door_visible
-		print("Set door ", door_info["name"], " visible: ", door_visible)
+		#print("Set door ", door_info["name"], " visible: ", door_visible)
 
 func disable_wall_at_door(door_info: Dictionary) -> void:
 	"""Disable the wall corresponding to a door"""
+	#print(door_info)
 	if not door_info.has("node") or not door_info.has("room"):
 		return
 
@@ -304,7 +385,7 @@ func disable_wall_at_door(door_info: Dictionary) -> void:
 	var wall_node = walls_node.get_node_or_null(wall_name)
 	if wall_node:
 		wall_node.queue_free()
-		print("Disabled wall: ", wall_name)
+		#print("Disabled wall: ", wall_name)
 
 func get_floor_tiles_in_room(room_node: Node3D) -> Array:
 	"""Get all floor tile nodes from a room"""
@@ -331,75 +412,59 @@ func get_opposing_direction(direction: String) -> String:
 	return ""
 
 func get_room_with_door_in_direction(direction: String) -> Dictionary:
-	"""Find a random room that has a door in the specified direction
-	Returns a Dictionary with 'room' (Node3D) and 'name' (String), or empty dict if not found"""
-	
-	# Get list of all room files
-	var dir = DirAccess.open(ROT_ROOMS_PATH)
-	if not dir:
-		print("Failed to open rot_rooms directory")
-		return {}
+	"""
+	Find a random room that has a door in the specified direction.
+	Returns a Dictionary with 'room' (Node3D) and 'name' (String), or empty dict if not found.
 
-	var room_files = []
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tscn"):
-			room_files.append(file_name.replace(".tscn", ""))
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	Uses the cached per-room door-direction data to filter candidates without
+	instantiating/adding-to-tree every room file on every call (and without
+	re-scanning the directory each time). Only the chosen candidate is
+	actually spawned for real.
+	"""
+	_ensure_room_files_cached()
 
-	if room_files.is_empty():
+	if _room_files_cache.is_empty():
 		print("No room files found in rot_rooms")
 		return {}
 
-	# Try to find a room with the required door
-	var max_attempts = 10
-	
-	for attempt in range(max_attempts):
-		var room_name = room_files[randi() % room_files.size()]
-		
-		# Skip if this room variant is already spawned
+	var candidates = []
+	for room_name in _room_files_cache:
 		if is_room_variant_spawned(room_name):
 			continue
-		
-		# Load the room temporarily to check its doors
-		var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
-		if temp_room and has_door_in_direction(temp_room, direction):
-			var room_doors = get_room_doors(temp_room)  # Preload doors
-			var door_in_direction = null
-			for door in room_doors:
-				if door["direction"] == direction:
-					door_in_direction = door
-					break
-			return {
-				"room": temp_room,
-				"name": room_name,
-				"door": door_in_direction
-			}
-		elif temp_room:
-			temp_room.queue_free()
+		if _get_door_directions_for_room(room_name).has(direction):
+			candidates.append(room_name)
 
-	return {}
+	if candidates.is_empty():
+		return {}
+
+	var room_name = candidates[randi() % candidates.size()]
+	var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
+	if not temp_room:
+		return {}
+
+	var room_doors = get_room_doors(temp_room)
+	var door_in_direction = null
+	for door in room_doors:
+		if door["direction"] == direction:
+			door_in_direction = door
+			break
+
+	return {
+		"room": temp_room,
+		"name": room_name,
+		"door": door_in_direction
+	}
 
 func spawn_room_at_position(room_name: String, pos: Vector3) -> Node3D:
 	"""Spawn a specific room at a given position"""
-	var scene_path = ROT_ROOMS_PATH + room_name + ".tscn"
-	
-	# Check if the scene file exists
-	if not ResourceLoader.exists(scene_path):
-		print("Room scene not found: ", scene_path)
-		return null
-	
-	# Load and instance the room scene
-	var room_scene = load(scene_path)
+	var room_scene = _get_scene_for_room(room_name)
 	if not room_scene:
-		print("Failed to load room scene: ", scene_path)
+		print("Room scene not found: ", ROT_ROOMS_PATH + room_name + ".tscn")
 		return null
-	
+
 	var room_instance = room_scene.instantiate()
 	if not room_instance:
-		print("Failed to instantiate room: ", scene_path)
+		print("Failed to instantiate room: ", room_name)
 		return null
 	
 	# Add the room to the parent scene
@@ -419,7 +484,7 @@ func spawn_room_at_position(room_name: String, pos: Vector3) -> Node3D:
 	
 	if rot_degrees > 0.0:
 		room_instance.rotation_degrees.y = rot_degrees
-		print("Applied rotation: ", rot_degrees, "° to room: ", room_name)
+		#print("Applied rotation: ", rot_degrees, "° to room: ", room_name)
 	
 	return room_instance
 

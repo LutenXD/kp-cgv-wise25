@@ -1,6 +1,6 @@
 {
-  "rooms": [
-	{
+  "rooms": {
+	"crypt": {
 	  "doors": {
 		"east": [],
 		"north": [
@@ -12,7 +12,6 @@
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "crypt",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -24,37 +23,10 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/crypt.tscn",
+	  "scene": "res://assets/rot_rooms/crypt.tscn",
 	  "width": 1
 	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [],
-		"south": [],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "crypt_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  1,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/crypt.tscn",
-	  "width": 2
-	},
-	{
+	"crypt_rot180": {
 	  "doors": {
 		"east": [],
 		"north": [
@@ -66,22 +38,21 @@
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "crypt_rot180",
 	  "occupied_tiles": [
 		[
 		  0,
-		  0
+		  1
 		],
 		[
 		  0,
-		  1
+		  0
 		]
 	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/crypt.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/crypt_rot180.tscn",
 	  "width": 1
 	},
-	{
+	"crypt_rot270": {
 	  "doors": {
 		"east": [
 		  0
@@ -92,23 +63,48 @@
 		  0
 		]
 	  },
-	  "length": 1,
-	  "name": "crypt_rot270",
+	  "length": 2,
 	  "occupied_tiles": [
 		[
-		  1,
-		  0
+		  0,
+		  1
 		],
 		[
 		  0,
 		  0
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/crypt.tscn",
-	  "width": 2
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/crypt_rot270.tscn",
+	  "width": 1
 	},
-	{
+	"crypt_rot90": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/crypt_rot90.tscn",
+	  "width": 1
+	},
+	"faculty_office": {
 	  "doors": {
 		"east": [],
 		"north": [],
@@ -118,7 +114,6 @@
 		"west": []
 	  },
 	  "length": 1,
-	  "name": "faculty_office",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -126,31 +121,10 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/faculty_office.tscn",
+	  "scene": "res://assets/rot_rooms/faculty_office.tscn",
 	  "width": 1
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "faculty_office_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/faculty_office.tscn",
-	  "width": 1
-	},
-	{
+	"faculty_office_rot180": {
 	  "doors": {
 		"east": [],
 		"north": [
@@ -160,18 +134,37 @@
 		"west": []
 	  },
 	  "length": 1,
-	  "name": "faculty_office_rot180",
 	  "occupied_tiles": [
 		[
 		  0,
 		  0
 		]
 	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/faculty_office.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/faculty_office_rot180.tscn",
 	  "width": 1
 	},
-	{
+	"faculty_office_rot270": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/faculty_office_rot270.tscn",
+	  "width": 1
+	},
+	"faculty_office_rot90": {
 	  "doors": {
 		"east": [
 		  0
@@ -181,18 +174,17 @@
 		"west": []
 	  },
 	  "length": 1,
-	  "name": "faculty_office_rot270",
 	  "occupied_tiles": [
 		[
 		  0,
 		  0
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/faculty_office.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/faculty_office_rot90.tscn",
 	  "width": 1
 	},
-	{
+	"foyer": {
 	  "doors": {
 		"east": [
 		  0
@@ -207,7 +199,6 @@
 		]
 	  },
 	  "length": 2,
-	  "name": "foyer",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -227,242 +218,24 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/foyer.tscn",
+	  "scene": "res://assets/rot_rooms/foyer.tscn",
 	  "width": 2
 	},
-	{
+	"foyer_rot180": {
 	  "doors": {
 		"east": [
-		  1,
 		  0
-		],
-		"north": [
-		  1
-		],
-		"south": [
-		  1
-		],
-		"west": []
-	  },
-	  "length": 2,
-	  "name": "foyer_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  0,
-		  1
-		],
-		[
-		  1,
-		  0
-		],
-		[
-		  1,
-		  1
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/foyer.tscn",
-	  "width": 2
-	},
-	{
-	  "doors": {
-		"east": [
-		  1
 		],
 		"north": [],
 		"south": [
-		  0,
-		  1
+		  1,
+		  0
 		],
 		"west": [
-		  1
+		  0
 		]
 	  },
 	  "length": 2,
-	  "name": "foyer_rot180",
-	  "occupied_tiles": [
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  0
-		],
-		[
-		  1,
-		  1
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/foyer.tscn",
-	  "width": 2
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  0
-		],
-		"south": [
-		  0
-		],
-		"west": [
-		  0,
-		  1
-		]
-	  },
-	  "length": 2,
-	  "name": "foyer_rot270",
-	  "occupied_tiles": [
-		[
-		  1,
-		  1
-		],
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  1
-		],
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/foyer.tscn",
-	  "width": 2
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [
-		  0
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "hallway",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 0,
-	  "scene": "res://assets/rooms/hallway.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [
-		  0
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "hallway_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/hallway.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [
-		  0
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "hallway_rot180",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/hallway.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [
-		  0
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "hallway_rot270",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/hallway.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  1
-		],
-		"west": []
-	  },
-	  "length": 2,
-	  "name": "holodeck",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -482,10 +255,252 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/holodeck.tscn",
+	  "scene": "res://assets/rot_rooms/foyer_rot180.tscn",
 	  "width": 2
 	},
-	{
+	"foyer_rot270": {
+	  "doors": {
+		"east": [
+		  1,
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  1,
+		  1
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/foyer_rot270.tscn",
+	  "width": 2
+	},
+	"foyer_rot90": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  1,
+		  0
+		]
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  1,
+		  1
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/foyer_rot90.tscn",
+	  "width": 2
+	},
+	"hallway": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/hallway.tscn",
+	  "width": 1
+	},
+	"hallway_rot180": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/hallway_rot180.tscn",
+	  "width": 1
+	},
+	"hallway_rot270": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/hallway_rot270.tscn",
+	  "width": 1
+	},
+	"hallway_rot90": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/hallway_rot90.tscn",
+	  "width": 1
+	},
+	"holodeck": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  1,
+		  1
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/holodeck.tscn",
+	  "width": 2
+	},
+	"holodeck_rot180": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  1
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  1,
+		  1
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/holodeck_rot180.tscn",
+	  "width": 2
+	},
+	"holodeck_rot270": {
 	  "doors": {
 		"east": [],
 		"north": [],
@@ -495,96 +510,61 @@
 		]
 	  },
 	  "length": 2,
-	  "name": "holodeck_rot90",
 	  "occupied_tiles": [
 		[
 		  0,
-		  0
+		  1
+		],
+		[
+		  1,
+		  1
 		],
 		[
 		  0,
-		  1
-		],
-		[
-		  1,
 		  0
 		],
 		[
 		  1,
-		  1
+		  0
 		]
 	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/holodeck.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/holodeck_rot270.tscn",
 	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": []
-	  },
-	  "length": 2,
-	  "name": "holodeck_rot180",
-	  "occupied_tiles": [
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  0
-		],
-		[
-		  1,
-		  1
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/holodeck.tscn",
-	  "width": 2
-	},
-	{
+	"holodeck_rot90": {
 	  "doors": {
 		"east": [
-		  0
+		  1
 		],
 		"north": [],
 		"south": [],
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "holodeck_rot270",
 	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
 		[
 		  1,
 		  1
 		],
 		[
-		  1,
+		  0,
 		  0
 		],
 		[
-		  0,
-		  1
-		],
-		[
-		  0,
+		  1,
 		  0
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/holodeck.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/holodeck_rot90.tscn",
 	  "width": 2
 	},
-	{
+	"lecturehall": {
 	  "doors": {
 		"east": [],
 		"north": [
@@ -596,7 +576,6 @@
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "lecturehall",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -616,128 +595,124 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/lecturehall.tscn",
+	  "scene": "res://assets/rot_rooms/lecturehall.tscn",
 	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [
-		  1
-		],
-		"north": [],
-		"south": [],
-		"west": [
-		  1
-		]
-	  },
-	  "length": 2,
-	  "name": "lecturehall_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  1,
-		  1
-		],
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/lecturehall.tscn",
-	  "width": 2
-	},
-	{
+	"lecturehall_rot180": {
 	  "doors": {
 		"east": [],
 		"north": [
-		  0
+		  1
 		],
 		"south": [
-		  0
+		  1
 		],
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "lecturehall_rot180",
 	  "occupied_tiles": [
 		[
-		  1,
-		  0
-		],
-		[
 		  0,
 		  1
 		],
 		[
 		  1,
-		  1
+		  0
 		],
 		[
 		  0,
 		  0
+		],
+		[
+		  1,
+		  1
 		]
 	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/lecturehall.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/lecturehall_rot180.tscn",
 	  "width": 2
 	},
-	{
+	"lecturehall_rot270": {
 	  "doors": {
 		"east": [
-		  0
+		  1
 		],
 		"north": [],
 		"south": [],
 		"west": [
-		  0
+		  1
 		]
 	  },
 	  "length": 2,
-	  "name": "lecturehall_rot270",
 	  "occupied_tiles": [
 		[
-		  1,
-		  1
-		],
-		[
-		  0,
-		  0
-		],
-		[
 		  0,
 		  1
 		],
 		[
 		  1,
 		  0
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  1
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/lecturehall.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/lecturehall_rot270.tscn",
 	  "width": 2
 	},
-	{
+	"lecturehall_rot90": {
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  1,
+		  0
+		],
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  1
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/lecturehall_rot90.tscn",
+	  "width": 2
+	},
+	"library": {
 	  "doors": {
 		"east": [
 		  0,
-		  -1
+		  1
 		],
 		"north": [],
 		"south": [
-		  -1
+		  0
 		],
 		"west": []
 	  },
 	  "length": 3,
-	  "name": "library",
 	  "occupied_tiles": [
 		[
 		  1,
@@ -757,403 +732,178 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/library.tscn",
+	  "scene": "res://assets/rot_rooms/library.tscn",
 	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  2,
-		  3
-		],
-		"west": [
-		  -1
-		]
-	  },
-	  "length": 2,
-	  "name": "library_rot90",
-	  "occupied_tiles": [
-		[
-		  1,
-		  1
-		],
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  0
-		],
-		[
-		  2,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/library.tscn",
-	  "width": 3
-	},
-	{
+	"library_rot180": {
 	  "doors": {
 		"east": [],
 		"north": [
-		  2
+		  0
 		],
 		"south": [],
 		"west": [
-		  2,
-		  3
+		  0,
+		  1
 		]
 	  },
 	  "length": 3,
-	  "name": "library_rot180",
 	  "occupied_tiles": [
+		[
+		  1,
+		  1
+		],
 		[
 		  0,
 		  1
 		],
 		[
-		  1,
-		  1
-		],
-		[
-		  1,
-		  0
-		],
-		[
-		  1,
-		  2
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/library.tscn",
-	  "width": 2
-	},
-	{
-	  "doors": {
-		"east": [
+		  0,
 		  2
 		],
-		"north": [
-		  0,
-		  -1
-		],
-		"south": [],
-		"west": []
-	  },
-	  "length": 2,
-	  "name": "library_rot270",
-	  "occupied_tiles": [
-		[
-		  1,
-		  0
-		],
-		[
-		  1,
-		  1
-		],
-		[
-		  2,
-		  1
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/library.tscn",
-	  "width": 3
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [],
-		"south": [],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 2,
-	  "name": "server_room",
-	  "occupied_tiles": [
-		[
-		  0,
-		  1
-		],
 		[
 		  0,
 		  0
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/server_room.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  1
-		],
-		"south": [
-		  1
-		],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "server_room_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  1,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/server_room.tscn",
+	  "scene": "res://assets/rot_rooms/library_rot180.tscn",
 	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [
-		  1
-		],
-		"north": [],
-		"south": [],
-		"west": [
-		  1
-		]
-	  },
-	  "length": 2,
-	  "name": "server_room_rot180",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/server_room.tscn",
-	  "width": 1
-	},
-	{
+	"library_rot270": {
 	  "doors": {
 		"east": [],
-		"north": [
-		  0
-		],
+		"north": [],
 		"south": [
-		  0
+		  0,
+		  1
 		],
-		"west": []
+		"west": [
+		  0
+		]
 	  },
-	  "length": 1,
-	  "name": "server_room_rot270",
+	  "length": 3,
 	  "occupied_tiles": [
 		[
 		  1,
-		  0
+		  1
 		],
 		[
 		  0,
-		  0
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/server_room.tscn",
-	  "width": 2
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  0
+		  1
 		],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "smalllectureroom",
-	  "occupied_tiles": [
+		[
+		  0,
+		  2
+		],
 		[
 		  0,
 		  0
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/smalllectureroom.tscn",
-	  "width": 1
+	  "scene": "res://assets/rot_rooms/library_rot270.tscn",
+	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "smalllectureroom_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/smalllectureroom.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "smalllectureroom_rot180",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/smalllectureroom.tscn",
-	  "width": 1
-	},
-	{
+	"library_rot90": {
 	  "doors": {
 		"east": [
 		  0
 		],
-		"north": [],
+		"north": [
+		  0,
+		  1
+		],
 		"south": [],
 		"west": []
 	  },
-	  "length": 1,
-	  "name": "smalllectureroom_rot270",
+	  "length": 3,
 	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/smalllectureroom.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  1
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "studentcafe",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
 		[
 		  1,
+		  1
+		],
+		[
+		  0,
+		  1
+		],
+		[
+		  0,
+		  2
+		],
+		[
+		  0,
 		  0
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/studentcafe.tscn",
+	  "scene": "res://assets/rot_rooms/library_rot90.tscn",
 	  "width": 2
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": [
-		  1
-		]
-	  },
-	  "length": 2,
-	  "name": "studentcafe_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		],
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/studentcafe.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "studentcafe_rot180",
-	  "occupied_tiles": [
-		[
-		  1,
-		  0
-		],
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/studentcafe.tscn",
-	  "width": 2
-	},
-	{
+	"server_room": {
 	  "doors": {
 		"east": [
 		  0
 		],
 		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/server_room.tscn",
+	  "width": 1
+	},
+	"server_room_rot180": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/server_room_rot180.tscn",
+	  "width": 1
+	},
+	"server_room_rot270": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
 		"south": [
 		  0
 		],
 		"west": []
 	  },
 	  "length": 2,
-	  "name": "studentcafe_rot270",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -1164,15 +914,39 @@
 		  0
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/studentcafe.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/server_room_rot270.tscn",
 	  "width": 1
 	},
-	{
+	"server_room_rot90": {
 	  "doors": {
-		"east": [
+		"east": [],
+		"north": [
 		  0
 		],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 2,
+	  "occupied_tiles": [
+		[
+		  0,
+		  1
+		],
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/server_room_rot90.tscn",
+	  "width": 1
+	},
+	"smalllectureroom": {
+	  "doors": {
+		"east": [],
 		"north": [],
 		"south": [
 		  0
@@ -1180,7 +954,6 @@
 		"west": []
 	  },
 	  "length": 1,
-	  "name": "teakitchen",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -1188,79 +961,10 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/teakitchen.tscn",
+	  "scene": "res://assets/rot_rooms/smalllectureroom.tscn",
 	  "width": 1
 	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  0
-		],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "teakitchen_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/teakitchen.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": [
-		  0
-		]
-	  },
-	  "length": 1,
-	  "name": "teakitchen_rot180",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/teakitchen.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [
-		  0
-		],
-		"south": [],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "teakitchen_rot270",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/teakitchen.tscn",
-	  "width": 1
-	},
-	{
+	"smalllectureroom_rot180": {
 	  "doors": {
 		"east": [],
 		"north": [
@@ -1270,7 +974,6 @@
 		"west": []
 	  },
 	  "length": 1,
-	  "name": "toilet",
 	  "occupied_tiles": [
 		[
 		  0,
@@ -1278,52 +981,10 @@
 		]
 	  ],
 	  "rotation": 0,
-	  "scene": "res://assets/rooms/toilet.tscn",
+	  "scene": "res://assets/rot_rooms/smalllectureroom_rot180.tscn",
 	  "width": 1
 	},
-	{
-	  "doors": {
-		"east": [
-		  0
-		],
-		"north": [],
-		"south": [],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "toilet_rot90",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 90,
-	  "scene": "res://assets/rooms/toilet.tscn",
-	  "width": 1
-	},
-	{
-	  "doors": {
-		"east": [],
-		"north": [],
-		"south": [
-		  0
-		],
-		"west": []
-	  },
-	  "length": 1,
-	  "name": "toilet_rot180",
-	  "occupied_tiles": [
-		[
-		  0,
-		  0
-		]
-	  ],
-	  "rotation": 180,
-	  "scene": "res://assets/rooms/toilet.tscn",
-	  "width": 1
-	},
-	{
+	"smalllectureroom_rot270": {
 	  "doors": {
 		"east": [],
 		"north": [],
@@ -1333,16 +994,307 @@
 		]
 	  },
 	  "length": 1,
-	  "name": "toilet_rot270",
 	  "occupied_tiles": [
 		[
 		  0,
 		  0
 		]
 	  ],
-	  "rotation": 270,
-	  "scene": "res://assets/rooms/toilet.tscn",
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/smalllectureroom_rot270.tscn",
+	  "width": 1
+	},
+	"smalllectureroom_rot90": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/smalllectureroom_rot90.tscn",
+	  "width": 1
+	},
+	"studentcafe": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  1
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/studentcafe.tscn",
+	  "width": 2
+	},
+	"studentcafe_rot180": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  1
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/studentcafe_rot180.tscn",
+	  "width": 2
+	},
+	"studentcafe_rot270": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  1
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/studentcafe_rot270.tscn",
+	  "width": 2
+	},
+	"studentcafe_rot90": {
+	  "doors": {
+		"east": [
+		  1
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		],
+		[
+		  1,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/studentcafe_rot90.tscn",
+	  "width": 2
+	},
+	"teakitchen": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/teakitchen.tscn",
+	  "width": 1
+	},
+	"teakitchen_rot180": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/teakitchen_rot180.tscn",
+	  "width": 1
+	},
+	"teakitchen_rot270": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/teakitchen_rot270.tscn",
+	  "width": 1
+	},
+	"teakitchen_rot90": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/teakitchen_rot90.tscn",
+	  "width": 1
+	},
+	"toilet": {
+	  "doors": {
+		"east": [],
+		"north": [
+		  0
+		],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/toilet.tscn",
+	  "width": 1
+	},
+	"toilet_rot180": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [
+		  0
+		],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/toilet_rot180.tscn",
+	  "width": 1
+	},
+	"toilet_rot270": {
+	  "doors": {
+		"east": [
+		  0
+		],
+		"north": [],
+		"south": [],
+		"west": []
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/toilet_rot270.tscn",
+	  "width": 1
+	},
+	"toilet_rot90": {
+	  "doors": {
+		"east": [],
+		"north": [],
+		"south": [],
+		"west": [
+		  0
+		]
+	  },
+	  "length": 1,
+	  "occupied_tiles": [
+		[
+		  0,
+		  0
+		]
+	  ],
+	  "rotation": 0,
+	  "scene": "res://assets/rot_rooms/toilet_rot90.tscn",
 	  "width": 1
 	}
-  ]
+  }
 }

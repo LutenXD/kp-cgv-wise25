@@ -1,512 +1,418 @@
 extends Node3D
-class_name RoomLayoutManager
+#class_name RoomLayoutManager
 
 
 signal finished
 
-# Path to the rotated rooms folder
-const ROT_ROOMS_PATH = "res://assets/rot_rooms/"
-
-# Grid settings for room placement
-const ROOM_SIZE = 10.0  # Base size of a room (10x10 units)
 
 const ROOM_DATA_PATH := "res://data/room_assets.json"
+const ROOM_SIZE: float = 10.0
 
-var room_database := []
-var rooms_by_direction := {
-	"north": [],
-	"east": [],
-	"south": [],
-	"west": []
+## Maps each direction to the face a connecting room must expose.
+const OPPOSITE_DIR: Dictionary = {
+	"north": "south",
+	"south": "north",
+	"east":  "west",
+	"west":  "east",
 }
 
-var grid = {}  # Dictionary to track occupied grid positions
-var spawned_rooms = []
-var available_doors = []
 
+var grid: Dictionary[Vector3i, bool] = {}
+var available_doors: Array[Node3D] = []
 var door_scene: PackedScene = preload("res://entities/interactable_door.tscn")
+var rooms: Array[Array] = []           ## [scene: String, tile_origin: Vector3i, name: String]
+var room_database: Dictionary = {}
+var open_doors: Array[Dictionary] = [] ## BFS queue of pending door connections
 
 
-func _ready():
+func _ready() -> void:
+	randomize()
+
+
+# ── Public API ────────────────────────────────────────────────────────────────
+
+func spawn_starting_room(
+		starting_room_name: String = "foyer",
+		filler_room_name:   String = "hallway",
+		number_of_connected_rooms: int = 8) -> void:
 	load_room_database()
+	add_room_to_dic(starting_room_name, Vector3i(0, 0, 0))
+	generate_layout(starting_room_name, number_of_connected_rooms, filler_room_name)
+	spawn_rooms()
+	finished.emit()
 
 
-func load_room_database():
+# ── Database ──────────────────────────────────────────────────────────────────
+
+func load_room_database() -> void:
 	var file := FileAccess.open(ROOM_DATA_PATH, FileAccess.READ)
 	if file == null:
 		push_error("Failed to load room database")
 		return
 
 	var json := JSON.new()
+	print("Parsing room database…")
 
 	if json.parse(file.get_as_text()) != OK:
 		push_error("Failed to parse room database")
 		return
 
 	room_database = json.data["rooms"]
-
-	for room in room_database:
-		for dir in room["doors"].keys():
-			if room["doors"][dir].size() > 0:
-				rooms_by_direction[dir].append(room)
-
-	print("Loaded ", room_database.size(), " room variants")
+	print("Loaded %d room variants." % room_database.size())
 
 
-func get_base_room_name(room_name: String) -> String:
-	"""Extract base room name without rotation suffix"""
-	var base_name = room_name
-	if base_name.ends_with("_rot90"):
-		base_name = base_name.replace("_rot90", "")
-	elif base_name.ends_with("_rot180"):
-		base_name = base_name.replace("_rot180", "")
-	elif base_name.ends_with("_rot270"):
-		base_name = base_name.replace("_rot270", "")
-	return base_name
+func add_room_to_dic(room_name: String, pos: Vector3i) -> void:
+	if not room_database.has(room_name):
+		push_error("Room not found in database: " + room_name)
+		return
 
-func is_room_variant_spawned(room_name: String) -> bool:
-	"""Check if any variant of this room is already spawned"""
-	var base_name = get_base_room_name(room_name)
-	for room_data in spawned_rooms:
-		if get_base_room_name(room_data["name"]) == base_name:
-			return true
+	var room: Dictionary = room_database[room_name]
+	rooms.append([room["scene"], pos, room_name])
+
+	# Mark every tile this room occupies in world-tile space.
+	for tile in room["occupied_tiles"]:
+		grid[Vector3i(pos.x + int(tile[0]), 0, pos.z + int(tile[1]))] = true
+
+
+# ── Layout generation ─────────────────────────────────────────────────────────
+
+func generate_layout(
+		starting_room_name: String,
+		max_rooms: int,
+		filler_room_name: String) -> void:
+
+	var rooms_placed := 1
+
+	# Seed the BFS queue with every open door on the starting room.
+	open_doors.assign(get_room_doors(starting_room_name, Vector3i(0, 0, 0)))
+	open_doors.shuffle()
+
+	while open_doors.size() > 0 and rooms_placed < max_rooms:
+		var pending: Dictionary = open_doors.pop_front()
+		var opposite_dir: String = OPPOSITE_DIR[pending["direction"]]
+
+		# Collect every room that has at least one door on the required face.
+		var candidates: Array[String] = get_rooms_with_door(opposite_dir)
+		candidates.erase(starting_room_name)   # keep the entrance unique
+		candidates.shuffle()
+
+		# Demote the filler to the very end — it is a last resort only.
+		if candidates.has(filler_room_name):
+			candidates.erase(filler_room_name)
+			candidates.append(filler_room_name)
+
+		if _try_place_from_candidates(pending, candidates, opposite_dir):
+			rooms_placed += 1
+
+	if rooms_placed < max_rooms:
+		push_warning("Layout finished with %d / %d rooms — some doors had no valid fit."
+				% [rooms_placed, max_rooms])
+
+
+## Tries each candidate in order; places the first one that fits without overlap.
+## Returns true if a room was placed.
+func _try_place_from_candidates(
+		pending: Dictionary,
+		candidates: Array[String],
+		opposite_dir: String) -> bool:
+
+	for candidate_name: String in candidates:
+		var candidate_room: Dictionary = room_database[candidate_name]
+
+		for door_tile_raw in candidate_room["doors"][opposite_dir]:
+			var door_tile := int(door_tile_raw)
+			var new_origin := _compute_new_room_origin(pending, candidate_room, door_tile)
+
+			if _can_place_room(candidate_room, new_origin):
+				add_room_to_dic(candidate_name, new_origin)
+
+				# Queue every open door of the new room except the one we just used.
+				for door: Dictionary in get_room_doors(candidate_name, new_origin):
+					if not (door["direction"] == opposite_dir and door["door_tile"] == door_tile):
+						open_doors.append(door)
+
+				return true
+
 	return false
 
 
-func spawn_starting_room(starting_room_name: String = "foyer", filler_room_name: String = "hallway", number_of_connected_rooms: int = 8) -> void:
-	"""Spawn the initial room(s) when the game starts"""
-	print("Spawning starting room with connected rooms...")
-	
-	# Spawn grand foyer as the starting room at origin
-	var starting_room = spawn_room_at_position(starting_room_name, Vector3.ZERO)
-	grid[Vector3i(0, 0, 0)] = true
+# ── Geometry ──────────────────────────────────────────────────────────────────
+#
+#   Coordinate convention
+#   ─────────────────────
+#   north = −Z   south = +Z   east = +X   west = −X
+#
+#   Door-index meanings
+#   ───────────────────
+#   north / south doors: index is the X offset from the room origin (0 … width−1)
+#   east  / west  doors: index is the Z offset from the room origin (0 … length−1)
+#
+#   A room at tile-origin (ox, oz) with length L, width W occupies:
+#     north wall  z = oz          (local z = 0)
+#     south wall  z = oz + L − 1 (local z = L − 1)
+#     west wall   x = ox          (local x = 0)
+#     east wall   x = ox + W − 1 (local x = W − 1)
+
+func _compute_new_room_origin(
+		pending: Dictionary,
+		candidate_room: Dictionary,
+		candidate_door_tile: int) -> Vector3i:
+
+	var p_origin: Vector3i = pending["origin"]
+	var p_room: Dictionary = room_database[pending["room_name"]]
+	var i: int = pending["door_tile"]   # wall-offset on the parent side
+	var j: int = candidate_door_tile    # wall-offset on the candidate side
+
+	match pending["direction"]:
+		"north":
+			# Candidate's south wall must touch parent's north wall.
+			# parent north tile row: z = p_origin.z
+			# candidate south tile row: new_oz + candidate_length − 1 = p_origin.z − 1
+			return Vector3i(p_origin.x + i - j, 0,
+					p_origin.z - int(candidate_room["length"]))
+		"south":
+			# Candidate's north wall must touch parent's south wall.
+			# parent south tile row: z = p_origin.z + parent_length − 1
+			# candidate north tile row: new_oz = p_origin.z + parent_length
+			return Vector3i(p_origin.x + i - j, 0,
+					p_origin.z + int(p_room["length"]))
+		"east":
+			# Candidate's west wall must touch parent's east wall.
+			# parent east column: x = p_origin.x + parent_width − 1
+			# candidate west column: new_ox = p_origin.x + parent_width
+			return Vector3i(p_origin.x + int(p_room["width"]), 0,
+					p_origin.z + i - j)
+		"west":
+			# Candidate's east wall must touch parent's west wall.
+			# parent west column: x = p_origin.x
+			# candidate east column: new_ox + candidate_width − 1 = p_origin.x − 1
+			return Vector3i(p_origin.x - int(candidate_room["width"]), 0,
+					p_origin.z + i - j)
+
+	return p_origin  # unreachable
 
 
-	var doors = get_room_doors(starting_room)
-	available_doors = doors.duplicate()
-	
-	for floor_tile in get_floor_tiles_in_room(starting_room):
-		var floor_grid_position = Vector3i(floor_tile.global_position.x, floor_tile.global_position.y, floor_tile.global_position.z)
-		grid[floor_grid_position] = true
-	
-	# Track the spawned room
-	spawned_rooms.append({
-		"node": null,
-		"name": starting_room_name,
-		"position": Vector3.ZERO
-	})
-
-	for i in range(number_of_connected_rooms):
-		spawn_connected_room(filler_room_name)
-	
-	finished.emit()
-	#prints("\n", grid)
-	#prints("\n", spawned_rooms)
+## Returns true only if every tile the room would occupy is currently free.
+func _can_place_room(room_data: Dictionary, origin: Vector3i) -> bool:
+	for tile in room_data["occupied_tiles"]:
+		if grid.has(Vector3i(origin.x + int(tile[0]), 0, origin.z + int(tile[1]))):
+			return false
+	return true
 
 
-func spawn_connected_room(filler_room_name: String = "none") -> void:
-
-	if available_doors.is_empty():
-		print("No available doors to spawn connected room")
-		return
-
-	# Select a random available door
-	var parent_door = available_doors[randi() % available_doors.size()]
-	print("Spawning connected room at door: ", parent_door)
-
-	# Get opposing direction
-	var opposing_direction = get_opposing_direction(parent_door["direction"])
-	
-	# Try multiple times to find a room that doesn't collide
-	var max_attempts = 10
-	var room_placed = false
-	
-	for attempt in range(max_attempts):
-		# Find a room with opposing door
-		var room_with_door = get_room_with_door_in_direction(opposing_direction)
-		if not room_with_door:
-			print("Could not find room with door in direction: ", opposing_direction)
-			break
-		
-		var new_room = room_with_door["room"]
-		var new_room_name = room_with_door["name"]
-		
-		# Store the original rotation to preserve it after position adjustment
-		#var original_rotation = new_room.rotation
-		#print("new_room original rotation: ", original_rotation)
-
-		var parent_door_position = parent_door["node"].global_position
-		var child_door_position = room_with_door["door"]["node"].global_position
-		
-		#printt("parent door pos:", parent_door_position)
-		#printt("child door pos:", child_door_position)
-		#printt("global pos:", new_room.global_position)
-		
-		#new_room.global_transform = parent_door_position * child_door_position.affine_inverse()
-		new_room.global_position = round(parent_door_position - (child_door_position - new_room.global_position))
-
-		# Check for collisions
-		var collision_detected = false
-		var new_room_floor_tiles = get_floor_tiles_in_room(new_room)
-		for floor_tile in new_room_floor_tiles:
-			var floor_grid_position = Vector3i(
-				round(floor_tile.global_position.x), 
-				round(floor_tile.global_position.y), 
-				round(floor_tile.global_position.z)
-			)
-			if grid.has(floor_grid_position):
-				print("Collision detected at grid position: ", floor_grid_position, " (attempt ", attempt + 1, ")")
-				collision_detected = true
-				break
-		
-		if collision_detected:
-			new_room.queue_free()
-			continue  # Try again with a different room
-		else:
-			# No collision - add floor tiles to grid and keep the room
-			for floor_tile in new_room_floor_tiles:
-				var floor_grid_position = Vector3i(
-					round(floor_tile.global_position.x), 
-					round(floor_tile.global_position.y), 
-					round(floor_tile.global_position.z)
-				)
-				printt("grid pos:", floor_grid_position)
-				grid[floor_grid_position] = true
-			
-			print("Successfully placed room: ", new_room_name)
-			
-			# Track the spawned room
-			spawned_rooms.append({
-				"node": null,
-				"name": new_room_name,
-				"position": Vector3.ZERO
+## Returns all open doors of `room_name` placed at `origin` as dictionaries
+## ready for the BFS queue.
+func get_room_doors(room_name: String, origin: Vector3i) -> Array[Dictionary]:
+	var room: Dictionary = room_database[room_name]
+	var result: Array[Dictionary] = []
+	for dir: String in ["north", "south", "east", "west"]:
+		for door_tile_raw in room["doors"][dir]:
+			result.append({
+				"origin":    origin,
+				"room_name": room_name,
+				"direction": dir,
+				"door_tile": int(door_tile_raw),
 			})
-			
-			# Room position confirmed, now enable door visibility and disable walls
-			set_door_visible(parent_door, true)
-			set_door_visible(room_with_door["door"], true)
-			disable_wall_at_door(parent_door)
-			disable_wall_at_door(room_with_door["door"])
-			
-			# Spawn door
-			var door_node: Node3D = door_scene.instantiate()
-			get_parent().add_child(door_node)
-			door_node.global_position = parent_door_position
-			
-			if parent_door["direction"] == "east" or parent_door["direction"] == "west":
-				door_node.rotation.y = PI / 2.0 
-			
-			var new_doors = get_room_doors(new_room)
-			for door in new_doors:
-				# Exclude the door used for connection
-				if door["name"] != room_with_door["door"]["name"]:
-					available_doors.append(door)
-			
-			available_doors.erase(parent_door)
-			print("Available doors count: ", available_doors.size())
-			room_placed = true
-			break
-	
-	# If no room was placed after all attempts, spawn a filler room
-	if not room_placed and filler_room_name and filler_room_name != "none":
-		print("Spawning filler room: ", filler_room_name)
-		spawn_filler_room(parent_door, opposing_direction, filler_room_name)
+	return result
 
-func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, filler_room_name: String) -> void:
-	"""Spawn a filler room when no suitable room is found"""
-	var filler_room = get_filler_room_with_door(filler_room_name, opposing_direction)
-	if not filler_room:
-		print("Could not load filler room: ", filler_room_name)
-		return
-	
-	var new_room = filler_room["room"]
-	var new_room_name = filler_room["name"]
-	
-	var parent_door_position = parent_door["node"].global_position
-	var child_door_position = filler_room["door"]["node"].global_position
-	
-	new_room.global_position = round(parent_door_position - (child_door_position - new_room.global_position))
-	
-	# Check for collisions
-	var collision_detected = false
-	var new_room_floor_tiles = get_floor_tiles_in_room(new_room)
-	for floor_tile in new_room_floor_tiles:
-		var floor_grid_position = Vector3i(
-			round(floor_tile.global_position.x), 
-			round(floor_tile.global_position.y), 
-			round(floor_tile.global_position.z)
-		)
-		if grid.has(floor_grid_position):
-			print("Filler room collision detected at: ", floor_grid_position)
-			collision_detected = true
-			break
-	
-	if collision_detected:
-		new_room.queue_free()
-		print("Could not place filler room due to collision")
-		return
-	
-	# Add floor tiles to grid
-	for floor_tile in new_room_floor_tiles:
-		var floor_grid_position = Vector3i(
-			round(floor_tile.global_position.x), 
-			round(floor_tile.global_position.y), 
-			round(floor_tile.global_position.z)
-		)
-		grid[floor_grid_position] = true
-	
-	print("Successfully placed filler room: ", new_room_name)
-	
-	# Track the spawned room
-	spawned_rooms.append({
-		"node": null,
-		"name": new_room_name,
-		"position": Vector3.ZERO
-	})
-	
-	# Enable door visibility and disable walls
-	set_door_visible(parent_door, true)
-	set_door_visible(filler_room["door"], true)
-	disable_wall_at_door(parent_door)
-	disable_wall_at_door(filler_room["door"])
-	
-	# Spawn door
-	var door_node: Node3D = door_scene.instantiate()
-	get_parent().add_child(door_node)
-	door_node.global_position = parent_door_position
-	
-	if parent_door["direction"] == "east" or parent_door["direction"] == "west":
-		door_node.rotation.y = PI / 2.0 
-	
-	# Add new doors to available_doors (excluding the connection door)
-	var new_doors = get_room_doors(new_room)
-	for door in new_doors:
-		if door["name"] != filler_room["door"]["name"]:
-			available_doors.append(door)
-	
-	available_doors.erase(parent_door)
 
-func get_filler_room_with_door(filler_room_name: String, direction: String) -> Dictionary:
-	"""Get a filler room with a door in the specified direction"""
-	# Try all rotation variants of the filler room
-	var rotations = ["", "_rot90", "_rot180", "_rot270"]
-	
-	for rot in rotations:
-		var room_name = filler_room_name + rot
-		var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
-		
-		if temp_room and has_door_in_direction(temp_room, direction):
-			var room_doors = get_room_doors(temp_room)
-			var door_in_direction = null
-			for door in room_doors:
-				if door["direction"] == direction:
-					door_in_direction = door
-					break
-			return {
-				"room": temp_room,
-				"name": room_name,
-				"door": door_in_direction
-			}
-		elif temp_room:
-			temp_room.queue_free()
-	
-	return {}
+## All room names whose door data includes at least one door facing `direction`.
+func get_rooms_with_door(direction: String) -> Array[String]:
+	var result: Array[String] = []
+	for room_name: String in room_database:
+		if room_database[room_name]["doors"][direction].size() > 0:
+			result.append(room_name)
+	return result
 
+
+# ── Spawning ──────────────────────────────────────────────────────────────────
+
+func spawn_rooms() -> void:
+	var spawned_passages: Dictionary = {}  # deduplicates door instances
+
+	for room: Array in rooms:
+		var scene_path: String    = room[0]
+		var tile_origin: Vector3i = room[1]
+		var room_name: String     = room[2]
+
+		var room_node: Node3D = load(scene_path).instantiate()
+		get_parent().add_child(room_node)
+
+		# Convert tile coordinates to world-space units.
+		room_node.global_position = Vector3(
+				tile_origin.x * ROOM_SIZE, 0.0, tile_origin.z * ROOM_SIZE)
+
+		# Apply the visual rotation stored in the database (degrees).
+		var rotation_deg := float(room_database[room_name].get("rotation", 0))
+		if rotation_deg != 0.0:
+			room_node.rotate_y(deg_to_rad(rotation_deg))
+
+		_spawn_room_doors(room_node, room_name, tile_origin, spawned_passages)
+
+
+func _spawn_room_doors(
+		room_node: Node3D,
+		room_name: String,
+		tile_origin: Vector3i,
+		spawned_passages: Dictionary) -> void:
+
+	var room: Dictionary = room_database[room_name]
+
+	for dir: String in ["north", "south", "east", "west"]:
+		for door_tile_raw in room["doors"][dir]:
+			var door_tile := int(door_tile_raw)
+
+			# Only open a door where the grid shows a room on the other side.
+			# Anything else is a dead-end wall: leave it solid and the
+			# doorframe hidden, exactly as the room scene starts out.
+			var adjacent: Vector3i = _adjacent_tile(tile_origin, room, dir, door_tile)
+			if not grid.has(adjacent):
+				print("hallo")
+				continue
+
+			# Reveal THIS room's own doorframe and remove its own wall piece.
+			# This happens independently for every connected room, since the
+			# Walls/Doors nodes are local to each room's scene.
+			var door_info: Dictionary = _get_door_info(room_node, dir, door_tile)
+			if not door_info.is_empty():
+				set_door_visible(door_info, true)
+				disable_wall_at_door(door_info)
+
+			# The interactable door object itself sits in the gap between two
+			# rooms, so only spawn one per passage (deduplicated both ways).
+			var face: Vector3i = _face_tile(tile_origin, room, dir, door_tile)
+			var key: String    = _passage_key(face, adjacent)
+			if spawned_passages.has(key):
+				continue
+			spawned_passages[key] = true
+
+			var interactable: Node3D = door_scene.instantiate()
+			get_parent().add_child(interactable)
+			interactable.global_position = _door_world_position(tile_origin, room, dir, door_tile)
+			interactable.rotation.y = _door_rotation(dir)
+			available_doors.append(interactable)
+
+
+## Looks up the doorframe node for a given direction/index inside a room
+## scene, e.g. direction "north", door_tile 0 -> "Doors/DoorNorth0".
+## Returns {} if the room scene doesn't have that node.
+func _get_door_info(room_node: Node3D, direction: String, door_tile: int) -> Dictionary:
+	var suffix: String   = direction.capitalize() + str(door_tile)
+	var door_name: String = "Door" + suffix
+
+	var doors_node: Node = room_node.get_node_or_null("Doors")
+	if doors_node == null:
+		return {}
+
+	var door_node: Node = doors_node.get_node_or_null(door_name)
+	if door_node == null:
+		return {}
+
+	return {
+		"node": door_node,
+		"room": room_node,
+		"name": door_name,
+	}
+
+
+## Set the visibility of a door's frame node.
 func set_door_visible(door_info: Dictionary, door_visible: bool) -> void:
-	"""Set the visibility of a door node"""
 	if not door_info.has("node"):
 		return
-	
-	var door_node = door_info["node"]
+
+	var door_node: Node = door_info["node"]
 	if door_node:
 		door_node.visible = door_visible
-		print("Set door ", door_info["name"], " visible: ", door_visible)
 
+
+## Remove the wall segment that corresponds to an open door.
 func disable_wall_at_door(door_info: Dictionary) -> void:
-	"""Disable the wall corresponding to a door"""
+	print(door_info)
 	if not door_info.has("node") or not door_info.has("room"):
 		return
 
-	var room_node = door_info["room"]
-	var door_name = door_info["name"]
-	
-	# Extract the wall name pattern (e.g., "DoorNorth0" -> "WallNorth0")
-	var wall_name = door_name.replace("Door", "Wall")
-	
-	# Find the corresponding wall
-	var walls_node = room_node.get_node_or_null("Walls")
+	var room_node: Node = door_info["room"]
+	var door_name: String = door_info["name"]
+
+	# "DoorNorth0" -> "WallNorth0"
+	var wall_name: String = door_name.replace("Door", "Wall")
+
+	var walls_node: Node = room_node.get_node_or_null("Walls")
 	if not walls_node:
 		return
-	
-	var wall_node = walls_node.get_node_or_null(wall_name)
+
+	var wall_node: Node = walls_node.get_node_or_null(wall_name)
 	if wall_node:
 		wall_node.queue_free()
-		print("Disabled wall: ", wall_name)
 
-func get_floor_tiles_in_room(room_node: Node3D) -> Array:
-	"""Get all floor tile nodes from a room"""
-	var floor_tiles = []
-	
-	if not room_node:
-		return floor_tiles
-	
-	var floors_node = room_node.get_node_or_null("Floor")
-	if not floors_node:
-		return floor_tiles
-	
-	for child in floors_node.get_children():
-		floor_tiles.append(child)
-	
-	return floor_tiles
 
-func get_opposing_direction(direction: String) -> String:
-	match direction:
-		"north": return "south"
-		"south": return "north"
-		"east": return "west"
-		"west": return "east"
-	return ""
+## World tile inside this room that the door opening is on.
+func _face_tile(
+		tile_origin: Vector3i,
+		room: Dictionary,
+		dir: String,
+		door_tile: int) -> Vector3i:
+	match dir:
+		"north": return Vector3i(tile_origin.x + door_tile, 0, tile_origin.z)
+		"south": return Vector3i(tile_origin.x + door_tile, 0,
+				tile_origin.z + int(room["length"]) - 1)
+		"east":  return Vector3i(tile_origin.x + int(room["width"]) - 1, 0,
+				tile_origin.z + door_tile)
+		"west":  return Vector3i(tile_origin.x, 0, tile_origin.z + door_tile)
+	return tile_origin
 
-func get_room_with_door_in_direction(direction: String) -> Dictionary:
-	"""Find a random room that has a door in the specified direction
-	Returns a Dictionary with 'room' (Node3D) and 'name' (String), or empty dict if not found"""
-	
-	# Get list of all room files
-	var dir = DirAccess.open(ROT_ROOMS_PATH)
-	if not dir:
-		print("Failed to open rot_rooms directory")
-		return {}
 
-	var room_files = []
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tscn"):
-			room_files.append(file_name.replace(".tscn", ""))
-		file_name = dir.get_next()
-	dir.list_dir_end()
+## World tile immediately outside this room's wall — i.e. in the next room.
+func _adjacent_tile(
+		tile_origin: Vector3i,
+		room: Dictionary,
+		dir: String,
+		door_tile: int) -> Vector3i:
+	match dir:
+		"north": return Vector3i(tile_origin.x + door_tile, 0, tile_origin.z - 1)
+		"south": return Vector3i(tile_origin.x + door_tile, 0,
+				tile_origin.z + int(room["length"]))
+		"east":  return Vector3i(tile_origin.x + int(room["width"]), 0,
+				tile_origin.z + door_tile)
+		"west":  return Vector3i(tile_origin.x - 1, 0, tile_origin.z + door_tile)
+	return tile_origin
 
-	if room_files.is_empty():
-		print("No room files found in rot_rooms")
-		return {}
 
-	# Try to find a room with the required door
-	var max_attempts = 10
-	
-	for attempt in range(max_attempts):
-		var room_name = room_files[randi() % room_files.size()]
-		
-		# Skip if this room variant is already spawned
-		if is_room_variant_spawned(room_name):
-			continue
-		
-		# Load the room temporarily to check its doors
-		var temp_room = spawn_room_at_position(room_name, Vector3.ZERO)
-		if temp_room and has_door_in_direction(temp_room, direction):
-			var room_doors = get_room_doors(temp_room)  # Preload doors
-			var door_in_direction = null
-			for door in room_doors:
-				if door["direction"] == direction:
-					door_in_direction = door
-					break
-			return {
-				"room": temp_room,
-				"name": room_name,
-				"door": door_in_direction
-			}
-		elif temp_room:
-			temp_room.queue_free()
+## Canonical key for the wall gap between two adjacent tiles.
+## Always produces the same string regardless of argument order.
+func _passage_key(a: Vector3i, b: Vector3i) -> String:
+	if a.x < b.x or (a.x == b.x and a.z < b.z):
+		return "%d,%d|%d,%d" % [a.x, a.z, b.x, b.z]
+	return "%d,%d|%d,%d" % [b.x, b.z, a.x, a.z]
 
-	return {}
 
-func spawn_room_at_position(room_name: String, pos: Vector3) -> Node3D:
-	"""Spawn a specific room at a given position"""
-	var scene_path = ROT_ROOMS_PATH + room_name + ".tscn"
-	
-	# Check if the scene file exists
-	if not ResourceLoader.exists(scene_path):
-		print("Room scene not found: ", scene_path)
-		return null
-	
-	# Load and instance the room scene
-	var room_scene = load(scene_path)
-	if not room_scene:
-		print("Failed to load room scene: ", scene_path)
-		return null
-	
-	var room_instance = room_scene.instantiate()
-	if not room_instance:
-		print("Failed to instantiate room: ", scene_path)
-		return null
-	
-	# Add the room to the parent scene
-	get_parent().add_child(room_instance)
-	
-	# Set the room position
-	room_instance.global_position = pos
-	
-	# Extract rotation from room name and apply it AFTER adding to scene tree
-	var rot_degrees := 0.0
-	if room_name.ends_with("_rot90"):
-		rot_degrees = 90.0
-	elif room_name.ends_with("_rot180"):
-		rot_degrees = 180.0
-	elif room_name.ends_with("_rot270"):
-		rot_degrees = 270.0
-	
-	if rot_degrees > 0.0:
-		room_instance.rotation_degrees.y = rot_degrees
-		print("Applied rotation: ", rot_degrees, "° to room: ", room_name)
-	
-	return room_instance
+## Centre of the wall gap in world space. Y = 0; adjust to match your door scene.
+func _door_world_position(
+		tile_origin: Vector3i,
+		room: Dictionary,
+		dir: String,
+		door_tile: int) -> Vector3:
+	var half := ROOM_SIZE * 0.5
+	match dir:
+		"north":
+			return Vector3(
+					(tile_origin.x + door_tile) * ROOM_SIZE + half, 0.0,
+					 tile_origin.z * ROOM_SIZE)
+		"south":
+			return Vector3(
+					(tile_origin.x + door_tile) * ROOM_SIZE + half, 0.0,
+					(tile_origin.z + int(room["length"])) * ROOM_SIZE)
+		"east":
+			return Vector3(
+					(tile_origin.x + int(room["width"])) * ROOM_SIZE, 0.0,
+					(tile_origin.z + door_tile) * ROOM_SIZE + half)
+		"west":
+			return Vector3(
+					 tile_origin.x * ROOM_SIZE, 0.0,
+					(tile_origin.z + door_tile) * ROOM_SIZE + half)
+	return Vector3.ZERO
 
-func get_room_doors(room_node: Node3D) -> Array:
-		"""Get all door nodes from a room as a list of dictionaries with direction, name, and node"""
-		var door_list = []
-		
-		if not room_node:
-			return door_list
-		
-		var walls_node = room_node.get_node_or_null("Walls")
-		if not walls_node:
-			return door_list
-		
-		# Search for door nodes by name pattern
-		for child in walls_node.get_children():
-			var node_name = child.name
-			var direction = ""
-			
-			if node_name.begins_with("DoorNorth"):
-				direction = "north"
-			elif node_name.begins_with("DoorSouth"):
-				direction = "south"
-			elif node_name.begins_with("DoorEast"):
-				direction = "east"
-			elif node_name.begins_with("DoorWest"):
-				direction = "west"
-			
-			if direction != "":
-				door_list.append({
-					"room": room_node,
-					"direction": direction,
-					"name": str(node_name),
-					"node": child
-				})
-		
-		return door_list
 
-func has_door_in_direction(room_node: Node3D, direction: String) -> bool:
-	"""Check if a room has a door in a specific direction (north/south/east/west)"""
-	var doors = get_room_doors(room_node)
-	for door in doors:
-		if door["direction"] == direction:
-			return true
-	return false
-
-func get_door_count(room_node: Node3D) -> int:
-	"""Get the total number of doors in a room"""
-	var doors = get_room_doors(room_node)
-	var count = 0
-	for direction in doors.keys():
-		count += doors[direction].size()
-	return count
+## N/S doors face along Z (no rotation); E/W doors face along X (90°).
+func _door_rotation(dir: String) -> float:
+	return PI * 0.5 if (dir == "east" or dir == "west") else 0.0

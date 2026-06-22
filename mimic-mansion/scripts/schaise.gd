@@ -1,9 +1,8 @@
 @tool
 extends EditorScript
 
-const ROOM_FOLDER := "res://assets/rooms/"
+const ROOM_FOLDER := "res://assets/rot_rooms/"
 const OUTPUT_JSON_PATH := "res://data/room_assets.json"
-const ROTATIONS := [90, 180, 270]
 const ROOM_SIZE := 10.0
 
 
@@ -28,7 +27,7 @@ func _run() -> void:
 		push_error("No .tscn files found in " + ROOM_FOLDER)
 		return
 
-	var all_rooms: Array = []
+	var all_rooms: Dictionary = {}  # Changed: Array -> Dictionary
 
 	for file in room_files:
 		var scene_path := ROOM_FOLDER + file
@@ -39,10 +38,7 @@ func _run() -> void:
 			push_error("Skipping invalid room: " + scene_path)
 			continue
 
-		all_rooms.append(base_room)
-
-		for rot in ROTATIONS:
-			all_rooms.append(create_rotated_room_data(base_room, rot))
+		all_rooms[room_name] = base_room  # Changed: append() -> keyed insert
 
 	var output_data := {"rooms": all_rooms}
 	var output_json := JSON.stringify(output_data, "  ")
@@ -92,7 +88,7 @@ func extract_room_data(scene_path: String, room_name: String) -> Dictionary:
 	room.free()
 
 	return {
-		"name": room_name,
+		# "name" removed — it's now the dictionary key one level up
 		"scene": scene_path,
 		"rotation": 0,
 		"width": bounds["width"],
@@ -183,111 +179,5 @@ func get_door_direction_from_name(name: String) -> String:
 	return ""
 
 
-func get_door_index(door: Node3D, direction: String) -> int:
-	var x := int(round(door.position.x / ROOM_SIZE))
-	var z := int(round(door.position.z / ROOM_SIZE))
-
-	match direction:
-		"north", "south":
-			return x
-		"east", "west":
-			return z
-
-	return 0
-
-
-func create_rotated_room_data(room: Dictionary, rotation: int) -> Dictionary:
-	var rotated := room.duplicate(true)
-
-	rotated["name"] = String(room["name"]) + "_rot" + str(rotation)
-	rotated["rotation"] = rotation
-
-	var width := int(room["width"])
-	var length := int(room["length"])
-
-	if rotation == 90 or rotation == 270:
-		rotated["width"] = length
-		rotated["length"] = width
-
-	rotated["occupied_tiles"] = rotate_tiles(room["occupied_tiles"], width, length, rotation)
-	rotated["doors"] = rotate_doors(room["doors"], width, length, rotation)
-
-	return rotated
-
-
-func rotate_tiles(tiles: Array, width: int, length: int, rotation: int) -> Array:
-	var out: Array = []
-
-	for t in tiles:
-		var x := int(t[0])
-		var z := int(t[1])
-		var p := rotate_point(x, z, width, length, rotation)
-		out.append([p[0], p[1]])
-
-	return out
-
-
-func rotate_point(x: int, z: int, width: int, length: int, rotation: int) -> Array:
-	match rotation:
-		90:
-			return [length - 1 - z, x]
-		180:
-			return [width - 1 - x, length - 1 - z]
-		270:
-			return [z, width - 1 - x]
-
-	return [x, z]
-
-
-func rotate_doors(doors: Dictionary, width: int, length: int, rotation: int) -> Dictionary:
-	var out := {
-		"north": [],
-		"east": [],
-		"south": [],
-		"west": []
-	}
-
-	for dir in doors.keys():
-		for idx in doors[dir]:
-			var result := rotate_door_entry(String(dir), int(idx), width, length, rotation)
-			out[result["direction"]].append(result["index"])
-
-	return out
-
-
-func rotate_door_entry(direction: String, index: int, width: int, length: int, rotation: int) -> Dictionary:
-	match rotation:
-		90:
-			match direction:
-				"north":
-					return {"direction": "east", "index": index}
-				"east":
-					return {"direction": "south", "index": length - 1 - index}
-				"south":
-					return {"direction": "west", "index": index}
-				"west":
-					return {"direction": "north", "index": length - 1 - index}
-
-		180:
-			match direction:
-				"north":
-					return {"direction": "south", "index": width - 1 - index}
-				"east":
-					return {"direction": "west", "index": length - 1 - index}
-				"south":
-					return {"direction": "north", "index": width - 1 - index}
-				"west":
-					return {"direction": "east", "index": length - 1 - index}
-
-		270:
-			match direction:
-				"north":
-					return {"direction": "west", "index": width - 1 - index}
-				"east":
-					return {"direction": "north", "index": index}
-				"south":
-					return {"direction": "east", "index": width - 1 - index}
-				"west":
-					return {"direction": "south", "index": index}
-
-	return {"direction": direction, "index": index}
+func get_door_index(door: Node3D, _direction: String) -> int:
+	return door.name.right(1) as int

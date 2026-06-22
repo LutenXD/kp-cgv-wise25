@@ -25,11 +25,11 @@ func _on_room_layout_manager_finished() -> void:
 		if mimic is Evaluator:
 			mimics.erase(mimic)
 			humgold = mimic
-	print(mimics)
+	#print(mimics)
 	var num_questions: int = mimics.size()
 	var statements: Array = mimic_statements.parse_json(num_questions)
 	for i: int in range(num_questions):
-		print(str(statements[i]))
+		#print(str(statements[i]))
 		mimics[i].set_instructions(mimic_pre_instructions + str(statements[i]) + mimic_post_instructions)
 	
 	if humgold:
