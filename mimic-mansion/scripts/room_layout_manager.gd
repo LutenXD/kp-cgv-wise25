@@ -9,11 +9,28 @@ const ROT_ROOMS_PATH = "res://assets/rot_rooms/"
 
 # Grid settings for room placement
 const ROOM_SIZE = 10.0  # Base size of a room (10x10 units)
+
+const KNOWN_ROOM_NAMES := [
+	"crypt", "crypt_rot180", "crypt_rot270", "crypt_rot90", 
+	"faculty_office", "faculty_office_rot180", "faculty_office_rot270", "faculty_office_rot90", 
+	"foyer", "foyer_rot180", "foyer_rot270", "foyer_rot90", 
+	"hallway", "hallway_rot180", "hallway_rot270", "hallway_rot90", 
+	"holodeck", "holodeck_rot180", "holodeck_rot270", "holodeck_rot90", 
+	"lecturehall", "lecturehall_rot180", "lecturehall_rot270", "lecturehall_rot90", 
+	"library", "library_rot180", "library_rot270", "library_rot90", 
+	"server_room", "server_room_rot180", "server_room_rot270", "server_room_rot90", 
+	"smalllectureroom", "smalllectureroom_rot180", "smalllectureroom_rot270", "smalllectureroom_rot90", 
+	"studentcafe", "studentcafe_rot180", "studentcafe_rot270", "studentcafe_rot90", 
+	"teakitchen", "teakitchen_rot180", "teakitchen_rot270", "teakitchen_rot90", 
+	"toilet", "toilet_rot180", "toilet_rot270", "toilet_rot90"]
+
+
 var grid = {}  # Dictionary to track occupied grid positions
 var spawned_rooms = []
 var available_doors = []
 
 var door_scene: PackedScene = preload("res://entities/interactable_door.tscn")
+
 
 # --- Performance caches -----------------------------------------------------
 # These avoid re-scanning the filesystem and re-instantiating/re-adding scenes
@@ -29,6 +46,23 @@ var _room_door_directions_cache: Dictionary = {}  # room_name -> Array[String] o
 
 var _spawned_base_names: Dictionary = {}   # base_name -> true, for O(1) lookups
 # -----------------------------------------------------------------------------
+
+func restart() -> void:
+	# Free rooms (children of this node)
+	for child in get_children():
+		child.queue_free()
+
+	# Reset per-run state - the static room/scene caches are fine to keep,
+	# but everything tracking *this* layout needs to be cleared
+	grid.clear()
+	spawned_rooms.clear()
+	available_doors.clear()
+	_spawned_base_names.clear()
+
+	call_deferred("spawn_starting_room")
+	
+	get_tree().get_first_node_in_group("HUD").set_subtitle("")
+	$"../Player".global_position = Vector3.ZERO
 
 
 func get_base_room_name(room_name: String) -> String:
@@ -57,23 +91,10 @@ func _track_spawned_room(room_name: String) -> void:
 
 
 func _ensure_room_files_cached() -> void:
-	"""Scan the rot_rooms directory once and cache the result"""
 	if _room_files_cached:
 		return
 	_room_files_cached = true
-
-	var dir = DirAccess.open(ROT_ROOMS_PATH)
-	if not dir:
-		print("Failed to open rot_rooms directory")
-		return
-
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.ends_with(".tscn"):
-			_room_files_cache.append(file_name.replace(".tscn", ""))
-		file_name = dir.get_next()
-	dir.list_dir_end()
+	_room_files_cache = KNOWN_ROOM_NAMES.duplicate()
 
 
 func _get_scene_for_room(room_name: String) -> PackedScene:
@@ -232,7 +253,7 @@ func spawn_connected_room(filler_room_name: String = "none") -> void:
 			
 			# Spawn door
 			var door_node: Node3D = door_scene.instantiate()
-			get_parent().add_child(door_node)
+			self.add_child(door_node)
 			door_node.global_position = parent_door_position
 			
 			if parent_door["direction"] == "east" or parent_door["direction"] == "west":
@@ -311,7 +332,7 @@ func spawn_filler_room(parent_door: Dictionary, opposing_direction: String, fill
 	
 	# Spawn door
 	var door_node: Node3D = door_scene.instantiate()
-	get_parent().add_child(door_node)
+	self.add_child(door_node)
 	door_node.global_position = parent_door_position
 	
 	if parent_door["direction"] == "east" or parent_door["direction"] == "west":
@@ -468,7 +489,7 @@ func spawn_room_at_position(room_name: String, pos: Vector3) -> Node3D:
 		return null
 	
 	# Add the room to the parent scene
-	get_parent().add_child(room_instance)
+	self.add_child(room_instance)
 	
 	# Set the room position
 	room_instance.global_position = pos

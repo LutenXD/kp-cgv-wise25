@@ -37,6 +37,7 @@ func start_new_game():
 	player_position = Vector3.ZERO
 	selected_items = []
 	print("New game started")
+	get_tree().get_first_node_in_group("room_layout_manager").restart()
 
 func save_game_state(player_pos: Vector3, lore: Array, spheres: Dictionary, selections: Array, rooms: Array = []):
 	game_in_progress = true

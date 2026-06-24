@@ -35,8 +35,10 @@ func _on_new_game_button_pressed():
 		settings.clear_game_state()
 		settings.start_new_game()
 	
+	continue_game.emit()
+	
 	# Load the game scene
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
 	
 	#continue_game.emit()
 	#get_tree().change_scene_to_file("res://scenes/game.tscn")

@@ -5,33 +5,48 @@
 		"explanation": "The dot product connects directly to the angle between two vectors. For two non zero vectors, the dot product equals the product of their lengths times the cosine of the angle. So you first compute the dot product. Then compute each vector length. Divide the dot product by the product of the two lengths. The result is the cosine of the angle. Apply the arccosine to get the angle. In numerical code, a stable alternative is to use a function called atan2. You give it two inputs: the length of the cross product, and the dot product. This often behaves better when the angle is very small or very close to one hundred eighty degrees."
 	},
 	{
-		"question": "How do you compute the area of a triangle in three dimensions, given its vertices p1, p2, and p3?",
-		"answer": "Form two edge vectors and take their cross product. The triangle area is half of the length of that cross product.",
-		"explanation": "Take the vector from p1 to p2, and call it a. Take the vector from p1 to p3, and call it b. The cross product of a and b is perpendicular to the triangle plane. Its length equals the area of the parallelogram spanned by the two edges. A triangle is exactly half of that parallelogram. Therefore the triangle area equals one half times the length of the cross product."
-	},
-	{
 		"question": "How can you test whether two vectors are perpendicular?",
 		"answer": "Compute their dot product. They are perpendicular if the dot product is zero.",
 		"explanation": "Two vectors are perpendicular when the angle between them is ninety degrees. The cosine of ninety degrees is zero. The dot product equals the product of the vector lengths times the cosine of the angle. So if the dot product is zero, the cosine term must be zero, which means the vectors are orthogonal. In practice, with floating point numbers, you often check whether the dot product is close to zero within a small tolerance."
 	},
 	{
-		"question": "What is the scalar triple product, and what does it compute?",
-		"answer": "It is the dot product of one vector with the cross product of the other two. It gives the signed volume of the parallelepiped spanned by the three vectors.",
-		"explanation": "Take three vectors u, v, and w. First compute the cross product of v and w. Then take the dot product of u with that cross product. The absolute value of the result equals the volume of the parallelepiped formed by the three vectors. The sign tells you the orientation, meaning whether the three vectors form a right handed or left handed system. The same value can be computed as the determinant of the three by three matrix built from the vectors, depending on whether you place them as rows or columns. If you want the volume of the tetrahedron defined by the same spanning vectors, you take the absolute value and divide by six."
+		"question": "Given two vectors, how do you determine the direction of their cross product?",
+		"answer": "Use the right hand rule. Curl the fingers of your right hand from the first vector toward the second. Your thumb points in the cross product direction.",
+		"explanation": "The cross product produces a vector that is perpendicular to both input vectors. Its direction depends on the order of the inputs. Point your right hand index finger along the first vector. Point your middle finger along the second vector, using the smaller rotation from the first to the second. Your thumb then points in the direction of the cross product. If you swap the vectors, the result flips direction."
 	},
 	{
-		"question": "Name two different ways to specify a plane in three dimensional space.",
-		"answer": "You can use three non collinear points. Or you can use one point and a normal vector.",
-		"explanation": "One common representation uses three points that are not on a single line. These three points uniquely define a plane. Another common representation uses one known point on the plane and a normal vector. This leads directly to an implicit plane equation that says the dot product of the normal with x minus the point is zero. A related form is the Hesse normal form, which uses a unit normal and the signed distance of the plane from the origin."
+		"question": "What are barycentric coordinates, and how can they be computed?",
+		"answer": "They are three weights for the triangle vertices that sum to one. The point equals the weighted average of the vertices. You compute them by solving a small linear system or by using area ratios.",
+		"explanation": "For a triangle with vertices p0, p1, and p2, barycentric coordinates describe a point p using three weights. Call them sigma zero, sigma one, and sigma two. The point p equals sigma zero times p0 plus sigma one times p1 plus sigma two times p2. The weights add up to one. To compute the weights in two dimensions, you can solve a three by three linear system built from the vertex coordinates and the point coordinates. Another method uses areas: each weight equals the area of a sub triangle divided by the area of the whole triangle, with a consistent orientation."
 	},
 	{
-		"question": "How do barycentric coordinates tell you whether a point lies inside a triangle?",
-		"answer": "Compute the three weights. The point is inside or on the boundary if all weights are between zero and one, and they sum to one.",
-		"explanation": "Barycentric coordinates describe convex combinations. If all three weights are non negative and add up to one, the point lies in the triangle or on its edges. If all three weights are strictly greater than zero, the point lies strictly inside. If one weight is zero and the others are non negative, the point lies on the corresponding edge. If any weight is negative, the point lies outside the triangle. In floating point computations, you usually allow a small tolerance around zero."
-	},
-	{
-		"question": "How is an implicit curve defined, and how does it compare to a parametric curve?",
-		"answer": "An implicit curve is the set of points where a function value is zero. A parametric curve is a function that maps a parameter to a point on the curve.",
-		"explanation": "In two dimensions, an implicit curve is defined by a scalar function f of x and y. The curve is all points where f equals zero. Often the sign of f tells you which side is inside or outside. A parametric curve introduces a parameter t. It defines a point as a function of t, such as x of t and y of t. The implicit form defines the set directly. The parametric form provides an explicit way to traverse the curve in order."
-	}
+	"question": "What do the terms convex and concave mean?",
+	"answer": "A shape is convex if it has no inward dents — you can draw a straight line between any two points inside it and that line stays inside. A concave shape has at least one dent where such a line would cross outside the boundary.",
+	"explanation": "Think of a convex shape as one that never curves inward. A sphere, a box, and a regular polygon are all convex. If you pick any two points inside them and stretch a rubber band between those points, the rubber band never leaves the shape. A concave shape breaks this: it has a hollow or notch somewhere, so you can find two interior points where the direct path between them briefly exits the shape. A crescent moon or a star shape are classic examples. In computer graphics, convexity matters a lot because convex shapes are much easier to work with algorithmically — intersection tests are simpler, and many spatial algorithms only work correctly on convex input."
+  },
+  {
+	"question": "What is the fundamental concept of depth-first search?",
+	"answer": "Depth-first search explores a graph by following one path as far as it goes before backtracking and trying other branches.",
+	"explanation": "Imagine exploring a maze by always taking the first available turn and only going back when you hit a dead end. That is exactly how depth-first search works. Starting from a node, you pick a neighbor and immediately dive into it, then dive into one of its neighbors, and so on, going deeper and deeper until you reach a node with no more unvisited neighbors. At that point you backtrack one step and try a different branch. This continues until every reachable node has been visited. The algorithm naturally uses a stack — either the program call stack in a recursive implementation, or an explicit stack if written iteratively. Depth-first search is the basis for many important graph algorithms, including cycle detection, topological sorting, and finding strongly connected components."
+  },
+  {
+	"question": "What is the difference between a directed graph, a directed acyclic graph, and a tree?",
+	"answer": "A directed graph has edges with direction and may contain cycles. A directed acyclic graph is a directed graph with no cycles. A tree is a directed acyclic graph where there is exactly one root and every other node has exactly one parent.",
+	"explanation": "In a directed graph, every connection between nodes has a direction — like a one-way street. You can follow those streets and potentially end up back where you started, which is called a cycle. A directed acyclic graph removes that possibility: you can never follow the edges and loop back to a node you already visited. This is useful because it lets you order all the nodes from first to last such that every edge goes forward in that order — a property called topological ordering. A tree is even more constrained. It is a directed acyclic graph where every node except one special root has exactly one incoming edge, meaning exactly one parent. There is a single unique path from the root down to any other node. Trees show up everywhere: file systems, scene graphs in game engines, abstract syntax trees in compilers, and hierarchical UI layouts all follow this structure."
+  },
+  {
+	"question": "How do you compute the normal of a triangle?",
+	"answer": "Take two edges of the triangle as vectors, compute their cross product, and normalize the result to unit length.",
+	"explanation": "Pick one vertex as the origin and compute two vectors pointing along two edges of the triangle. The cross product of those two vectors points perpendicular to the surface of the triangle. Which side it points toward depends on the order you pick the vertices — this is called winding order, and keeping it consistent across an entire mesh ensures all normals face outward. The cross product you get is not yet a unit vector, so you divide it by its own length to make it length one. That unit vector is the triangle normal and is what gets used in lighting calculations. In a mesh, consistent winding order across all triangles is essential so the renderer knows which side of each face is the outside."
+  },
+  {
+	"question": "What are normal maps and what are they used for?",
+	"answer": "Normal maps are textures that store a surface normal direction at every pixel. They let you simulate fine surface detail and complex lighting on simple low-polygon meshes without adding real geometry.",
+	"explanation": "Instead of storing a color, each pixel of a normal map stores a direction — specifically, where the surface appears to be pointing at that spot. During shading, the renderer reads that stored direction and uses it for lighting calculations instead of the actual geometric surface normal. This tricks the lighting into behaving as if the surface has bumps, grooves, or scratches, even though the underlying mesh is completely flat. Normal maps typically look blue-purple because most stored normals point mostly straight out of the surface, and that direction maps to a blue-ish color in the way the data is encoded. Normal maps are almost always expressed in tangent space, meaning the stored directions are relative to the surface itself rather than the world. This makes them reusable across differently oriented or even animated geometry, which is why they are the standard approach in real-time rendering."
+  },
+{
+	"question": "What is a UV coordinate and how does texture mapping work?",
+	"answer": "A UV coordinate is a two-dimensional position in texture space, ranging from zero to one in each axis. Every vertex on a mesh is assigned a UV coordinate that says which part of the texture it corresponds to.",
+	"explanation": "Think of a texture as a flat image that you want to wrap around a three-dimensional object. The challenge is telling the renderer which pixel of the image should appear at each point on the surface. UV coordinates solve this by giving every vertex on the mesh a corresponding position in the texture image, using U for the horizontal axis and V for the vertical axis, both running from zero to one. When the GPU rasterizes a triangle, it interpolates the UV coordinates smoothly across its surface. For each screen pixel inside the triangle, it looks up the color in the texture at the interpolated UV position and uses that as the surface color. The process of assigning UVs to a mesh is called UV unwrapping, and it is essentially cutting the surface of the mesh open and flattening it into a two-dimensional layout, similar to unfolding the net of a cardboard box. Getting a clean unwrap without too much distortion is an important step in the art pipeline."
+  },
 ]

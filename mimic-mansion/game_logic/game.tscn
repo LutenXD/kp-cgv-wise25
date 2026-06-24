@@ -243,7 +243,6 @@ player = NodePath("../Player")
 autoplay = true
 
 [node name="Player" parent="." unique_id=947552428 instance=ExtResource("3_4sqru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0073252916, 0)
 
 [node name="MaterialFootstepPlayer3D" type="RayCast3D" parent="Player" unique_id=1286032956 node_paths=PackedStringArray("character", "audio_player")]
 process_mode = 3
@@ -287,7 +286,7 @@ script = ExtResource("5_ta1pv")
 min_flicker_time = 20.0
 max_flicker_time = 90.0
 
-[node name="RoomLayoutManager" type="Node3D" parent="." unique_id=731569450]
+[node name="RoomLayoutManager" type="Node3D" parent="." unique_id=731569450 groups=["room_layout_manager"]]
 script = ExtResource("76_iy51i")
 metadata/_custom_type_script = "uid://bo0nxcksr5ibk"
 

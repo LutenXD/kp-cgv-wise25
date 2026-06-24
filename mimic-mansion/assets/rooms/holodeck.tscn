@@ -429,7 +429,7 @@ transform = Transform3D(-0.8525399, 0, 0.5226622, 0, 1, 0, -0.5226622, 0, -0.852
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D51" index="2" unique_id=1651585574 groups=["flickering_light"]]
 transform = Transform3D(0.9537299, 0.0040328205, 0.30063742, -0.3002201, -0.041568633, 0.95296377, 0.016340196, -0.99912757, -0.038434535, -0.34058046, 0.22162533, 0.00603199)
 light_color = Color(1, 0.83137256, 0.31764707, 1)
-light_energy = 2.0
+light_energy = 3.0
 light_indirect_energy = 2.0
 light_size = 0.262
 shadow_enabled = true
@@ -441,7 +441,7 @@ transform = Transform3D(0.2841993, 0, 0.95876527, -0.04299096, 0.9989942, 0.0127
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D84" index="2" unique_id=843320729 groups=["flickering_light"]]
 transform = Transform3D(0.9537299, 0.0040328205, 0.30063742, -0.3002201, -0.041568633, 0.95296377, 0.016340196, -0.99912757, -0.038434535, -0.34058046, 0.22162533, 0.00603199)
 light_color = Color(1, 0.83137256, 0.31764707, 1)
-light_energy = 2.0
+light_energy = 3.0
 light_indirect_energy = 2.0
 light_size = 0.335
 shadow_enabled = true
@@ -453,7 +453,7 @@ transform = Transform3D(-0.30409953, 0, 0.9526403, 0, 1, 0, -0.9526403, 0, -0.30
 [node name="SpotLight3D" type="SpotLight3D" parent="Props/StaticBody3D52" index="2" unique_id=579364451 groups=["flickering_light"]]
 transform = Transform3D(0.7087785, -0.49469328, 0.5029033, -0.4046226, 0.29887885, 0.86426383, -0.57785267, -0.81605756, 0.011674777, -0.3405838, 0.22162533, 0.0060329437)
 light_color = Color(1, 0.83137256, 0.31764707, 1)
-light_energy = 2.0
+light_energy = 3.0
 light_indirect_energy = 2.0
 light_size = 0.335
 shadow_enabled = true
@@ -551,8 +551,8 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 11.1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/computerlab_CeilingTileLight" index="2" unique_id=337464267 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
-light_color = Color(1, 1, 0.73333335, 1)
-light_energy = 2.0
+light_color = Color(1, 1, 0.83137256, 1)
+light_energy = 8.0
 light_size = 0.207
 shadow_enabled = true
 distance_fade_enabled = true
@@ -564,8 +564,8 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.10
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/computerlab_CeilingTileLight2" index="2" unique_id=121646939 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
-light_color = Color(1, 1, 0.73333335, 1)
-light_energy = 2.0
+light_color = Color(0.99999994, 0.9196615, 0.5753505, 1)
+light_energy = 8.0
 light_size = 0.207
 shadow_enabled = true
 distance_fade_enabled = true
@@ -577,8 +577,8 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.10
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/computerlab_CeilingTileLight3" index="2" unique_id=309586788 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
-light_color = Color(1, 1, 0.73333335, 1)
-light_energy = 2.0
+light_color = Color(1, 1, 0.83137256, 1)
+light_energy = 8.0
 light_size = 0.207
 shadow_enabled = true
 distance_fade_enabled = true
@@ -590,8 +590,8 @@ transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 11.1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/computerlab_CeilingTileLight4" index="2" unique_id=555512809 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12508178, 0)
-light_color = Color(1, 1, 0.73333335, 1)
-light_energy = 2.0
+light_color = Color(1, 1, 0.83137256, 1)
+light_energy = 8.0
 light_size = 0.207
 shadow_enabled = true
 distance_fade_enabled = true

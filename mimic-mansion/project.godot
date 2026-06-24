@@ -67,6 +67,7 @@ player=""
 mimic=""
 flickering_light="group for flickering ceiling lights"
 note_book=""
+room_layout_manager=""
 
 [gui]
 

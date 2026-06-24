@@ -589,7 +589,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -10)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D" index="2" unique_id=1995867031 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 7.0
+light_energy = 9.0
 light_size = 0.075
 shadow_enabled = true
 distance_fade_enabled = true
@@ -602,7 +602,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.238915, 5, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D2" index="2" unique_id=442388433 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 7.0
+light_energy = 9.0
 light_size = 0.075
 shadow_enabled = true
 distance_fade_enabled = true
@@ -615,7 +615,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D18" index="2" unique_id=1439500359 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 7.0
+light_energy = 9.0
 light_size = 0.075
 shadow_enabled = true
 distance_fade_enabled = true
@@ -628,7 +628,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 10)
 [node name="OmniLight3D" type="OmniLight3D" parent="Props/StaticBody3D19" index="2" unique_id=1762015098 groups=["flickering_light"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62954235, 0)
 light_color = Color(1, 1, 0.76862746, 1)
-light_energy = 7.0
+light_energy = 9.0
 light_size = 0.075
 shadow_enabled = true
 distance_fade_enabled = true
